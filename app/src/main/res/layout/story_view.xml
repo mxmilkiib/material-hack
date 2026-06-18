@@ -40,7 +40,7 @@
         style="@style/textTitleStyle"
         android:layout_marginLeft="@dimen/cardview_min_height"
         android:layout_marginStart="@dimen/cardview_min_height"
-        android:paddingTop="@dimen/padding"
+        android:paddingTop="@dimen/padding_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -139,7 +139,7 @@
         android:id="@+id/score_filler"
         android:background="?attr/colorCardHighlight"
         android:layout_below="@id/score"
-        android:layout_alignBottom="@id/comment"
+        android:layout_alignBottom="@id/posted"
         android:layout_width="@dimen/cardview_min_height"
         android:layout_height="match_parent" />
 

@@ -78,7 +78,7 @@
                 android:paddingRight="@dimen/padding"
                 style="@style/textContentStyle"
                 android:textIsSelectable="true"
-                android:paddingTop="@dimen/padding"
+                android:paddingTop="@dimen/padding_text"
                 android:paddingBottom="@dimen/padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

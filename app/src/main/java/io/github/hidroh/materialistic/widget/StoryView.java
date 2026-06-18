@@ -132,6 +132,7 @@ public class StoryView extends RelativeLayout implements Checkable {
         Resources res = getResources();
         int columnWidth = res.getDimensionPixelSize(R.dimen.cardview_compact_min_height);
         int verticalPadding = res.getDimensionPixelSize(R.dimen.padding_compact);
+        int titleTopPadding = res.getDimensionPixelSize(R.dimen.padding_text);
         float compactTitleSize = res.getDimension(R.dimen.text_size_compact_title);
         float compactSubtitleSize = res.getDimension(R.dimen.text_size_compact_subtitle);
         setViewWidth(mVoteSwitcher, columnWidth);
@@ -143,10 +144,23 @@ public class StoryView extends RelativeLayout implements Checkable {
         mTitleTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactTitleSize);
         mSourceTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
         mPostedTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
-        mTitleTextView.setPadding(mTitleTextView.getPaddingLeft(), verticalPadding,
+        mTitleTextView.setPadding(mTitleTextView.getPaddingLeft(), titleTopPadding,
                 mTitleTextView.getPaddingRight(), verticalPadding);
         mPostedTextView.setPadding(mPostedTextView.getPaddingLeft(), verticalPadding,
                 mPostedTextView.getPaddingRight(), verticalPadding);
+        int iconSize = res.getDimensionPixelSize(R.dimen.comment_icon_compact);
+        Drawable commentIcon = DrawableCompat.wrap(
+                androidx.core.content.ContextCompat.getDrawable(getContext(),
+                        R.drawable.ic_comment_white_24dp).mutate());
+        DrawableCompat.setTint(commentIcon, mAccentColorResId);
+        commentIcon.setBounds(0, 0, iconSize, iconSize);
+        mCommentButton.setCompoundDrawables(commentIcon, null, null, null);
+        mCommentButton.setPadding(0, 0, 0, 0);
+        mMoreButton.setPadding(
+                res.getDimensionPixelSize(R.dimen.padding_compact),
+                mMoreButton.getPaddingTop(),
+                res.getDimensionPixelSize(R.dimen.padding_compact),
+                mMoreButton.getPaddingBottom());
     }
 
     private static void setViewWidth(View view, int width) {

@@ -103,7 +103,7 @@
     <color name="nordText">#ECEFF4</color>
     <color name="nordTextSecondary">#D8DEE9</color>
 
-    <!-- Dull grey for edge overscroll effect -->
-    <color name="edgeEffectGrey">#88888888</color>
+    <!-- Edge overscroll effect: fully transparent to suppress the flash -->
+    <color name="edgeEffectGrey">#00000000</color>
 
 </resources>
