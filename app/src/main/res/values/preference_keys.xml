@@ -41,6 +41,7 @@
     <string translatable="false" name="pref_offline_notification">pref_offline_notification</string>
     <string translatable="false" name="pref_line_height">pref_line_height</string>
     <string translatable="false" name="pref_list_item_view">pref_list_item_view</string>
+    <string translatable="false" name="pref_list_compact">pref_list_compact</string>
     <string translatable="false" name="pref_max_lines">pref_max_lines</string>
     <string translatable="false" name="pref_multi_window">pref_multi_window</string>
     <string translatable="false" name="pref_navigation">pref_navigation</string>

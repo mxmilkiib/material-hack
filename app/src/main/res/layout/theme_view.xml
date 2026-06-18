@@ -19,12 +19,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
 
-    <TextView
-        android:id="@id/content"
-        android:text="T"
-        style="@style/textTitleStyle"
-        android:gravity="center"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="?attr/listPreferredItemHeightSmall"
-        android:layout_height="?attr/listPreferredItemHeightSmall" />
+        android:layout_height="?attr/listPreferredItemHeightSmall">
+
+        <View
+            android:id="@+id/primary_bar"
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@id/content"
+                android:text="T"
+                style="@style/textTitleStyle"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/accent_dot"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="6dp"
+                android:background="@drawable/theme_accent_dot" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
 </merge>

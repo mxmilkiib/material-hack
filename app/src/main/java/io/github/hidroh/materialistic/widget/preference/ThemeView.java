@@ -17,12 +17,14 @@
 package io.github.hidroh.materialistic.widget.preference;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import androidx.core.content.ContextCompat;
 import androidx.cardview.widget.CardView;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TextView;
 
 import io.github.hidroh.materialistic.AppUtils;
@@ -42,8 +44,14 @@ public class ThemeView extends CardView {
         ta.recycle();
         int cardBackgroundColor = AppUtils.getThemedResId(wrapper, R.attr.colorCardBackground);
         int textColor = AppUtils.getThemedResId(wrapper, android.R.attr.textColorTertiary);
+        int primaryColor = AppUtils.getThemedResId(wrapper, R.attr.colorPrimary);
+        int accentColor = AppUtils.getThemedResId(wrapper, R.attr.colorAccent);
         setCardBackgroundColor(ContextCompat.getColor(wrapper, cardBackgroundColor));
         ((TextView) findViewById(R.id.content)).setTextColor(ContextCompat.getColor(wrapper, textColor));
+        findViewById(R.id.primary_bar).setBackgroundColor(ContextCompat.getColor(wrapper, primaryColor));
+        View accentDot = findViewById(R.id.accent_dot);
+        accentDot.setBackgroundTintList(
+                ColorStateList.valueOf(ContextCompat.getColor(wrapper, accentColor)));
     }
 
 }

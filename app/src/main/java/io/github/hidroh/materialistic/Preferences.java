@@ -114,6 +114,10 @@ public class Preferences {
         return get(context, R.string.pref_list_item_view, false);
     }
 
+    public static boolean isListItemCompact(Context context) {
+        return get(context, R.string.pref_list_compact, false);
+    }
+
     public static boolean isSortByRecent(Context context) {
         return get(context, R.string.pref_search_sort, R.string.pref_search_sort_value_recent)
                 .equals(context.getString(R.string.pref_search_sort_value_recent));
