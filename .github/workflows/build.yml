@@ -5,13 +5,41 @@ on:
     branches: [ master ]
     tags:
       - 'v*'
-  pull_request:
-    branches: [ master ]
 
 jobs:
+  # On branch pushes: wait 3 hours then check we're still the latest commit.
+  # If newer commits landed in the meantime, this run exits cleanly — no build wasted.
+  # On tag pushes: skip the wait and build immediately.
+  wait:
+    name: Wait for commit storm to settle
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+    steps:
+      - name: Sleep 3 hours
+        run: sleep 10800
+
+      - name: Check this commit is still HEAD
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LATEST=$(gh api repos/${{ github.repository }}/commits/master --jq '.sha')
+          if [ "$LATEST" = "${{ github.sha }}" ]; then
+            echo "should_build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Newer commit $LATEST supersedes ${{ github.sha }}, skipping build."
+            echo "should_build=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
     name: Build APKs
     runs-on: ubuntu-latest
+    needs: wait
+    if: |
+      always() &&
+      (needs.wait.result == 'skipped' || needs.wait.outputs.should_build == 'true')
 
     steps:
       - uses: actions/checkout@v4
@@ -34,8 +62,9 @@ jobs:
 
       - name: Build release APK
         run: ./gradlew assembleRelease
-        # Note: release APK will be unsigned without signing config.
-        # Add KEYSTORE secrets and a signingConfigs block in build.gradle to sign.
+        # Unsigned unless KEYSTORE_BASE64 / KEYSTORE_PASSWORD / KEY_ALIAS / KEY_PASSWORD
+        # secrets are set in repo Settings → Secrets and a signingConfigs block added to
+        # app/build.gradle referencing them.
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
@@ -58,33 +87,22 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - name: Download debug APK
+        uses: actions/download-artifact@v4
         with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: gradle
+          name: app-debug
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build debug APK
-        run: ./gradlew assembleDebug
-
-      - name: Build release APK
-        run: ./gradlew assembleRelease
+      - name: Download release APK
+        uses: actions/download-artifact@v4
+        with:
+          name: app-release-unsigned
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            app/build/outputs/apk/debug/app-debug.apk
-            app/build/outputs/apk/release/app-release-unsigned.apk
+            app-debug.apk
+            app-release-unsigned.apk
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
