@@ -64,10 +64,46 @@
 
     <color name="cardDarkBackground">#FF424242</color>
 
-    <!-- Violet theme palette -->
+    <!-- Violet theme palette (cohesive purple ramp) -->
+    <color name="purple200">#CE93D8</color>
+    <color name="purple700">#7B1FA2</color>
     <color name="purple800">#6A1B9A</color>
-    <color name="violet900">#311B92</color>
-    <color name="violetA100">#B388FF</color>
-    <color name="violetCardBackground">#FF120A1F</color>
+    <color name="purple900">#4A148C</color>
+    <color name="purpleCardBackground">#FF160E1C</color>
+
+    <!-- Ocean theme (dark teal/blue) -->
+    <color name="oceanPrimary">#00695C</color>
+    <color name="oceanPrimaryDark">#004D40</color>
+    <color name="oceanAccent">#80CBC4</color>
+    <color name="oceanCard">#FF0D1F24</color>
+    <color name="oceanHighlight">#FF0A2A35</color>
+
+    <!-- Rose theme (warm pink/light) -->
+    <color name="rosePrimary">#E91E63</color>
+    <color name="rosePrimaryDark">#C2185B</color>
+    <color name="roseAccent">#FF80AB</color>
+    <color name="roseCard">#FFF8F0F4</color>
+    <color name="roseHighlight">#FFEBC5D0</color>
+
+    <!-- Monokai theme (dark) -->
+    <color name="monokaiPrimary">#75715E</color>
+    <color name="monokaiPrimaryDark">#49483E</color>
+    <color name="monokaiAccent">#A6E22E</color>
+    <color name="monokaiCard">#FF272822</color>
+    <color name="monokaiHighlight">#FF3E3D32</color>
+    <color name="monokaiText">#F8F8F2</color>
+    <color name="monokaiTextSecondary">#75715E</color>
+
+    <!-- Nord theme (arctic dark blue-grey) -->
+    <color name="nordPrimary">#5E81AC</color>
+    <color name="nordPrimaryDark">#4C6FA5</color>
+    <color name="nordAccent">#88C0D0</color>
+    <color name="nordCard">#FF2E3440</color>
+    <color name="nordHighlight">#FF3B4252</color>
+    <color name="nordText">#ECEFF4</color>
+    <color name="nordTextSecondary">#D8DEE9</color>
+
+    <!-- Dull grey for edge overscroll effect -->
+    <color name="edgeEffectGrey">#88888888</color>
 
 </resources>

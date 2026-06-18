@@ -34,6 +34,7 @@
         <item name="android:windowDisablePreview">true</item>
         <item name="android:textColorTertiary">?android:textColorPrimary</item>
         <item name="android:textColorLink">?colorAccent</item>
+        <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="alertDialogTheme">@style/AppAlertDialog</item>
@@ -63,6 +64,7 @@
         <item name="android:windowDisablePreview">true</item>
         <item name="android:textColorTertiary">?android:textColorPrimary</item>
         <item name="android:textColorLink">?colorAccent</item>
+        <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="alertDialogTheme">@style/AppAlertDialog.Dark</item>
@@ -83,6 +85,7 @@
         <item name="android:windowDisablePreview">true</item>
         <item name="android:textColorTertiary">?android:textColorPrimary</item>
         <item name="android:textColorLink">?colorAccent</item>
+        <item name="android:colorEdgeEffect">@color/edgeEffectGrey</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">?colorPrimary</item>
         <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
@@ -195,15 +198,63 @@
     </style>
 
     <style name="Violet">
-        <item name="colorPrimary">@color/purple800</item>
-        <item name="colorPrimaryDark">@color/violet900</item>
-        <item name="colorAccent">@color/violetA100</item>
-        <item name="colorCardBackground">@color/violetCardBackground</item>
-        <item name="colorCardHighlight">@color/violet900</item>
+        <item name="colorPrimary">@color/purple700</item>
+        <item name="colorPrimaryDark">@color/purple900</item>
+        <item name="colorAccent">@color/purple200</item>
+        <item name="colorCardBackground">@color/purpleCardBackground</item>
+        <item name="colorCardHighlight">@color/purple800</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/whiteT70</item>
         <item name="alertDialogTheme">@style/AppAlertDialog.Dark.Violet</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Violet</item>
+    </style>
+
+    <style name="Ocean">
+        <item name="colorPrimary">@color/oceanPrimary</item>
+        <item name="colorPrimaryDark">@color/oceanPrimaryDark</item>
+        <item name="colorAccent">@color/oceanAccent</item>
+        <item name="colorCardBackground">@color/oceanCard</item>
+        <item name="colorCardHighlight">@color/oceanHighlight</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/whiteT70</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Dark.Ocean</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Ocean</item>
+    </style>
+
+    <style name="Rose">
+        <item name="colorPrimary">@color/rosePrimary</item>
+        <item name="colorPrimaryDark">@color/rosePrimaryDark</item>
+        <item name="colorAccent">@color/roseAccent</item>
+        <item name="colorCardBackground">@color/roseCard</item>
+        <item name="colorCardHighlight">@color/roseHighlight</item>
+        <item name="android:textColorPrimary">@color/blackT87</item>
+        <item name="android:textColorSecondary">@color/blackT50</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Rose</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Rose</item>
+    </style>
+
+    <style name="Monokai">
+        <item name="colorPrimary">@color/monokaiPrimary</item>
+        <item name="colorPrimaryDark">@color/monokaiPrimaryDark</item>
+        <item name="colorAccent">@color/monokaiAccent</item>
+        <item name="colorCardBackground">@color/monokaiCard</item>
+        <item name="colorCardHighlight">@color/monokaiHighlight</item>
+        <item name="android:textColorPrimary">@color/monokaiText</item>
+        <item name="android:textColorSecondary">@color/monokaiTextSecondary</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Dark.Monokai</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Monokai</item>
+    </style>
+
+    <style name="Nord">
+        <item name="colorPrimary">@color/nordPrimary</item>
+        <item name="colorPrimaryDark">@color/nordPrimaryDark</item>
+        <item name="colorAccent">@color/nordAccent</item>
+        <item name="colorCardBackground">@color/nordCard</item>
+        <item name="colorCardHighlight">@color/nordHighlight</item>
+        <item name="android:textColorPrimary">@color/nordText</item>
+        <item name="android:textColorSecondary">@color/nordTextSecondary</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Dark.Nord</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Nord</item>
     </style>
 
     <!-- =================== -->
@@ -264,10 +315,44 @@
     </style>
 
     <style name="AppAlertDialog.Dark.Violet">
-        <item name="colorPrimary">@color/purple800</item>
-        <item name="colorAccent">@color/violetA100</item>
-        <item name="colorCardBackground">@color/violetCardBackground</item>
-        <item name="colorCardHighlight">@color/violet900</item>
+        <item name="colorPrimary">@color/purple700</item>
+        <item name="colorAccent">@color/purple200</item>
+        <item name="colorCardBackground">@color/purpleCardBackground</item>
+        <item name="colorCardHighlight">@color/purple800</item>
+    </style>
+
+    <style name="AppAlertDialog.Dark.Ocean">
+        <item name="colorPrimary">@color/oceanPrimary</item>
+        <item name="colorAccent">@color/oceanAccent</item>
+        <item name="colorCardBackground">@color/oceanCard</item>
+        <item name="colorCardHighlight">@color/oceanHighlight</item>
+    </style>
+
+    <style name="AppAlertDialog.Rose" parent="AppAlertDialog">
+        <item name="colorPrimary">@color/rosePrimary</item>
+        <item name="colorAccent">@color/roseAccent</item>
+        <item name="colorCardBackground">@color/roseCard</item>
+        <item name="colorCardHighlight">@color/roseHighlight</item>
+        <item name="android:textColorPrimary">@color/blackT87</item>
+        <item name="android:textColorSecondary">@color/blackT50</item>
+    </style>
+
+    <style name="AppAlertDialog.Dark.Monokai">
+        <item name="colorPrimary">@color/monokaiPrimary</item>
+        <item name="colorAccent">@color/monokaiAccent</item>
+        <item name="colorCardBackground">@color/monokaiCard</item>
+        <item name="colorCardHighlight">@color/monokaiHighlight</item>
+        <item name="android:textColorPrimary">@color/monokaiText</item>
+        <item name="android:textColorSecondary">@color/monokaiTextSecondary</item>
+    </style>
+
+    <style name="AppAlertDialog.Dark.Nord">
+        <item name="colorPrimary">@color/nordPrimary</item>
+        <item name="colorAccent">@color/nordAccent</item>
+        <item name="colorCardBackground">@color/nordCard</item>
+        <item name="colorCardHighlight">@color/nordHighlight</item>
+        <item name="android:textColorPrimary">@color/nordText</item>
+        <item name="android:textColorSecondary">@color/nordTextSecondary</item>
     </style>
 
     <style name="AppBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
@@ -315,9 +400,33 @@
     </style>
 
     <style name="AppBottomSheetDialog.Dark.Violet">
-        <item name="colorPrimary">@color/purple800</item>
-        <item name="colorAccent">@color/violetA100</item>
-        <item name="android:colorBackground">@color/violetCardBackground</item>
+        <item name="colorPrimary">@color/purple700</item>
+        <item name="colorAccent">@color/purple200</item>
+        <item name="android:colorBackground">@color/purpleCardBackground</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Dark.Ocean">
+        <item name="colorPrimary">@color/oceanPrimary</item>
+        <item name="colorAccent">@color/oceanAccent</item>
+        <item name="android:colorBackground">@color/oceanCard</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Rose" parent="AppBottomSheetDialog">
+        <item name="colorPrimary">@color/rosePrimary</item>
+        <item name="colorAccent">@color/roseAccent</item>
+        <item name="android:colorBackground">@color/roseCard</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Dark.Monokai">
+        <item name="colorPrimary">@color/monokaiPrimary</item>
+        <item name="colorAccent">@color/monokaiAccent</item>
+        <item name="android:colorBackground">@color/monokaiCard</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Dark.Nord">
+        <item name="colorPrimary">@color/nordPrimary</item>
+        <item name="colorAccent">@color/nordAccent</item>
+        <item name="android:colorBackground">@color/nordCard</item>
     </style>
 
 </resources>

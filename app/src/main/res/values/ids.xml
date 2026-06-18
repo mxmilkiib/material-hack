@@ -102,6 +102,12 @@
     <item type="id" name="menu_readability" />
     <item type="id" name="menu_refresh" />
 
+    <!-- theme swatches -->
+    <item type="id" name="theme_ocean" />
+    <item type="id" name="theme_rose" />
+    <item type="id" name="theme_monokai" />
+    <item type="id" name="theme_nord" />
+
     <!-- others -->
     <item type="id" name="text_developer_info" />
     <item type="id" name="text_application_info" />

@@ -36,7 +36,14 @@
     <string name="application_info_text">
         <![CDATA[
             <p>Version: %1$s (%2$d)</p>
-            <p>This application is open source at <a href="https://github.com/hidroh/materialistic">github.com/hidroh/materialistic</a></p>
+            <p><b>Material Hack</b> is a fork of the original Materialistic HN reader by Ha Duy Trung,
+            refreshed with a modernised build toolchain (Gradle 8, AGP 8.5, Kotlin 1.9, targetSdk 34),
+            new themes (Violet, Ocean, Rose, Monokai, Nord), an improved theme selector,
+            a compact list mode with tighter spacing and smaller fonts,
+            additional font choices (Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys),
+            and various UI refinements throughout.</p>
+            <p>Source: <a href="https://github.com/mxmilkiib/material-hack">github.com/mxmilkiib/material-hack</a></p>
+            <p>Original: <a href="https://github.com/hidroh/materialistic">github.com/hidroh/materialistic</a></p>
         ]]>
     </string>
     <string name="libraries_title">Libraries &amp; Resources</string>
@@ -201,6 +208,10 @@
     <string name="theme_solarized_dark">Solarized Dark</string>
     <string name="theme_solarized">Solarized</string>
     <string name="theme_violet">Violet</string>
+    <string name="theme_ocean">Ocean</string>
+    <string name="theme_rose">Rose</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
     <string name="comment_display_multiple">Multiple pages</string>
     <string name="comment_display_single">Single page - auto expand</string>
     <string name="comment_display_collapsed">Single page - collapsed</string>

@@ -138,6 +138,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_ocean"
+                android:theme="@style/Ocean"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_rose"
+                android:theme="@style/Rose"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_monokai"
+                android:theme="@style/Monokai"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_nord"
+                android:theme="@style/Nord"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
     </HorizontalScrollView>

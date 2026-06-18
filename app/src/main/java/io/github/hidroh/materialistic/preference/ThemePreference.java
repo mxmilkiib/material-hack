@@ -41,6 +41,10 @@ public class ThemePreference extends Preference {
     private static final String SOLARIZED = "solarized";
     private static final String SOLARIZED_DARK = "solarized_dark";
     private static final String VIOLET = "violet";
+    private static final String OCEAN = "ocean";
+    private static final String ROSE = "rose";
+    private static final String MONOKAI = "monokai";
+    private static final String NORD = "nord";
     private static final ArrayMap<Integer, String> BUTTONS = new ArrayMap<>();
     private static final ArrayMap<String, ThemeSpec> VALUES = new ArrayMap<>();
     static {
@@ -52,6 +56,10 @@ public class ThemePreference extends Preference {
         BUTTONS.put(R.id.theme_solarized, SOLARIZED);
         BUTTONS.put(R.id.theme_solarized_dark, SOLARIZED_DARK);
         BUTTONS.put(R.id.theme_violet, VIOLET);
+        BUTTONS.put(R.id.theme_ocean, OCEAN);
+        BUTTONS.put(R.id.theme_rose, ROSE);
+        BUTTONS.put(R.id.theme_monokai, MONOKAI);
+        BUTTONS.put(R.id.theme_nord, NORD);
 
         VALUES.put(LIGHT, new DayNightSpec(R.string.theme_light));
         VALUES.put(DARK, new DarkSpec(R.string.theme_dark));
@@ -62,6 +70,10 @@ public class ThemePreference extends Preference {
         VALUES.put(SOLARIZED_DARK, new DarkSpec(R.string.theme_solarized_dark,
                 R.style.Solarized_Dark));
         VALUES.put(VIOLET, new DarkSpec(R.string.theme_violet, R.style.Violet));
+        VALUES.put(OCEAN, new DarkSpec(R.string.theme_ocean, R.style.Ocean));
+        VALUES.put(ROSE, new DayNightSpec(R.string.theme_rose, R.style.Rose));
+        VALUES.put(MONOKAI, new DarkSpec(R.string.theme_monokai, R.style.Monokai));
+        VALUES.put(NORD, new DarkSpec(R.string.theme_nord, R.style.Nord));
     }
 
     private String mSelectedTheme;
