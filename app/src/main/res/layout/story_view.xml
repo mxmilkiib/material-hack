@@ -61,7 +61,7 @@
         android:layout_marginLeft="@dimen/cardview_min_height"
         android:layout_marginStart="@dimen/cardview_min_height"
         android:layout_toLeftOf="@id/comment"
-        android:paddingBottom="@dimen/padding"
+        android:paddingBottom="0dp"
         android:maxLines="1" />
 
     <include
@@ -69,7 +69,7 @@
         android:id="@id/comment"
         android:layout_toLeftOf="@+id/button_more"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_below="@id/title"
+        android:layout_below="@id/source"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -96,8 +96,10 @@
             android:id="@id/rank"
             android:text="46"
             style="@style/textRankStyle"
-            android:layout_gravity="bottom|center"
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="none"
+            android:maxLines="1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <ImageView
@@ -125,14 +127,16 @@
         android:text="128 pts"
         style="@style/textSubtitleStyle"
         android:maxLines="1"
+        android:ellipsize="none"
         android:background="?attr/colorCardHighlight"
-        android:gravity="center|top"
+        android:gravity="center"
         android:layout_gravity="center"
         android:layout_below="@id/vote_switcher"
         android:layout_width="@dimen/cardview_min_height"
         android:layout_height="wrap_content"/>
 
     <View
+        android:id="@+id/score_filler"
         android:background="?attr/colorCardHighlight"
         android:layout_below="@id/score"
         android:layout_alignBottom="@id/comment"
