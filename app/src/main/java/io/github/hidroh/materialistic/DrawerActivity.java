@@ -176,6 +176,8 @@ public abstract class DrawerActivity extends InjectableActivity {
             navigate(UserActivity.class, extras);
         });
         findViewById(R.id.drawer_feedback).setOnClickListener(v -> navigate(FeedbackActivity.class));
+        findViewById(R.id.drawer_about).setOnClickListener(v ->
+                startActivity(new Intent(DrawerActivity.this, AboutActivity.class)));
 
     }
 

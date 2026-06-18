@@ -16,6 +16,7 @@
 
 package io.github.hidroh.materialistic
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.annotation.IdRes
@@ -40,6 +41,9 @@ class AboutActivity : InjectableActivity() {
       // do nothing
     }
 
+    findViewById<android.widget.Button>(R.id.btn_whats_new).setOnClickListener {
+      startActivity(Intent(this, ReleaseNotesActivity::class.java))
+    }
     setTextWithLinks(R.id.text_application_info, getString(R.string.application_info_text, versionName, versionCode))
     setTextWithLinks(R.id.text_developer_info, getString(R.string.developer_info_text))
     setTextWithLinks(R.id.text_libraries, getString(R.string.libraries_text))

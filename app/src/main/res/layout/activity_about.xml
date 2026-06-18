@@ -37,6 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/btn_whats_new"
+                android:text="@string/title_activity_release"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                style="@style/Widget.AppCompat.Button.Colored" />
+
             <TextView
                 android:text="@string/application_info_title"
                 style="@style/HeadlineTextStyle" />
