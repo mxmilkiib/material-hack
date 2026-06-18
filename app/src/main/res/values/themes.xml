@@ -194,6 +194,18 @@
     <style name="Solarized.Dark" parent="BaseDarkSolarized">
     </style>
 
+    <style name="Violet">
+        <item name="colorPrimary">@color/purple800</item>
+        <item name="colorPrimaryDark">@color/violet900</item>
+        <item name="colorAccent">@color/violetA100</item>
+        <item name="colorCardBackground">@color/violetCardBackground</item>
+        <item name="colorCardHighlight">@color/violet900</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/whiteT70</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Dark.Violet</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Violet</item>
+    </style>
+
     <!-- =================== -->
     <!-- Alert dialog themes -->
     <!-- =================== -->
@@ -251,6 +263,13 @@
         <item name="colorCardHighlight">@color/solarizedBase02</item>
     </style>
 
+    <style name="AppAlertDialog.Dark.Violet">
+        <item name="colorPrimary">@color/purple800</item>
+        <item name="colorAccent">@color/violetA100</item>
+        <item name="colorCardBackground">@color/violetCardBackground</item>
+        <item name="colorCardHighlight">@color/violet900</item>
+    </style>
+
     <style name="AppBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="colorAccent">@color/redA200</item>
         <item name="android:textColorPrimary">@color/blackT87</item>
@@ -293,6 +312,12 @@
         <item name="android:textColorPrimary">@color/solarizedBase2</item>
         <item name="android:textColorSecondary">@color/solarizedBase1</item>
         <item name="android:colorBackground">@color/solarizedBase03</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Dark.Violet">
+        <item name="colorPrimary">@color/purple800</item>
+        <item name="colorAccent">@color/violetA100</item>
+        <item name="android:colorBackground">@color/violetCardBackground</item>
     </style>
 
 </resources>

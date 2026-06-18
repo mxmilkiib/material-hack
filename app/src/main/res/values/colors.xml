@@ -64,4 +64,10 @@
 
     <color name="cardDarkBackground">#FF424242</color>
 
+    <!-- Violet theme palette -->
+    <color name="purple800">#6A1B9A</color>
+    <color name="violet900">#311B92</color>
+    <color name="violetA100">#B388FF</color>
+    <color name="violetCardBackground">#FF120A1F</color>
+
 </resources>

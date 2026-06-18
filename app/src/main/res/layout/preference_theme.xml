@@ -129,6 +129,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <io.github.hidroh.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_violet"
+                android:theme="@style/Violet"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
     </HorizontalScrollView>

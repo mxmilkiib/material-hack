@@ -40,6 +40,7 @@ public class ThemePreference extends Preference {
     private static final String GREEN = "green";
     private static final String SOLARIZED = "solarized";
     private static final String SOLARIZED_DARK = "solarized_dark";
+    private static final String VIOLET = "violet";
     private static final ArrayMap<Integer, String> BUTTONS = new ArrayMap<>();
     private static final ArrayMap<String, ThemeSpec> VALUES = new ArrayMap<>();
     static {
@@ -50,6 +51,7 @@ public class ThemePreference extends Preference {
         BUTTONS.put(R.id.theme_green, GREEN);
         BUTTONS.put(R.id.theme_solarized, SOLARIZED);
         BUTTONS.put(R.id.theme_solarized_dark, SOLARIZED_DARK);
+        BUTTONS.put(R.id.theme_violet, VIOLET);
 
         VALUES.put(LIGHT, new DayNightSpec(R.string.theme_light));
         VALUES.put(DARK, new DarkSpec(R.string.theme_dark));
@@ -59,6 +61,7 @@ public class ThemePreference extends Preference {
         VALUES.put(SOLARIZED, new DayNightSpec(R.string.theme_solarized, R.style.Solarized));
         VALUES.put(SOLARIZED_DARK, new DarkSpec(R.string.theme_solarized_dark,
                 R.style.Solarized_Dark));
+        VALUES.put(VIOLET, new DarkSpec(R.string.theme_violet, R.style.Violet));
     }
 
     private String mSelectedTheme;
