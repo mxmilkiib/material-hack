@@ -14,18 +14,14 @@ Material design [Hacker News] client for Android, uses official [HackerNews/API]
 - [Official Hacker News API][HackerNews/API], user services (e.g. login/create account/vote/comment) rely on redirect requests to Hacker News website
 - [Algolia Hacker News Search API]
 - [Mercury Web Parser API]
-- [Android Jetpack]: appcompat-v7 / recyclerview-v7 / design / cardview-v7 / preference-v7 / customtabs
-- Square [Retrofit] / [OkHttp] / [AssertJ] / [Dagger] / [LeakCanary]
+- [Android Jetpack]: appcompat / recyclerview / material / cardview / swiperefreshlayout / preference / browser / room / lifecycle
+- Square [Retrofit] / [OkHttp] / [Dagger]
 - [RxJava] & [RxAndroid]
 - [PDF.js]
 
 **Build**
 
     ./gradlew assembleDebug
-
-Build with LeakCanary on
-
-    ./gradlew assembleDebug -Pleak
 
 Grab your Mercury Web Parser API key [here][mercury] if you want to connect to Mercury.
 
