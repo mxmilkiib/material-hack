@@ -35,8 +35,9 @@
     <string name="application_info_title">Application Info</string>
     <string name="application_info_text">
         <![CDATA[
-            Version %1$s (build %2$d)<br>
-            Built %3$s &#8226; %4$s &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br><br>
+            <b>Version</b> %1$s<br>
+            <b>Build</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Built</b> %3$s (%4$s)<br><br>
             <b>Material Hack</b> is a fork of Materialistic by Ha Duy Trung.<br><br>
             <b>Changes:</b><br>
             &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modernised toolchain: Gradle 8, AGP 8.5, Kotlin 1.9, targetSdk 34<br>

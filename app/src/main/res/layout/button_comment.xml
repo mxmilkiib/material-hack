@@ -27,7 +27,7 @@
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
     android:paddingTop="0dp"
-    android:paddingBottom="0dp"
+    android:paddingBottom="6dp"
     android:gravity="start|center_vertical"
     android:minWidth="48dp"
     android:minHeight="0dp"
