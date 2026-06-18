@@ -72,6 +72,7 @@ public class StoryView extends RelativeLayout implements Checkable {
     private final View mMoreButton;
     private final Drawable mCommentDrawable;
     private final View mBackground;
+    private final int mIconSize;
     private boolean mChecked;
 
     public StoryView(Context context) {
@@ -103,6 +104,9 @@ public class StoryView extends RelativeLayout implements Checkable {
         mCommentDrawable = DrawableCompat.wrap(ContextCompat.getDrawable(context,
                 R.drawable.ic_comment_white_24dp).mutate());
         DrawableCompat.setTint(mCommentDrawable, mAccentColorResId);
+        int iconSize = context.getResources().getDimensionPixelSize(R.dimen.comment_icon_size);
+        mIconSize = iconSize;
+        mCommentDrawable.setBounds(0, 0, iconSize, iconSize);
         inflate(context, mIsLocal ? R.layout.local_story_view : R.layout.story_view, this);
         mBackground = findViewById(R.id.background);
         mBackground.setBackgroundColor(mBackgroundColor);
@@ -114,7 +118,7 @@ public class StoryView extends RelativeLayout implements Checkable {
         mTitleTextView = (TextView) findViewById(R.id.title);
         mSourceTextView = (TextView) findViewById(R.id.source);
         mCommentButton = (TextView) findViewById(R.id.comment);
-        mCommentButton.setCompoundDrawablesWithIntrinsicBounds(mCommentDrawable, null, null, null);
+        mCommentButton.setCompoundDrawables(mCommentDrawable, null, null, null);
         mMoreButton = findViewById(R.id.button_more);
         // replace with bounded ripple as unbounded ripple requires container bg
         // http://b.android.com/155880
@@ -217,17 +221,18 @@ public class StoryView extends RelativeLayout implements Checkable {
                 hot = item.getKidCount() >= hotThreshold;
                 mCommentButton.setTextColor(hot ? mHotColorResId : mAccentColorResId);
                 if (hot) {
-                    mCommentButton.setCompoundDrawablesWithIntrinsicBounds(
-                            R.drawable.ic_whatshot_orange500_24dp, 0, 0, 0);
+                    Drawable hotIcon = ContextCompat.getDrawable(getContext(),
+                            R.drawable.ic_whatshot_orange500_18dp);
+                    hotIcon.setBounds(0, 0, mIconSize, mIconSize);
+                    mCommentButton.setCompoundDrawables(hotIcon, null, null, null);
                 } else {
-                    mCommentButton.setCompoundDrawablesWithIntrinsicBounds(
-                            mCommentDrawable, null, null, null);
+                    mCommentButton.setCompoundDrawables(mCommentDrawable, null, null, null);
                 }
                 mCommentButton.setText(String.valueOf(item.getKidCount()));
             } else {
                 mCommentButton.setTextColor(mAccentColorResId);
                 mCommentButton.setText(null);
-                mCommentButton.setCompoundDrawablesWithIntrinsicBounds(
+                mCommentButton.setCompoundDrawables(
                         mCommentDrawable, null, null, null);
             }
         }
