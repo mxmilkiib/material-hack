@@ -5,7 +5,7 @@ Material design [Hacker News] client for Android, uses official [HackerNews/API]
 
 ### Setup
 **Requirements**
-- JDK 11
+- JDK 17
 - Latest Android SDK tools
 - Latest Android platform tools
 - AndroidX
