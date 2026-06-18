@@ -206,7 +206,7 @@
     </style>
 
     <style name="AppCardView" parent="BaseAppCardView">
-        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:foreground">@drawable/ripple_card</item>
     </style>
 
     <style name="FlatCardView">
