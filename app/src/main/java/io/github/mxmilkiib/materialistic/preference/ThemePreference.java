@@ -51,6 +51,7 @@ public class ThemePreference extends Preference {
     private static final String MIDNIGHT = "midnight";
     private static final String SAND = "sand";
     private static final String DRACULA = "dracula";
+    private static final String DARK_ORANGE = "darkorange";
     private static final ArrayMap<Integer, String> BUTTONS = new ArrayMap<>();
     private static final ArrayMap<String, ThemeSpec> VALUES = new ArrayMap<>();
     static {
@@ -71,6 +72,7 @@ public class ThemePreference extends Preference {
         BUTTONS.put(R.id.theme_midnight, MIDNIGHT);
         BUTTONS.put(R.id.theme_sand, SAND);
         BUTTONS.put(R.id.theme_dracula, DRACULA);
+        BUTTONS.put(R.id.theme_darkorange, DARK_ORANGE);
 
         VALUES.put(LIGHT, new DayNightSpec(R.string.theme_light));
         VALUES.put(DARK, new DarkSpec(R.string.theme_dark));
@@ -90,6 +92,7 @@ public class ThemePreference extends Preference {
         VALUES.put(MIDNIGHT, new DarkSpec(R.string.theme_midnight, R.style.Midnight));
         VALUES.put(SAND, new DayNightSpec(R.string.theme_sand, R.style.Sand));
         VALUES.put(DRACULA, new DarkSpec(R.string.theme_dracula, R.style.Dracula));
+        VALUES.put(DARK_ORANGE, new DarkSpec(R.string.theme_darkorange, R.style.DarkOrange));
     }
 
     private String mSelectedTheme;

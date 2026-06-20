@@ -249,6 +249,7 @@
     <string name="theme_midnight">Midnight</string>
     <string name="theme_sand">Sand</string>
     <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Dark Orange</string>
     <string name="comment_display_multiple">Multiple pages</string>
     <string name="comment_display_single">Single page - auto expand</string>
     <string name="comment_display_collapsed">Single page - collapsed</string>

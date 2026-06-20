@@ -198,6 +198,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_darkorange"
+                android:theme="@style/DarkOrange"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
     </GridLayout>
 
 </LinearLayout>

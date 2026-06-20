@@ -146,6 +146,15 @@
     <color name="sandText">#3E2723</color>
     <color name="sandTextSecondary">#795548</color>
 
+    <!-- Dark Orange theme (dark warm amber) -->
+    <color name="darkorangePrimary">#E65100</color>
+    <color name="darkorangePrimaryDark">#BF360C</color>
+    <color name="darkorangeAccent">#FFCC80</color>
+    <color name="darkorangeCard">#FF1A0E00</color>
+    <color name="darkorangeHighlight">#FF2A1604</color>
+    <color name="darkorangeText">#FFF0E0</color>
+    <color name="darkorangeTextSecondary">#A08060</color>
+
     <!-- Dracula theme (dark purple-grey) -->
     <color name="draculaPrimary">#6272A4</color>
     <color name="draculaPrimaryDark">#44475A</color>

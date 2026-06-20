@@ -317,6 +317,18 @@
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.Dracula</item>
     </style>
 
+    <style name="DarkOrange">
+        <item name="colorPrimary">@color/darkorangePrimary</item>
+        <item name="colorPrimaryDark">@color/darkorangePrimaryDark</item>
+        <item name="colorAccent">@color/darkorangeAccent</item>
+        <item name="colorCardBackground">@color/darkorangeCard</item>
+        <item name="colorCardHighlight">@color/darkorangeHighlight</item>
+        <item name="android:textColorPrimary">@color/darkorangeText</item>
+        <item name="android:textColorSecondary">@color/darkorangeTextSecondary</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog.Dark.DarkOrange</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialog.Dark.DarkOrange</item>
+    </style>
+
     <!-- =================== -->
     <!-- Alert dialog themes -->
     <!-- =================== -->
@@ -460,6 +472,15 @@
         <item name="android:textColorSecondary">@color/draculaTextSecondary</item>
     </style>
 
+    <style name="AppAlertDialog.Dark.DarkOrange">
+        <item name="colorPrimary">@color/darkorangePrimary</item>
+        <item name="colorAccent">@color/darkorangeAccent</item>
+        <item name="colorCardBackground">@color/darkorangeCard</item>
+        <item name="colorCardHighlight">@color/darkorangeHighlight</item>
+        <item name="android:textColorPrimary">@color/darkorangeText</item>
+        <item name="android:textColorSecondary">@color/darkorangeTextSecondary</item>
+    </style>
+
     <style name="AppBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="colorAccent">@color/redA200</item>
         <item name="android:textColorPrimary">@color/blackT87</item>
@@ -562,6 +583,12 @@
         <item name="colorPrimary">@color/draculaPrimary</item>
         <item name="colorAccent">@color/draculaAccent</item>
         <item name="android:colorBackground">@color/draculaCard</item>
+    </style>
+
+    <style name="AppBottomSheetDialog.Dark.DarkOrange">
+        <item name="colorPrimary">@color/darkorangePrimary</item>
+        <item name="colorAccent">@color/darkorangeAccent</item>
+        <item name="android:colorBackground">@color/darkorangeCard</item>
     </style>
 
 </resources>
