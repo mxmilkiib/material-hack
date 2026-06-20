@@ -6,13 +6,13 @@ A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha
 
 ### Screenshots
 
-![Light](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_light.png)
+![Light](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_light_v2.png)
 
-![Dark Orange](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_darkorange.png)
+![Dark Orange](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_darkorange_v2.png)
 
-![Violet](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_violet.png)
+![Violet](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_violet_v2.png)
 
-![Aquamarine](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_aquamarine.png)
+![Aquamarine](https://raw.githubusercontent.com/mxmilkiib/material-hack/master/screenshots/theme_aquamarine_v2.png)
 
 ### What's different
 
