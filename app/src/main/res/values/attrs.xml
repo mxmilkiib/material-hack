@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -18,6 +19,7 @@
 <resources>
     <attr name="colorCardBackground" format="reference" />
     <attr name="colorCardHighlight" format="reference" />
+    <attr name="colorDivider" format="reference" />
     <attr name="backgroundDrawerHeader" format="reference" />
     <attr name="titleTextSize" format="dimension|reference" />
     <attr name="subtitleTextSize" format="dimension|reference" />

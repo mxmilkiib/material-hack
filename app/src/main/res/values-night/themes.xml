@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2017 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -23,6 +24,7 @@
         <item name="colorAccent">@color/redA100</item>
         <item name="colorCardBackground">@color/grey900</item>
         <item name="colorCardHighlight">@color/grey800</item>
+        <item name="colorDivider">@color/grey900</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/whiteT50</item>
 

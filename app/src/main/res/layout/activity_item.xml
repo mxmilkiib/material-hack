@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -53,7 +54,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <io.github.hidroh.materialistic.widget.ViewPager
+    <io.github.mxmilkiib.materialistic.widget.ViewPager
         android:id="@+id/view_pager"
         app:layout_behavior="@string/fab_scrolling_view_behavior"
         android:layout_width="match_parent"

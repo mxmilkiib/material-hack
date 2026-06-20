@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -21,10 +22,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <io.github.hidroh.materialistic.preference.ThemePreference
+    <io.github.mxmilkiib.materialistic.preference.ThemePreference
         android:key="@string/pref_theme"
         android:title="@string/pref_theme_title"
         android:defaultValue="light" />
+
+    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+        android:key="@string/pref_app_icon"
+        android:title="@string/pref_app_icon_title"
+        android:defaultValue="@string/pref_app_icon_value_default"
+        app:entries="@array/pref_app_icon_options"
+        app:entryValues="@array/pref_app_icon_values" />
 
     <androidx.preference.SwitchPreferenceCompat
         app:iconSpaceReserved="false"
@@ -33,21 +41,21 @@
         android:title="@string/pref_daynight_title"
         android:defaultValue="false" />
 
-    <io.github.hidroh.materialistic.preference.FontSizePreference
+    <io.github.mxmilkiib.materialistic.preference.FontSizePreference
         android:key="@string/pref_text_size"
         android:title="@string/pref_text_size_title"
         android:defaultValue="0"
         app:entries="@array/text_size_options"
         app:entryValues="@array/pref_text_size_values" />
 
-    <io.github.hidroh.materialistic.preference.FontPreference
+    <io.github.mxmilkiib.materialistic.preference.FontPreference
         android:key="@string/pref_font"
         android:title="@string/pref_font_title"
         android:defaultValue=""
         app:entries="@array/font_options"
         app:entryValues="@array/font_values" />
 
-    <io.github.hidroh.materialistic.preference.SimpleSpinnerPreference
+    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
         android:key="@string/pref_launch_screen"
         android:title="@string/pref_launch_screen_title"
         android:defaultValue="top"
@@ -84,7 +92,7 @@
         android:summary="@string/pref_lazy_load_summary"
         android:defaultValue="true" />
 
-    <io.github.hidroh.materialistic.preference.PreferenceHelp
+    <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
         android:key="@string/pref_lazy_load_help"
         android:title="@string/whats_this"
         app:dialogTitle="@string/pref_lazy_load_title"
@@ -97,7 +105,7 @@
         android:summary="@string/pref_volume_summary"
         android:defaultValue="false" />
 
-    <io.github.hidroh.materialistic.preference.PreferenceHelp
+    <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
         android:key="@string/pref_volume_help"
         android:title="@string/whats_this"
         app:dialogTitle="@string/pref_volume_title"

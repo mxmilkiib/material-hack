@@ -1,5 +1,6 @@
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="io.github.hidroh.materialistic.ListActivity"
+    tools:context="io.github.mxmilkiib.materialistic.ListActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,18 +25,19 @@
 
     <include layout="@layout/empty_list" />
 
-    <io.github.hidroh.materialistic.widget.AppBarSwipeRefreshLayout
+    <io.github.mxmilkiib.materialistic.widget.AppBarSwipeRefreshLayout
         android:id="@id/swipe_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@id/recycler_view"
+            android:background="?attr/colorDivider"
             android:paddingBottom="?attr/actionBarSize"
             android:clipToPadding="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    </io.github.hidroh.materialistic.widget.AppBarSwipeRefreshLayout>
+    </io.github.mxmilkiib.materialistic.widget.AppBarSwipeRefreshLayout>
 
 </FrameLayout>

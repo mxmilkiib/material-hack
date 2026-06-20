@@ -11,7 +11,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="io.github.mxmilkiib.materialistic.debug"
-            android:targetClass="io.github.hidroh.materialistic.ListActivity" />
+            android:targetClass="io.github.mxmilkiib.materialistic.ListActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="new"
@@ -22,7 +22,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="io.github.mxmilkiib.materialistic.debug"
-            android:targetClass="io.github.hidroh.materialistic.NewActivity" />
+            android:targetClass="io.github.mxmilkiib.materialistic.NewActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="favorite"
@@ -33,7 +33,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="io.github.mxmilkiib.materialistic.debug"
-            android:targetClass="io.github.hidroh.materialistic.FavoriteActivity" />
+            android:targetClass="io.github.mxmilkiib.materialistic.FavoriteActivity" />
     </shortcut>
     <shortcut
         android:shortcutId="compose"
@@ -44,6 +44,6 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="io.github.mxmilkiib.materialistic.debug"
-            android:targetClass="io.github.hidroh.materialistic.SubmitActivity" />
+            android:targetClass="io.github.mxmilkiib.materialistic.SubmitActivity" />
     </shortcut>
 </shortcuts>

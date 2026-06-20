@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -35,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/drawer_display"
                 android:text="@string/display"
                 app:iconStart="@drawable/ic_palette_white_24dp"
@@ -46,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider" />
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/menu_list"
                 android:text="@string/list"
                 app:iconStart="@drawable/ic_list_white_24dp"
@@ -57,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider" />
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/menu_comments"
                 android:text="@string/comments"
                 app:iconStart="@drawable/ic_format_size_white_24dp"
@@ -68,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider" />
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/menu_readability"
                 android:text="@string/readability"
                 app:iconStart="@drawable/ic_local_library_white_24dp"
@@ -79,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider" />
 
-            <io.github.hidroh.materialistic.widget.TintableTextView
+            <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/drawer_offline"
                 android:text="@string/offline"
                 app:iconStart="@drawable/ic_cloud_off_white_24dp"

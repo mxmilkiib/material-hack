@@ -1,5 +1,6 @@
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -37,6 +38,7 @@
     <dimen name="level_indicator_width">24dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="divider">1dp</dimen>
+    <dimen name="list_item_divider">1dp</dimen>
     <dimen name="icon_button_width">48dp</dimen>
     <dimen name="padding_widget">0dp</dimen>
     <dimen name="cardview_elevation">2dp</dimen>

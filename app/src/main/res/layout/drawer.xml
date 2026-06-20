@@ -1,5 +1,6 @@
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -24,7 +25,7 @@
     android:animateLayoutChanges="true"
     android:clickable="true"
     android:focusable="true"
-    tools:context="io.github.hidroh.materialistic.DrawerActivity"
+    tools:context="io.github.mxmilkiib.materialistic.DrawerActivity"
     tools:targetApi="honeycomb">
 
     <FrameLayout
@@ -41,7 +42,11 @@
         <TextView
             android:id="@+id/drawer_app_title"
             android:text="@string/app_name"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/orange500"
+            android:shadowColor="#FF000000"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
             android:textStyle="bold"
             android:textSize="20sp"
             android:paddingLeft="16dp"
@@ -51,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <io.github.hidroh.materialistic.widget.TintableTextView
+        <io.github.mxmilkiib.materialistic.widget.TintableTextView
             android:id="@id/drawer_account"
             android:text="@string/login"
             android:textColor="?android:attr/textColorPrimary"
@@ -72,98 +77,133 @@
     </FrameLayout>
 
     <View
-        android:background="@color/blackT12"
+        android:background="@color/blackT6"
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider" />
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_list"
         android:text="@string/title_activity_list"
         app:iconStart="@drawable/ic_trending_up_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_popular"
         android:text="@string/title_activity_popular"
         app:iconStart="@drawable/ic_history_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_new"
         android:text="@string/title_activity_new"
         app:iconStart="@drawable/ic_new_releases_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_best"
         android:text="@string/title_activity_best"
         app:iconStart="@drawable/ic_thumb_up_white_24dp"
         style="@style/DrawerTextStyle"/>
 
     <View
-        android:background="@color/blackT12"
+        android:background="@color/blackT6"
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider" />
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_show"
         android:text="@string/title_activity_show"
         app:iconStart="@drawable/ic_done_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_ask"
         android:text="@string/title_activity_ask"
         app:iconStart="@drawable/ic_live_help_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_job"
         android:text="@string/title_activity_jobs"
         app:iconStart="@drawable/ic_work_white_24dp"
         style="@style/DrawerTextStyle"/>
 
     <View
-        android:background="@color/blackT12"
+        android:background="@color/blackT6"
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider" />
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_favorite"
         android:text="@string/title_activity_favorite"
         app:iconStart="@drawable/ic_bookmark_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_user"
         android:text="@string/title_activity_user"
         app:iconStart="@drawable/ic_person_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_submit"
         android:text="@string/title_activity_submit"
         app:iconStart="@drawable/ic_add_white_24dp"
         style="@style/DrawerTextStyle"/>
 
     <View
-        android:background="@color/blackT12"
+        android:background="@color/blackT6"
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider" />
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_settings"
         android:text="@string/action_settings"
         app:iconStart="@drawable/ic_settings_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_feedback"
         android:text="@string/feedback"
         app:iconStart="@drawable/ic_feedback_white_24dp"
         style="@style/DrawerTextStyle"/>
 
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <View
+        android:background="@color/blackT6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" />
+
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:id="@id/drawer_about"
         android:text="@string/title_activity_about"
         app:iconStart="@drawable/ic_info_white_24dp"

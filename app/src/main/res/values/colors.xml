@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -22,7 +23,9 @@
     <color name="blackT87">#DE000000</color>
     <color name="blackT50">#80000000</color>
     <color name="blackT12">#1F000000</color>
+    <color name="blackT6">#0F000000</color>
     <color name="grey100">#F5F5F5</color>
+    <color name="grey50">#FAFAFA</color>
     <color name="grey800">#424242</color>
     <color name="grey900">#212121</color>
 
@@ -67,8 +70,9 @@
     <!-- Violet theme palette (cohesive purple ramp) -->
     <color name="purple200">#CE93D8</color>
     <color name="purple700">#7B1FA2</color>
-    <color name="purple800">#6A1B9A</color>
+    <color name="purple800">#6A1BB8</color>
     <color name="purple900">#4A148C</color>
+    <color name="purple900b">#3A0066</color>
     <color name="purpleCardBackground">#FF160E1C</color>
 
     <!-- Ocean theme (dark teal/blue) -->
@@ -105,5 +109,50 @@
 
     <!-- Edge overscroll effect: fully transparent to suppress the flash -->
     <color name="edgeEffectGrey">#00000000</color>
+
+    <!-- Crimson theme (dark deep red) -->
+    <color name="crimsonPrimary">#B71C1C</color>
+    <color name="crimsonPrimaryDark">#7F0000</color>
+    <color name="crimsonAccent">#EF9A9A</color>
+    <color name="crimsonCard">#FF1A0508</color>
+    <color name="crimsonHighlight">#FF2A0A10</color>
+    <color name="crimsonText">#FFE8E0</color>
+    <color name="crimsonTextSecondary">#B0A0A0</color>
+
+    <!-- Forest theme (dark green) -->
+    <color name="forestPrimary">#2E7D32</color>
+    <color name="forestPrimaryDark">#1B5E20</color>
+    <color name="forestAccent">#A5D6A7</color>
+    <color name="forestCard">#FF0A1410</color>
+    <color name="forestHighlight">#FF102818</color>
+    <color name="forestText">#E0F0E0</color>
+    <color name="forestTextSecondary">#90B090</color>
+
+    <!-- Midnight theme (dark deep blue) -->
+    <color name="midnightPrimary">#1565C0</color>
+    <color name="midnightPrimaryDark">#0D47A1</color>
+    <color name="midnightAccent">#90CAF9</color>
+    <color name="midnightCard">#FF050A14</color>
+    <color name="midnightHighlight">#FF0A1428</color>
+    <color name="midnightText">#E0E8F0</color>
+    <color name="midnightTextSecondary">#8090A0</color>
+
+    <!-- Sand theme (light warm desert) -->
+    <color name="sandPrimary">#A1887F</color>
+    <color name="sandPrimaryDark">#6D4C41</color>
+    <color name="sandAccent">#FFAB91</color>
+    <color name="sandCard">#FFFAF0E6</color>
+    <color name="sandHighlight">#FFF0E0D0</color>
+    <color name="sandText">#3E2723</color>
+    <color name="sandTextSecondary">#795548</color>
+
+    <!-- Dracula theme (dark purple-grey) -->
+    <color name="draculaPrimary">#6272A4</color>
+    <color name="draculaPrimaryDark">#44475A</color>
+    <color name="draculaAccent">#FF79C6</color>
+    <color name="draculaCard">#FF282A36</color>
+    <color name="draculaHighlight">#FF383A4A</color>
+    <color name="draculaText">#F8F8F2</color>
+    <color name="draculaTextSecondary">#6272A4</color>
 
 </resources>

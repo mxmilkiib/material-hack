@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -61,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_light"
                 android:theme="@style/AppTheme"
                 android:layout_margin="4dip"
@@ -69,7 +70,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_sepia"
                 android:theme="@style/Sepia"
                 android:layout_margin="4dip"
@@ -77,15 +78,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
-                android:id="@+id/theme_green"
-                android:theme="@style/Green"
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_sand"
+                android:theme="@style/Sand"
                 android:layout_margin="4dip"
                 android:layout_columnWeight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_rose"
                 android:theme="@style/Rose"
                 android:layout_margin="4dip"
@@ -93,7 +94,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_green"
+                android:theme="@style/Green"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_solarized"
                 android:theme="@style/Solarized"
                 android:layout_margin="4dip"
@@ -101,7 +110,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_dark"
                 android:theme="@style/AppTheme.Dark"
                 android:layout_margin="4dip"
@@ -109,7 +118,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_black"
                 android:theme="@style/Black"
                 android:layout_margin="4dip"
@@ -117,7 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_solarized_dark"
                 android:theme="@style/Solarized.Dark"
                 android:layout_margin="4dip"
@@ -125,15 +134,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
-                android:id="@+id/theme_violet"
-                android:theme="@style/Violet"
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_midnight"
+                android:theme="@style/Midnight"
                 android:layout_margin="4dip"
                 android:layout_columnWeight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_ocean"
                 android:theme="@style/Ocean"
                 android:layout_margin="4dip"
@@ -141,7 +150,31 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_forest"
+                android:theme="@style/Forest"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_crimson"
+                android:theme="@style/Crimson"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_violet"
+                android:theme="@style/Violet"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_monokai"
                 android:theme="@style/Monokai"
                 android:layout_margin="4dip"
@@ -149,7 +182,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
 
-            <io.github.hidroh.materialistic.widget.preference.ThemeView
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
+                android:id="@+id/theme_dracula"
+                android:theme="@style/Dracula"
+                android:layout_margin="4dip"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <io.github.mxmilkiib.materialistic.widget.preference.ThemeView
                 android:id="@+id/theme_nord"
                 android:theme="@style/Nord"
                 android:layout_margin="4dip"

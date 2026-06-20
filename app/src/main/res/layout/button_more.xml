@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,17 +16,15 @@
   ~ limitations under the License.
   -->
 
-<io.github.hidroh.materialistic.widget.IconButton
+<io.github.mxmilkiib.materialistic.widget.IconButton
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:src="@drawable/ic_more_vert_white_24dp"
     android:contentDescription="@string/more"
     app:tint="?android:attr/textColorSecondary"
-    android:paddingLeft="@dimen/padding"
-    android:paddingRight="@dimen/padding"
-    android:paddingTop="0dp"
-    android:paddingBottom="8dp"
-    android:scaleX="0.75"
-    android:scaleY="0.75"
-    android:layout_width="wrap_content"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:layout_width="40dp"
     android:layout_height="wrap_content"/>

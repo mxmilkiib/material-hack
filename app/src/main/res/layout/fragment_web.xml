@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -50,7 +51,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <io.github.hidroh.materialistic.widget.CacheableWebView
+                <io.github.mxmilkiib.materialistic.widget.CacheableWebView
                     android:id="@id/web_view"
                     android:scrollbarStyle="insideOverlay"
                     android:scrollbars="vertical"

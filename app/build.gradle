@@ -56,7 +56,7 @@ android {
     kotlin {
         jvmToolchain(17)
     }
-    namespace 'io.github.hidroh.materialistic'
+    namespace 'io.github.mxmilkiib.materialistic'
 
 }
 

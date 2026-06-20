@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -34,7 +35,7 @@
         android:id="@id/header_card_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <io.github.hidroh.materialistic.widget.TintableTextView
+    <io.github.mxmilkiib.materialistic.widget.TintableTextView
         android:text="@string/try_me"
         app:iconTop="@drawable/ic_touch_app_white_48dp"
         style="@style/textEmptyStyle"

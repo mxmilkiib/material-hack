@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -96,6 +97,15 @@
     <string name="pref_custom_tab_summary">Open a browser tab instead of full browser</string>
     <string name="pref_story_display_title">Default open</string>
     <string name="pref_theme_title">Theme</string>
+    <string name="pref_app_icon_title">App icon style</string>
+    <string name="app_icon_default">Orange (default)</string>
+    <string name="app_icon_purple">Purple</string>
+    <string name="app_icon_green">Green</string>
+    <string name="app_icon_blue">Blue</string>
+    <string name="app_icon_red">Red</string>
+    <string name="app_icon_teal">Teal</string>
+    <string name="app_icon_pink">Pink</string>
+    <string name="app_icon_indigo">Indigo</string>
     <string name="pref_daynight_title">Auto day-night mode</string>
     <string name="pref_search_sort_title">Sort by</string>
     <string name="pref_search_sort_value_recent">recent</string>
@@ -173,7 +183,7 @@
     <string name="comment_hint">Comment</string>
     <string name="feedback_note">
         <![CDATA[
-            Your feedback will be made public as a <a href="https://github.com/hidroh/materialistic/issues">Materialistic Github issue</a>.
+            Your feedback will be made public as a <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a>.
         ]]>
     </string>
     <string name="title_required">Title is required</string>
@@ -234,6 +244,11 @@
     <string name="theme_rose">Rose</string>
     <string name="theme_monokai">Monokai</string>
     <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Crimson</string>
+    <string name="theme_forest">Forest</string>
+    <string name="theme_midnight">Midnight</string>
+    <string name="theme_sand">Sand</string>
+    <string name="theme_dracula">Dracula</string>
     <string name="comment_display_multiple">Multiple pages</string>
     <string name="comment_display_single">Single page - auto expand</string>
     <string name="comment_display_collapsed">Single page - collapsed</string>

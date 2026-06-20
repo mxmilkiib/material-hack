@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -36,7 +37,7 @@
         android:dependency="@string/pref_saved_item_sync"
         android:defaultValue="false" />
 
-    <io.github.hidroh.materialistic.preference.SimpleSpinnerPreference
+    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
         android:key="@string/pref_offline_data"
         android:title="@string/pref_offline_data_title"
         android:dependency="@string/pref_saved_item_sync"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -144,8 +145,8 @@
     <style name="DrawerTextStyle">
         <item name="android:textAppearance">@style/TextAppearance.App.Large</item>
         <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:drawablePadding">32dp</item>
         <item name="android:gravity">center_vertical</item>
@@ -202,11 +203,15 @@
     <!-- =========== -->
     <style name="BaseAppCardView" parent="CardView">
         <item name="cardPreventCornerOverlap">false</item>
-        <item name="cardUseCompatPadding">true</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardBackgroundColor">?attr/colorCardBackground</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">0dp</item>
     </style>
 
     <style name="AppCardView" parent="BaseAppCardView">
-        <item name="android:foreground">@drawable/ripple_card</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
 
     <style name="FlatCardView">

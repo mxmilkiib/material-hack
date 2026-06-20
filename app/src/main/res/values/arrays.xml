@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -150,6 +151,36 @@
     <string name="pref_launch_screen_value_jobs" translatable="false">jobs</string>
     <string name="pref_launch_screen_value_saved" translatable="false">saved</string>
     <string name="pref_launch_screen_value_last" translatable="false">last</string>
+
+    <!-- App icon style -->
+    <string-array name="pref_app_icon_options">
+        <item>@string/app_icon_default</item>
+        <item>@string/app_icon_purple</item>
+        <item>@string/app_icon_green</item>
+        <item>@string/app_icon_blue</item>
+        <item>@string/app_icon_red</item>
+        <item>@string/app_icon_teal</item>
+        <item>@string/app_icon_pink</item>
+        <item>@string/app_icon_indigo</item>
+    </string-array>
+    <string-array name="pref_app_icon_values">
+        <item>@string/pref_app_icon_value_default</item>
+        <item>@string/pref_app_icon_value_purple</item>
+        <item>@string/pref_app_icon_value_green</item>
+        <item>@string/pref_app_icon_value_blue</item>
+        <item>@string/pref_app_icon_value_red</item>
+        <item>@string/pref_app_icon_value_teal</item>
+        <item>@string/pref_app_icon_value_pink</item>
+        <item>@string/pref_app_icon_value_indigo</item>
+    </string-array>
+    <string name="pref_app_icon_value_default" translatable="false">default</string>
+    <string name="pref_app_icon_value_purple" translatable="false">purple</string>
+    <string name="pref_app_icon_value_green" translatable="false">green</string>
+    <string name="pref_app_icon_value_blue" translatable="false">blue</string>
+    <string name="pref_app_icon_value_red" translatable="false">red</string>
+    <string name="pref_app_icon_value_teal" translatable="false">teal</string>
+    <string name="pref_app_icon_value_pink" translatable="false">pink</string>
+    <string name="pref_app_icon_value_indigo" translatable="false">indigo</string>
 
     <!-- Line height -->
     <string-array name="pref_line_height_options">

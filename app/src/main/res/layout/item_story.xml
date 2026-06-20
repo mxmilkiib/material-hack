@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2015 Ha Duy Trung
+  ~ Copyright (c) 2024-2026 mxmilkiib
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,15 +16,15 @@
   ~ limitations under the License.
   -->
 
-<io.github.hidroh.materialistic.widget.FlatCardView
+<io.github.mxmilkiib.materialistic.widget.FlatCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/AppCardView">
+    style="@style/BaseAppCardView">
 
-    <io.github.hidroh.materialistic.widget.StoryView
+    <io.github.mxmilkiib.materialistic.widget.StoryView
         android:id="@id/story_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-</io.github.hidroh.materialistic.widget.FlatCardView>
+</io.github.mxmilkiib.materialistic.widget.FlatCardView>

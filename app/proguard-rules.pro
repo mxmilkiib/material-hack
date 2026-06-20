@@ -17,5 +17,5 @@
 }
 
 -dontobfuscate
--keep class io.github.hidroh.materialistic.** { *; }
--keep interface io.github.hidroh.materialistic.** { *; }
+-keep class io.github.mxmilkiib.materialistic.** { *; }
+-keep interface io.github.mxmilkiib.materialistic.** { *; }
