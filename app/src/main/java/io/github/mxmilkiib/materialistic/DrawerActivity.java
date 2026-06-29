@@ -78,7 +78,7 @@ public abstract class DrawerActivity extends InjectableActivity {
                         intent.putExtras(mPendingNavigationExtras);
                         mPendingNavigationExtras = null;
                     }
-                    // TODO M bug https://code.google.com/p/android/issues/detail?id=193822
+                    // workaround for Android M startActivity crash with FLAG_ACTIVITY_REORDER_TO_FRONT
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
                     mPendingNavigation = null;

@@ -46,7 +46,6 @@ import android.text.format.DateUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.URLSpan;
 import android.view.ContextThemeWrapper;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -154,7 +153,7 @@ public class AppUtils {
 
     public static void setTextWithLinks(TextView textView, CharSequence html) {
         textView.setText(html);
-        // TODO https://code.google.com/p/android/issues/detail?id=191430
+        // workaround for TextView touch event handling issue with linkified text
         //noinspection Convert2Lambda
         textView.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")

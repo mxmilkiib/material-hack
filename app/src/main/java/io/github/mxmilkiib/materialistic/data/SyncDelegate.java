@@ -319,11 +319,14 @@ public class SyncDelegate {
     }
 
     void stopSync() {
-        // TODO
         mJob.connectionEnabled = false;
         int id = parseItemId(mJob.id);
         mNotificationManager.cancel(id);
         mHandler.removeMessages(id);
+        if (mWebView != null) {
+            mWebView.destroy();
+            mWebView = null;
+        }
     }
 
     private PendingIntent getItemActivity(String itemId) {
