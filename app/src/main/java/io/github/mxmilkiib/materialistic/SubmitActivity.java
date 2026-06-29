@@ -57,6 +57,7 @@ public class SubmitActivity extends InjectableActivity {
     private TextInputLayout mTitleLayout;
     private TextInputLayout mContentLayout;
     private boolean mSending;
+    private WebView mTitleWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,16 +84,18 @@ public class SubmitActivity extends InjectableActivity {
         mContentEditText.setText(text);
         if (TextUtils.isEmpty(subject)) {
             if (isUrl(text)) {
-                WebView webView = new WebView(this);
-                webView.setWebChromeClient(new WebChromeClient() {
+                mTitleWebView = new WebView(this);
+                mTitleWebView.setWebChromeClient(new WebChromeClient() {
                     @Override
                     public void onReceivedTitle(WebView view, String title) {
                         if (mTitleEditText.length() == 0) {
                             mTitleEditText.setText(title);
                         }
+                        mTitleWebView.destroy();
+                        mTitleWebView = null;
                     }
                 });
-                webView.loadUrl(text);
+                mTitleWebView.loadUrl(text);
             } else if (!TextUtils.isEmpty(text)) {
                 extractUrl(text);
             }
@@ -135,12 +138,13 @@ public class SubmitActivity extends InjectableActivity {
         if (item.getItemId() == R.id.menu_guidelines) {
             WebView webView = new WebView(this);
             webView.loadUrl(HN_GUIDELINES_URL);
-            mAlertDialogBuilder
+            android.app.Dialog dialog = mAlertDialogBuilder
                     .init(this)
                     .setView(webView)
                     .setPositiveButton(android.R.string.ok, null)
-                    .create()
-                    .show();
+                    .create();
+            dialog.setOnDismissListener(d -> webView.destroy());
+            dialog.show();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -247,6 +251,15 @@ public class SubmitActivity extends InjectableActivity {
         mTitleEditText.setEnabled(!sending);
         mContentEditText.setEnabled(!sending);
         supportInvalidateOptionsMenu();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mTitleWebView != null) {
+            mTitleWebView.destroy();
+            mTitleWebView = null;
+        }
+        super.onDestroy();
     }
 
     static class SubmitCallback extends UserServices.Callback {
