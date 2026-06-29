@@ -87,10 +87,14 @@ public class UserServicesClient implements UserServices {
     public void login(String username, String password, boolean createAccount, Callback callback) {
         execute(postLogin(username, password, createAccount))
                 .flatMap(response -> {
-                    if (response.code() == HttpURLConnection.HTTP_OK) {
-                        return Observable.error(new UserServices.Exception(parseLoginError(response)));
+                    try {
+                        if (response.code() == HttpURLConnection.HTTP_OK) {
+                            return Observable.error(new UserServices.Exception(parseLoginError(response)));
+                        }
+                        return Observable.just(response.code() == HttpURLConnection.HTTP_MOVED_TEMP);
+                    } finally {
+                        response.close();
                     }
-                    return Observable.just(response.code() == HttpURLConnection.HTTP_MOVED_TEMP);
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callback::onDone, callback::onError);
@@ -104,7 +108,13 @@ public class UserServicesClient implements UserServices {
         }
         Toast.makeText(context, R.string.sending, Toast.LENGTH_SHORT).show();
         execute(postVote(credentials.first, credentials.second, itemId))
-                .map(response -> response.code() == HttpURLConnection.HTTP_MOVED_TEMP)
+                .map(response -> {
+                    try {
+                        return response.code() == HttpURLConnection.HTTP_MOVED_TEMP;
+                    } finally {
+                        response.close();
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callback::onDone, callback::onError);
         return true;
@@ -118,7 +128,13 @@ public class UserServicesClient implements UserServices {
             return;
         }
         execute(postReply(parentId, text, credentials.first, credentials.second))
-                .map(response -> response.code() == HttpURLConnection.HTTP_MOVED_TEMP)
+                .map(response -> {
+                    try {
+                        return response.code() == HttpURLConnection.HTTP_MOVED_TEMP;
+                    } finally {
+                        response.close();
+                    }
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callback::onDone, callback::onError);
     }
@@ -141,9 +157,13 @@ public class UserServicesClient implements UserServices {
          */
         // fetch submit page with given credentials
         execute(postSubmitForm(credentials.first, credentials.second))
-                .flatMap(response -> response.code() != HttpURLConnection.HTTP_MOVED_TEMP ?
-                        Observable.just(response) :
-                        Observable.error(new IOException()))
+                .flatMap(response -> {
+                    if (response.code() == HttpURLConnection.HTTP_MOVED_TEMP) {
+                        response.close();
+                        return Observable.error(new IOException());
+                    }
+                    return Observable.just(response);
+                })
                 .flatMap(response -> {
                     try {
                         return Observable.just(new String[]{
@@ -164,9 +184,16 @@ public class UserServicesClient implements UserServices {
                         Observable.just(array) :
                         Observable.error(new IOException()))
                 .flatMap(array -> execute(postSubmit(title, content, isUrl, array[0], array[1])))
-                .flatMap(response -> response.code() == HttpURLConnection.HTTP_MOVED_TEMP ?
-                        Observable.just(Uri.parse(response.header(HEADER_LOCATION))) :
-                        Observable.error(new IOException()))
+                .flatMap(response -> {
+                    try {
+                        if (response.code() == HttpURLConnection.HTTP_MOVED_TEMP) {
+                            return Observable.just(Uri.parse(response.header(HEADER_LOCATION)));
+                        }
+                        return Observable.error(new IOException());
+                    } finally {
+                        response.close();
+                    }
+                })
                 .flatMap(uri -> TextUtils.equals(uri.getPath(), DEFAULT_SUBMIT_REDIRECT) ?
                         Observable.just(true) :
                         Observable.error(buildException(uri)))
@@ -292,6 +319,7 @@ public class UserServicesClient implements UserServices {
 
     private String parseLoginError(Response response) {
         try {
+            if (response.body() == null) return null;
             Matcher matcher = Pattern.compile(REGEX_CREATE_ERROR_BODY).matcher(response.body().string());
             return matcher.find() ? matcher.group(1).replaceAll("\\n|\\r|\\t|\\s+", " ").trim() : null;
         } catch (IOException e) {
