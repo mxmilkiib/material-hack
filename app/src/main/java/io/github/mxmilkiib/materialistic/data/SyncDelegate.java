@@ -324,8 +324,9 @@ public class SyncDelegate {
         mNotificationManager.cancel(id);
         mHandler.removeMessages(id);
         if (mWebView != null) {
-            mWebView.destroy();
+            final CacheableWebView webView = mWebView;
             mWebView = null;
+            mHandler.post(webView::destroy);
         }
     }
 
