@@ -71,7 +71,8 @@ public class SyncDelegate {
     private static final long TIMEOUT_MILLIS = DateUtils.MINUTE_IN_MILLIS;
     private static final String DOWNLOADS_CHANNEL_ID = "downloads";
 
-    private static int parseItemId(String id) {
+    @VisibleForTesting
+    static int parseItemId(String id) {
         try {
             return Integer.valueOf(id);
         } catch (NumberFormatException e) {

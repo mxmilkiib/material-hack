@@ -19,6 +19,7 @@ package io.github.mxmilkiib.materialistic.accounts;
 
 import android.content.Context;
 import android.net.Uri;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.util.Pair;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -306,7 +307,8 @@ public class UserServicesClient implements UserServices {
         }
     }
 
-    private String getInputValue(String html, String name) {
+    @VisibleForTesting
+    String getInputValue(String html, String name) {
         // extract <input ... >
         Matcher matcherInput = PATTERN_INPUT.matcher(html);
         while (matcherInput.find()) {

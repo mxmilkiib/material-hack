@@ -62,6 +62,11 @@ android {
     }
     namespace 'io.github.mxmilkiib.materialistic'
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 ext {
@@ -97,4 +102,11 @@ dependencies {
             "com.squareup.dagger:dagger-compiler:$daggerVersion"
     kaptTest "androidx.room:room-compiler:$roomVersion",
             "com.squareup.dagger:dagger-compiler:$daggerVersion"
+
+    testImplementation 'junit:junit:4.13.2',
+            'org.mockito:mockito-core:5.12.0',
+            'org.robolectric:robolectric:4.13',
+            'androidx.test:core:1.6.1',
+            'androidx.test.ext:junit:1.2.1',
+            "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
 }
