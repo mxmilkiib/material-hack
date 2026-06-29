@@ -45,17 +45,21 @@ public interface RestServiceFactory {
 
     class Impl implements RestServiceFactory {
         private final Call.Factory mCallFactory;
-        private boolean mRxEnabled;
+        private final boolean mRxEnabled;
 
         @Inject
         public Impl(Call.Factory callFactory) {
+            this(callFactory, false);
+        }
+
+        private Impl(Call.Factory callFactory, boolean rxEnabled) {
             this.mCallFactory = callFactory;
+            this.mRxEnabled = rxEnabled;
         }
 
         @Override
         public RestServiceFactory rxEnabled(boolean enabled) {
-            mRxEnabled = enabled;
-            return this;
+            return new Impl(mCallFactory, enabled);
         }
 
         @Override
