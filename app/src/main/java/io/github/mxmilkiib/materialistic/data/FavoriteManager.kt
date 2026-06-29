@@ -208,22 +208,22 @@ class FavoriteManager @Inject constructor(
     if (!dir.exists() && !dir.mkdir()) return null
     val file = File(dir, FILENAME_EXPORT)
     if (!file.exists() && !file.createNewFile()) return null
-    val bufferedSink = Okio.buffer(Okio.sink(file))
-    with(bufferedSink) {
-      do {
-        val item = cursor.favorite
-        writeUtf8(item.displayedTitle)
-        writeByte('\n'.code)
-        writeUtf8(item.url)
-        writeByte('\n'.code)
-        writeUtf8(HackerNewsClient.WEB_ITEM_PATH.format(item.id))
-        if (!cursor.isLast) {
+    Okio.buffer(Okio.sink(file)).use { sink ->
+      with(sink) {
+        do {
+          val item = cursor.favorite
+          writeUtf8(item.displayedTitle)
           writeByte('\n'.code)
+          writeUtf8(item.url)
           writeByte('\n'.code)
-        }
-      } while (cursor.moveToNext())
-      flush()
-      closeQuietly()
+          writeUtf8(HackerNewsClient.WEB_ITEM_PATH.format(item.id))
+          if (!cursor.isLast) {
+            writeByte('\n'.code)
+            writeByte('\n'.code)
+          }
+        } while (cursor.moveToNext())
+        flush()
+      }
     }
     return file.getUri(context, FILE_AUTHORITY)
   }
