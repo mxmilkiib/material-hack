@@ -670,6 +670,13 @@ public class WebFragment extends LazyLoadFragment
         @JavascriptInterface
         public String getChunk(long begin, long end) {
             try {
+                if (begin < 0 || end <= begin) {
+                    return "";
+                }
+                final long fileSize = mFile.length();
+                if (begin >= fileSize || end > fileSize) {
+                    return "";
+                }
                 if (mRandomAccessFile == null) {
                     mRandomAccessFile = new RandomAccessFile(mFile, "r");
                 }
