@@ -50,13 +50,16 @@ public class FileDownloader {
 
             @Override
             public void onResponse(Call call, Response response) {
-                try {
-                    BufferedSink sink = Okio.buffer(Okio.sink(outputFile));
+                try (BufferedSink sink = Okio.buffer(Okio.sink(outputFile))) {
+                    if (response.body() == null) {
+                        throw new IOException("Empty response body");
+                    }
                     sink.writeAll(response.body().source());
-                    sink.close();
                     mMainHandler.post(() -> callback.onSuccess(outputFile.getPath()));
                 } catch (IOException e) {
                     this.onFailure(call, e);
+                } finally {
+                    response.close();
                 }
             }
         });
