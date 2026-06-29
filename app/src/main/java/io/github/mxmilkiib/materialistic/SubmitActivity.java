@@ -138,7 +138,7 @@ public class SubmitActivity extends InjectableActivity {
         if (item.getItemId() == R.id.menu_guidelines) {
             WebView webView = new WebView(this);
             webView.loadUrl(HN_GUIDELINES_URL);
-            androidx.appcompat.app.AlertDialog dialog = mAlertDialogBuilder
+            android.app.Dialog dialog = mAlertDialogBuilder
                     .init(this)
                     .setView(webView)
                     .setPositiveButton(android.R.string.ok, null)
