@@ -469,6 +469,9 @@ public class WebFragment extends LazyLoadFragment
     }
 
     private void offerExternalApp() {
+        if (getActivity() == null) {
+            return;
+        }
         final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mItem.getUrl()));
         if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
             return;
