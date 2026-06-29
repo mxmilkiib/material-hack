@@ -33,7 +33,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -320,31 +319,19 @@ public class AppUtils {
     public static boolean isOnWiFi(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
                 Context.CONNECTIVITY_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            android.net.Network network = cm.getActiveNetwork();
-            if (network == null) return false;
-            android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
-            return caps != null && caps.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI);
-        } else {
-            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-            return activeNetwork != null &&
-                    activeNetwork.isConnectedOrConnecting() &&
-                    activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
-        }
+        android.net.Network network = cm.getActiveNetwork();
+        if (network == null) return false;
+        android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
+        return caps != null && caps.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI);
     }
 
     public static boolean hasConnection(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
                 Context.CONNECTIVITY_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            android.net.Network network = cm.getActiveNetwork();
-            if (network == null) return false;
-            android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
-            return caps != null && caps.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET);
-        } else {
-            NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
-        }
+        android.net.Network network = cm.getActiveNetwork();
+        if (network == null) return false;
+        android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
+        return caps != null && caps.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET);
     }
 
     @SuppressLint("MissingPermission")
@@ -452,12 +439,7 @@ public class AppUtils {
                         if (selection < 0) {
                             break;
                         }
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-                            AccountManager.get(context).removeAccount(accounts[selection], null, null, null);
-                        } else {
-                            //noinspection deprecation
-                            AccountManager.get(context).removeAccount(accounts[selection], null, null);
-                        }
+                        AccountManager.get(context).removeAccount(accounts[selection], null, null, null);
                         dialog.dismiss();
                         break;
                     default:
@@ -640,9 +622,7 @@ public class AppUtils {
                                 new Intent(context, ItemActivity.class)
                                         .putExtra(ItemActivity.EXTRA_ITEM, item)
                                         .putExtra(ItemActivity.EXTRA_OPEN_COMMENTS, true),
-                                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ?
-                                        PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE :
-                                        PendingIntent.FLAG_ONE_SHOT));
+                                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE));
             }
             return builder.build().intent.setData(Uri.parse(url));
         } else {
@@ -661,12 +641,7 @@ public class AppUtils {
     }
 
     public static void setTextAppearance(TextView textView, @StyleRes int textAppearance) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            textView.setTextAppearance(textAppearance);
-        } else {
-            //noinspection deprecation
-            textView.setTextAppearance(textView.getContext(), textAppearance);
-        }
+        textView.setTextAppearance(textAppearance);
     }
 
     public static boolean urlEquals(String thisUrl, String thatUrl) {

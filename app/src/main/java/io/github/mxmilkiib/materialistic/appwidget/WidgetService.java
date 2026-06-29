@@ -43,7 +43,6 @@ import io.github.mxmilkiib.materialistic.R;
 import io.github.mxmilkiib.materialistic.data.Item;
 import io.github.mxmilkiib.materialistic.data.ItemManager;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class WidgetService extends RemoteViewsService {
     static final String EXTRA_SECTION = "extra:section";
     static final String EXTRA_LIGHT_THEME = "extra:lightTheme";

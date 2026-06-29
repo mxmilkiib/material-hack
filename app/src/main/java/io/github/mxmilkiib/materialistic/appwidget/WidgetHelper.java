@@ -132,9 +132,7 @@ class WidgetHelper {
                         new Intent(mContext, config.destination)
                                 .putExtra(SearchManager.QUERY, config.title) :
                         new Intent(mContext, config.destination),
-                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ?
-                                PendingIntent.FLAG_IMMUTABLE :
-                                0));
+                        PendingIntent.FLAG_IMMUTABLE));
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -154,9 +152,7 @@ class WidgetHelper {
         remoteViews.setEmptyView(android.R.id.list, R.id.empty);
         remoteViews.setPendingIntentTemplate(android.R.id.list,
                 PendingIntent.getActivity(mContext, 0, new Intent(Intent.ACTION_VIEW),
-                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ?
-                                PendingIntent.FLAG_IMMUTABLE :
-                                0));
+                        PendingIntent.FLAG_IMMUTABLE));
     }
 
     private PendingIntent createRefreshPendingIntent(int appWidgetId) {
@@ -164,9 +160,7 @@ class WidgetHelper {
                 new Intent(WidgetProvider.ACTION_REFRESH_WIDGET)
                         .putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
                         .setPackage(mContext.getPackageName()),
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ?
-                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE :
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
     }
 
     static class WidgetConfig {

@@ -7,11 +7,11 @@ android {
 
     defaultConfig {
         applicationId "io.github.mxmilkiib.materialistic"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 34
-        versionCode 79
-        versionName "3.4-wip"
-        buildConfigField "int", "LATEST_RELEASE", "79"
+        versionCode 80
+        versionName "4.0-wip"
+        buildConfigField "int", "LATEST_RELEASE", "80"
         buildConfigField "String", "GITHUB_TOKEN", "\"\""
         buildConfigField "String", "MERCURY_TOKEN", "\"\""
         buildConfigField "long", "BUILD_TIME", System.currentTimeMillis() + "L"
