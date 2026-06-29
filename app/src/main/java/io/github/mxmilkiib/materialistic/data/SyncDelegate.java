@@ -71,6 +71,14 @@ public class SyncDelegate {
     private static final long TIMEOUT_MILLIS = DateUtils.MINUTE_IN_MILLIS;
     private static final String DOWNLOADS_CHANNEL_ID = "downloads";
 
+    private static int parseItemId(String id) {
+        try {
+            return Integer.valueOf(id);
+        } catch (NumberFormatException e) {
+            return id.hashCode();
+        }
+    }
+
     private final HackerNewsClient.RestService mHnRestService;
     private final ReadabilityClient mReadabilityClient;
     private final SharedPreferences mSharedPreferences;
@@ -120,7 +128,7 @@ public class SyncDelegate {
             return;
         }
         if (!TextUtils.isEmpty(job.id)) {
-            JobInfo.Builder builder = new JobInfo.Builder(Long.valueOf(job.id).intValue(),
+            JobInfo.Builder builder = new JobInfo.Builder(parseItemId(job.id),
                     new ComponentName(context.getPackageName(),
                             ItemSyncJobService.class.getName()))
                     .setRequiredNetworkType(Preferences.Offline.isWifiOnly(context) ?
@@ -157,7 +165,7 @@ public class SyncDelegate {
         mJob = job;
         if (!TextUtils.isEmpty(mJob.id)) {
             Message message = Message.obtain(mHandler, this::stopSync);
-            message.what = Integer.valueOf(mJob.id);
+            message.what = parseItemId(mJob.id);
             mHandler.sendMessageDelayed(message, TIMEOUT_MILLIS);
             mSyncProgress = new SyncProgress(mJob);
             sync(mJob.id);
@@ -292,7 +300,7 @@ public class SyncDelegate {
     }
 
     private void showProgress() {
-        mNotificationManager.notify(Integer.valueOf(mJob.id), mNotificationBuilder
+        mNotificationManager.notify(parseItemId(mJob.id), mNotificationBuilder
                 .setContentTitle(mSyncProgress.title)
                 .setContentText(mContext.getString(R.string.download_in_progress))
                 .setContentIntent(getItemActivity(mJob.id))
@@ -313,7 +321,7 @@ public class SyncDelegate {
     void stopSync() {
         // TODO
         mJob.connectionEnabled = false;
-        int id = Integer.valueOf(mJob.id);
+        int id = parseItemId(mJob.id);
         mNotificationManager.cancel(id);
         mHandler.removeMessages(id);
     }
