@@ -36,6 +36,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Html;
 import android.text.Layout;
@@ -90,6 +91,24 @@ public class AppUtils {
     private static final String FORMAT_HTML_COLOR = "%06X";
     public static final int HOT_THRESHOLD_HIGH = 300;
     public static final int HOT_THRESHOLD_NORMAL = 100;
+
+    @SuppressWarnings("deprecation")
+    public static <T extends android.os.Parcelable> T getParcelableExtra(Intent intent, String name, Class<T> clazz) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return intent.getParcelableExtra(name, clazz);
+        } else {
+            return intent.getParcelableExtra(name);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    public static <T extends android.os.Parcelable> T getParcelable(Bundle bundle, String name, Class<T> clazz) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return bundle.getParcelable(name, clazz);
+        } else {
+            return bundle.getParcelable(name);
+        }
+    }
     static final int HOT_THRESHOLD_LOW = 10;
     public static final int HOT_FACTOR = 3;
     private static final String HOST_ITEM = "item";
@@ -103,7 +122,8 @@ public class AppUtils {
             return;
         }
         Intent intent = createViewIntent(context, item, url, session);
-        if (!HackerNewsClient.BASE_WEB_URL.contains(Uri.parse(url).getHost())) {
+        String host = Uri.parse(url).getHost();
+        if (host != null && !HackerNewsClient.BASE_WEB_URL.contains(host)) {
             if (intent.resolveActivity(context.getPackageManager()) != null) {
                 context.startActivity(intent);
             }
@@ -299,17 +319,33 @@ public class AppUtils {
     }
 
     public static boolean isOnWiFi(Context context) {
-        NetworkInfo activeNetwork = ((ConnectivityManager) context.getSystemService(
-                Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-        return activeNetwork != null &&
-                activeNetwork.isConnectedOrConnecting() &&
-                activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            android.net.Network network = cm.getActiveNetwork();
+            if (network == null) return false;
+            android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
+            return caps != null && caps.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI);
+        } else {
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            return activeNetwork != null &&
+                    activeNetwork.isConnectedOrConnecting() &&
+                    activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+        }
     }
 
     public static boolean hasConnection(Context context) {
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(
-                Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            android.net.Network network = cm.getActiveNetwork();
+            if (network == null) return false;
+            android.net.NetworkCapabilities caps = cm.getNetworkCapabilities(network);
+            return caps != null && caps.hasCapability(android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET);
+        } else {
+            NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
+            return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+        }
     }
 
     @SuppressLint("MissingPermission")

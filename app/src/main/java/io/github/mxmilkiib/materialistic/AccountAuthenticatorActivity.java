@@ -32,7 +32,9 @@ public abstract class AccountAuthenticatorActivity extends InjectableActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAccountAuthenticatorResponse =
-                getIntent().getParcelableExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE);
+                AppUtils.getParcelableExtra(getIntent(),
+                        AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE,
+                        AccountAuthenticatorResponse.class);
         if (mAccountAuthenticatorResponse != null) {
             mAccountAuthenticatorResponse.onRequestContinued();
         }

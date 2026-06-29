@@ -139,11 +139,11 @@ public class WebFragment extends LazyLoadFragment
             mContent = savedInstanceState.getString(STATE_CONTENT);
             mEmpty = savedInstanceState.getBoolean(STATE_EMPTY, false);
             mReadability = savedInstanceState.getBoolean(STATE_READABILITY, false);
-            mItem = savedInstanceState.getParcelable(EXTRA_ITEM);
+            mItem = AppUtils.getParcelable(savedInstanceState, EXTRA_ITEM, io.github.mxmilkiib.materialistic.data.Item.class);
         } else {
             mReadability = Preferences.getDefaultStoryView(getActivity()) ==
                     Preferences.StoryViewMode.Readability;
-            mItem = getArguments().getParcelable(EXTRA_ITEM);
+            mItem = AppUtils.getParcelable(getArguments(), EXTRA_ITEM, io.github.mxmilkiib.materialistic.data.Item.class);
         }
         mIsHackerNewsUrl = AppUtils.isHackerNewsUrl(mItem);
     }

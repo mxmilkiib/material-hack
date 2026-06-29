@@ -164,15 +164,17 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
         mPreferenceObservable.subscribe(this, this::onPreferenceChanged,
                 R.string.pref_navigation);
         if (savedInstanceState != null) {
-            mItem = savedInstanceState.getParcelable(STATE_ITEM);
+            mItem = AppUtils.getParcelable(savedInstanceState, STATE_ITEM, io.github.mxmilkiib.materialistic.data.Item.class);
             mItemId = savedInstanceState.getString(STATE_ITEM_ID);
             mFullscreen = savedInstanceState.getBoolean(STATE_FULLSCREEN);
         } else {
             if (Intent.ACTION_VIEW.equalsIgnoreCase(intent.getAction())) {
                 mItemId = AppUtils.getDataUriId(intent, PARAM_ID);
             } else if (intent.hasExtra(EXTRA_ITEM)) {
-                mItem = intent.getParcelableExtra(EXTRA_ITEM);
-                mItemId = mItem.getId();
+                mItem = AppUtils.getParcelableExtra(intent, EXTRA_ITEM, io.github.mxmilkiib.materialistic.data.Item.class);
+                if (mItem != null) {
+                    mItemId = mItem.getId();
+                }
             }
         }
 

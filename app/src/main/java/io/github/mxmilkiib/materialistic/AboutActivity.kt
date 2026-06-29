@@ -19,6 +19,7 @@ package io.github.mxmilkiib.materialistic
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.appcompat.app.ActionBar
@@ -38,10 +39,16 @@ class AboutActivity : InjectableActivity() {
         ActionBar.DISPLAY_HOME_AS_UP or ActionBar.DISPLAY_SHOW_TITLE
 
     var versionName = ""
-    var versionCode = 0
+    var versionCode = 0L
     try {
-      versionName = packageManager.getPackageInfo(packageName, 0).versionName
-      versionCode = packageManager.getPackageInfo(packageName, 0).versionCode
+      val info = packageManager.getPackageInfo(packageName, 0)
+      versionName = info.versionName ?: ""
+      versionCode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        info.longVersionCode
+      } else {
+        @Suppress("DEPRECATION")
+        info.versionCode.toLong()
+      }
     } catch (e: PackageManager.NameNotFoundException) {
       // do nothing
     }

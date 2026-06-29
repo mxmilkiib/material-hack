@@ -18,6 +18,7 @@
 package io.github.mxmilkiib.materialistic;
 
 import android.os.Bundle;
+import io.github.mxmilkiib.materialistic.data.Item;
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
@@ -43,7 +44,7 @@ public class ThreadPreviewActivity extends InjectableActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Item item = getIntent().getParcelableExtra(EXTRA_ITEM);
+        Item item = AppUtils.getParcelableExtra(getIntent(), EXTRA_ITEM, Item.class);
         if (item == null) {
             finish();
             return;
