@@ -92,10 +92,10 @@ public interface ReadabilityClient {
         @Override
         public void parse(String itemId, String url) {
             Observable.defer(() -> fromCache(itemId))
-                    .subscribeOn(Schedulers.immediate())
+                    .subscribeOn(Schedulers.trampoline())
                     .switchIfEmpty(fromNetwork(itemId, url))
                     .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? null : content)
-                    .observeOn(Schedulers.immediate())
+                    .observeOn(Schedulers.trampoline())
                     .subscribe();
         }
 
