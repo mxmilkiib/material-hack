@@ -605,7 +605,9 @@ public class WebFragment extends LazyLoadFragment
 
     @Synthetic
     void onItemLoaded(@NonNull Item response) {
-        getActivity().invalidateOptionsMenu();
+        if (getActivity() != null) {
+            getActivity().invalidateOptionsMenu();
+        }
         mItem = response;
         bindContent();
     }
