@@ -88,6 +88,7 @@ public class WebFragment extends LazyLoadFragment
     private static final int DEFAULT_PROGRESS = 20;
     public static final String PDF_LOADER_URL = "file:///android_asset/pdf/index.html";
     private static final String PDF_MIME_TYPE = "application/pdf";
+    private static final String TAG = WebFragment.class.getSimpleName();
     @Synthetic WebView mWebView;
     private NestedScrollView mScrollView;
     @Synthetic boolean mExternalRequired = false;
@@ -701,7 +702,7 @@ public class WebFragment extends LazyLoadFragment
                     return "";
                 }
             } catch (IOException e) {
-                Log.e("Exception", e.toString());
+                Log.e(TAG, "Failed to read PDF chunk", e);
                 return "";
             }
         }
@@ -731,7 +732,7 @@ public class WebFragment extends LazyLoadFragment
                     mRandomAccessFile.close();
                 }
             } catch (IOException e) {
-                Log.e("Exception", e.toString());
+                Log.e(TAG, "Failed to close PDF file", e);
             }
         }
 
