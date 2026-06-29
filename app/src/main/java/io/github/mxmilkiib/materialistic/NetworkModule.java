@@ -105,6 +105,7 @@ class NetworkModule {
                 .addInterceptor(new ConnectionAwareInterceptor(context))
                 .addInterceptor(new LoggingInterceptor())
                 .build();
+    }
 
     @Provides @Singleton @Named(NO_REDIRECT)
     public Call.Factory provideNoRedirectCallFactory(Call.Factory callFactory) {
