@@ -141,11 +141,13 @@ public class ComposeActivity extends InjectableActivity {
         if (item.getItemId() == R.id.menu_guidelines) {
             WebView webView = new WebView(ComposeActivity.this);
             webView.loadUrl(HN_FORMAT_DOC_URL);
-            mAlertDialogBuilder
+            android.app.Dialog dialog = mAlertDialogBuilder
                     .init(ComposeActivity.this)
                     .setView(webView)
                     .setPositiveButton(android.R.string.ok, null)
-                    .show();
+                    .create();
+            dialog.setOnDismissListener(d -> webView.destroy());
+            dialog.show();
             return true;
         }
         return super.onOptionsItemSelected(item);

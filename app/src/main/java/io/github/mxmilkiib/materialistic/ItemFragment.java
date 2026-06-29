@@ -96,12 +96,12 @@ public class ItemFragment extends LazyLoadFragment implements Scrollable, Naviga
         setHasOptionsMenu(true);
         if (savedInstanceState != null) {
             mCacheMode = savedInstanceState.getInt(STATE_CACHE_MODE, ItemManager.MODE_DEFAULT);
-            mItem = savedInstanceState.getParcelable(STATE_ITEM);
+            mItem = AppUtils.getParcelable(savedInstanceState, STATE_ITEM, io.github.mxmilkiib.materialistic.data.Item.class);
             mItemId = savedInstanceState.getString(STATE_ITEM_ID);
-            mAdapterItems = savedInstanceState.getParcelable(STATE_ADAPTER_ITEMS);
+            mAdapterItems = AppUtils.getParcelable(savedInstanceState, STATE_ADAPTER_ITEMS, SinglePageItemRecyclerViewAdapter.SavedState.class);
         } else {
             mCacheMode = getArguments().getInt(EXTRA_CACHE_MODE, ItemManager.MODE_DEFAULT);
-            WebItem item = getArguments().getParcelable(EXTRA_ITEM);
+            WebItem item = AppUtils.getParcelable(getArguments(), EXTRA_ITEM, io.github.mxmilkiib.materialistic.data.WebItem.class);
             if (item instanceof Item) {
                 mItem = (Item) item;
             }

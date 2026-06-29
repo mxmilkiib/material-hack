@@ -139,7 +139,7 @@ public class UserActivity extends InjectableActivity implements Scrollable {
         mScrollableHelper = new KeyDelegate.RecyclerViewHelper(mRecyclerView,
                 KeyDelegate.RecyclerViewHelper.SCROLL_ITEM);
         if (savedInstanceState != null) {
-            mUser = savedInstanceState.getParcelable(STATE_USER);
+            mUser = AppUtils.getParcelable(savedInstanceState, STATE_USER, UserManager.User.class);
         }
         if (mUser == null) {
             load();

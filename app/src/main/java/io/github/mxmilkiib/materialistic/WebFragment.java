@@ -346,6 +346,7 @@ public class WebFragment extends LazyLoadFragment
 
     @Synthetic
     void loadContent() {
+        if (getActivity() == null) return;
         setWebSettings(false);
         mWebView.reloadHtml(AppUtils.wrapHtml(getActivity(), mContent));
     }
@@ -498,7 +499,9 @@ public class WebFragment extends LazyLoadFragment
         mWebView.getSettings().setLoadWithOverviewMode(isRemote);
         mWebView.getSettings().setUseWideViewPort(isRemote);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        getActivity().invalidateOptionsMenu();
+        if (getActivity() != null) {
+            getActivity().invalidateOptionsMenu();
+        }
     }
 
     @Synthetic

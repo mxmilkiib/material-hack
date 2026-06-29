@@ -137,7 +137,7 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
                             LIST_FRAGMENT_TAG)
                     .commit();
         } else {
-            mSelectedItem = savedInstanceState.getParcelable(STATE_SELECTED_ITEM);
+            mSelectedItem = AppUtils.getParcelable(savedInstanceState, STATE_SELECTED_ITEM, io.github.mxmilkiib.materialistic.data.WebItem.class);
             mFullscreen = savedInstanceState.getBoolean(STATE_FULLSCREEN);
             if (mIsMultiPane) {
                 openMultiPaneItem();
