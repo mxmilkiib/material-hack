@@ -263,8 +263,14 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
 
     private DisplayMetrics getDisplayMetrics() {
         DisplayMetrics metrics = new DisplayMetrics();
-        ((WindowManager) getContext().getSystemService(Activity.WINDOW_SERVICE))
-                .getDefaultDisplay().getMetrics(metrics);
+        WindowManager wm = (WindowManager) getContext().getSystemService(Activity.WINDOW_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            metrics.setTo(wm.getCurrentWindowMetrics().getBounds().width(),
+                    wm.getCurrentWindowMetrics().getBounds().height(),
+                    getContext().getResources().getDisplayMetrics().densityDpi);
+        } else {
+            wm.getDefaultDisplay().getMetrics(metrics);
+        }
         return metrics;
     }
 

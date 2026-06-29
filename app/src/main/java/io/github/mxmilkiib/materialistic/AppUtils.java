@@ -506,11 +506,14 @@ public class AppUtils {
     }
 
     public static int getDisplayHeight(Context context) {
-        Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
-                .getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        return point.y;
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            return wm.getCurrentWindowMetrics().getBounds().height();
+        } else {
+            Point point = new Point();
+            wm.getDefaultDisplay().getSize(point);
+            return point.y;
+        }
     }
 
     public static LayoutInflater createLayoutInflater(Context context) {
