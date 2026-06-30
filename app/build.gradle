@@ -92,6 +92,7 @@ dependencies {
             "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion",
             "com.squareup.okhttp3:okhttp:$okHttpVersion",
             "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            'org.jsoup:jsoup:1.18.1',
             "io.reactivex.rxjava3:rxandroid:3.0.2",
             'io.reactivex.rxjava3:rxjava:3.1.8',
             "androidx.room:room-runtime:$roomVersion",

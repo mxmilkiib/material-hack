@@ -24,10 +24,12 @@ import androidx.core.util.Pair;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 
@@ -69,12 +71,6 @@ public class UserServicesClient implements UserServices {
     private static final String CREATING_TRUE = "t";
     private static final String DEFAULT_FNOP = "submit-page";
     private static final String DEFAULT_SUBMIT_REDIRECT = "newest";
-    private static final String REGEX_INPUT = "<\\s*input[^>]*>";
-    private static final String REGEX_VALUE = "value[^\"]*\"([^\"]*)\"";
-    private static final String REGEX_CREATE_ERROR_BODY = "<body>([^<]*)";
-    private static final Pattern PATTERN_INPUT = Pattern.compile(REGEX_INPUT);
-    private static final Pattern PATTERN_VALUE = Pattern.compile(REGEX_VALUE);
-    private static final Pattern PATTERN_CREATE_ERROR_BODY = Pattern.compile(REGEX_CREATE_ERROR_BODY);
     private static final String HEADER_LOCATION = "location";
     private static final String HEADER_COOKIE = "cookie";
     private static final String HEADER_SET_COOKIE = "set-cookie";
@@ -312,24 +308,21 @@ public class UserServicesClient implements UserServices {
 
     @VisibleForTesting
     String getInputValue(String html, String name) {
-        // extract <input ... >
-        Matcher matcherInput = PATTERN_INPUT.matcher(html);
-        while (matcherInput.find()) {
-            String input = matcherInput.group();
-            if (input.contains(name)) {
-                // extract value="..."
-                Matcher matcher = PATTERN_VALUE.matcher(input);
-                return matcher.find() ? matcher.group(1) : null; // return first match if any
-            }
+        Document doc = Jsoup.parse(html);
+        Element input = doc.selectFirst("input[name=" + name + "]");
+        if (input == null || !input.hasAttr("value")) {
+            return null;
         }
-        return null;
+        return input.attr("value");
     }
 
     @VisibleForTesting String parseLoginError(Response response) {
         try {
             if (response.body() == null) return null;
-            Matcher matcher = PATTERN_CREATE_ERROR_BODY.matcher(response.body().string());
-            return matcher.find() ? matcher.group(1).replaceAll("\\s+", " ").trim() : null;
+            Document doc = Jsoup.parse(response.body().string());
+            if (doc.body() == null) return null;
+            String bodyText = doc.body().ownText().replaceAll("\\s+", " ").trim();
+            return bodyText.isEmpty() ? null : bodyText;
         } catch (IOException e) {
             return null;
         }
