@@ -187,7 +187,6 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
         Toast.makeText(getContext(), R.string.hint_drag, Toast.LENGTH_SHORT).show();
         //noinspection Convert2Lambda
         super.setOnTouchListener(new OnTouchListener() {
-            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
@@ -246,7 +245,6 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
     }
 
     @SuppressLint("CommitPrefEdits")
-    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Synthetic void persistPosition() {
         getPreferences()
                 .edit()
@@ -255,7 +253,6 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
                 .apply();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     private void restorePosition() {
         setX(getPreferences().getFloat(mPreferenceX, getX()));
         setY(getPreferences().getFloat(mPreferenceY, getY()));

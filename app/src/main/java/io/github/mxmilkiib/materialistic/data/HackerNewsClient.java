@@ -224,7 +224,7 @@ public class HackerNewsClient implements ItemManager, UserManager {
 
     private HackerNewsItem[] toItems(int[] ids) {
         if (ids == null) {
-            return null;
+            return new HackerNewsItem[0];
         }
         HackerNewsItem[] items = new HackerNewsItem[ids.length];
         for (int i = 0; i < items.length; i++) {

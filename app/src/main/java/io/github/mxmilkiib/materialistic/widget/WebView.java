@@ -17,10 +17,8 @@
 
 package io.github.mxmilkiib.materialistic.widget;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.webkit.WebResourceRequest;
@@ -110,7 +108,6 @@ public class WebView extends android.webkit.WebView {
             }
         }
 
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @SuppressWarnings("deprecation")
         @Override
         public WebResourceResponse shouldInterceptRequest(android.webkit.WebView view, String url) {
@@ -118,7 +115,6 @@ public class WebView extends android.webkit.WebView {
                     super.shouldInterceptRequest(view, url);
         }
 
-        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
         @Override
         public WebResourceResponse shouldInterceptRequest(android.webkit.WebView view, WebResourceRequest request) {
             return mClient != null ? mClient.shouldInterceptRequest(view, request) :

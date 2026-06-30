@@ -170,6 +170,9 @@ public class UserServicesClient implements UserServices {
                 })
                 .flatMap(response -> {
                     try {
+                        if (response.body() == null) {
+                            return Observable.error(new IOException("empty response body"));
+                        }
                         return Observable.just(new String[]{
                                 response.header(HEADER_SET_COOKIE),
                                 response.body().string()

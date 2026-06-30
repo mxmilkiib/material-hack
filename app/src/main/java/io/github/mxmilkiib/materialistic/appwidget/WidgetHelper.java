@@ -17,7 +17,6 @@
 
 package io.github.mxmilkiib.materialistic.appwidget;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -29,7 +28,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.widget.RemoteViews;
@@ -38,7 +36,6 @@ import java.util.Locale;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import io.github.mxmilkiib.materialistic.BestActivity;
 import io.github.mxmilkiib.materialistic.ListActivity;
@@ -82,7 +79,6 @@ class WidgetHelper {
         mAppWidgetManager.updateAppWidget(appWidgetId, remoteViews);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     void refresh(int appWidgetId) {
         mAppWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, android.R.id.list);
         update(appWidgetId);
@@ -96,7 +92,7 @@ class WidgetHelper {
     private void scheduleUpdate(int appWidgetId) {
         String frequency = getConfig(appWidgetId, R.string.pref_widget_frequency);
         long frequencyHourMillis = DateUtils.HOUR_IN_MILLIS * (TextUtils.isEmpty(frequency) ?
-                DEFAULT_FREQUENCY_HOUR : Integer.valueOf(frequency));
+                DEFAULT_FREQUENCY_HOUR : Integer.parseInt(frequency));
         getJobScheduler().schedule(new JobInfo.Builder(appWidgetId,
                 new ComponentName(mContext.getPackageName(), WidgetRefreshJobService.class.getName()))
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
@@ -108,7 +104,6 @@ class WidgetHelper {
         getJobScheduler().cancel(appWidgetId);
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private JobScheduler getJobScheduler() {
         return (JobScheduler) mContext.getSystemService(Context.JOB_SCHEDULER_SERVICE);
     }
@@ -135,7 +130,6 @@ class WidgetHelper {
                         PendingIntent.FLAG_IMMUTABLE));
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void updateCollection(int appWidgetId, RemoteViews remoteViews, WidgetConfig config) {
         remoteViews.setTextViewText(R.id.subtitle,
                 DateUtils.formatDateTime(mContext, System.currentTimeMillis(),
