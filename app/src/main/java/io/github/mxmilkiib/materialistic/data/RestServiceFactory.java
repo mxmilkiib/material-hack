@@ -27,9 +27,9 @@ import javax.inject.Inject;
 
 import okhttp3.Call;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public interface RestServiceFactory {
     String CACHE_CONTROL_FORCE_CACHE = "Cache-Control: only-if-cached, max-stale=" + Integer.MAX_VALUE;
@@ -71,7 +71,7 @@ public interface RestServiceFactory {
         public <T> T create(String baseUrl, Class<T> clazz, Executor callbackExecutor) {
             Retrofit.Builder builder = new Retrofit.Builder();
             if (mRxEnabled) {
-                builder.addCallAdapterFactory(RxJavaCallAdapterFactory
+                builder.addCallAdapterFactory(RxJava3CallAdapterFactory
                         .createWithScheduler(Schedulers.io()));
             }
             builder.callFactory(mCallFactory)

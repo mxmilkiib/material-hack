@@ -26,7 +26,7 @@ import javax.inject.Inject;
 
 import androidx.annotation.StringDef;
 import retrofit2.Call;
-import rx.Observable;
+import io.reactivex.rxjava3.core.Observable;
 
 public class AlgoliaPopularClient extends AlgoliaClient {
 

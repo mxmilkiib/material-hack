@@ -7,9 +7,9 @@ import androidx.core.util.Pair;
 
 import io.github.mxmilkiib.materialistic.data.Item;
 import io.github.mxmilkiib.materialistic.data.ItemManager;
-import rx.Observable;
-import rx.Scheduler;
-import rx.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 
 public class StoryListViewModel extends ViewModel {
     private ItemManager mItemManager;

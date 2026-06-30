@@ -43,7 +43,7 @@ import io.github.mxmilkiib.materialistic.data.Item;
 import io.github.mxmilkiib.materialistic.data.ItemManager;
 import io.github.mxmilkiib.materialistic.data.MaterialisticDatabase;
 import io.github.mxmilkiib.materialistic.widget.StoryRecyclerViewAdapter;
-import rx.Scheduler;
+import io.reactivex.rxjava3.core.Scheduler;
 
 public class ListFragment extends BaseListFragment {
 

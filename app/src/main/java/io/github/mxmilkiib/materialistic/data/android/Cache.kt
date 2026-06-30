@@ -20,8 +20,8 @@ package io.github.mxmilkiib.materialistic.data.android
 import io.github.mxmilkiib.materialistic.DataModule
 import io.github.mxmilkiib.materialistic.data.LocalCache
 import io.github.mxmilkiib.materialistic.data.MaterialisticDatabase
-import rx.Observable
-import rx.Scheduler
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Scheduler
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -42,7 +42,7 @@ class Cache @Inject constructor(
 
   override fun setViewed(itemId: String?) {
     readStoriesDao.insert(MaterialisticDatabase.ReadStory(itemId))
-    Observable.just(itemId)
+    Observable.just(itemId ?: "")
         .map { database.createReadUri(it) }
         .observeOn(mainScheduler)
         .subscribe { database.setLiveValue(it) }

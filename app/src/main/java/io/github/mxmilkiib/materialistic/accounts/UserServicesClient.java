@@ -38,9 +38,9 @@ import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.Request;
 import okhttp3.Response;
-import rx.Observable;
-import rx.Scheduler;
-import rx.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 
 public class UserServicesClient implements UserServices {
     private static final String BASE_WEB_URL = "https://news.ycombinator.com";

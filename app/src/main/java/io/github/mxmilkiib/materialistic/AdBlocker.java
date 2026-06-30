@@ -33,8 +33,8 @@ import java.util.Set;
 import okhttp3.HttpUrl;
 import okio.BufferedSource;
 import okio.Okio;
-import rx.Observable;
-import rx.Scheduler;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
 
 public class AdBlocker {
     private static final String AD_HOSTS_FILE = "pgl.yoyo.org.txt";

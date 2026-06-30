@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import okhttp3.OkHttpClient;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -15,7 +15,7 @@ public class UserServicesClientTest {
 
     @Before
     public void setUp() {
-        client = new UserServicesClient(new OkHttpClient(), Schedulers.immediate());
+        client = new UserServicesClient(new OkHttpClient(), Schedulers.trampoline());
     }
 
     @Test

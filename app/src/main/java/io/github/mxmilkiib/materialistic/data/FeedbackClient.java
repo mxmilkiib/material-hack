@@ -29,8 +29,8 @@ import io.github.mxmilkiib.materialistic.annotation.Synthetic;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
-import rx.Observable;
-import rx.Scheduler;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
 
 public interface FeedbackClient {
     interface Callback {

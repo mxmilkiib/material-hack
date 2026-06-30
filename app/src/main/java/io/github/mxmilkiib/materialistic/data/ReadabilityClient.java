@@ -31,9 +31,9 @@ import io.github.mxmilkiib.materialistic.annotation.Synthetic;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Query;
-import rx.Observable;
-import rx.Scheduler;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public interface ReadabilityClient {
     String HOST = "mercury.postlight.com";

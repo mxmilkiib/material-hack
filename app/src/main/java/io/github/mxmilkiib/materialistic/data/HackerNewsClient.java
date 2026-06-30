@@ -29,8 +29,8 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Path;
-import rx.Observable;
-import rx.Scheduler;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
 
 /**
  * Client to retrieve Hacker News content asynchronously
@@ -84,7 +84,7 @@ public class HackerNewsClient implements ItemManager, UserManager {
                 break;
             case MODE_CACHE:
                 itemObservable = mRestService.cachedItemRx(itemId)
-                        .onErrorResumeNext(mRestService.itemRx(itemId));
+                        .onErrorResumeNext(throwable -> mRestService.itemRx(itemId));
                 break;
         }
         Observable.defer(() -> Observable.zip(

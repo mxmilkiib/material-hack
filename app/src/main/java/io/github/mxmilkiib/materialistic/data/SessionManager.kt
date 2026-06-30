@@ -19,8 +19,8 @@ package io.github.mxmilkiib.materialistic.data
 
 import androidx.annotation.WorkerThread
 import io.github.mxmilkiib.materialistic.DataModule
-import rx.Observable
-import rx.Scheduler
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Scheduler
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton

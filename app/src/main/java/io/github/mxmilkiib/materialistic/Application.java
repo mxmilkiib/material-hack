@@ -23,7 +23,7 @@ import android.os.StrictMode;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import io.github.mxmilkiib.materialistic.data.AlgoliaClient;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Application extends android.app.Application implements Injectable {
 

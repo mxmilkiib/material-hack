@@ -39,9 +39,9 @@ import io.github.mxmilkiib.materialistic.data.SyncScheduler;
 import io.github.mxmilkiib.materialistic.data.UserManager;
 import io.github.mxmilkiib.materialistic.data.android.Cache;
 import okhttp3.Call;
-import rx.Scheduler;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import static io.github.mxmilkiib.materialistic.ActivityModule.ALGOLIA;
 import static io.github.mxmilkiib.materialistic.ActivityModule.HN;
