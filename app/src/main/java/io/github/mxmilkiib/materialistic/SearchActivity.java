@@ -35,6 +35,11 @@ public class SearchActivity extends BaseListActivity {
     private String mQuery;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (getIntent().hasExtra(SearchManager.QUERY)) {
             mQuery = getIntent().getStringExtra(SearchManager.QUERY);

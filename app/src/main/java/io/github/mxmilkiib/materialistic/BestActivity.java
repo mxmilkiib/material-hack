@@ -22,6 +22,11 @@ import androidx.annotation.NonNull;
 import io.github.mxmilkiib.materialistic.data.ItemManager;
 
 public class BestActivity extends BaseStoriesActivity {
+    @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
     @NonNull
     @Override
     protected String getFetchMode() {

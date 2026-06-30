@@ -19,23 +19,25 @@ package io.github.mxmilkiib.materialistic;
 
 import android.os.Bundle;
 
-import dagger.ObjectGraph;
-
 public abstract class InjectableActivity extends ThemedActivity implements Injectable {
-    private ObjectGraph mActivityGraph;
+    private ActivityComponent mActivityComponent;
     private boolean mDestroyed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        inject(this);
+        injectSelf(getActivityComponent());
+    }
+
+    protected void injectSelf(ActivityComponent component) {
+        // override to inject dependencies
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mDestroyed = true;
-        mActivityGraph = null;
+        mActivityComponent = null;
     }
 
     @Override
@@ -49,17 +51,11 @@ public abstract class InjectableActivity extends ThemedActivity implements Injec
     }
 
     @Override
-    public void inject(Object object) {
-        getApplicationGraph().inject(object);
-    }
-
-    @Override
-    public ObjectGraph getApplicationGraph() {
-        if (mActivityGraph == null) {
-            mActivityGraph = ((Injectable) getApplication()).getApplicationGraph()
-                    .plus(new ActivityModule(this), new UiModule());
+    public ActivityComponent getActivityComponent() {
+        if (mActivityComponent == null) {
+            mActivityComponent = ((Injectable) getApplication()).getActivityComponent();
         }
-        return mActivityGraph;
+        return mActivityComponent;
     }
 
     public boolean isActivityDestroyed() {

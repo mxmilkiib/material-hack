@@ -38,6 +38,7 @@ import java.util.Set;
 import javax.inject.Inject;
 
 import io.github.mxmilkiib.materialistic.AppUtils;
+import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.Navigable;
 import io.github.mxmilkiib.materialistic.Preferences;
 import io.github.mxmilkiib.materialistic.R;
@@ -79,6 +80,9 @@ public class SinglePageItemRecyclerViewAdapter
     @Override
     public void attach(Context context, RecyclerView recyclerView) {
         super.attach(context, recyclerView);
+        if (mContext instanceof Injectable) {
+            ((Injectable) mContext).getActivityComponent().inject(this);
+        }
         mLevelIndicatorWidth = AppUtils.getDimensionInDp(mContext, R.dimen.level_indicator_width);
         mColors = mResourcesProvider.obtainTypedArray(R.array.color_codes);
         mItemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(

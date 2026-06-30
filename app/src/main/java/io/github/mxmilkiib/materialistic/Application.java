@@ -22,19 +22,20 @@ import android.graphics.Typeface;
 import android.os.StrictMode;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import dagger.ObjectGraph;
 import io.github.mxmilkiib.materialistic.data.AlgoliaClient;
 import rx.schedulers.Schedulers;
 
 public class Application extends android.app.Application implements Injectable {
 
     public static Typeface TYPE_FACE = null;
-    private ObjectGraph mApplicationGraph;
+    private AppComponent mAppComponent;
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        mApplicationGraph = ObjectGraph.create();
+        mAppComponent = DaggerAppComponent.builder()
+                .activityModule(new ActivityModule(this))
+                .build();
     }
 
     @Override
@@ -59,12 +60,7 @@ public class Application extends android.app.Application implements Injectable {
     }
 
     @Override
-    public void inject(Object object) {
-        getApplicationGraph().inject(object);
-    }
-
-    @Override
-    public ObjectGraph getApplicationGraph() {
-        return mApplicationGraph;
+    public ActivityComponent getActivityComponent() {
+        return mAppComponent.activityComponent();
     }
 }

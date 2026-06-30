@@ -133,6 +133,9 @@ public class ListFragment extends BaseListFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        if (getActivity() instanceof Injectable) {
+            ((Injectable) getActivity()).getActivityComponent().inject(this);
+        }
         MaterialisticDatabase.getInstance(getContext()).getLiveData().observe(getViewLifecycleOwner(), mObserver);
         String managerClassName = getArguments().getString(EXTRA_ITEM_MANAGER);
         ItemManager itemManager;

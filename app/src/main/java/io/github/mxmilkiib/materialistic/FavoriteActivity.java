@@ -51,6 +51,11 @@ public class FavoriteActivity extends BaseListActivity {
     private String mFilter;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {

@@ -24,52 +24,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import io.github.mxmilkiib.materialistic.appwidget.WidgetConfigActivity;
-import io.github.mxmilkiib.materialistic.widget.FavoriteRecyclerViewAdapter;
-import io.github.mxmilkiib.materialistic.widget.MultiPageItemRecyclerViewAdapter;
 import io.github.mxmilkiib.materialistic.widget.PopupMenu;
-import io.github.mxmilkiib.materialistic.widget.SinglePageItemRecyclerViewAdapter;
-import io.github.mxmilkiib.materialistic.widget.StoryRecyclerViewAdapter;
-import io.github.mxmilkiib.materialistic.widget.SubmissionRecyclerViewAdapter;
-import io.github.mxmilkiib.materialistic.widget.ThreadPreviewRecyclerViewAdapter;
 
-@Module(
-        injects = {
-                AboutActivity.class,
-                AskActivity.class,
-                BestActivity.class,
-                ComposeActivity.class,
-                FavoriteActivity.class,
-                FeedbackActivity.class,
-                ItemActivity.class,
-                JobsActivity.class,
-                ListActivity.class,
-                LoginActivity.class,
-                NewActivity.class,
-                OfflineWebActivity.class,
-                PopularActivity.class,
-                ReleaseNotesActivity.class,
-                SearchActivity.class,
-                SettingsActivity.class,
-                ShowActivity.class,
-                SubmitActivity.class,
-                ThreadPreviewActivity.class,
-                UserActivity.class,
-                WidgetConfigActivity.class,
-                FavoriteFragment.class,
-                ItemFragment.class,
-                ListFragment.class,
-                WebFragment.class,
-                FavoriteRecyclerViewAdapter.class,
-                SinglePageItemRecyclerViewAdapter.class,
-                StoryRecyclerViewAdapter.class,
-                SubmissionRecyclerViewAdapter.class,
-                MultiPageItemRecyclerViewAdapter.class,
-                ThreadPreviewRecyclerViewAdapter.class
-        },
-        library = true,
-        complete = false
-)
+@Module
 class UiModule {
     @Provides
     public PopupMenu providePopupMenu() {

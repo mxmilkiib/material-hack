@@ -50,6 +50,7 @@ import javax.inject.Named;
 import io.github.mxmilkiib.materialistic.ActivityModule;
 import io.github.mxmilkiib.materialistic.AppUtils;
 import io.github.mxmilkiib.materialistic.ComposeActivity;
+import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.Preferences;
 import io.github.mxmilkiib.materialistic.R;
 import io.github.mxmilkiib.materialistic.UserActivity;
@@ -148,6 +149,7 @@ public class StoryRecyclerViewAdapter extends
 
     public StoryRecyclerViewAdapter(Context context) {
         super(context);
+        ((Injectable) context).getActivityComponent().inject(this);
         mCallback = new ItemTouchHelperCallback(context,
                 Preferences.getListSwipePreferences(context)) {
             @Override

@@ -150,6 +150,14 @@ public class WebFragment extends LazyLoadFragment
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (getActivity() instanceof Injectable) {
+            ((Injectable) getActivity()).getActivityComponent().inject(this);
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (isNewInstance()) {
             mFragmentView = inflater.inflate(R.layout.fragment_web, container, false);

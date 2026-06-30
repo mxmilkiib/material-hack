@@ -54,6 +54,11 @@ public class ComposeActivity extends InjectableActivity {
     private boolean mSending;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mParentId = getIntent().getStringExtra(EXTRA_PARENT_ID);

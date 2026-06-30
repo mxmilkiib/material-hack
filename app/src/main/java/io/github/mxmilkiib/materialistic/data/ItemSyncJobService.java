@@ -42,10 +42,7 @@ public class ItemSyncJobService extends JobService {
     @Override
     public void onCreate() {
         super.onCreate();
-        ((Injectable) getApplication())
-                .getApplicationGraph()
-                .plus(new ActivityModule(this))
-                .inject(this);
+        ((Injectable) getApplication()).getActivityComponent().inject(this);
     }
 
     @Override

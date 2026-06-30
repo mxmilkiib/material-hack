@@ -130,6 +130,11 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     private AppUtils.SystemUiHelper mSystemUiHelper;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mExternalBrowser = Preferences.externalBrowserEnabled(this);

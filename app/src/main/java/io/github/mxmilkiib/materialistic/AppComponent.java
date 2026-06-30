@@ -17,25 +17,14 @@
 
 package io.github.mxmilkiib.materialistic;
 
-import androidx.annotation.NonNull;
+import javax.inject.Singleton;
 
-import io.github.mxmilkiib.materialistic.data.ItemManager;
+import dagger.Component;
 
-public class ShowActivity extends BaseStoriesActivity {
+@Singleton
+@Component(modules = {ActivityModule.class, DataModule.class, UiModule.class})
+public interface AppComponent {
+    ActivityComponent activityComponent();
 
-    @Override
-    protected void injectSelf(ActivityComponent component) {
-        component.inject(this);
-    }
-
-    @Override
-    protected String getDefaultTitle() {
-        return getString(R.string.title_activity_show);
-    }
-
-    @NonNull
-    @Override
-    protected String getFetchMode() {
-        return ItemManager.SHOW_FETCH_MODE;
-    }
+    void inject(Application application);
 }

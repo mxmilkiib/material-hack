@@ -17,12 +17,15 @@
 
 package io.github.mxmilkiib.materialistic.widget;
 
+import android.content.Context;
 import android.content.Intent;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.Arrays;
 
+import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.ItemActivity;
 import io.github.mxmilkiib.materialistic.R;
 import io.github.mxmilkiib.materialistic.data.Item;
@@ -37,6 +40,14 @@ public class MultiPageItemRecyclerViewAdapter
         super(itemManager);
         mItems = Arrays.copyOf(items, items.length + 1);
         mItems[items.length] = null; // footer
+    }
+
+    @Override
+    public void attach(Context context, RecyclerView recyclerView) {
+        super.attach(context, recyclerView);
+        if (mContext instanceof Injectable) {
+            ((Injectable) mContext).getActivityComponent().inject(this);
+        }
     }
 
     @Override

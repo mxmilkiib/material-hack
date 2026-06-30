@@ -61,6 +61,11 @@ public class SubmitActivity extends InjectableActivity {
     private WebView mTitleWebView;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppUtils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.blackT12));

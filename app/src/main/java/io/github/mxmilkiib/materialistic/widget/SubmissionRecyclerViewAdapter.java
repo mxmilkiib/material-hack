@@ -17,6 +17,7 @@
 
 package io.github.mxmilkiib.materialistic.widget;
 
+import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.ItemActivity;
 import io.github.mxmilkiib.materialistic.R;
 import io.github.mxmilkiib.materialistic.ThreadPreviewActivity;
@@ -42,6 +44,14 @@ public class SubmissionRecyclerViewAdapter extends ItemRecyclerViewAdapter<Submi
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         attach(recyclerView.getContext(), recyclerView);
+    }
+
+    @Override
+    public void attach(Context context, RecyclerView recyclerView) {
+        super.attach(context, recyclerView);
+        if (mContext instanceof Injectable) {
+            ((Injectable) mContext).getActivityComponent().inject(this);
+        }
     }
 
     @Override

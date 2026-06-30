@@ -17,18 +17,12 @@
 
 package io.github.mxmilkiib.materialistic;
 
-import dagger.ObjectGraph;
-
 /**
  * Interface for context that can be injected with dependencies
  */
 public interface Injectable {
     /**
-     * Injects the members of given object, including injectable members
-     * inherited from its supertypes.
-     * @param object object with members to be injected
+     * Returns an ActivityComponent for dependency injection
      */
-    void inject(Object object);
-
-    ObjectGraph getApplicationGraph();
+    ActivityComponent getActivityComponent();
 }
