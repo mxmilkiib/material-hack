@@ -33,7 +33,7 @@ import java.util.Set;
 import okhttp3.HttpUrl;
 import okio.BufferedSource;
 import okio.Okio;
-import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Scheduler;
 
 public class AdBlocker {
@@ -41,10 +41,11 @@ public class AdBlocker {
     private static final Set<String> AD_HOSTS = Collections.synchronizedSet(new HashSet<>());
 
     public static void init(Context context, Scheduler scheduler) {
-        Observable.fromCallable(() -> loadFromAssets(context))
-                .onErrorReturn(throwable -> null)
+        Completable.fromAction(() -> loadFromAssets(context))
                 .subscribeOn(scheduler)
-                .subscribe();
+                .subscribe(
+                        () -> {},
+                        throwable -> { });
     }
 
     public static boolean isAd(String url) {
@@ -57,7 +58,7 @@ public class AdBlocker {
     }
 
     @WorkerThread
-    private static Void loadFromAssets(Context context) throws IOException {
+    private static void loadFromAssets(Context context) throws IOException {
         try (InputStream stream = context.getAssets().open(AD_HOSTS_FILE);
              BufferedSource buffer = Okio.buffer(Okio.source(stream))) {
             String line;
@@ -65,7 +66,6 @@ public class AdBlocker {
                 AD_HOSTS.add(line);
             }
         }
-        return null;
     }
 
     /**
