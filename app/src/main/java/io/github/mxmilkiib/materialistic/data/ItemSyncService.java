@@ -36,10 +36,7 @@ public class ItemSyncService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        ((Injectable) getApplication())
-                .getApplicationGraph()
-                .plus(new ActivityModule(this))
-                .inject(this);
+        ((Injectable) getApplication()).getActivityComponent().inject(this);
         synchronized (sItemSyncAdapterLock) {
             if (sItemSyncAdapter == null) {
                 sItemSyncAdapter = new ItemSyncAdapter(getApplicationContext(),

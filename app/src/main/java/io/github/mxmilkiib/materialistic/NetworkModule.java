@@ -47,8 +47,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 
-@Module(library = true, complete = false)
-class NetworkModule {
+@Module
+public class NetworkModule {
     static final String NO_REDIRECT = "noRedirect";
     private static final String TAG_OK_HTTP = "OkHttp";
     private static final long CACHE_SIZE = 20 * 1024 * 1024; // 20 MB

@@ -71,7 +71,7 @@ android {
 
 ext {
     okHttpVersion = '3.14.9'
-    daggerVersion = '1.2.5'
+    daggerVersion = '2.51.1'
     retrofitVersion = '2.11.0'
     roomVersion = '2.6.1'
     lifecycleVersion = '2.8.4'
@@ -85,7 +85,7 @@ dependencies {
             'com.google.android.material:material:1.12.0',
             'androidx.preference:preference:1.2.1',
             'androidx.browser:browser:1.8.0',
-            "com.squareup.dagger:dagger:$daggerVersion",
+            "com.google.dagger:dagger:$daggerVersion",
             "com.squareup.retrofit2:retrofit:$retrofitVersion",
             "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
@@ -99,9 +99,9 @@ dependencies {
             "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     kapt "androidx.room:room-compiler:$roomVersion",
-            "com.squareup.dagger:dagger-compiler:$daggerVersion"
+            "com.google.dagger:dagger-compiler:$daggerVersion"
     kaptTest "androidx.room:room-compiler:$roomVersion",
-            "com.squareup.dagger:dagger-compiler:$daggerVersion"
+            "com.google.dagger:dagger-compiler:$daggerVersion"
 
     testImplementation 'junit:junit:4.13.2',
             'org.mockito:mockito-core:5.12.0',

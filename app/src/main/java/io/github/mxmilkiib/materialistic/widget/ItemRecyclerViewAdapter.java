@@ -82,9 +82,6 @@ public abstract class ItemRecyclerViewAdapter<VH extends ItemRecyclerViewAdapter
     @Override
     public void attach(Context context, RecyclerView recyclerView) {
         super.attach(context, recyclerView);
-        if (mContext instanceof Injectable) {
-            ((Injectable) mContext).inject(this);
-        }
         mLayoutInflater = AppUtils.createLayoutInflater(mContext);
         TypedArray ta = mContext.obtainStyledAttributes(new int[]{
                 android.R.attr.textColorTertiary,

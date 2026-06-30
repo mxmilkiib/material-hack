@@ -146,6 +146,14 @@ public class ItemFragment extends LazyLoadFragment implements Scrollable, Naviga
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (getActivity() instanceof Injectable) {
+            ((Injectable) getActivity()).getActivityComponent().inject(this);
+        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_comments) {
             showPreferences();

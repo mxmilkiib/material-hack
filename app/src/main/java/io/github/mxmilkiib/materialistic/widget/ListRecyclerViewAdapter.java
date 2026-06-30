@@ -74,7 +74,6 @@ public abstract class ListRecyclerViewAdapter
     public ListRecyclerViewAdapter(Context context) {
         mContext = context;
         mInflater = AppUtils.createLayoutInflater(mContext);
-        ((Injectable) mContext).inject(this);
         mMultiPaneListener = (MultiPaneListener) mContext;
         mMultiWindowEnabled = Preferences.multiWindowEnabled(mContext);
     }

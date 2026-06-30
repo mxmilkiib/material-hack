@@ -43,6 +43,7 @@ import javax.inject.Inject;
 
 import io.github.mxmilkiib.materialistic.AppUtils;
 import io.github.mxmilkiib.materialistic.ComposeActivity;
+import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.MenuTintDelegate;
 import io.github.mxmilkiib.materialistic.R;
 import io.github.mxmilkiib.materialistic.accounts.UserServices;
@@ -125,6 +126,7 @@ public class FavoriteRecyclerViewAdapter extends ListRecyclerViewAdapter
 
     public FavoriteRecyclerViewAdapter(Context context, ActionModeDelegate actionModeDelegate) {
         super(context);
+        ((Injectable) context).getActivityComponent().inject(this);
         mActionModeDelegate = actionModeDelegate;
         mMenuTintDelegate = new MenuTintDelegate();
         mMenuTintDelegate.onActivityCreated(mContext);

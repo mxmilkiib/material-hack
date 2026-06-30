@@ -46,6 +46,11 @@ public class LoginActivity extends AccountAuthenticatorActivity {
     private String mPassword;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String username = Preferences.getUsername(this);

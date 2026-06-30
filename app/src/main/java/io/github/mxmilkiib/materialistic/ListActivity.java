@@ -24,6 +24,11 @@ import io.github.mxmilkiib.materialistic.data.ItemManager;
 public class ListActivity extends BaseStoriesActivity {
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected String getDefaultTitle() {
         return getString(R.string.title_activity_list);
     }

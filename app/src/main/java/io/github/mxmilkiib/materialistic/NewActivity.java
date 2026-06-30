@@ -26,6 +26,11 @@ public class NewActivity extends BaseStoriesActivity {
     public static final String EXTRA_REFRESH = NewActivity.class.getName() + ".EXTRA_REFRESH";
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (intent.getBooleanExtra(EXTRA_REFRESH, false)) {

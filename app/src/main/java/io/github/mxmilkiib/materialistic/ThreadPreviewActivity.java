@@ -42,6 +42,11 @@ public class ThreadPreviewActivity extends InjectableActivity {
     @Inject KeyDelegate mKeyDelegate;
 
     @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Item item = AppUtils.getParcelableExtra(getIntent(), EXTRA_ITEM, Item.class);

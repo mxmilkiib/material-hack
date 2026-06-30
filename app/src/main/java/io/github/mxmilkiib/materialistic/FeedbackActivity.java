@@ -35,6 +35,11 @@ import io.github.mxmilkiib.materialistic.data.FeedbackClient;
 public class FeedbackActivity extends InjectableActivity {
     @Inject FeedbackClient mFeedbackClient;
 
+    @Override
+    protected void injectSelf(ActivityComponent component) {
+        component.inject(this);
+    }
+
     @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

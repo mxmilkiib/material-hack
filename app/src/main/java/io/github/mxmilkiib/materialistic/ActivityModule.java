@@ -24,19 +24,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import io.github.mxmilkiib.materialistic.appwidget.WidgetService;
-import io.github.mxmilkiib.materialistic.data.ItemSyncJobService;
-import io.github.mxmilkiib.materialistic.data.ItemSyncService;
 
-@Module(
-        injects = {
-                ItemSyncService.class,
-                WidgetService.class,
-                ItemSyncJobService.class
-        },
-        library = true,
-        includes = DataModule.class
-)
+@Module
 public class ActivityModule {
     public static final String ALGOLIA = "algolia";
     public static final String POPULAR = "popular";
