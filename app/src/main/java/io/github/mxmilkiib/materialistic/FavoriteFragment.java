@@ -85,10 +85,10 @@ public class FavoriteFragment extends BaseListFragment
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         if (getActivity() instanceof Injectable) {
             ((Injectable) getActivity()).getActivityComponent().inject(this);
         }
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

@@ -110,7 +110,9 @@ public abstract class ListRecyclerViewAdapter
             return;
         }
         // TODO naive launch priority for now
-        mCustomTabsDelegate.mayLaunchUrl(Uri.parse(item.getUrl()), null, null);
+        if (mCustomTabsDelegate != null) {
+            mCustomTabsDelegate.mayLaunchUrl(Uri.parse(item.getUrl()), null, null);
+        }
         holder.bind(item,
                 mHotThreshold,
                 mCardViewEnabled,
