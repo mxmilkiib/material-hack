@@ -20,7 +20,7 @@ android {
             gitCommit = ["git", "rev-parse", "--short", "HEAD"].execute().text.trim() ?: "unknown"
         } catch (Exception ignored) {}
         buildConfigField "String", "GIT_COMMIT", "\"" + gitCommit + "\""
-        proguardFiles getDefaultProguardFile('proguard-android.txt'),
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                 'proguard-rules.pro',
                 'proguard-square.pro',
                 'proguard-support.pro',
@@ -108,5 +108,6 @@ dependencies {
             'org.robolectric:robolectric:4.13',
             'androidx.test:core:1.6.1',
             'androidx.test.ext:junit:1.2.1',
-            "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
+            "com.squareup.okhttp3:mockwebserver:$okHttpVersion",
+            'androidx.arch.core:core-testing:2.2.0'
 }

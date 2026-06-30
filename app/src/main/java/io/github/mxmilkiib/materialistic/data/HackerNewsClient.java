@@ -18,6 +18,7 @@
 package io.github.mxmilkiib.materialistic.data;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
 
 import java.io.IOException;
 
@@ -222,7 +223,7 @@ public class HackerNewsClient implements ItemManager, UserManager {
         return call;
     }
 
-    private HackerNewsItem[] toItems(int[] ids) {
+    @VisibleForTesting HackerNewsItem[] toItems(int[] ids) {
         if (ids == null) {
             return new HackerNewsItem[0];
         }

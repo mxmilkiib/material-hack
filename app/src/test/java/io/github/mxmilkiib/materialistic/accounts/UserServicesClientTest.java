@@ -3,11 +3,18 @@ package io.github.mxmilkiib.materialistic.accounts;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class UserServicesClientTest {
 
@@ -74,5 +81,53 @@ public class UserServicesClientTest {
                 "<input name=\"fnid\" value=\"second\">";
         String result = client.getInputValue(html, "fnid");
         assertEquals("first", result);
+    }
+
+    // parseLoginError
+
+    @Test
+    public void parseLoginErrorNullBodyReturnsNull() throws Exception {
+        Response response = mock(Response.class);
+        when(response.body()).thenReturn(null);
+        assertNull(client.parseLoginError(response));
+    }
+
+    @Test
+    public void parseLoginErrorExtractsBodyText() throws Exception {
+        Response response = mock(Response.class);
+        ResponseBody body = ResponseBody.create(
+                "<body>Bad login</body>",
+                MediaType.parse("text/html"));
+        when(response.body()).thenReturn(body);
+        assertEquals("Bad login", client.parseLoginError(response));
+    }
+
+    @Test
+    public void parseLoginErrorNormalisesWhitespace() throws Exception {
+        Response response = mock(Response.class);
+        ResponseBody body = ResponseBody.create(
+                "<body>Bad\n\tlogin  error</body>",
+                MediaType.parse("text/html"));
+        when(response.body()).thenReturn(body);
+        assertEquals("Bad login error", client.parseLoginError(response));
+    }
+
+    @Test
+    public void parseLoginErrorNoMatchReturnsNull() throws Exception {
+        Response response = mock(Response.class);
+        ResponseBody body = ResponseBody.create(
+                "<html><head></head></html>",
+                MediaType.parse("text/html"));
+        when(response.body()).thenReturn(body);
+        assertNull(client.parseLoginError(response));
+    }
+
+    @Test
+    public void parseLoginErrorIoExceptionReturnsNull() throws Exception {
+        Response response = mock(Response.class);
+        ResponseBody body = mock(ResponseBody.class);
+        when(body.string()).thenThrow(new IOException("network failure"));
+        when(response.body()).thenReturn(body);
+        assertNull(client.parseLoginError(response));
     }
 }

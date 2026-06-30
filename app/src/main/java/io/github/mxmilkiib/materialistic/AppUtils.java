@@ -49,6 +49,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.widget.TextView;
@@ -648,22 +650,38 @@ public class AppUtils {
         private final int originalUiFlags;
         private boolean enabled = true;
 
+        @SuppressWarnings("deprecation")
         SystemUiHelper(Window window) {
             this.window = window;
-            this.originalUiFlags = window.getDecorView().getSystemUiVisibility();
+            this.originalUiFlags = Build.VERSION.SDK_INT < Build.VERSION_CODES.R
+                    ? window.getDecorView().getSystemUiVisibility()
+                    : 0;
         }
 
-        @SuppressLint("InlinedApi")
+        @SuppressWarnings("deprecation")
         void setFullscreen(boolean fullscreen) {
             if (!enabled) {
                 return;
             }
-            if (fullscreen) {
-                window.getDecorView().setSystemUiVisibility(originalUiFlags |
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                WindowInsetsController controller = window.getInsetsController();
+                if (controller != null) {
+                    if (fullscreen) {
+                        controller.hide(WindowInsets.Type.navigationBars());
+                        controller.setSystemBarsBehavior(
+                                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                    } else {
+                        controller.show(WindowInsets.Type.navigationBars());
+                    }
+                }
             } else {
-                window.getDecorView().setSystemUiVisibility(originalUiFlags);
+                if (fullscreen) {
+                    window.getDecorView().setSystemUiVisibility(originalUiFlags |
+                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                } else {
+                    window.getDecorView().setSystemUiVisibility(originalUiFlags);
+                }
             }
         }
 

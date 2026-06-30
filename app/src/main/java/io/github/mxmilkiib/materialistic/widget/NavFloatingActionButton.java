@@ -18,11 +18,11 @@
 package io.github.mxmilkiib.materialistic.widget;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -37,7 +37,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GestureDetectorCompat;
 import io.github.mxmilkiib.materialistic.AppUtils;
@@ -155,7 +154,7 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
                         }
                         mNavigable.onNavigate(direction);
                         if (mVibrationEnabled) {
-                            mVibrator.vibrate(VIBRATE_DURATION_MS);
+                            vibrate(VIBRATE_DURATION_MS);
                         }
                         trackKonami(direction);
                         return false;
@@ -182,7 +181,7 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
     @Synthetic
     void startDrag(float startX, float startY) {
         if (mVibrationEnabled) {
-            mVibrator.vibrate(VIBRATE_DURATION_MS * 2);
+            vibrate(VIBRATE_DURATION_MS * 2);
         }
         Toast.makeText(getContext(), R.string.hint_drag, Toast.LENGTH_SHORT).show();
         //noinspection Convert2Lambda
@@ -218,8 +217,8 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
         } else if (mNextKonamiCode == KONAMI_CODE.length - 1) {
             mNextKonamiCode = 0;
             if (mVibrationEnabled) {
-                mVibrator.vibrate(new long[]{0, VIBRATE_DURATION_MS * 2,
-                        100, VIBRATE_DURATION_MS * 2}, -1);
+                vibratePattern(new long[]{0, VIBRATE_DURATION_MS * 2,
+                        100, VIBRATE_DURATION_MS * 2});
             }
             new AlertDialog.Builder(getContext())
                     .setView(R.layout.dialog_konami)
@@ -287,5 +286,23 @@ public class NavFloatingActionButton extends FloatingActionButton implements Vie
     private static SharedPreferences getSharedPreferences(Context context) {
         return context.getSharedPreferences(context.getPackageName() + PREFERENCES_FAB,
                 Context.MODE_PRIVATE);
+    }
+
+    @SuppressWarnings("deprecation")
+    private void vibrate(long durationMs) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mVibrator.vibrate(VibrationEffect.createOneShot(durationMs, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            mVibrator.vibrate(durationMs);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private void vibratePattern(long[] pattern) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mVibrator.vibrate(VibrationEffect.createWaveform(pattern, -1));
+        } else {
+            mVibrator.vibrate(pattern, -1);
+        }
     }
 }

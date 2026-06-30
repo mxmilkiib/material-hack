@@ -217,7 +217,7 @@ public class UserServicesClient implements UserServices {
             formBuilder.add(LOGIN_PARAM_CREATING, CREATING_TRUE);
         }
         return new Request.Builder()
-                .url(HttpUrl.parse(BASE_WEB_URL)
+                .url(HttpUrl.get(BASE_WEB_URL)
                         .newBuilder()
                         .addPathSegment(LOGIN_PATH)
                         .build())
@@ -227,7 +227,7 @@ public class UserServicesClient implements UserServices {
 
     private Request postVote(String username, String password, String itemId) {
         return new Request.Builder()
-                .url(HttpUrl.parse(BASE_WEB_URL)
+                .url(HttpUrl.get(BASE_WEB_URL)
                         .newBuilder()
                         .addPathSegment(VOTE_PATH)
                         .build())
@@ -242,7 +242,7 @@ public class UserServicesClient implements UserServices {
 
     private Request postReply(String parentId, String text, String username, String password) {
         return new Request.Builder()
-                .url(HttpUrl.parse(BASE_WEB_URL)
+                .url(HttpUrl.get(BASE_WEB_URL)
                         .newBuilder()
                         .addPathSegment(COMMENT_PATH)
                         .build())
@@ -257,7 +257,7 @@ public class UserServicesClient implements UserServices {
 
     private Request postSubmitForm(String username, String password) {
         return new Request.Builder()
-                .url(HttpUrl.parse(BASE_WEB_URL)
+                .url(HttpUrl.get(BASE_WEB_URL)
                         .newBuilder()
                         .addPathSegment(SUBMIT_PATH)
                         .build())
@@ -270,7 +270,7 @@ public class UserServicesClient implements UserServices {
 
     private Request postSubmit(String title, String content, boolean isUrl, String cookie, String fnid) {
         Request.Builder builder = new Request.Builder()
-                .url(HttpUrl.parse(BASE_WEB_URL)
+                .url(HttpUrl.get(BASE_WEB_URL)
                         .newBuilder()
                         .addPathSegment(SUBMIT_POST_PATH)
                         .build())
@@ -325,11 +325,11 @@ public class UserServicesClient implements UserServices {
         return null;
     }
 
-    private String parseLoginError(Response response) {
+    @VisibleForTesting String parseLoginError(Response response) {
         try {
             if (response.body() == null) return null;
             Matcher matcher = PATTERN_CREATE_ERROR_BODY.matcher(response.body().string());
-            return matcher.find() ? matcher.group(1).replaceAll("\\n|\\r|\\t|\\s+", " ").trim() : null;
+            return matcher.find() ? matcher.group(1).replaceAll("\\s+", " ").trim() : null;
         } catch (IOException e) {
             return null;
         }
