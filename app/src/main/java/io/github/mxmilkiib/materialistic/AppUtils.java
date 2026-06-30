@@ -204,15 +204,8 @@ public class AppUtils {
         if (TextUtils.isEmpty(htmlText)) {
             return null;
         }
-        CharSequence spanned;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            //noinspection InlinedApi
-            spanned = Html.fromHtml(htmlText, compact ?
-                    Html.FROM_HTML_MODE_COMPACT : Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            //noinspection deprecation
-            spanned = Html.fromHtml(htmlText);
-        }
+        CharSequence spanned = Html.fromHtml(htmlText, compact ?
+                Html.FROM_HTML_MODE_COMPACT : Html.FROM_HTML_MODE_LEGACY);
         return trim(spanned);
     }
 
@@ -386,8 +379,6 @@ public class AppUtils {
         }, null, true);
     }
 
-    @SuppressWarnings("deprecation")
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public static void openPlayStore(Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(PLAY_STORE_URL));
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
@@ -630,9 +621,8 @@ public class AppUtils {
         }
     }
 
-    @SuppressLint("InlinedApi")
     public static Intent multiWindowIntent(Activity activity, Intent intent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && activity.isInMultiWindowMode()) {
+        if (activity.isInMultiWindowMode()) {
             intent.addFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT |
                     Intent.FLAG_ACTIVITY_NEW_TASK |
                     Intent.FLAG_ACTIVITY_MULTIPLE_TASK);

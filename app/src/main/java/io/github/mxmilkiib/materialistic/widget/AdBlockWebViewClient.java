@@ -17,8 +17,6 @@
 
 package io.github.mxmilkiib.materialistic.widget;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
@@ -38,7 +36,6 @@ public class AdBlockWebViewClient extends WebViewClient {
         mAdBlockEnabled = adBlockEnabled;
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public final WebResourceResponse shouldInterceptRequest(WebView view, String url) {
         if (!mAdBlockEnabled) {
@@ -55,7 +52,6 @@ public class AdBlockWebViewClient extends WebViewClient {
                 super.shouldInterceptRequest(view, url);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {

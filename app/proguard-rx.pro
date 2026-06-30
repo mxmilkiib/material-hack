@@ -1,11 +1,3 @@
--keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
-    long producerIndex;
-    long consumerIndex;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
+# RxJava 3 -- internal rules are embedded in the library's consumer-proguard-rules.pro.
+# Only sun.misc.Unsafe suppression is required here.
 -dontwarn sun.misc.Unsafe

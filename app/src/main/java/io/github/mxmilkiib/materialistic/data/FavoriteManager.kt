@@ -36,7 +36,8 @@ import io.github.mxmilkiib.materialistic.ktx.closeQuietly
 import io.github.mxmilkiib.materialistic.ktx.getUri
 import io.github.mxmilkiib.materialistic.ktx.setChannel
 import io.github.mxmilkiib.materialistic.ktx.toSendIntentChooser
-import okio.Okio
+import okio.buffer
+import okio.sink
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -208,7 +209,7 @@ class FavoriteManager @Inject constructor(
     if (!dir.exists() && !dir.mkdir()) return null
     val file = File(dir, FILENAME_EXPORT)
     if (!file.exists() && !file.createNewFile()) return null
-    Okio.buffer(Okio.sink(file)).use { sink ->
+    file.sink().buffer().use { sink ->
       with(sink) {
         do {
           val item = cursor.favorite
