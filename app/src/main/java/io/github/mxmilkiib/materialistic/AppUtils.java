@@ -20,7 +20,6 @@ package io.github.mxmilkiib.materialistic;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
@@ -71,8 +70,9 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsSession;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Pair;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.lifecycle.ViewModelProvider;
 import io.github.mxmilkiib.materialistic.annotation.PublicApi;
 import io.github.mxmilkiib.materialistic.data.HackerNewsClient;
 import io.github.mxmilkiib.materialistic.data.Item;
@@ -471,9 +471,11 @@ public class AppUtils {
                         .putExtra(ComposeActivity.EXTRA_PARENT_TEXT,
                                 item instanceof Item ? ((Item) item).getText() : null));
             } else {
-                LocalBroadcastManager.getInstance(context)
-                        .sendBroadcast(new Intent(WebFragment.ACTION_FULLSCREEN)
-                                .putExtra(WebFragment.EXTRA_FULLSCREEN, true));
+                if (context instanceof AppCompatActivity) {
+                    new ViewModelProvider((AppCompatActivity) context)
+                            .get(FullscreenViewModel.class)
+                            .setFullscreen(true);
+                }
             }
         });
     }

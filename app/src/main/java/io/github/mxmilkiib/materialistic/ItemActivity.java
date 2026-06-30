@@ -18,10 +18,8 @@
 package io.github.mxmilkiib.materialistic;
 
 import androidx.lifecycle.Observer;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,7 +32,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
 import androidx.core.content.ContextCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.appcompat.app.ActionBar;
 import android.text.TextUtils;
@@ -119,13 +117,7 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
             bindFavorite();
         }
     };
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            mFullscreen = intent.getBooleanExtra(WebFragment.EXTRA_FULLSCREEN, false);
-            setFullscreen();
-        }
-    };
+    private FullscreenViewModel mFullscreenViewModel;
     private final Preferences.Observable mPreferenceObservable = new Preferences.Observable();
     private AppUtils.SystemUiHelper mSystemUiHelper;
 
@@ -164,8 +156,11 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
         AppUtils.toggleFab(mReplyButton, false);
         final Intent intent = getIntent();
         MaterialisticDatabase.getInstance(this).getLiveData().observe(this, mObserver);
-        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver,
-                new IntentFilter(WebFragment.ACTION_FULLSCREEN));
+        mFullscreenViewModel = new ViewModelProvider(this).get(FullscreenViewModel.class);
+        mFullscreenViewModel.getFullscreen().observe(this, fullscreen -> {
+            mFullscreen = fullscreen != null && fullscreen;
+            setFullscreen();
+        });
         mPreferenceObservable.subscribe(this, this::onPreferenceChanged,
                 R.string.pref_navigation);
         if (savedInstanceState != null) {
@@ -254,7 +249,6 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
         mPreferenceObservable.unsubscribe(this);
     }
 
@@ -263,8 +257,7 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
         if (!mFullscreen) {
             super.onBackPressed();
         } else {
-            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(
-                    WebFragment.ACTION_FULLSCREEN).putExtra(WebFragment.EXTRA_FULLSCREEN, false));
+            mFullscreenViewModel.setFullscreen(false);
         }
     }
 

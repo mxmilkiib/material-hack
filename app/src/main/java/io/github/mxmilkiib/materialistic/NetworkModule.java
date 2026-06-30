@@ -63,39 +63,37 @@ public class NetworkModule {
     public Call.Factory provideCallFactory(Context context) {
         return new OkHttpClient.Builder()
                 .socketFactory(new SocketFactory() {
-                    private SocketFactory mDefaultFactory = SocketFactory.getDefault();
-
                     @Override
                     public Socket createSocket() throws IOException {
-                        Socket socket = mDefaultFactory.createSocket();
+                        Socket socket = SocketFactory.getDefault().createSocket();
                         TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(String host, int port) throws IOException {
-                        Socket socket = mDefaultFactory.createSocket(host, port);
+                        Socket socket = SocketFactory.getDefault().createSocket(host, port);
                         TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException {
-                        Socket socket = mDefaultFactory.createSocket(host, port, localHost, localPort);
+                        Socket socket = SocketFactory.getDefault().createSocket(host, port, localHost, localPort);
                         TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(InetAddress host, int port) throws IOException {
-                        Socket socket = mDefaultFactory.createSocket(host, port);
+                        Socket socket = SocketFactory.getDefault().createSocket(host, port);
                         TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }
 
                     @Override
                     public Socket createSocket(InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
-                        Socket socket = mDefaultFactory.createSocket(address, port, localAddress, localPort);
+                        Socket socket = SocketFactory.getDefault().createSocket(address, port, localAddress, localPort);
                         TrafficStats.setThreadStatsTag(TRAFFIC_STATS_TAG);
                         return socket;
                     }

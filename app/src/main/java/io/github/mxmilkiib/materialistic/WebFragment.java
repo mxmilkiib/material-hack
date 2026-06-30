@@ -18,10 +18,8 @@
 package io.github.mxmilkiib.materialistic;
 
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
@@ -59,7 +57,7 @@ import androidx.annotation.Nullable;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.lifecycle.ViewModelProvider;
 import io.github.mxmilkiib.materialistic.annotation.Synthetic;
 import io.github.mxmilkiib.materialistic.data.FileDownloader;
 import io.github.mxmilkiib.materialistic.data.Item;
@@ -81,8 +79,6 @@ public class WebFragment extends LazyLoadFragment
     public static final String EXTRA_ITEM = WebFragment.class.getName() +".EXTRA_ITEM";
     private static final String STATE_EMPTY = "state:empty";
     private static final String STATE_READABILITY = "state:readability";
-    static final String ACTION_FULLSCREEN = WebFragment.class.getName() + ".ACTION_FULLSCREEN";
-    static final String EXTRA_FULLSCREEN = WebFragment.class.getName() + ".EXTRA_FULLSCREEN";
     private static final String STATE_FULLSCREEN = "state:fullscreen";
     private static final String STATE_CONTENT = "state:content";
     private static final int DEFAULT_PROGRESS = 20;
@@ -96,12 +92,6 @@ public class WebFragment extends LazyLoadFragment
     @Inject PopupMenu mPopupMenu;
     private KeyDelegate.NestedScrollViewHelper mScrollableHelper;
     private final Preferences.Observable mPreferenceObservable = new Preferences.Observable();
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            setFullscreen(intent.getBooleanExtra(WebFragment.EXTRA_FULLSCREEN, false));
-        }
-    };
     private ViewGroup mFullscreenView;
     private ViewGroup mScrollViewContent;
     @Synthetic ImageButton mButtonRefresh;
@@ -112,6 +102,7 @@ public class WebFragment extends LazyLoadFragment
     protected ProgressBar mProgressBar;
     private boolean mFullscreen;
     private boolean mIsPdf;
+    private FullscreenViewModel mFullscreenViewModel;
     protected String mContent;
     private AppUtils.SystemUiHelper mSystemUiHelper;
     private View mFragmentView;
@@ -128,8 +119,6 @@ public class WebFragment extends LazyLoadFragment
                 R.string.pref_readability_font,
                 R.string.pref_readability_line_height,
                 R.string.pref_readability_text_size);
-        LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver,
-                new IntentFilter(ACTION_FULLSCREEN));
     }
 
     @Override
@@ -189,6 +178,10 @@ public class WebFragment extends LazyLoadFragment
                 setFullscreen(true);
             }
         }
+        mFullscreenViewModel = new ViewModelProvider(requireActivity()).get(FullscreenViewModel.class);
+        mFullscreenViewModel.getFullscreen().observe(getViewLifecycleOwner(), fullscreen -> {
+            if (fullscreen != null) setFullscreen(fullscreen);
+        });
     }
 
     @Override
@@ -258,7 +251,6 @@ public class WebFragment extends LazyLoadFragment
         super.onDetach();
         if (context != null) {
             mPreferenceObservable.unsubscribe(context);
-            LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
         }
     }
 
@@ -409,9 +401,7 @@ public class WebFragment extends LazyLoadFragment
             }
         });
         view.findViewById(R.id.button_exit).setOnClickListener(v ->
-                LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(
-                        new Intent(WebFragment.ACTION_FULLSCREEN)
-                                .putExtra(EXTRA_FULLSCREEN, false)));
+                mFullscreenViewModel.setFullscreen(false));
         mButtonNext.setOnClickListener(v -> mWebView.findNext(true));
         mButtonMore.setOnClickListener(v ->
                 mPopupMenu.create(getActivity(), mButtonMore, Gravity.NO_GRAVITY)

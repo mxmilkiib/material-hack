@@ -19,11 +19,9 @@ package io.github.mxmilkiib.materialistic;
 
 import android.annotation.SuppressLint;
 import android.app.SearchManager;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -46,7 +44,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.lifecycle.ViewModelProvider;
 import io.github.mxmilkiib.materialistic.annotation.Synthetic;
 import io.github.mxmilkiib.materialistic.data.ItemManager;
 import io.github.mxmilkiib.materialistic.data.SessionManager;
@@ -82,14 +80,8 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
     private View mListView;
     @Synthetic boolean mFullscreen;
     private boolean mMultiWindowEnabled;
+    private FullscreenViewModel mFullscreenViewModel;
     private final Preferences.Observable mPreferenceObservable = new Preferences.Observable();
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            mFullscreen = intent.getBooleanExtra(WebFragment.EXTRA_FULLSCREEN, false);
-            setFullscreen();
-        }
-    };
     private ItemPagerAdapter mAdapter;
 
     @SuppressWarnings("ConstantConditions")
@@ -110,8 +102,11 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
         mAppBar = (AppBarLayout) findViewById(R.id.appbar);
         mIsMultiPane = getResources().getBoolean(R.bool.multi_pane);
         if (mIsMultiPane) {
-            LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver,
-                    new IntentFilter(WebFragment.ACTION_FULLSCREEN));
+            mFullscreenViewModel = new ViewModelProvider(this).get(FullscreenViewModel.class);
+            mFullscreenViewModel.getFullscreen().observe(this, fullscreen -> {
+                mFullscreen = fullscreen != null && fullscreen;
+                setFullscreen();
+            });
             mListView = findViewById(android.R.id.list);
             mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
             mTabLayout.setVisibility(View.GONE);
@@ -244,17 +239,13 @@ public abstract class BaseListActivity extends DrawerActivity implements MultiPa
     protected void onDestroy() {
         super.onDestroy();
         mPreferenceObservable.unsubscribe(this);
-        if (mIsMultiPane) {
-            LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
-        }
     }
     @Override
     public void onBackPressed() {
         if (!mIsMultiPane || !mFullscreen) {
             super.onBackPressed();
         } else {
-            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(
-                    WebFragment.ACTION_FULLSCREEN).putExtra(WebFragment.EXTRA_FULLSCREEN, false));
+            mFullscreenViewModel.setFullscreen(false);
         }
     }
 
