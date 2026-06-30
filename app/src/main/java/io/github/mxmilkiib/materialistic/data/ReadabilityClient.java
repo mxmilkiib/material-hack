@@ -83,7 +83,7 @@ public interface ReadabilityClient {
                     .subscribeOn(mIoScheduler)
                     .flatMap(content -> content != null ?
                             Observable.just(content) : fromNetwork(itemId, url))
-                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? null : content)
+                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? "" : content)
                     .observeOn(mMainThreadScheduler)
                     .subscribe(callback::onResponse);
         }
@@ -94,7 +94,7 @@ public interface ReadabilityClient {
             Observable.defer(() -> fromCache(itemId))
                     .subscribeOn(Schedulers.trampoline())
                     .switchIfEmpty(fromNetwork(itemId, url))
-                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? null : content)
+                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? "" : content)
                     .observeOn(Schedulers.trampoline())
                     .subscribe();
         }
@@ -102,13 +102,14 @@ public interface ReadabilityClient {
         @NonNull
         private Observable<String> fromNetwork(String itemId, String url) {
             return mMercuryService.parse(url)
-                    .onErrorReturn(throwable -> null)
-                    .map(readable -> readable == null ? null : readable.content)
+                    .onErrorResumeNext(throwable -> Observable.empty())
+                    .map(readable -> readable.content)
                     .doOnNext(content -> mCache.putReadability(itemId, content));
         }
 
         private Observable<String> fromCache(String itemId) {
-            return Observable.just(mCache.getReadability(itemId));
+            String cached = mCache.getReadability(itemId);
+            return cached != null ? Observable.just(cached) : Observable.empty();
         }
     }
 }
