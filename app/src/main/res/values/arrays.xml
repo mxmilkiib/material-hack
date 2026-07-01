@@ -46,6 +46,7 @@
         <item>Fira Code</item>
         <item>Terminus</item>
         <item>Fixedsys</item>
+        <item>Shantell Sans</item>
     </string-array>
     <string-array name="font_values" translatable="false">
         <item/>
@@ -59,6 +60,7 @@
         <item>FiraCode-Regular.ttf</item>
         <item>Terminus-Regular.ttf</item>
         <item>Fixedsys-Regular.ttf</item>
+        <item>ShantellSans-Regular.otf</item>
     </string-array>
 
     <!-- Comment display -->
