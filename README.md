@@ -16,13 +16,18 @@ A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha
 
 ### What's different
 
-- **Modernised toolchain** — Gradle 8.7, AGP 8.5.2, Kotlin 1.9.24, compileSdk/targetSdk 34, minSdk 21
+- **Modernised toolchain** — Gradle 8.7, AGP 8.5.2, Kotlin 1.9.24, compileSdk/targetSdk 34, minSdk 24
 - **New themes** — Violet, Ocean, Rose, Monokai, Nord, Crimson, Forest, Midnight, Sand, Dracula, Dark Orange (alongside the originals)
+- **App icon customization** — 8 selectable app icons via Display settings (Orange, Purple, Green, Blue, Red, Teal, Pink, Indigo)
 - **Compact list mode** — tighter spacing, smaller fonts, smaller rank/score column
 - **Extra fonts** — Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys
 - **Flattened drawer** — all section links in the root, no "More sections" submenu
 - **UI polish** — transparent overscroll glow, tighter header/comment spacing, better score column layout
 - **Side-by-side debug install** — debug build uses `applicationIdSuffix ".debug"` so it installs alongside any release build
+- **Deprecated API modernization** — updated for Android 34, replaced deprecated APIs (LocalBroadcastManager → LiveData, setLayoutFrozen → suppressLayout, etc.)
+- **Crash fixes** — fixed RxJava 3.x null crashes, DI ordering issues, ScrollView crash, tab listener leaks, Parcelable duplicates
+- **Test coverage** — unit tests for HackerNewsClient, StoryListViewModel, UserServicesClient
+- **GitHub Actions CI** — automated debug/release APK builds and tagged releases
 
 ### Build
 
