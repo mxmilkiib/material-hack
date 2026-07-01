@@ -51,7 +51,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 ### License
     Copyright 2015 Ha Duy Trung
-    Copyright 2024-2026 mxmilkiib
+    Copyright 2026 mxmilkiib
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

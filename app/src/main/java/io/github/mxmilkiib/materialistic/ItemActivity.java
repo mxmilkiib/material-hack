@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 Ha Duy Trung
- * Copyright (c) 2024-2026 mxmilkiib
+ * Copyright (c) 2026 mxmilkiib
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     private NavFloatingActionButton mNavButton;
     private ItemPagerAdapter mAdapter;
     private ViewPager mViewPager;
+    private TabLayout.OnTabSelectedListener mTabListener;
     @Synthetic boolean mFullscreen;
     private final Observer<Uri> mObserver = uri -> {
         if (mItem == null) {
@@ -143,9 +144,11 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
         mSystemUiHelper = new AppUtils.SystemUiHelper(getWindow());
         mReplyButton = findViewById(R.id.reply_button);
         mNavButton = findViewById(R.id.navigation_button);
-        mNavButton.setNavigable(direction ->
-                // if callback is fired navigable should not be null
-                AppUtils.navigate(direction, mAppBar, (Navigable) mAdapter.getItem(0)));
+        mNavButton.setNavigable(direction -> {
+            if (mAdapter == null) return;
+            // if callback is fired navigable should not be null
+            AppUtils.navigate(direction, mAppBar, (Navigable) mAdapter.getItem(0));
+        });
         mVoteButton = findViewById(R.id.vote_button);
         mBookmark = findViewById(R.id.bookmarked);
         mCoordinatorLayout = findViewById(R.id.content_frame);
@@ -250,6 +253,10 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
     protected void onDestroy() {
         super.onDestroy();
         mPreferenceObservable.unsubscribe(this);
+        if (mTabListener != null && mTabLayout != null) {
+            mTabLayout.removeOnTabSelectedListener(mTabListener);
+            mTabListener = null;
+        }
     }
 
     @Override
@@ -400,12 +407,16 @@ public class ItemActivity extends InjectableActivity implements ItemFragment.Ite
                         .setRetainInstance(true)
                         .setDefaultViewMode(mStoryViewMode));
         mAdapter.bind(mViewPager, mTabLayout, mNavButton, mReplyButton);
-        mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager) {
+        if (mTabListener != null) {
+            mTabLayout.removeOnTabSelectedListener(mTabListener);
+        }
+        mTabListener = new TabLayout.ViewPagerOnTabSelectedListener(mViewPager) {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
                 mAppBar.setExpanded(true, true);
             }
-        });
+        };
+        mTabLayout.addOnTabSelectedListener(mTabListener);
         if (story.isStoryType() && mExternalBrowser && !hasText) {
             TextView buttonArticle = (TextView) findViewById(R.id.button_article);
             buttonArticle.setVisibility(View.VISIBLE);

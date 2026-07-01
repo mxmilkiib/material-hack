@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 Ha Duy Trung
- * Copyright (c) 2024-2026 mxmilkiib
+ * Copyright (c) 2026 mxmilkiib
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,8 +181,8 @@ public class ItemFragment extends LazyLoadFragment implements Scrollable, Naviga
 
     @Override
     public void onDetach() {
-        super.onDetach();
         mPreferenceObservable.unsubscribe(getActivity());
+        super.onDetach();
     }
 
     @Override

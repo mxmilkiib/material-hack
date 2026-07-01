@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Ha Duy Trung
- * Copyright (c) 2024-2026 mxmilkiib
+ * Copyright (c) 2026 mxmilkiib
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,13 +35,15 @@ import okio.BufferedSource;
 import okio.Okio;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 public class AdBlocker {
     private static final String AD_HOSTS_FILE = "pgl.yoyo.org.txt";
     private static final Set<String> AD_HOSTS = Collections.synchronizedSet(new HashSet<>());
+    private static Disposable mInitDisposable;
 
     public static void init(Context context, Scheduler scheduler) {
-        Completable.fromAction(() -> loadFromAssets(context))
+        mInitDisposable = Completable.fromAction(() -> loadFromAssets(context))
                 .subscribeOn(scheduler)
                 .subscribe(
                         () -> {},

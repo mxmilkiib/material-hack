@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 Ha Duy Trung
- * Copyright (c) 2024-2026 mxmilkiib
+ * Copyright (c) 2026 mxmilkiib
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,9 +125,9 @@ abstract class BaseListFragment extends BaseFragment implements Scrollable {
 
     @Override
     public void onDetach() {
-        super.onDetach();
         mPreferenceObservable.unsubscribe(getActivity());
         mRecyclerView.setAdapter(null); // force adapter detach
+        super.onDetach();
     }
 
     @Override

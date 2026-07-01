@@ -6,7 +6,7 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 
 - Renamed app to **Material Hack**, applicationId changed to `io.github.mxmilkiib.materialistic`
 - Full package migration from `io.github.hidroh.materialistic` to `io.github.mxmilkiib.materialistic` across all source files, XML, Gradle, and ProGuard
-- Copyright headers updated: `Copyright (c) 2024-2026 mxmilkiib` added as second line in all source and XML files
+- Copyright headers updated: `Copyright (c) 2026 mxmilkiib` added as second line in all source and XML files
 - Feedback endpoint updated to `mxmilkiib/material-hack` repo
 - Bumped version to 3.4-wip, synced LATEST_RELEASE with versionCode
 - Debug build installs alongside release (applicationIdSuffix `.debug`)

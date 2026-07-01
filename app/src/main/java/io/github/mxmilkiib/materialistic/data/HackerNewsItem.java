@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 Ha Duy Trung
- * Copyright (c) 2024-2026 mxmilkiib
+ * Copyright (c) 2026 mxmilkiib
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,6 @@ class HackerNewsItem implements Item {
         url = source.readString();
         text = source.readString();
         type = source.readString();
-        favorite = source.readInt() != 0;
         descendants = source.readInt();
         score = source.readInt();
         favorite = source.readInt() == 1;
@@ -212,7 +211,6 @@ class HackerNewsItem implements Item {
         dest.writeString(url);
         dest.writeString(text);
         dest.writeString(type);
-        dest.writeInt(favorite ? 1 : 0);
         dest.writeInt(descendants);
         dest.writeInt(score);
         dest.writeInt(favorite ? 1 : 0);
