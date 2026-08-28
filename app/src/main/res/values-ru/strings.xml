@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Настройки</string>
+    <string name="title_activity_list">Лучшие истории</string>
+    <string name="title_activity_best">Топ истории</string>
+    <string name="title_activity_item">Комментарии</string>
+    <string name="title_activity_release">Что нового</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Открыть меню</string>
+    <string name="close_drawer">Закрыть меню</string>
+    <string name="view_in_browser">Открыть во внешнем браузере</string>
+    <string name="share">Поделиться</string>
+    <string name="title_activity_about">О приложении</string>
+    <string name="license_title">Лицензия</string>
+    <string name="third_party_licenses_title">Лицензии сторонних разработчиков</string>
+    <string name="developer_info_title">Информация о разработчике</string>
+    <string name="application_info_title">Информация о приложении</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Версия</b> %1$s<br>
+            <b>Сборка</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Собрано</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> это форк Materialistic от Ha Duy Trung.<br><br>
+            <b>Изменения:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Модернизированный toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Новые темы<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Фиолетовый<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Океан<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Роза<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Компактный режим списка с меньшими шрифтами и более узкими отступами<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Новые шрифты<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Упрощённое меню навигации, все разделы в корне<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Более узкие отступы во всём приложении<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Прозрачное свечение прокрутки<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Поддержка параллельной отладочной установки<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Библиотеки и ресурсы</string>
+    <string name="title_activity_favorite">Сохранённые истории</string>
+    <string name="saved">Сохранено %1$s назад</string>
+    <string name="toast_saved">История сохранена</string>
+    <string name="clear_all">Очистить всё</string>
+    <string name="toast_removed">История удалена</string>
+    <string name="no_saved_stories">Пока нет сохранённых историй</string>
+    <string name="no_comments">Пока здесь тихо</string>
+    <string name="confirm_clear">Очистить все сохранённые истории?</string>
+    <string name="export">Экспорт</string>
+    <string name="clear_selected">Очистить выбранное</string>
+    <string name="confirm_clear_selected">Очистить выбранные сохранённые истории?</string>
+    <string name="search">Поиск</string>
+    <string name="hint_search_saved_stories">Поиск сохранённых историй</string>
+    <string name="no_stories_search">Не удалось найти то, что вы ищете</string>
+    <string name="display">Отображение</string>
+    <string name="pref_external_title">Использовать внешний браузер</string>
+    <string name="pref_external_summary">Читать статьи во внешнем браузере</string>
+    <string name="pref_color_code_title">Цветовой код</string>
+    <string name="pref_color_code_opacity_title">Прозрачность цветового кода</string>
+    <string name="pref_highlight_updated_title">Подсветить обновлённые истории</string>
+    <string name="pref_highlight_updated_summary">Показать изменения с последнего обновления</string>
+    <string name="pref_custom_tab_title">Использовать пользовательские вкладки</string>
+    <string name="pref_custom_tab_summary">Открыть вкладку браузера вместо полного браузера</string>
+    <string name="pref_story_display_title">Открывать по умолчанию</string>
+    <string name="pref_theme_title">Тема</string>
+    <string name="pref_app_icon_title">Стиль иконки приложения</string>
+    <string name="app_icon_default">Оранжевый (по умолчанию)</string>
+    <string name="app_icon_purple">Фиолетовый</string>
+    <string name="app_icon_green">Зелёный</string>
+    <string name="app_icon_blue">Синий</string>
+    <string name="app_icon_red">Красный</string>
+    <string name="app_icon_teal">Бирюзовый</string>
+    <string name="app_icon_pink">Розовый</string>
+    <string name="app_icon_indigo">Индиго</string>
+    <string name="pref_daynight_title">Автоматический режим день-ночь</string>
+    <string name="pref_search_sort_title">Сортировать по</string>
+    <string name="pref_search_sort_value_recent">последние</string>
+    <string name="pref_search_sort_value_default">по умолчанию</string>
+    <string name="pref_text_size_title">Размер текста</string>
+    <string name="pref_font_title">Шрифт</string>
+    <string name="pref_comment_display_title">Тема</string>
+    <string name="pref_max_lines_title">Длинный комментарий</string>
+    <string name="pref_multi_window_title">Режим многооконности</string>
+    <string name="pref_multi_window_summary">В каком окне открывать историю (Android 7+)</string>
+    <string name="pref_multi_window_none">То же</string>
+    <string name="pref_multi_window_one">Другое</string>
+    <string name="pref_navigation_title">Навигация на экране</string>
+    <string name="pref_navigation_vibrate_title">Вибрация при касании</string>
+    <string name="pref_lazy_load_title">Ленивая загрузка контента</string>
+    <string name="pref_lazy_load_summary">Загружать контент только при переключении на его вкладку</string>
+    <string name="pref_saved_item_sync_title">Включить офлайн-доступ</string>
+    <string name="pref_saved_item_sync_summary">Загружать контент при сохранении истории</string>
+    <string name="pref_offline_data_title">Когда загружать</string>
+    <string name="pref_offline_comments_title">Загрузить комментарии</string>
+    <string name="pref_offline_article_title">Загрузить статью</string>
+    <string name="pref_offline_readability_title">Загрузить читаемость</string>
+    <string name="pref_offline_data_wifi">Только WiFi</string>
+    <string name="pref_offline_data_always">Всегда</string>
+    <string name="pref_offline_notification_title">Показать прогресс</string>
+    <string name="pref_offline_notification_summary">Показать уведомление о прогрессе загрузки</string>
+    <string name="pref_launch_screen_title">Экран по умолчанию</string>
+    <string name="pref_volume_title">Использовать навигацию громкостью</string>
+    <string name="pref_volume_summary">Прокручивать вверх/вниз клавишами громкости</string>
+    <string name="pref_ad_block_title">Блокировать рекламу</string>
+    <string name="pref_ad_block_summary">Включить простой блокировщик рекламы для внутреннего браузера</string>
+    <string name="pref_line_height_title">Межстрочный интервал</string>
+    <string name="pref_list_item_view_title">Показывать как карточки</string>
+    <string name="pref_list_compact_title">Компактный интервал списка</string>
+    <string name="pref_list_compact_summary">Более узкие строки и более узкая колонка очков для более широких заголовков</string>
+    <string name="pref_thread_indicator_title">Индикатор темы</string>
+    <string name="pref_widget_section_title">Раздел</string>
+    <string name="pref_widget_query_title">Фильтровать по запросу (опционально)</string>
+    <string name="pref_widget_frequency_title">Частота обновления</string>
+    <string name="pref_auto_viewed_title">Автоматически отмечать как просмотренное</string>
+    <string name="pref_auto_viewed_summary">Отмечать истории как просмотренные при прокрутке вверх</string>
+    <string name="pref_smooth_scroll_title">Анимировать навигацию</string>
+    <string name="pref_smooth_scroll_summary">Отключить для улучшения точности прокрутки</string>
+    <string name="pref_list_swipe_left_title">Свайп влево для</string>
+    <string name="pref_list_swipe_right_title">Свайп вправо для</string>
+    <string name="connection_error">Не удалось подключиться к Hacker News. Проверьте соединение или попробуйте снова.</string>
+    <string name="select_story">Выберите историю для просмотра</string>
+    <string name="download_external">Открыть в другом приложении</string>
+    <string name="try_me">Длинное нажатие/свайп для сохранения на потом!</string>
+    <string name="title_activity_jobs">Вакансии</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Новые истории</string>
+    <string name="title_activity_search">Поиск HN</string>
+    <string name="clear_search_history">Очистить историю поиска</string>
+    <string name="clear_search_history_confirm">Очистить историю поиска?</string>
+    <string name="undo">Отменить</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Комментарии</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s комментарий</item>
+        <item quantity="one">%1$s комментарий</item>
+        <item quantity="other">%1$s комментариев</item>
+    </plurals>
+    <string name="article">Статья</string>
+    <string name="reset_settings">Сбросить все настройки</string>
+    <string name="reset_settings_confirm">Сбросить все ваши предпочтения к настройкам приложения по умолчанию?</string>
+    <string name="last_updated">Последнее обновление %1$s</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="send_feedback">Отправить обратную связь</string>
+    <string name="title_hint">Заголовок</string>
+    <string name="comment_hint">Комментарий</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Ваша обратная связь будет опубликована как <a href="https://github.com/mxmilkiib/material-hack/issues">проблема Github Material Hack</a>.
+        ]]>
+    </string>
+    <string name="title_required">Заголовок обязателен</string>
+    <string name="comment_required">Комментарий обязателен</string>
+    <string name="feedback_sent">Обратная связь отправлена. Спасибо!</string>
+    <string name="feedback_failed">Не удалось отправить, попробуйте снова</string>
+    <string name="chooser_title">Открыть с помощью</string>
+    <string name="title_activity_popular">Нагнать</string>
+    <string name="range">Период</string>
+    <string name="popular_range_last_24h">Последние 24 часа</string>
+    <string name="popular_range_past_week">Прошлая неделя</string>
+    <string name="popular_range_past_month">Прошлый месяц</string>
+    <string name="popular_range_past_year">Прошлый год</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s новая история</item>
+        <item quantity="one">%1$s новая история</item>
+        <item quantity="other">%1$s новые истории</item>
+    </plurals>
+    <string name="show_me">Показать</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Показываю %1$s новую историю</item>
+        <item quantity="one">Показываю %1$s новую историю</item>
+        <item quantity="other">Показываю %1$s новые истории</item>
+    </plurals>
+    <string name="show_all">Показать все</string>
+    <string name="whats_this">Что это?</string>
+    <string name="got_it">Понятно</string>
+    <string name="help_new_story">Новая история с последнего обновления</string>
+    <string name="help_promoted_story">Продвинутая история с последнего обновления</string>
+    <string name="help_new_comments">История с новыми комментариями с последнего обновления</string>
+    <string name="help_lazy_load">С включённой ленивой загрузкой только ваша предпочтительная вкладка по умолчанию будет загружена, когда элемент будет открыт впервые.\n\nЕсли вы на медленном соединении или испытываете задержки, включение этого может помочь.</string>
+    <string name="help_volume_up">Нажмите громкость вверх для прокрутки вверх</string>
+    <string name="help_long_volume_up">Длинное нажатие громкость вверх для быстрой прокрутки вверх</string>
+    <string name="help_volume_down">Нажмите громкость вниз для прокрутки вниз</string>
+    <string name="help_navigate">Показать плавающую кнопку навигации, реагирующую на жесты свайпа для навигации по вложенным темам комментариев.</string>
+    <string name="help_navigate_up">Свайп \u2191: перейти к предыдущему комментарию</string>
+    <string name="help_navigate_down">Свайп \u2193: перейти к следующему комментарию</string>
+    <string name="help_navigate_right">Свайп \u2192: развернуть &amp; перейти к 1-му ответу</string>
+    <string name="help_navigate_left">Свайп \u2190: вернуться к родителю</string>
+    <string name="help_navigate_move">Длинное нажатие для перетаскивания кнопки навигации в новую позицию</string>
+    <string name="readability">Читаемость</string>
+    <string name="text_size_extra_small">Очень маленький</string>
+    <string name="text_size_small">Маленький</string>
+    <string name="text_size_medium">Средний</string>
+    <string name="text_size_large">Большой</string>
+    <string name="text_size_extra_large">Очень большой</string>
+    <string name="readability_failed">Не удалось проанализировать статью</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="theme_black">Чёрная</string>
+    <string name="theme_sepia">Сепия</string>
+    <string name="theme_green">Зелёная</string>
+    <string name="theme_transparent">Прозрачная</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Фиолетовый</string>
+    <string name="theme_ocean">Океан</string>
+    <string name="theme_rose">Роза</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Малиновый</string>
+    <string name="theme_forest">Лес</string>
+    <string name="theme_midnight">Полночь</string>
+    <string name="theme_sand">Песок</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Тёмно-оранжевый</string>
+    <string name="comment_display_multiple">Несколько страниц</string>
+    <string name="comment_display_single">Одна страница - авто-разворачивание</string>
+    <string name="comment_display_collapsed">Одна страница - свёрнуто</string>
+    <string name="story_display_article">Статья</string>
+    <string name="story_display_comments">Комментарии</string>
+    <string name="search_sort_recent">Более новые</string>
+    <string name="search_sort_popularity">Популярность</string>
+    <string name="story_display_readability">Читаемость</string>
+    <string name="font_options">Настройки шрифта</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Читать все %1$d строк</string>
+    <string name="comment_max_lines_3">Макс 3 строки</string>
+    <string name="comment_max_lines_4">Макс 4 строки</string>
+    <string name="comment_max_lines_5">Макс 5 строк</string>
+    <string name="comment_max_lines_all">Полный контент</string>
+    <string name="line_height_compact">Компактный</string>
+    <string name="line_height_normal">Обычный</string>
+    <string name="line_height_cozy">Уютный</string>
+    <string name="line_height_comfortable">Комфортный</string>
+    <string name="frequency_3_hours">3 часа</string>
+    <string name="frequency_6_hours">6 часов</string>
+    <string name="frequency_12_hours">12 часов</string>
+    <string name="frequency_1_day">1 день</string>
+    <string name="file_not_supported">Тип контента не поддерживается</string>
+    <string name="username_hint">Имя пользователя</string>
+    <string name="password_hint">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="title_activity_login">Войти в Hacker News</string>
+    <string name="username_required">Имя пользователя обязательно</string>
+    <string name="password_required">Пароль обязателен</string>
+    <string name="login_failed">Вход/создание аккаунта не удалось, попробуйте снова</string>
+    <string name="welcome">Добро пожаловать %1$s!</string>
+    <string name="logout_confirm">Вы хотите выйти?</string>
+    <string name="choose_account">Выберите аккаунт</string>
+    <string name="add_account">Добавить</string>
+    <string name="remove_account">Удалить</string>
+    <string name="login_note">Ваши учётные данные будут безопасно сохранены в Настройки / Аккаунты вашего устройства</string>
+    <string name="save">Сохранить</string>
+    <string name="unsave">Отменить сохранение</string>
+    <string name="re_enter_password">Введите пароль снова</string>
+    <string name="vote_up">Проголосовать</string>
+    <string name="voted">Успешно проголосовано</string>
+    <string name="vote_failed">Не удалось записать голос. Попробуйте снова.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Отправка...</string>
+    <string name="add_comment">Добавить комментарий</string>
+    <string name="title_activity_compose">Написать</string>
+    <string name="send">Отправить</string>
+    <string name="original_content">Оригинальный контент</string>
+    <string name="quote">Цитата</string>
+    <string name="formatting_guidelines">Руководство по форматированию HN</string>
+    <string name="confirm_save_draft">Сохранить черновик?</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="comment_failed">Не удалось отправить комментарий</string>
+    <string name="comment_successful">Комментарий добавлен. Обновите для просмотра.</string>
+    <string name="confirm_no_waiting">Выйти без ожидания?</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="or">или</string>
+    <string name="leave_feedback">Оставить отзыв</string>
+    <string name="no_playstore">Приложение Play Store не найдено</string>
+    <string name="submit_content_hint">URL или текст</string>
+    <string name="title_activity_submit">Отправить в HN</string>
+    <string name="url_text_required">URL или текст обязателен</string>
+    <string name="submit_failed">Не удалось отправить. Попробуйте снова.</string>
+    <string name="submit_successful">Успешно отправлено</string>
+    <string name="confirm_no_submit">Выйти без отправки?</string>
+    <string name="submit_note">Введите текст для отправки вопроса для обсуждения, или URL для отправки ссылки. Вы также можете делиться ссылками напрямую из других приложений</string>
+    <string name="confirm_submit_url">Отправить как ссылку?</string>
+    <string name="confirm_submit_question">Отправить как вопрос?</string>
+    <string name="submission_guidelines">Руководство по отправке</string>
+    <string name="title_activity_user">Мой профиль</string>
+    <string name="user_info">Создано: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s отправка</item>
+        <item quantity="one">%1$s отправка</item>
+        <item quantity="other">%1$s отправок</item>
+    </plurals>
+    <string name="view_story">Просмотреть историю</string>
+    <string name="user_failed">Не удалось загрузить пользователя. Попробуйте снова.</string>
+    <string name="dead_prefix">[мёртв]</string>
+    <string name="title_activity_thread_preview">Предпросмотр темы</string>
+    <string name="view_thread">Просмотреть тему</string>
+    <string name="view_user">Просмотреть пользователя</string>
+    <string name="more">Ещё</string>
+    <string name="logout">Выйти</string>
+    <string name="offline">Офлайн</string>
+    <string name="offline_notice">Вы сейчас офлайн</string>
+    <string name="download_in_progress">Загрузка в процессе</string>
+    <string name="love_it">Мне нравится!</string>
+    <string name="display_options">Настройки отображения</string>
+    <string name="pull_up_hint">Потяните вверх для большего</string>
+    <string name="find_in_page">Найти на странице</string>
+    <string name="no_matches">Совпадений не найдено</string>
+    <string name="back">Назад</string>
+    <string name="forward">Вперёд</string>
+    <string name="zoom_out">Уменьшить</string>
+    <string name="zoom_in">Увеличить</string>
+    <string name="refresh">Обновить</string>
+    <string name="exit_fullscreen">Выйти</string>
+    <string name="next">Следующий</string>
+    <string name="list_display_options">Настройки отображения списка</string>
+    <string name="last_screen">Последний использованный экран</string>
+    <string name="widget_options">Настройки виджета</string>
+    <string name="item_exist">Похожая история уже была отправлена</string>
+    <string name="hn_link">Ссылка Hacker News</string>
+    <string name="article_link">Ссылка на статью</string>
+    <string name="hint_drag">Перетащите для перемещения</string>
+    <string name="hint_nav_short">Свайп \u2191 \u2193 \u2192 \u2190 для навигации\nДлинное нажатие для перемещения</string>
+    <string name="konami">Вы нашли код Konami! Дайте мне 5 звёзд?</string>
+    <string name="end_of_thread">Конец темы</string>
+    <string name="save_draft">Сохранить черновик</string>
+    <string name="discard_draft">Отменить черновик</string>
+    <string name="clear_drafts">Очистить все черновики</string>
+    <string name="more_sections">Ещё разделы</string>
+    <string name="list">Список</string>
+    <string name="delete">Удалить</string>
+    <string name="full_text">Полный текст</string>
+    <string name="empty_text">[Эта история не имеет контента]</string>
+    <string name="none">Нет</string>
+    <string name="hint_update">Ваше приложение только что было обновлено!</string>
+    <string name="export_saved_stories">Экспорт сохранённых историй</string>
+    <string name="export_notification">Сохранено в файл. Нажмите для опций.</string>
+    <string name="share_file">Поделиться файлом</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="notification_channel_downloads">Загрузки</string>
+    <string name="reply">Ответить</string>
+</resources>

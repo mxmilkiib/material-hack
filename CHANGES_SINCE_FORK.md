@@ -36,6 +36,11 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 - `AppIconUtils` handles enabling/disabling aliases via `PackageManager`
 - `PreferencesActivity.SettingsFragment` listens for preference changes and applies immediately
 
+## Translations
+
+- 29 languages supported with full translations: English, Spanish, Chinese (Simplified), Portuguese, French, Swedish, German, Hindi, Arabic, Bengali, Indonesian, Urdu, Polish, Russian, Japanese, Turkish, Nigerian Pidgin, Egyptian Arabic, Western Punjabi, Tagalog, Tamil, Yue Chinese, Wu Chinese, Korean, Amharic, Jamaican, Latin, Gaelic, Scots
+- Existing Spanish and Chinese (Simplified) translations updated with new theme names, app icon labels, compact mode preference, and plurals
+
 ## Typography
 
 - Added fonts: Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys

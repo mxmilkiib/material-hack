@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Ayarlar</string>
+    <string name="title_activity_list">En İyi Hikayeler</string>
+    <string name="title_activity_best">Top Hikayeler</string>
+    <string name="title_activity_item">Yorumlar</string>
+    <string name="title_activity_release">Yenilikler</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Menüyü aç</string>
+    <string name="close_drawer">Menüyü kapat</string>
+    <string name="view_in_browser">Dış tarayıcıda görüntüle</string>
+    <string name="share">Paylaş</string>
+    <string name="title_activity_about">Hakkında</string>
+    <string name="license_title">Lisans</string>
+    <string name="third_party_licenses_title">Üçüncü Taraf Lisansları</string>
+    <string name="developer_info_title">Geliştirici Bilgisi</string>
+    <string name="application_info_title">Uygulama Bilgisi</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Sürüm</b> %1$s<br>
+            <b>Derleme</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Derlendi</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> Ha Duy Trung tarafından Materialistic\'in bir fork\'udur.<br><br>
+            <b>Değişiklikler:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modern toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Yeni temalar<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Mor<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Okyanus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gül<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Daha küçük fontlar ve daha dar boşluklarla kompakt liste modu<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Yeni fontlar<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Basitleştirilmiş navigasyon menüsü, tüm bölümler kökte<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Uygulama genelinde daha dar boşluklar<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Şeffaf kaydırma parlaması<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Yan yana debug kurulumu desteği<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Kütüphaneler ve Kaynaklar</string>
+    <string name="title_activity_favorite">Kaydedilen Hikayeler</string>
+    <string name="saved">%1$s önce kaydedildi</string>
+    <string name="toast_saved">Hikaye kaydedildi</string>
+    <string name="clear_all">Hepsini temizle</string>
+    <string name="toast_removed">Hikaye kaldırıldı</string>
+    <string name="no_saved_stories">Henüz kaydedilen hikaye yok</string>
+    <string name="no_comments">Burada hala sessiz</string>
+    <string name="confirm_clear">Tüm kaydedilen hikayeleri temizle?</string>
+    <string name="export">Dışa aktar</string>
+    <string name="clear_selected">Seçileni temizle</string>
+    <string name="confirm_clear_selected">Seçilen kaydedilen hikayeleri temizle?</string>
+    <string name="search">Ara</string>
+    <string name="hint_search_saved_stories">Kaydedilen hikayeleri ara</string>
+    <string name="no_stories_search">Aradığınız bulunamadı</string>
+    <string name="display">Görünüm</string>
+    <string name="pref_external_title">Dış tarayıcı kullan</string>
+    <string name="pref_external_summary">Makaleleri dış tarayıcıda oku</string>
+    <string name="pref_color_code_title">Renk kodu</string>
+    <string name="pref_color_code_opacity_title">Renk kodu opaklığı</string>
+    <string name="pref_highlight_updated_title">Güncellenen hikayeleri vurgula</string>
+    <string name="pref_highlight_updated_summary">Son yenilemeden değişiklikleri göster</string>
+    <string name="pref_custom_tab_title">Özel sekmeleri kullan</string>
+    <string name="pref_custom_tab_summary">Tam tarayıcı yerine tarayıcı sekmesi aç</string>
+    <string name="pref_story_display_title">Varsayılan aç</string>
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_app_icon_title">Uygulama ikonu stili</string>
+    <string name="app_icon_default">Turuncu (varsayılan)</string>
+    <string name="app_icon_purple">Mor</string>
+    <string name="app_icon_green">Yeşil</string>
+    <string name="app_icon_blue">Mavi</string>
+    <string name="app_icon_red">Kırmızı</string>
+    <string name="app_icon_teal">Turkuaz</string>
+    <string name="app_icon_pink">Pembe</string>
+    <string name="app_icon_indigo">İndigo</string>
+    <string name="pref_daynight_title">Otomatik gece-gündüz modu</string>
+    <string name="pref_search_sort_title">Sırala</string>
+    <string name="pref_search_sort_value_recent">en son</string>
+    <string name="pref_search_sort_value_default">varsayılan</string>
+    <string name="pref_text_size_title">Metin boyutu</string>
+    <string name="pref_font_title">Font</string>
+    <string name="pref_comment_display_title">Konu</string>
+    <string name="pref_max_lines_title">Uzun yorum</string>
+    <string name="pref_multi_window_title">Çoklu pencere modu</string>
+    <string name="pref_multi_window_summary">Hikayeyi hangi pencerede aç (Android 7+)</string>
+    <string name="pref_multi_window_none">Aynı</string>
+    <string name="pref_multi_window_one">Başka</string>
+    <string name="pref_navigation_title">Ekran navigasyonu</string>
+    <string name="pref_navigation_vibrate_title">Dokunma titreşimi</string>
+    <string name="pref_lazy_load_title">Yavaş yükleme içeriği</string>
+    <string name="pref_lazy_load_summary">İçeriği sadece sekmesine geçtiğinizde yükleyin</string>
+    <string name="pref_saved_item_sync_title">Çevrimdışı erişimi etkinleştir</string>
+    <string name="pref_saved_item_sync_summary">Hikayeyi kaydederken içeriği indir</string>
+    <string name="pref_offline_data_title">Ne zaman indirilecek</string>
+    <string name="pref_offline_comments_title">Yorumları indir</string>
+    <string name="pref_offline_article_title">Makaleyi indir</string>
+    <string name="pref_offline_readability_title">Okunabilirliği indir</string>
+    <string name="pref_offline_data_wifi">Sadece WiFi</string>
+    <string name="pref_offline_data_always">Her zaman</string>
+    <string name="pref_offline_notification_title">İlerlemeyi göster</string>
+    <string name="pref_offline_notification_summary">İndirme ilerlemesi için bildirim göster</string>
+    <string name="pref_launch_screen_title">Varsayılan ekran</string>
+    <string name="pref_volume_title">Ses navigasyonunu kullan</string>
+    <string name="pref_volume_summary">Ses tuşlarıyla yukarı/aşağı kaydır</string>
+    <string name="pref_ad_block_title">Reklamları engelle</string>
+    <string name="pref_ad_block_summary">Dahili tarayıcı için basit reklam engelleyiciyi etkinleştir</string>
+    <string name="pref_line_height_title">Satır yüksekliği</string>
+    <string name="pref_list_item_view_title">Kart olarak göster</string>
+    <string name="pref_list_compact_title">Kompakt liste aralığı</string>
+    <string name="pref_list_compact_summary">Daha geniş başlıklar için daha dar satırlar ve daha dar puan sütunu</string>
+    <string name="pref_thread_indicator_title">Konu göstergesi</string>
+    <string name="pref_widget_section_title">Bölüm</string>
+    <string name="pref_widget_query_title">Sorguya göre filtrele (isteğe bağlı)</string>
+    <string name="pref_widget_frequency_title">Güncelleme sıklığı</string>
+    <string name="pref_auto_viewed_title">Otomatik olarak görüldü olarak işaretle</string>
+    <string name="pref_auto_viewed_summary">Yukarı kaydırırken hikayeleri görüldü olarak işaretle</string>
+    <string name="pref_smooth_scroll_title">Navigasyonu canlandır</string>
+    <string name="pref_smooth_scroll_summary">Kaydırma hassasiyetini artırmak için devre dışı bırak</string>
+    <string name="pref_list_swipe_left_title">Sola kaydır</string>
+    <string name="pref_list_swipe_right_title">Sağa kaydır</string>
+    <string name="connection_error">Hacker News\'e bağlanılamadı. Bağlantınızı kontrol edin veya tekrar deneyin.</string>
+    <string name="select_story">Görüntülemek için bir hikaye seçin</string>
+    <string name="download_external">Başka uygulamada görüntüle</string>
+    <string name="try_me">Uzun basma/kaydırma ile sonra için kaydedin!</string>
+    <string name="title_activity_jobs">İşler</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Yeni Hikayeler</string>
+    <string name="title_activity_search">HN ara</string>
+    <string name="clear_search_history">Arama geçmişini temizle</string>
+    <string name="clear_search_history_confirm">Arama geçmişini temizle?</string>
+    <string name="undo">Geri al</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Yorumlar</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Yorum</item>
+        <item quantity="one">%1$s Yorum</item>
+        <item quantity="other">%1$s Yorum</item>
+    </plurals>
+    <string name="article">Makale</string>
+    <string name="reset_settings">Tüm ayarları sıfırla</string>
+    <string name="reset_settings_confirm">Tüm tercihlerinizi uygulama varsayılanlarına sıfırlamak istiyor musunuz?</string>
+    <string name="last_updated">Son güncelleme %1$s</string>
+    <string name="feedback">Geri bildirim</string>
+    <string name="send_feedback">Geri bildirim gönder</string>
+    <string name="title_hint">Başlık</string>
+    <string name="comment_hint">Yorum</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Geri bildiriminiz bir <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github sorunu</a> olarak yayınlanacaktır.
+        ]]>
+    </string>
+    <string name="title_required">Başlık gereklidir</string>
+    <string name="comment_required">Yorum gereklidir</string>
+    <string name="feedback_sent">Geri bildirim gönderildi. Teşekkürler!</string>
+    <string name="feedback_failed">Gönderilemedi, tekrar deneyin</string>
+    <string name="chooser_title">Şununla aç</string>
+    <string name="title_activity_popular">Yakala</string>
+    <string name="range">Aralık</string>
+    <string name="popular_range_last_24h">Son 24 saat</string>
+    <string name="popular_range_past_week">Geçen hafta</string>
+    <string name="popular_range_past_month">Geçen ay</string>
+    <string name="popular_range_past_year">Geçen yıl</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s yeni hikaye</item>
+        <item quantity="one">%1$s yeni hikaye</item>
+        <item quantity="other">%1$s yeni hikaye</item>
+    </plurals>
+    <string name="show_me">Göster</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s yeni hikaye gösteriliyor</item>
+        <item quantity="one">%1$s yeni hikaye gösteriliyor</item>
+        <item quantity="other">%1$s yeni hikaye gösteriliyor</item>
+    </plurals>
+    <string name="show_all">Hepsini göster</string>
+    <string name="whats_this">Bu nedir?</string>
+    <string name="got_it">Anladım</string>
+    <string name="help_new_story">Son yenilemeden yeni hikaye</string>
+    <string name="help_promoted_story">Son yenilemeden yükseltilmiş hikaye</string>
+    <string name="help_new_comments">Son yenilemeden yeni yorumları olan hikaye</string>
+    <string name="help_lazy_load">Yavaş yükleme etkinleştirildiğinde, bir öğe ilk kez açıldığında sadece tercih edilen varsayılan sekme yüklenir.\n\nYavaş bir bağlantıdaysanız veya gecikme yaşıyorsanız, bunu etkinleştirmek yardımcı olabilir.</string>
+    <string name="help_volume_up">Yukarı kaydırmak için ses yukarı tuşuna basın</string>
+    <string name="help_long_volume_up">Hızlı yukarı kaydırmak için ses yukarı tuşuna uzun basın</string>
+    <string name="help_volume_down">Aşağı kaydırmak için ses aşağı tuşuna basın</string>
+    <string name="help_navigate">İç içe geçmiş yorum konularını gezinmek için kaydırma hareketlerine yanıt veren bir kayan navigasyon düğmesi gösterin.</string>
+    <string name="help_navigate_up">Kaydır \u2191: önceki yoruma git</string>
+    <string name="help_navigate_down">Kaydır \u2193: sonraki yoruma git</string>
+    <string name="help_navigate_right">Kaydır \u2192: genişlet ve 1. yanıta git</string>
+    <string name="help_navigate_left">Kaydır \u2190: ebeveyne geri dön</string>
+    <string name="help_navigate_move">Navigasyon düğmesini yeni bir konuma sürüklemek için uzun basın</string>
+    <string name="readability">Okunabilirlik</string>
+    <string name="text_size_extra_small">Çok küçük</string>
+    <string name="text_size_small">Küçük</string>
+    <string name="text_size_medium">Orta</string>
+    <string name="text_size_large">Büyük</string>
+    <string name="text_size_extra_large">Çok büyük</string>
+    <string name="readability_failed">Makale analiz edilemedi</string>
+    <string name="theme_light">Açık</string>
+    <string name="theme_dark">Koyu</string>
+    <string name="theme_black">Siyah</string>
+    <string name="theme_sepia">Sepya</string>
+    <string name="theme_green">Yeşil</string>
+    <string name="theme_transparent">Şeffaf</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Mor</string>
+    <string name="theme_ocean">Okyanus</string>
+    <string name="theme_rose">Gül</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Koyu kırmızı</string>
+    <string name="theme_forest">Orman</string>
+    <string name="theme_midnight">Gece yarısı</string>
+    <string name="theme_sand">Kum</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Koyu turuncu</string>
+    <string name="comment_display_multiple">Birden çok sayfa</string>
+    <string name="comment_display_single">Tek sayfa - otomatik genişletme</string>
+    <string name="comment_display_collapsed">Tek sayfa - daraltılmış</string>
+    <string name="story_display_article">Makale</string>
+    <string name="story_display_comments">Yorumlar</string>
+    <string name="search_sort_recent">Daha yeni</string>
+    <string name="search_sort_popularity">Popülerlik</string>
+    <string name="story_display_readability">Okunabilirlik</string>
+    <string name="font_options">Font seçenekleri</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Tüm %1$d satırı oku</string>
+    <string name="comment_max_lines_3">Maks 3 satır</string>
+    <string name="comment_max_lines_4">Maks 4 satır</string>
+    <string name="comment_max_lines_5">Maks 5 satır</string>
+    <string name="comment_max_lines_all">Tam içerik</string>
+    <string name="line_height_compact">Kompakt</string>
+    <string name="line_height_normal">Normal</string>
+    <string name="line_height_cozy">Rahat</string>
+    <string name="line_height_comfortable">Konforlu</string>
+    <string name="frequency_3_hours">3 saat</string>
+    <string name="frequency_6_hours">6 saat</string>
+    <string name="frequency_12_hours">12 saat</string>
+    <string name="frequency_1_day">1 gün</string>
+    <string name="file_not_supported">İçerik türü desteklenmiyor</string>
+    <string name="username_hint">Kullanıcı adı</string>
+    <string name="password_hint">Şifre</string>
+    <string name="login">Giriş yap</string>
+    <string name="title_activity_login">Hacker News\'e giriş yap</string>
+    <string name="username_required">Kullanıcı adı gereklidir</string>
+    <string name="password_required">Şifre gereklidir</string>
+    <string name="login_failed">Giriş/hesap oluşturma başarısız, tekrar deneyin</string>
+    <string name="welcome">Hoş geldiniz %1$s!</string>
+    <string name="logout_confirm">Çıkış yapmak istiyor musunuz?</string>
+    <string name="choose_account">Bir hesap seçin</string>
+    <string name="add_account">Ekle</string>
+    <string name="remove_account">Kaldır</string>
+    <string name="login_note">Kimlik bilgileriniz cihazınızın Ayarlar / Hesaplar altında güvenli bir şekilde saklanacaktır</string>
+    <string name="save">Kaydet</string>
+    <string name="unsave">Kaydı iptal et</string>
+    <string name="re_enter_password">Şifrenizi tekrar girin</string>
+    <string name="vote_up">Oy ver</string>
+    <string name="voted">Başarıyla oy verildi</string>
+    <string name="vote_failed">Oy kaydedilemedi. Tekrar deneyin.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Gönderiliyor...</string>
+    <string name="add_comment">Yorum ekle</string>
+    <string name="title_activity_compose">Yaz</string>
+    <string name="send">Gönder</string>
+    <string name="original_content">Orijinal içerik</string>
+    <string name="quote">Alıntı</string>
+    <string name="formatting_guidelines">HN biçimlendirme yönergeleri</string>
+    <string name="confirm_save_draft">Taslağı kaydet?</string>
+    <string name="create_account">Hesap oluştur</string>
+    <string name="comment_failed">Yorum gönderilemedi</string>
+    <string name="comment_successful">Yorum eklendi. Görmek için yenileyin.</string>
+    <string name="confirm_no_waiting">Beklemeden çık?</string>
+    <string name="rate_app">Uygulamayı değerlendir</string>
+    <string name="or">veya</string>
+    <string name="leave_feedback">Geri bildirim bırak</string>
+    <string name="no_playstore">Play Store uygulaması bulunamadı</string>
+    <string name="submit_content_hint">URL veya metin</string>
+    <string name="title_activity_submit">HN\'e gönder</string>
+    <string name="url_text_required">URL veya metin gereklidir</string>
+    <string name="submit_failed">Gönderilemedi. Tekrar deneyin.</string>
+    <string name="submit_successful">Başarıyla gönderildi</string>
+    <string name="confirm_no_submit">Göndermeden çık?</string>
+    <string name="submit_note">Tartışma için bir soru göndermek için metin girin, veya bir bağlantı göndermek için URL. Ayrıca diğer uygulamalardan doğrudan bağlantı paylaşabilirsiniz</string>
+    <string name="confirm_submit_url">Bağlantı olarak gönder?</string>
+    <string name="confirm_submit_question">Soru olarak gönder?</string>
+    <string name="submission_guidelines">Gönderme yönergeleri</string>
+    <string name="title_activity_user">Profilim</string>
+    <string name="user_info">Oluşturuldu: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s gönderi</item>
+        <item quantity="one">%1$s gönderi</item>
+        <item quantity="other">%1$s gönderi</item>
+    </plurals>
+    <string name="view_story">Hikayeyi görüntüle</string>
+    <string name="user_failed">Kullanıcı yüklenemedi. Tekrar deneyin.</string>
+    <string name="dead_prefix">[ölü]</string>
+    <string name="title_activity_thread_preview">Konu önizlemesi</string>
+    <string name="view_thread">Konuyu görüntüle</string>
+    <string name="view_user">Kullanıcıyı görüntüle</string>
+    <string name="more">Daha fazla</string>
+    <string name="logout">Çıkış yap</string>
+    <string name="offline">Çevrimdışı</string>
+    <string name="offline_notice">Şu anda çevrimdışısınız</string>
+    <string name="download_in_progress">İndirme devam ediyor</string>
+    <string name="love_it">Bunu seviyorum!</string>
+    <string name="display_options">Görünüm seçenekleri</string>
+    <string name="pull_up_hint">Daha fazlası için yukarı çek</string>
+    <string name="find_in_page">Sayfada ara</string>
+    <string name="no_matches">Eşleşme bulunamadı</string>
+    <string name="back">Geri</string>
+    <string name="forward">İleri</string>
+    <string name="zoom_out">Uzaklaştır</string>
+    <string name="zoom_in">Yakınlaştır</string>
+    <string name="refresh">Yenile</string>
+    <string name="exit_fullscreen">Çık</string>
+    <string name="next">Sonraki</string>
+    <string name="list_display_options">Liste görünüm seçenekleri</string>
+    <string name="last_screen">Son kullanılan ekran</string>
+    <string name="widget_options">Widget seçenekleri</string>
+    <string name="item_exist">Benzer hikaye zaten gönderildi</string>
+    <string name="hn_link">Hacker News bağlantısı</string>
+    <string name="article_link">Makale bağlantısı</string>
+    <string name="hint_drag">Yeniden konumlandırmak için sürükle</string>
+    <string name="hint_nav_short">Navigasyon için kaydır \u2191 \u2193 \u2192 \u2190\nYeniden konumlandırmak için uzun bas</string>
+    <string name="konami">Konami kodunu buldunuz! Bana 5 yıldız verir misiniz?</string>
+    <string name="end_of_thread">Konu sonu</string>
+    <string name="save_draft">Taslağı kaydet</string>
+    <string name="discard_draft">Taslağı iptal et</string>
+    <string name="clear_drafts">Tüm taslakları temizle</string>
+    <string name="more_sections">Daha fazla bölüm</string>
+    <string name="list">Liste</string>
+    <string name="delete">Sil</string>
+    <string name="full_text">Tam metin</string>
+    <string name="empty_text">[Bu hikayenin içeriği yok]</string>
+    <string name="none">Yok</string>
+    <string name="hint_update">Uygulamanız güncellendi!</string>
+    <string name="export_saved_stories">Kaydedilen hikayeleri dışa aktar</string>
+    <string name="export_notification">Dosyaya kaydedildi. Seçenekler için dokunun.</string>
+    <string name="share_file">Dosyayı paylaş</string>
+    <string name="privacy_policy">Gizlilik politikası</string>
+    <string name="notification_channel_downloads">İndirmeler</string>
+    <string name="reply">Yanıtla</string>
+</resources>

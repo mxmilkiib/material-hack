@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">அமைப்புகள்</string>
+    <string name="title_activity_list">முக்கிய கதைகள்</string>
+    <string name="title_activity_best">சிறந்த கதைகள்</string>
+    <string name="title_activity_item">கருத்துகள்</string>
+    <string name="title_activity_release">புதியது என்ன</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">டிராயரைத் திறக்கவும்</string>
+    <string name="close_drawer">டிராயரை மூடவும்</string>
+    <string name="view_in_browser">வெளிப்புற உலாவியில் காண்க</string>
+    <string name="share">பகிரவும்</string>
+    <string name="title_activity_about">பற்றி</string>
+    <string name="license_title">உரிமம்</string>
+    <string name="third_party_licenses_title">மூன்பக்க உரிமங்கள்</string>
+    <string name="developer_info_title">டெவலப்பர் தகவல்</string>
+    <string name="application_info_title">பயன்பாடு தகவல்</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>பதிப்பு</b> %1$s<br>
+            <b>உருவாக்கம்</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>உருவாக்கப்பட்டது</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> Ha Duy Trung இன் Materialistic இன் ஒரு பிரிவு.<br><br>
+            <b>மாற்றங்கள்:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; நவீன toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; புதிய தீம்கள்<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ஊதா<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; பெருங்கடல்<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ரோஜா<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; மோனோகாய்<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; நோர்ட்<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; சிறிய எழுத்துருக்கள் மற்றும் இறுக்கமான இடைவெளிகளுடன் காம்பாக்ட் பட்டியல் முறை<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; புதிய எழுத்துருக்கள்<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; எளிதாக்கப்பட்ட வழிசெலுத்தும் டிராயர், அனைத்து பிரிவுகளும் ரூட்டில்<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; முழு பயன்பாட்டிலும் இறுக்கமான இடைவெளிகள்<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; தெளிவான ஸ்க்ரோல் ஒளி<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; பக்க-பக்க டிபக் நிறுவல் ஆதரவு<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">நூலகங்கள் மற்றும் வளங்கள்</string>
+    <string name="title_activity_favorite">சேமிக்கப்பட்ட கதைகள்</string>
+    <string name="saved">%1$s முன்பு சேமிக்கப்பட்டது</string>
+    <string name="toast_saved">கதை சேமிக்கப்பட்டது</string>
+    <string name="clear_all">அனைத்தையும் அழி</string>
+    <string name="toast_removed">கதை அகற்றப்பட்டது</string>
+    <string name="no_saved_stories">இன்னும் சேமிக்கப்பட்ட கதைகள் இல்லை</string>
+    <string name="no_comments">இன்னும் இங்கே அமைதியாக உள்ளது</string>
+    <string name="confirm_clear">அனைத்து சேமிக்கப்பட்ட கதைகளையும் அழிக்கவா?</string>
+    <string name="export">ஏற்றுமதி</string>
+    <string name="clear_selected">தேர்ந்தெடுத்ததை அழி</string>
+    <string name="confirm_clear_selected">தேர்ந்தெடுத்த சேமிக்கப்பட்ட கதைகளை அழிக்கவா?</string>
+    <string name="search">தேடு</string>
+    <string name="hint_search_saved_stories">சேமிக்கப்பட்ட கதைகளைத் தேடு</string>
+    <string name="no_stories_search">நீங்கள் தேடுவதைக் கண்டுபிடிக்க முடியவில்லை</string>
+    <string name="display">காட்சி</string>
+    <string name="pref_external_title">வெளிப்புற உலாவியைப் பயன்படுத்து</string>
+    <string name="pref_external_summary">வெளிப்புற உலாவியில் கட்டுரைகளைப் படி</string>
+    <string name="pref_color_code_title">நிறக் குறியீடு</string>
+    <string name="pref_color_code_opacity_title">நிறக் குறியீடு ஒளிபுகுத்து</string>
+    <string name="pref_highlight_updated_title">புதுப்பிக்கப்பட்ட கதைகளை முன்னிலைப்படுத்து</string>
+    <string name="pref_highlight_updated_summary">கடைசி புதுப்பிப்பிலிருந்து மாற்றங்களைக் காட்டு</string>
+    <string name="pref_custom_tab_title">தனிப்பயன் தாவல்களைப் பயன்படுத்து</string>
+    <string name="pref_custom_tab_summary">முழு உலாவிக்குப் பதிலாக உலாவி தாவலைத் திறக்கவும்</string>
+    <string name="pref_story_display_title">இயல்புநிலை திறப்பு</string>
+    <string name="pref_theme_title">தீம்</string>
+    <string name="pref_app_icon_title">பயன்பாடு ஐகான் பாணி</string>
+    <string name="app_icon_default">ஆரஞ்சு (இயல்புநிலை)</string>
+    <string name="app_icon_purple">ஊதா</string>
+    <string name="app_icon_green">பச்சை</string>
+    <string name="app_icon_blue">நீலம்</string>
+    <string name="app_icon_red">சிவப்பு</string>
+    <string name="app_icon_teal">டீல்</string>
+    <string name="app_icon_pink">இளஞ்சிப்பிங்க்</string>
+    <string name="app_icon_indigo">இண்டிகோ</string>
+    <string name="pref_daynight_title">தானியக பகல்-இரவு முறை</string>
+    <string name="pref_search_sort_title">வரிசைப்படுத்து</string>
+    <string name="pref_search_sort_value_recent">சமீபத்திய</string>
+    <string name="pref_search_sort_value_default">இயல்புநிலை</string>
+    <string name="pref_text_size_title">உரை அளவு</string>
+    <string name="pref_font_title">எழுத்துரு</string>
+    <string name="pref_comment_display_title">நூல்</string>
+    <string name="pref_max_lines_title">நீண்ட கருத்து</string>
+    <string name="pref_multi_window_title">பல-சாளர முறை</string>
+    <string name="pref_multi_window_summary">கதையைத் திறக்க எந்தச் சாளர் (Android 7+)</string>
+    <string name="pref_multi_window_none">அதே</string>
+    <string name="pref_multi_window_one">மற்றொன்று</string>
+    <string name="pref_navigation_title">திரை வழிசெலுத்துதல்</string>
+    <string name="pref_navigation_vibrate_title">தொடுதலில் அதிர்வு</string>
+    <string name="pref_lazy_load_title">மெதுவாக உள்ளடக்கத்தை ஏற்று</string>
+    <string name="pref_lazy_load_summary">அதன் தாவலுக்கு மாறும்போது மட்டும் உள்ளடக்கத்தை ஏற்று</string>
+    <string name="pref_saved_item_sync_title">ஆஃப்லைன் அணுகலை இயக்கு</string>
+    <string name="pref_saved_item_sync_summary">கதையைச் சேமிக்கும்போது உள்ளடக்கத்தைப் பதிவிறக்கு</string>
+    <string name="pref_offline_data_title">எப்போது பதிவிறக்க</string>
+    <string name="pref_offline_comments_title">கருத்துகளைப் பதிவிறக்கு</string>
+    <string name="pref_offline_article_title">கட்டுரையைப் பதிவிறக்கு</string>
+    <string name="pref_offline_readability_title">படிப்புத்திறனைப் பதிவிறக்கு</string>
+    <string name="pref_offline_data_wifi">WiFi மட்டும்</string>
+    <string name="pref_offline_data_always">எப்போதும்</string>
+    <string name="pref_offline_notification_title">முன்னேற்றத்தைக் காட்டு</string>
+    <string name="pref_offline_notification_summary">பதிவிறக்க முன்னேற்றத்திற்கு அறிவிப்பைக் காட்டு</string>
+    <string name="pref_launch_screen_title">இயல்புநிலைத் திரை</string>
+    <string name="pref_volume_title">ஒலிச்சரிவு வழிசெலுத்துதலைப் பயன்படுத்து</string>
+    <string name="pref_volume_summary">ஒலிச்சரிவு விசைகளுடன் மேலே/கீழே ஸ்க்ரோல் செய்</string>
+    <string name="pref_ad_block_title">விளம்பரங்களைத் தடு</string>
+    <string name="pref_ad_block_summary">உள் உலாவிக்கு எளிய விளம்பரத் தடுப்பியை இயக்கு</string>
+    <string name="pref_line_height_title">வரி உயரம்</string>
+    <string name="pref_list_item_view_title">அட்டைகளாகக் காட்டு</string>
+    <string name="pref_list_compact_title">காம்பாக்ட் பட்டியல் இடைவெளி</string>
+    <string name="pref_list_compact_summary">அகலமான தலைப்புகளுக்கு இறுக்கமான வரிகள் மற்றும் இறுக்கமான ஸ்கோர் நெடுவரிசை</string>
+    <string name="pref_thread_indicator_title">நூல் குறியீடு</string>
+    <string name="pref_widget_section_title">பிரிவு</string>
+    <string name="pref_widget_query_title">வினவல் மூலம் வடிகட்ட (விருப்பம்)</string>
+    <string name="pref_widget_frequency_title">புதுப்பிப்பு அதிர்வெண்</string>
+    <string name="pref_auto_viewed_title">தானியமாகப் பார்த்ததாகக் குறியிடு</string>
+    <string name="pref_auto_viewed_summary">மேலே ஸ்க்ரோல் செய்யும்போது கதைகளைப் பார்த்ததாகக் குறியிடு</string>
+    <string name="pref_smooth_scroll_title">வழிசெலுத்துதலை அனிமேட் செய்</string>
+    <string name="pref_smooth_scroll_summary">ஸ்க்ரோல் துல்லியத்தை மேம்படுத்த முடக்கு</string>
+    <string name="pref_list_swipe_left_title">இடது ஸ்வைப்</string>
+    <string name="pref_list_swipe_right_title">வலது ஸ்வைப்</string>
+    <string name="connection_error">Hacker News உடன் இணைக்க முடியவில்லை. உங்கள் இணைப்பைச் சரிபார்க்கவும் அல்லது மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="select_story">காண ஒரு கதையைத் தேர்வுசெய்</string>
+    <string name="download_external">மற்றொரு பயன்பாட்டில் காண்க</string>
+    <string name="try_me">பின்னர் சேமிக்க நீண்ட அழுத்து/ஸ்வைப்!</string>
+    <string name="title_activity_jobs">வேலைகள்</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">புதிய கதைகள்</string>
+    <string name="title_activity_search">HN தேடு</string>
+    <string name="clear_search_history">தேடல் வரலாற்றை அழி</string>
+    <string name="clear_search_history_confirm">தேடல் வரலாற்றை அழிக்கவா?</string>
+    <string name="undo">செயல்தவிர்ப்பு</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">கருத்துகள்</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s கருத்து</item>
+        <item quantity="one">%1$s கருத்து</item>
+        <item quantity="other">%1$s கருத்துகள்</item>
+    </plurals>
+    <string name="article">கட்டுரை</string>
+    <string name="reset_settings">அனைத்து அமைப்புகளையும் மீட்டமை</string>
+    <string name="reset_settings_confirm">உங்கள் அனைத்து விருப்பங்களையும் பயன்பாடு இயல்புநிலைகளுக்கு மீட்டமைக்கவா?</string>
+    <string name="last_updated">கடைசி புதுப்பிப்பு %1$s</string>
+    <string name="feedback">கருத்து</string>
+    <string name="send_feedback">கருத்தை அனுப்பு</string>
+    <string name="title_hint">தலைப்பு</string>
+    <string name="comment_hint">கருத்து</string>
+    <string name="feedback_note">
+        <![CDATA[
+            உங்கள் கருத்து ஒரு <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a> ஆக பொதுவாக்கப்படும்.
+        ]]>
+    </string>
+    <string name="title_required">தலைப்பு தேவை</string>
+    <string name="comment_required">கருத்து தேவை</string>
+    <string name="feedback_sent">கருத்து அனுப்பப்பட்டது. நன்றி!</string>
+    <string name="feedback_failed">அனுப்ப முடியவில்லை, மீண்டும் முயற்சிக்கவும்</string>
+    <string name="chooser_title">இதனுடன் திறக்க</string>
+    <string name="title_activity_popular">பிடிப்பு</string>
+    <string name="range">வரம்பு</string>
+    <string name="popular_range_last_24h">கடந்த 24 மணி</string>
+    <string name="popular_range_past_week">கடந்த வாரம்</string>
+    <string name="popular_range_past_month">கடந்த மாதம்</string>
+    <string name="popular_range_past_year">கடந்த ஆண்டு</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s புதிய கதை</item>
+        <item quantity="one">%1$s புதிய கதை</item>
+        <item quantity="other">%1$s புதிய கதைகள்</item>
+    </plurals>
+    <string name="show_me">காட்டு</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s புதிய கதையைக் காட்டுகிறது</item>
+        <item quantity="one">%1$s புதிய கதையைக் காட்டுகிறது</item>
+        <item quantity="other">%1$s புதிய கதைகளைக் காட்டுகிறது</item>
+    </plurals>
+    <string name="show_all">அனைத்தையும் காட்டு</string>
+    <string name="whats_this">இது என்ன?</string>
+    <string name="got_it">புரிந்தது</string>
+    <string name="help_new_story">கடைசி புதுப்பிப்பிலிருந்து புதிய கதை</string>
+    <string name="help_promoted_story">கடைசி புதுப்பிப்பிலிருந்து உயர்த்தப்பட்ட கதை</string>
+    <string name="help_new_comments">கடைசி புதுப்பிப்பிலிருந்து புதிய கருத்துகளுடன் கதை</string>
+    <string name="help_lazy_load">மெதுவாக ஏற்றுதல் இயக்கப்பட்டால், உங்கள் விருப்பமான இயல்புநிலை தாவல் மட்டும் உருப்பு முதல் திறக்கப்படும்போது ஏற்றப்படும்.\n\nநீங்கள் மெதுவான இணைப்பில் இருந்தால் அல்லது தாமதத்தை அனுபவித்தால், இதை இயக்குவது உதவலாக இருக்கலாம்.</string>
+    <string name="help_volume_up">மேலே ஸ்க்ரோல் செய்ய ஒலிச்சரிவு அதிகரிப்பை அழுத்தவும்</string>
+    <string name="help_long_volume_up">வேகமாக மேலே ஸ்க்ரோல் செய்ய ஒலிச்சரிவு அதிகரிப்பை நீண்ட அழுத்தவும்</string>
+    <string name="help_volume_down">கீழே ஸ்க்ரோல் செய்ய ஒலிச்சரிவு குறைப்பை அழுத்தவும்</string>
+    <string name="help_navigate">உள்ளமைக்கப்பட்ட கருத்து நூல்களை வழிசெலுத்த ஸ்வைப் சைகைகளுக்கு பதிலளிக்கும் மிதக்க வழிசெலுத்துதல் பொத்தானைக் காட்டு.</string>
+    <string name="help_navigate_up">ஸ்வைப் \u2191: முந்தைய கருத்துக்குச் செல்</string>
+    <string name="help_navigate_down">ஸ்வைப் \u2193: அடுத்த கருத்துக்குச் செல்</string>
+    <string name="help_navigate_right">ஸ்வைப் \u2192: விரிவாக்கு &amp; 1வது பதிலுக்குச் செல்</string>
+    <string name="help_navigate_left">ஸ்வைப் \u2190: பெற்றோருக்குத் திரும்பு</string>
+    <string name="help_navigate_move">வழிசெலுத்துதல் பொத்தானை புதிய நிலைக்கு இழுக்க நீண்ட அழுத்தவும்</string>
+    <string name="readability">படிப்புத்திறன்</string>
+    <string name="text_size_extra_small">மிகச் சிறிய</string>
+    <string name="text_size_small">சிறிய</string>
+    <string name="text_size_medium">நடுத்தரம்</string>
+    <string name="text_size_large">பெரிய</string>
+    <string name="text_size_extra_large">மிகப் பெரிய</string>
+    <string name="readability_failed">கட்டுரையை பகுப்பாய்வு செய்ய முடியவில்லை</string>
+    <string name="theme_light">ஒளி</string>
+    <string name="theme_dark">இருள்</string>
+    <string name="theme_black">கருப்பு</string>
+    <string name="theme_sepia">செபியா</string>
+    <string name="theme_green">பச்சை</string>
+    <string name="theme_transparent">தெளிவான</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">ஊதா</string>
+    <string name="theme_ocean">பெருங்கடல்</string>
+    <string name="theme_rose">ரோஜா</string>
+    <string name="theme_monokai">மோனோகாய்</string>
+    <string name="theme_nord">நோர்ட்</string>
+    <string name="theme_crimson">கிரிம்சன்</string>
+    <string name="theme_forest">காடு</string>
+    <string name="theme_midnight">நள்ளிரவு</string>
+    <string name="theme_sand">மணல்</string>
+    <string name="theme_dracula">டிராகுலா</string>
+    <string name="theme_darkorange">இருண்ட ஆரஞ்சு</string>
+    <string name="comment_display_multiple">பல பக்கங்கள்</string>
+    <string name="comment_display_single">ஒற்றைப் பக்கம் - தானிய விரிவாக்கம்</string>
+    <string name="comment_display_collapsed">ஒற்றைப் பக்கம் - சுருக்கம்</string>
+    <string name="story_display_article">கட்டுரை</string>
+    <string name="story_display_comments">கருத்துகள்</string>
+    <string name="search_sort_recent">மிகச் சமீபத்திய</string>
+    <string name="search_sort_popularity">பிரபலத்தின்</string>
+    <string name="story_display_readability">படிப்புத்திறன்</string>
+    <string name="font_options">எழுத்துரு விருப்பங்கள்</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">அனைத்த %1$d வரிகளையும் படி</string>
+    <string name="comment_max_lines_3">அதிகபட்சம் 3 வரிகள்</string>
+    <string name="comment_max_lines_4">அதிகபட்சம் 4 வரிகள்</string>
+    <string name="comment_max_lines_5">அதிகபட்சம் 5 வரிகள்</string>
+    <string name="comment_max_lines_all">முழு உள்ளடக்கம்</string>
+    <string name="line_height_compact">காம்பாக்ட்</string>
+    <string name="line_height_normal">இயல்புநிலை</string>
+    <string name="line_height_cozy">ஆறுதலான</string>
+    <string name="line_height_comfortable">ஆறுதலான</string>
+    <string name="frequency_3_hours">3 மணி</string>
+    <string name="frequency_6_hours">6 மணி</string>
+    <string name="frequency_12_hours">12 மணி</string>
+    <string name="frequency_1_day">1 நாள்</string>
+    <string name="file_not_supported">உள்ளடக்க வகை ஆதரிக்கப்படவில்லை</string>
+    <string name="username_hint">பயனர்பெயர்</string>
+    <string name="password_hint">கடவுச்சொல்</string>
+    <string name="login">உள்நுழை</string>
+    <string name="title_activity_login">Hacker News இல் உள்நுழை</string>
+    <string name="username_required">பயனர்பெயர் தேவை</string>
+    <string name="password_required">கடவுச்சொல் தேவை</string>
+    <string name="login_failed">உள்நுழை/கணக்கு உருவாக்கம் தோல்வி, மீண்டும் முயற்சிக்கவும்</string>
+    <string name="welcome">வரவேற்றுகள் %1$s!</string>
+    <string name="logout_confirm">வெளியேற விரும்புகிறீர்களா?</string>
+    <string name="choose_account">ஒரு கணக்கைத் தேர்வுசெய்</string>
+    <string name="add_account">சேர்</string>
+    <string name="remove_account">அகற்று</string>
+    <string name="login_note">உங்கள் சான்றுகள் உங்கள் சாதனத்தின் அமைப்புகள் / கணக்குகளின் கீழ் பாதுகாப்பாக சேமிக்கப்படும்</string>
+    <string name="save">சேமி</string>
+    <string name="unsave">சேமிப்பை நீக்கு</string>
+    <string name="re_enter_password">உங்கள் கடவுச்சொல்லை மீண்டும் உள்ளிடு</string>
+    <string name="vote_up">வாக்கள்</string>
+    <string name="voted">வெற்றிகரமாக வாக்கள்</string>
+    <string name="vote_failed">வாக்கு பதிவு செய்ய முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">அனுப்புகிறது...</string>
+    <string name="add_comment">கருத்து சேர்</string>
+    <string name="title_activity_compose">எழுது</string>
+    <string name="send">அனுப்பு</string>
+    <string name="original_content">அசல உள்ளடக்கம்</string>
+    <string name="quote">மேற்கோள்</string>
+    <string name="formatting_guidelines">HN வடிவமைப்பு வழிமுறைகள்</string>
+    <string name="confirm_save_draft">வரைவைச் சேமிக்கவா?</string>
+    <string name="create_account">கணக்கு உருவாக்கு</string>
+    <string name="comment_failed">கருத்தை அனுப்ப முடியவில்லை</string>
+    <string name="comment_successful">கருத்து சேர்க்கப்பட்டது. காண புதுப்பிக்கவும்.</string>
+    <string name="confirm_no_waiting">காத்திருக்காமல் வெளியேறுவா?</string>
+    <string name="rate_app">பயன்பாட்டை மதிப்பிடு</string>
+    <string name="or">அல்லது</string>
+    <string name="leave_feedback">கருத்தை விடு</string>
+    <string name="no_playstore">Play Store பயன்பாடு கிடைக்கவில்லை</string>
+    <string name="submit_content_hint">URL அல்லது உரை</string>
+    <string name="title_activity_submit">HN இல் சமர்ப்பு</string>
+    <string name="url_text_required">URL அல்லது உரை தேவை</string>
+    <string name="submit_failed">சமர்ப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="submit_successful">வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது</string>
+    <string name="confirm_no_submit">சமர்ப்பிக்காமல் வெளியேறுவா?</string>
+    <string name="submit_note">விவாதத்திற்கு ஒரு கேள்வியைச் சமர்ப்ப உரையை உள்ளிடு, அல்லது இணைப்பைச் சமர்ப்ப URL. நீங்கள் மற்ற பயன்பாடுகளிலிருந்து நேரடியாக இணைப்புகளைப் பகிரலாம்</string>
+    <string name="confirm_submit_url">இணைப்பாகச் சமர்ப்பவா?</string>
+    <string name="confirm_submit_question">கேள்வியாகச் சமர்ப்பவா?</string>
+    <string name="submission_guidelines">சமர்ப்பு வழிமுறைகள்</string>
+    <string name="title_activity_user">என் சுயவிவரம்</string>
+    <string name="user_info">உருவாக்கப்பட்டது: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s சமர்ப்பு</item>
+        <item quantity="one">%1$s சமர்ப்பு</item>
+        <item quantity="other">%1$s சமர்ப்புகள்</item>
+    </plurals>
+    <string name="view_story">கதையைக் காண்க</string>
+    <string name="user_failed">பயனரை ஏற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="dead_prefix">[இறந்த]</string>
+    <string name="title_activity_thread_preview">நூல் முன்னோட்டம்</string>
+    <string name="view_thread">நூலைக் காண்க</string>
+    <string name="view_user">பயனரைக் காண்க</string>
+    <string name="more">மேலும்</string>
+    <string name="logout">வெளியேறு</string>
+    <string name="offline">ஆஃப்லைன்</string>
+    <string name="offline_notice">நீங்கள் தற்போது ஆஃப்லைனில் உள்ளீர்கள்</string>
+    <string name="download_in_progress">பதிவிறக்கு நடந்து கொண்டிருக்கிறது</string>
+    <string name="love_it">இதை நான் விரும்புகிறேன்!</string>
+    <string name="display_options">காட்சி விருப்பங்கள்</string>
+    <string name="pull_up_hint">மேலுக்கு இழுக்கு மேலும்</string>
+    <string name="find_in_page">பக்கத்தில் தேடு</string>
+    <string name="no_matches">பொருத்தங்கள் கிடைக்கவில்லை</string>
+    <string name="back">பின்</string>
+    <string name="forward">முன்</string>
+    <string name="zoom_out">ஜூம் அவுட்</string>
+    <string name="zoom_in">ஜூம் இன்</string>
+    <string name="refresh">புதுப்பி</string>
+    <string name="exit_fullscreen">வெளியேறு</string>
+    <string name="next">அடுத்த</string>
+    <string name="list_display_options">பட்டியல் காட்சி விருப்பங்கள்</string>
+    <string name="last_screen">கடைசி பயன்படுத்தப்பட்ட திரை</string>
+    <string name="widget_options">விட்ஜெட் விருப்பங்கள்</string>
+    <string name="item_exist">ஒரு போன்ற கதை ஏற்கனவே சமர்ப்பிக்கப்பட்டது</string>
+    <string name="hn_link">Hacker News இணைப்பு</string>
+    <string name="article_link">கட்டுரை இணைப்பு</string>
+    <string name="hint_drag">மறுநிலைப்படுத்த இழுக்கு</string>
+    <string name="hint_nav_short">வழிசெலுத்த ஸ்வைப் \u2191 \u2193 \u2192 \u2190\nமறுநிலைப்படுத்த நீண்ட அழுத்து</string>
+    <string name="konami">நீங்கள் கோனாமி குறியீட்டைப் பெற்றீர்கள்! எனக்கு 5 நட்சத்திரங்கள் தருவீர்களா?</string>
+    <string name="end_of_thread">நூலின் முடிவு</string>
+    <string name="save_draft">வரைவைச் சேமி</string>
+    <string name="discard_draft">வரைவை நிராகரி</string>
+    <string name="clear_drafts">அனைத்து வரைவுகளையும் அழி</string>
+    <string name="more_sections">மேலும் பிரிவுகள்</string>
+    <string name="list">பட்டியல்</string>
+    <string name="delete">நீக்கு</string>
+    <string name="full_text">முழு உரை</string>
+    <string name="empty_text">[இந்தக் கதையில் உள்ளடக்கம் இல்லை]</string>
+    <string name="none">ஏதுமில்லை</string>
+    <string name="hint_update">உங்கள் பயன்பாடு இப்போதான் புதுப்பிக்கப்பட்டது!</string>
+    <string name="export_saved_stories">சேமிக்கப்பட்ட கதைகளை ஏற்றுமதி</string>
+    <string name="export_notification">கோப்பில் சேமிக்கப்பட்டது. விருப்பங்களுக்கு தட்டவும்.</string>
+    <string name="share_file">கோப்பைப் பகிர்</string>
+    <string name="privacy_policy">தனியுரிமைக் கொள்கை</string>
+    <string name="notification_channel_downloads">பதிவிறக்குகள்</string>
+    <string name="reply">பதில்</string>
+</resources>

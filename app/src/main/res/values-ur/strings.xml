@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">ترتیبات</string>
+    <string name="title_activity_list">بہترین کہانیاں</string>
+    <string name="title_activity_best">سب سے بہترین کہانیاں</string>
+    <string name="title_activity_item">تبصرے</string>
+    <string name="title_activity_release">نیا کیا ہے</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">کھولیں</string>
+    <string name="close_drawer">بند کریں</string>
+    <string name="view_in_browser">بیرونی براؤزر میں دیکھیں</string>
+    <string name="share">شیئر کریں</string>
+    <string name="title_activity_about">کے بارے میں</string>
+    <string name="license_title">لائسنس</string>
+    <string name="third_party_licenses_title">تیسرے فریق کے لائسنس</string>
+    <string name="developer_info_title">ڈویلپر کی معلومات</string>
+    <string name="application_info_title">ایپ کی معلومات</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>ورژن</b> %1$s<br>
+            <b>بلڈ</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>بنایا گیا</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> Ha Duy Trung کی Materialistic کا ایک فورک ہے۔<br><br>
+            <b>تبدیلیاں:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; جدید ٹولچین<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; نئے تھیم<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; بنفشی<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; سمندر<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; گلاب<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; مونوکائی<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; نارڈ<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; چھے فونٹ اور تنگ فاصلے کے ساتھ کمپیکٹ لسٹ موڈ<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; نئے فونٹ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; سادہ نیویگیشن ڈرائر، تمام حصے روٹ میں<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; پورے ایپ میں تنگ فاصلے<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; شفاف اسکرول چمک<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; سائیڈ بائی سائیڈ ڈیبگ انسٹالیشن سپورٹ<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">لائبریریاں اور وسائل</string>
+    <string name="title_activity_favorite">محفوظ کہانیاں</string>
+    <string name="saved">%1$s پہلے محفوظ کیا گیا</string>
+    <string name="toast_saved">کہانی محفوظ ہو گئی</string>
+    <string name="clear_all">سب صاف کریں</string>
+    <string name="toast_removed">کہانی ہٹا دی گئی</string>
+    <string name="no_saved_stories">ابھی تک کوئی محفوظ کہانی نہیں</string>
+    <string name="no_comments">یہاں ابھی خاموش ہے</string>
+    <string name="confirm_clear">سب محفوظ کہانیاں صاف کریں؟</string>
+    <string name="export">برآمد کریں</string>
+    <string name="clear_selected">منتخب صاف کریں</string>
+    <string name="confirm_clear_selected">منتخب محفوظ کہانیاں صاف کریں؟</string>
+    <string name="search">تلاش کریں</string>
+    <string name="hint_search_saved_stories">محفوظ کہانیاں تلاش کریں</string>
+    <string name="no_stories_search">آپ جو تلاش کر رہے ہیں وہ نہیں ملا</string>
+    <string name="display">ڈسپلے</string>
+    <string name="pref_external_title">بیرونی براؤزر استعمال کریں</string>
+    <string name="pref_external_summary">بیرونی براؤزر میں مضمون پڑھیں</string>
+    <string name="pref_color_code_title">رنگ کوڈ</string>
+    <string name="pref_color_code_opacity_title">رنگ کوڈ شفافیت</string>
+    <string name="pref_highlight_updated_title">اپ ڈیٹ کی گئی کہانیاں نمایاں کریں</string>
+    <string name="pref_highlight_updated_summary">آخری ریفریش سے تبدیلیاں دکھائیں</string>
+    <string name="pref_custom_tab_title">کسٹم ٹیب استعمال کریں</string>
+    <string name="pref_custom_tab_summary">پورے براؤزر کے بجائے براؤزر ٹیب کھولیں</string>
+    <string name="pref_story_display_title">ڈیفالٹ کھولیں</string>
+    <string name="pref_theme_title">تھیم</string>
+    <string name="pref_app_icon_title">ایپ آئیکن اسٹائل</string>
+    <string name="app_icon_default">نارنجی (ڈیفالٹ)</string>
+    <string name="app_icon_purple">بنفشی</string>
+    <string name="app_icon_green">سبز</string>
+    <string name="app_icon_blue">نیلا</string>
+    <string name="app_icon_red">سرخ</string>
+    <string name="app_icon_teal">تیل</string>
+    <string name="app_icon_pink">گلابی</string>
+    <string name="app_icon_indigo">نیلگوں</string>
+    <string name="pref_daynight_title">خودکار دن رات موڈ</string>
+    <string name="pref_search_sort_title">ترتیب دیں</string>
+    <string name="pref_search_sort_value_recent">حالیہ</string>
+    <string name="pref_search_sort_value_default">ڈیفالٹ</string>
+    <string name="pref_text_size_title">ٹیکسٹ سائز</string>
+    <string name="pref_font_title">فونٹ</string>
+    <string name="pref_comment_display_title">تھریڈ</string>
+    <string name="pref_max_lines_title">طویل تبصرہ</string>
+    <string name="pref_multi_window_title">ملٹی ونڈو موڈ</string>
+    <string name="pref_multi_window_summary">کون سا ونڈو کہانی کھولے گا (Android 7+)</string>
+    <string name="pref_multi_window_none">وہی</string>
+    <string name="pref_multi_window_one">دوسرا</string>
+    <string name="pref_navigation_title">اسکرین نیویگیشن</string>
+    <string name="pref_navigation_vibrate_title">چھو پر تھرتھراہ</string>
+    <string name="pref_lazy_load_title">لیزی لوڈ مواد</string>
+    <string name="pref_lazy_load_summary">مواد صرف تب لوڈ کریں جب آپ اس کے ٹیب پر سوئچ کریں</string>
+    <string name="pref_saved_item_sync_title">آف لائن رسائی فعال کریں</string>
+    <string name="pref_saved_item_sync_summary">کہانی محفوظ کرتے وقت مواد ڈاؤن لوڈ کریں</string>
+    <string name="pref_offline_data_title">کب ڈاؤن لوڈ کریں</string>
+    <string name="pref_offline_comments_title">تبصرے ڈاؤن لوڈ کریں</string>
+    <string name="pref_offline_article_title">مضمون ڈاؤن لوڈ کریں</string>
+    <string name="pref_offline_readability_title">ریڈیبلٹی ڈاؤن لوڈ کریں</string>
+    <string name="pref_offline_data_wifi">صرف WiFi</string>
+    <string name="pref_offline_data_always">ہمیشہ</string>
+    <string name="pref_offline_notification_title">پیش رفت دکھائیں</string>
+    <string name="pref_offline_notification_summary">ڈاؤن لوڈ پیش رفت کے لیے نوٹیفیکیشن دکھائیں</string>
+    <string name="pref_launch_screen_title">ڈیفالٹ اسکرین</string>
+    <string name="pref_volume_title">ولیوم نیویگیشن استعمال کریں</string>
+    <string name="pref_volume_summary">ولیوم کیز سے اوپر/نیچے اسکرول کریں</string>
+    <string name="pref_ad_block_title">اشتہارات بلاک کریں</string>
+    <string name="pref_ad_block_summary">انٹرنل براؤزر کے لیے سادہ اشتہار بلاکر فعال کریں</string>
+    <string name="pref_line_height_title">لائن ہائٹ</string>
+    <string name="pref_list_item_view_title">کارڈ کے طور پر دکھائیں</string>
+    <string name="pref_list_compact_title">کمپیکٹ لسٹ فاصلہ</string>
+    <string name="pref_list_compact_summary">وسیع عنوانوں کے لیے تنگ قطاریں اور تنگ اسکور کالم</string>
+    <string name="pref_thread_indicator_title">تھریڈ اشارہ</string>
+    <string name="pref_widget_section_title">حصہ</string>
+    <string name="pref_widget_query_title">کوئری کے ذریعے فلٹر کریں (اختیاری)</string>
+    <string name="pref_widget_frequency_title">اپ ڈیٹ فریکوئنسی</string>
+    <string name="pref_auto_viewed_title">خودکار طور پر دیکھا ہوا کے طور پر نشان زد کریں</string>
+    <string name="pref_auto_viewed_summary">اوپر سوائپ کرتے وقت کہانیوں کو دیکھا ہوا کے طور پر نشان زد کریں</string>
+    <string name="pref_smooth_scroll_title">نیویگیشن اینیمیٹ کریں</string>
+    <string name="pref_smooth_scroll_summary">اسکرول درستگی بہتر بنانے کے لیے غیر فعال کریں</string>
+    <string name="pref_list_swipe_left_title">بائیں سوائپ کریں</string>
+    <string name="pref_list_swipe_right_title">دائیں سوائپ کریں</string>
+    <string name="connection_error">Hacker News سے رابطہ نہیں ہو سکا۔ اپنا رابطہ چیک کریں یا دوبارہ کوشش کریں۔</string>
+    <string name="select_story">دیکھنے کے لیے ایک کہانی منتخب کریں</string>
+    <string name="download_external">دوسرے ایپ میں دیکھیں</string>
+    <string name="try_me">بعد کے لیے محفوظ کرنے کے لیے لمبا دباؤ/سوائپ کریں!</string>
+    <string name="title_activity_jobs">ملازمتیں</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">نئی کہانیاں</string>
+    <string name="title_activity_search">HN تلاش کریں</string>
+    <string name="clear_search_history">تلاش کی تاریخ صاف کریں</string>
+    <string name="clear_search_history_confirm">تلاش کی تاریخ صاف کریں؟</string>
+    <string name="undo">واپس</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">تبصرے</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s تبصرہ</item>
+        <item quantity="one">%1$s تبصرہ</item>
+        <item quantity="other">%1$s تبصرے</item>
+    </plurals>
+    <string name="article">مضمون</string>
+    <string name="reset_settings">سب ترتیبات ری سیٹ کریں</string>
+    <string name="reset_settings_confirm">کیا آپ اپنی تمام ترجیحات کو ایپ ڈیفالٹ پر ری سیٹ کرنا چاہتے ہیں؟</string>
+    <string name="last_updated">آخری اپ ڈیٹ %1$s</string>
+    <string name="feedback">فیڈ بیک</string>
+    <string name="send_feedback">فیڈ بیک بھیجیں</string>
+    <string name="title_hint">عنوان</string>
+    <string name="comment_hint">تبصرہ</string>
+    <string name="feedback_note">
+        <![CDATA[
+            آپ کا فیڈ بیک ایک <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a> کے طور پر عوامی طور پر کیا جائے گا۔
+        ]]>
+    </string>
+    <string name="title_required">عنوان ضروری ہے</string>
+    <string name="comment_required">تبصرہ ضروری ہے</string>
+    <string name="feedback_sent">فیڈ بیک بھیجا گیا۔ شکریہ!</string>
+    <string name="feedback_failed">بھیجنے میں ناکام، دوبارہ کوشش کریں</string>
+    <string name="chooser_title">کے ساتھ کھولیں</string>
+    <string name="title_activity_popular">پکڑو</string>
+    <string name="range">حد</string>
+    <string name="popular_range_last_24h">پچھلے 24 گھنٹے</string>
+    <string name="popular_range_past_week">پچھلے ہفتے</string>
+    <string name="popular_range_past_month">پچھلے مہینے</string>
+    <string name="popular_range_past_year">پچھلے سال</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s نئی کہانی</item>
+        <item quantity="one">%1$s نئی کہانی</item>
+        <item quantity="other">%1$s نئی کہانیاں</item>
+    </plurals>
+    <string name="show_me">دکھائیں</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s نئی کہانی دکھا رہا ہے</item>
+        <item quantity="one">%1$s نئی کہانی دکھا رہا ہے</item>
+        <item quantity="other">%1$s نئی کہانیاں دکھا رہا ہے</item>
+    </plurals>
+    <string name="show_all">سب دکھائیں</string>
+    <string name="whats_this">یہ کیا ہے؟</string>
+    <string name="got_it">سمجھ گیا</string>
+    <string name="help_new_story">آخری ریفریش سے نئی کہانی</string>
+    <string name="help_promoted_story">آخری ریفریش سے فروغ شدہ کہانی</string>
+    <string name="help_new_comments">آخری ریفریش سے نئے تبصرے والی کہانی</string>
+    <string name="help_lazy_load">لیزی لوڈ سیٹنگ فعال ہونے پر، صرف آپ کی ترجیحی ڈیفالٹ ٹیب لوڈ ہوگا جب کوئی آئٹم پہلی بار کھولا جائے گا۔\n\nاگر آپ سست کنکشن پر ہیں یا تاخیر کا سامنا کر رہے ہیں، تو اسے فعال کرنے سے مدد مل سکتی ہے۔</string>
+    <string name="help_volume_up">اوپر اسکرول کرنے کے لیے ولیوم اپ دبائیں</string>
+    <string name="help_long_volume_up">تیز سے اوپر اسکرول کرنے کے لیے ولیوم اپ لمبا دبائیں</string>
+    <string name="help_volume_down">نیچے اسکرول کرنے کے لیے ولیوم ڈاؤن دبائیں</string>
+    <string name="help_navigate">نیسٹڈ تبصرہ تھریڈز نیویگیٹ کرنے کے لیے سوائپ جیسچرز کا جواب دینے والا ایک فلوٹنگ نیویگیشن بٹن دکھائیں۔</string>
+    <string name="help_navigate_up">سوائپ \u2191: پچھلے تبصرے پر جائیں</string>
+    <string name="help_navigate_down">سوائپ \u2193: اگلے تبصرے پر جائیں</string>
+    <string name="help_navigate_right">سوائپ \u2192: پھیلائیں اور 1st جواب پر جائیں</string>
+    <string name="help_navigate_left">سوائپ \u2190: والد پر واپس جائیں</string>
+    <string name="help_navigate_move">نیویگیشن بٹن کو نئی پوزیشن پر کھینچنے کے لیے لمبا دبائیں</string>
+    <string name="readability">پڑھنے کی صلاحیت</string>
+    <string name="text_size_extra_small">بہت چھوٹا</string>
+    <string name="text_size_small">چھوٹا</string>
+    <string name="text_size_medium">درمیانہ</string>
+    <string name="text_size_large">بڑا</string>
+    <string name="text_size_extra_large">بہت بڑا</string>
+    <string name="readability_failed">مضمون کا تجزیہ نہیں کیا جا سکا</string>
+    <string name="theme_light">روشنی</string>
+    <string name="theme_dark">تاریک</string>
+    <string name="theme_black">سیاہ</string>
+    <string name="theme_sepia">سیپیا</string>
+    <string name="theme_green">سبز</string>
+    <string name="theme_transparent">شفاف</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">بنفشی</string>
+    <string name="theme_ocean">سمندر</string>
+    <string name="theme_rose">گلاب</string>
+    <string name="theme_monokai">مونوکائی</string>
+    <string name="theme_nord">نارڈ</string>
+    <string name="theme_crimson">کریمسن</string>
+    <string name="theme_forest">جنگل</string>
+    <string name="theme_midnight">دیر رات</string>
+    <string name="theme_sand">ریت</string>
+    <string name="theme_dracula">ڈریکولا</string>
+    <string name="theme_darkorange">تاریک نارنجی</string>
+    <string name="comment_display_multiple">متعدد صفحات</string>
+    <string name="comment_display_single">ایک صفحہ - خودکار پھیلاؤ</string>
+    <string name="comment_display_collapsed">ایک صفحہ - سکڑا ہوا</string>
+    <string name="story_display_article">مضمون</string>
+    <string name="story_display_comments">تبصرے</string>
+    <string name="search_sort_recent">زیادہ حالیہ</string>
+    <string name="search_sort_popularity">مقبولیت</string>
+    <string name="story_display_readability">پڑھنے کی صلاحیت</string>
+    <string name="font_options">فونٹ آپشنز</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">سب %1$d لائنیں پڑھیں</string>
+    <string name="comment_max_lines_3">زیادہ سے زیادہ 3 لائنیں</string>
+    <string name="comment_max_lines_4">زیادہ سے زیادہ 4 لائنیں</string>
+    <string name="comment_max_lines_5">زیادہ سے زیادہ 5 لائنیں</string>
+    <string name="comment_max_lines_all">مکمل مواد</string>
+    <string name="line_height_compact">کمپیکٹ</string>
+    <string name="line_height_normal">عام</string>
+    <string name="line_height_cozy">آرام دہ</string>
+    <string name="line_height_comfortable">آرام بخش</string>
+    <string name="frequency_3_hours">3 گھنٹے</string>
+    <string name="frequency_6_hours">6 گھنٹے</string>
+    <string name="frequency_12_hours">12 گھنٹے</string>
+    <string name="frequency_1_day">1 دن</string>
+    <string name="file_not_supported">مواد کی قسم معاون نہیں</string>
+    <string name="username_hint">صارف نام</string>
+    <string name="password_hint">پاس ورڈ</string>
+    <string name="login">لاگ ان</string>
+    <string name="title_activity_login">Hacker News میں لاگ ان کریں</string>
+    <string name="username_required">صارف نام ضروری ہے</string>
+    <string name="password_required">پاس ورڈ ضروری ہے</string>
+    <string name="login_failed">لاگ ان/اکاؤنٹ بنانا ناکام، دوبارہ کوشش کریں</string>
+    <string name="welcome">خوش آمدید %1$s!</string>
+    <string name="logout_confirm">کیا آپ لاگ آؤٹ کرنا چاہتے ہیں؟</string>
+    <string name="choose_account">ایک اکاؤنٹ منتخب کریں</string>
+    <string name="add_account">شامل کریں</string>
+    <string name="remove_account">ہٹائیں</string>
+    <string name="login_note">آپ کی اسناد آپ کے ڈیوائس کی ترتیبات / اکاؤنٹس کے تحت محفوظ طور پر محفوظ کیے جائیں گے</string>
+    <string name="save">محفوظ کریں</string>
+    <string name="unsave">محفوظ کرنا منسوخ کریں</string>
+    <string name="re_enter_password">اپنا پاس ورڈ دوبارہ درج کریں</string>
+    <string name="vote_up">ووٹ اپ</string>
+    <string name="voted">کامیابی سے ووٹ دیا گیا</string>
+    <string name="vote_failed">ووٹ ریکارڈ کرنے میں ناکام۔ دوبارہ کوشش کریں۔</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">بھیج رہا ہے...</string>
+    <string name="add_comment">تبصرہ شامل کریں</string>
+    <string name="title_activity_compose">لکھیں</string>
+    <string name="send">بھیجیں</string>
+    <string name="original_content">اصل مواد</string>
+    <string name="quote">اقتباس</string>
+    <string name="formatting_guidelines">HN فارمیٹنگ رہنمائیں</string>
+    <string name="confirm_save_draft">ڈرافٹ محفوظ کریں؟</string>
+    <string name="create_account">اکاؤنٹ بنائیں</string>
+    <string name="comment_failed">تبصرہ بھیجنے میں ناکام</string>
+    <string name="comment_successful">تبصرہ شامل کیا گیا۔ دیکھنے کے لیے ریفریش کریں۔</string>
+    <string name="confirm_no_waiting">انتظار کیے بغیر نکلیں؟</string>
+    <string name="rate_app">ایپ کی درجہ بندی کریں</string>
+    <string name="or">یا</string>
+    <string name="leave_feedback">فیڈ بیک چھوڑیں</string>
+    <string name="no_playstore">کوئی Play Store ایپ نہیں ملا</string>
+    <string name="submit_content_hint">URL یا ٹیکسٹ</string>
+    <string name="title_activity_submit">HN میں بھیجیں</string>
+    <string name="url_text_required">URL یا ٹیکسٹ ضروری ہے</string>
+    <string name="submit_failed">بھیجنے میں ناکام۔ دوبارہ کوشش کریں۔</string>
+    <string name="submit_successful">کامیابی سے بھیجا گیا</string>
+    <string name="confirm_no_submit">بھیے بغیر نکلیں؟</string>
+    <string name="submit_note">بحث کے لیے ایک سوال بھیجنے کے لیے ٹیکسٹ درج کریں، یا لنک بھیجنے کے لیے URL۔ آپ دوسرے ایپس سے بھی براہ راست لنکس شیئر کر سکتے ہیں</string>
+    <string name="confirm_submit_url">لنک کے طور پر بھیجیں؟</string>
+    <string name="confirm_submit_question">سوال کے طور پر بھیجیں؟</string>
+    <string name="submission_guidelines">جمع کرائنے کی رہنمائیں</string>
+    <string name="title_activity_user">میرا پروفائل</string>
+    <string name="user_info">بنایا گیا: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s جمع</item>
+        <item quantity="one">%1$s جمع</item>
+        <item quantity="other">%1$s جمع</item>
+    </plurals>
+    <string name="view_story">کہانی دیکھیں</string>
+    <string name="user_failed">صارف لوڈ نہیں ہو سکا۔ دوبارہ کوشش کریں۔</string>
+    <string name="dead_prefix">[مردہ]</string>
+    <string name="title_activity_thread_preview">تھریڈ پیش نظر</string>
+    <string name="view_thread">تھریڈ دیکھیں</string>
+    <string name="view_user">صارف دیکھیں</string>
+    <string name="more">مزید</string>
+    <string name="logout">لاگ آؤٹ</string>
+    <string name="offline">آف لائن</string>
+    <string name="offline_notice">آپ فی الحال آف لائن ہیں</string>
+    <string name="download_in_progress">ڈاؤن لوڈ جاری ہے</string>
+    <string name="love_it">میں اسے پسند کرتا ہوں!</string>
+    <string name="display_options">ڈسپلے آپشنز</string>
+    <string name="pull_up_hint">مزید کے لیے اوپر کھینچیں</string>
+    <string name="find_in_page">صفحے میں تلاش کریں</string>
+    <string name="no_matches">کوئی مماثلہ نہیں ملا</string>
+    <string name="back">پیچھے</string>
+    <string name="forward">آگے</string>
+    <string name="zoom_out">زوم آؤٹ</string>
+    <string name="zoom_in">زوم ان</string>
+    <string name="refresh">ریفرش</string>
+    <string name="exit_fullscreen">باہر نکلیں</string>
+    <string name="next">اگلا</string>
+    <string name="list_display_options">لسٹ ڈسپلے آپشنز</string>
+    <string name="last_screen">آخری استعمال شدہ اسکرین</string>
+    <string name="widget_options">وجٹ آپشنز</string>
+    <string name="item_exist">مماثل کہانی پہلے ہی جمع کرائی جا چکی ہے</string>
+    <string name="hn_link">Hacker News لنک</string>
+    <string name="article_link">مضمون لنک</string>
+    <string name="hint_drag">پھر پوزیشن کے لیے کھینچیں</string>
+    <string name="hint_nav_short">نیویگٹ کرنے کے لیے سوائپ \u2191 \u2193 \u2192 \u2190\nپھر پوزیشن کے لیے لمبا دباؤ</string>
+    <string name="konami">آپ نے کوڈی کوڈ حاصل کیا! مجھے 5 ستارے دیں؟</string>
+    <string name="end_of_thread">تھریڈ کا اختتام</string>
+    <string name="save_draft">ڈرافٹ محفوظ کریں</string>
+    <string name="discard_draft">ڈرافٹ چھوڑ دیں</string>
+    <string name="clear_drafts">سب ڈرافٹ صاف کریں</string>
+    <string name="more_sections">مزید حصے</string>
+    <string name="list">لسٹ</string>
+    <string name="delete">حذف کریں</string>
+    <string name="full_text">مکمل ٹیکسٹ</string>
+    <string name="empty_text">[اس کہانی میں کوئی مواد نہیں ہے]</string>
+    <string name="none">کوئی نہیں</string>
+    <string name="hint_update">آپ کی ایپ ابھی اپ ڈیٹ ہو گئی ہے!</string>
+    <string name="export_saved_stories">محفوظ کہانیاں برآمد کریں</string>
+    <string name="export_notification">فائل میں محفوظ۔ آپشنز کے لیے ٹیپ کریں۔</string>
+    <string name="share_file">فائل شیئر کریں</string>
+    <string name="privacy_policy">پرائیویسی پالیسی</string>
+    <string name="notification_channel_downloads">ڈاؤن لوڈز</string>
+    <string name="reply">جواب دیں</string>
+</resources>

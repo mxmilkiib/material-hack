@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Mga Setting</string>
+    <string name="title_activity_list">Mga Nangungunang Kwento</string>
+    <string name="title_activity_best">Mga Pinakamahusay na Kwento</string>
+    <string name="title_activity_item">Mga Komento</string>
+    <string name="title_activity_release">Anong Bago</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Buksan ang drawer</string>
+    <string name="close_drawer">Isara ang drawer</string>
+    <string name="view_in_browser">Tingin sa panlabas na browser</string>
+    <string name="share">Ibahagi</string>
+    <string name="title_activity_about">Tungkol sa</string>
+    <string name="license_title">Lisensya</string>
+    <string name="third_party_licenses_title">Mga Lisensya ng Third Party</string>
+    <string name="developer_info_title">Impormasyon ng Developer</string>
+    <string name="application_info_title">Impormasyon ng App</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Bersyon</b> %1$s<br>
+            <b>Build</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Binuo</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> ay isang fork ng Materialistic ni Ha Duy Trung.<br><br>
+            <b>Mga Pagbabago:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modernong toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Bagong mga tema<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Violet<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Karagatan<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Rosas<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Compact list mode na may mas maliit na font at mas maikling spacing<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Bagong mga font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Pinasimple na navigation drawer, lahat ng seksyon sa root<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Mas maikling spacing sa buong app<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Transparent na scroll glow<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Suporta sa side-by-side debug installation<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Mga Library &amp; Resources</string>
+    <string name="title_activity_favorite">Mga Nai-save na Kwento</string>
+    <string name="saved">Nai-save %1$s na nakalipas</string>
+    <string name="toast_saved">Nai-save ang kwento</string>
+    <string name="clear_all">Alisin lahat</string>
+    <string name="toast_removed">Tinanggal ang kwento</string>
+    <string name="no_saved_stories">Wala pang nai-save na kwento</string>
+    <string name="no_comments">Pa rin natahimik dito</string>
+    <string name="confirm_clear">Alisin lahat ang nai-save na kwento?</string>
+    <string name="export">I-export</string>
+    <string name="clear_selected">Alisin ang napili</string>
+    <string name="confirm_clear_selected">Alisin ang mga napiling nai-save na kwento?</string>
+    <string name="search">Maghanap</string>
+    <string name="hint_search_saved_stories">Maghanap ng nai-save na kwento</string>
+    <string name="no_stories_search">Hindi natagpuan ang hinahanap mo</string>
+    <string name="display">Display</string>
+    <string name="pref_external_title">Gamitin ang panlabas na browser</string>
+    <string name="pref_external_summary">Magbasa ng mga artikulo sa panlabas na browser</string>
+    <string name="pref_color_code_title">Color code</string>
+    <string name="pref_color_code_opacity_title">Opacity ng color code</string>
+    <string name="pref_highlight_updated_title">I-highlight ang mga nai-update na kwento</string>
+    <string name="pref_highlight_updated_summary">Ipakita ang mga pagbabago mula sa huling refresh</string>
+    <string name="pref_custom_tab_title">Gamitin ang custom tabs</string>
+    <string name="pref_custom_tab_summary">Buksan ang browser tab sa halip na buong browser</string>
+    <string name="pref_story_display_title">Default na buksan</string>
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_app_icon_title">Istilo ng icon ng app</string>
+    <string name="app_icon_default">Orange (default)</string>
+    <string name="app_icon_purple">Lila</string>
+    <string name="app_icon_green">Berde</string>
+    <string name="app_icon_blue">Asul</string>
+    <string name="app_icon_red">Pula</string>
+    <string name="app_icon_teal">Teal</string>
+    <string name="app_icon_pink">Pink</string>
+    <string name="app_icon_indigo">Indigo</string>
+    <string name="pref_daynight_title">Awtomatikong day-night mode</string>
+    <string name="pref_search_sort_title">Ayusin ayon sa</string>
+    <string name="pref_search_sort_value_recent">pinakabago</string>
+    <string name="pref_search_sort_value_default">default</string>
+    <string name="pref_text_size_title">Laki ng teksto</string>
+    <string name="pref_font_title">Font</string>
+    <string name="pref_comment_display_title">Thread</string>
+    <string name="pref_max_lines_title">Mahabang komento</string>
+    <string name="pref_multi_window_title">Multi-window mode</string>
+    <string name="pref_multi_window_summary">Aling window para buksan ang kwento (Android 7+)</string>
+    <string name="pref_multi_window_none">Pareho</string>
+    <string name="pref_multi_window_one">Iba</string>
+    <string name="pref_navigation_title">On-screen navigation</string>
+    <string name="pref_navigation_vibrate_title">Mag-vibrate sa pag-touch</string>
+    <string name="pref_lazy_load_title">Lazy load ng content</string>
+    <string name="pref_lazy_load_summary">I-load lang ang content kapag lumipat ka sa tab nito</string>
+    <string name="pref_saved_item_sync_title">Paganahin ang offline access</string>
+    <string name="pref_saved_item_sync_summary">I-download ang content kapag nai-save mo ang kwento</string>
+    <string name="pref_offline_data_title">Kapag i-download</string>
+    <string name="pref_offline_comments_title">I-download ang mga komento</string>
+    <string name="pref_offline_article_title">I-download ang artikulo</string>
+    <string name="pref_offline_readability_title">I-download ang readability</string>
+    <string name="pref_offline_data_wifi">WiFi lang</string>
+    <string name="pref_offline_data_always">Laging</string>
+    <string name="pref_offline_notification_title">Ipakita ang progress</string>
+    <string name="pref_offline_notification_summary">Ipakita ang notification para sa progress ng download</string>
+    <string name="pref_launch_screen_title">Default na screen</string>
+    <string name="pref_volume_title">Gamitin ang volume navigation</string>
+    <string name="pref_volume_summary">Scroll pataas/pababa gamit ang volume keys</string>
+    <string name="pref_ad_block_title">Block ang mga ad</string>
+    <string name="pref_ad_block_summary">Paganahin ang simple na ad blocker para sa internal browser</string>
+    <string name="pref_line_height_title">Taas ng linya</string>
+    <string name="pref_list_item_view_title">Ipakita bilang mga card</string>
+    <string name="pref_list_compact_title">Compact na list spacing</string>
+    <string name="pref_list_compact_summary">Mas maikling mga row at mas makitid na column ng score para sa mas malawak na mga title</string>
+    <string name="pref_thread_indicator_title">Indicator ng thread</string>
+    <string name="pref_widget_section_title">Seksyon</string>
+    <string name="pref_widget_query_title">Filter ayon sa query (optional)</string>
+    <string name="pref_widget_frequency_title">Frequency ng update</string>
+    <string name="pref_auto_viewed_title">Awtomatikong markahan bilang na-view</string>
+    <string name="pref_auto_viewed_summary">Markahan ang mga kwento bilang na-view kapag nag-scroll ka pataas</string>
+    <string name="pref_smooth_scroll_title">I-animate ang navigation</string>
+    <string name="pref_smooth_scroll_summary">Huwag paganahin para mapabuti ang accuracy ng scroll</string>
+    <string name="pref_list_swipe_left_title">Swipe kaliwa para sa</string>
+    <string name="pref_list_swipe_right_title">Swipe kanan para sa</string>
+    <string name="connection_error">Hindi makakonekta sa Hacker News. Suriin ang iyong koneksyon o subukang muli.</string>
+    <string name="select_story">Pumili ng kwento para tingnan</string>
+    <string name="download_external">Tingnan sa ibang app</string>
+    <string name="try_me">Long press/swipe para i-save sa ibang pagkakataon!</string>
+    <string name="title_activity_jobs">Mga Trabaho</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Mga Bagong Kwento</string>
+    <string name="title_activity_search">Maghanap ng HN</string>
+    <string name="clear_search_history">Alisin ang search history</string>
+    <string name="clear_search_history_confirm">Alisin ang search history?</string>
+    <string name="undo">I-undo</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Mga Komento</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Komento</item>
+        <item quantity="one">%1$s Komento</item>
+        <item quantity="other">%1$s mga Komento</item>
+    </plurals>
+    <string name="article">Artikulo</string>
+    <string name="reset_settings">I-reset ang lahat ng setting</string>
+    <string name="reset_settings_confirm">I-reset ang lahat ng iyong preference sa default ng app?</string>
+    <string name="last_updated">Huling na-update %1$s</string>
+    <string name="feedback">Feedback</string>
+    <string name="send_feedback">Ipadala ang Feedback</string>
+    <string name="title_hint">Pamagat</string>
+    <string name="comment_hint">Komento</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Ang iyong feedback ay magiging publiko bilang isang <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a>.
+        ]]>
+    </string>
+    <string name="title_required">Kailangan ang pamagat</string>
+    <string name="comment_required">Kailangan ang komento</string>
+    <string name="feedback_sent">Naipadala ang feedback. Salamat!</string>
+    <string name="feedback_failed">Nabigo ang pagpapadala, subukang muli</string>
+    <string name="chooser_title">Buksan gamit ang</string>
+    <string name="title_activity_popular">Habol</string>
+    <string name="range">Saklaw</string>
+    <string name="popular_range_last_24h">Nakaraang 24 oras</string>
+    <string name="popular_range_past_week">Nakaraang linggo</string>
+    <string name="popular_range_past_month">Nakaraang buwan</string>
+    <string name="popular_range_past_year">Nakaraang taon</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s bagong kwento</item>
+        <item quantity="one">%1$s bagong kwento</item>
+        <item quantity="other">%1$s mga bagong kwento</item>
+    </plurals>
+    <string name="show_me">Ipakita</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Nagpapakita ng %1$s bagong kwento</item>
+        <item quantity="one">Nagpapakita ng %1$s bagong kwento</item>
+        <item quantity="other">Nagpapakita ng %1$s mga bagong kwento</item>
+    </plurals>
+    <string name="show_all">Ipakita lahat</string>
+    <string name="whats_this">Ano ito?</string>
+    <string name="got_it">Naiintindihan ko</string>
+    <string name="help_new_story">Bagong kwento mula sa huling refresh</string>
+    <string name="help_promoted_story">Nai-promote na kwento mula sa huling refresh</string>
+    <string name="help_new_comments">Kwento na may mga bagong komento mula sa huling refresh</string>
+    <string name="help_lazy_load">Kapag naka-enable ang lazy load, lang ang iyong preferred default tab ang maging loaded kapag unang buksan ang item.\n\nKapag nasa mabagal na koneksyon ka o nakakaranas ng lag, maaaring makatulong ang pag-enable nito.</string>
+    <string name="help_volume_up">Pindutin ang volume up para mag-scroll pataas</string>
+    <string name="help_long_volume_up">Long press ang volume up para mabilis na mag-scroll pataas</string>
+    <string name="help_volume_down">Pindutin ang volume down para mag-scroll pababa</string>
+    <string name="help_navigate">Ipakita ang floating navigation button na tumutugon sa mga swipe gesture para mag-navigate sa mga nested na comment threads.</string>
+    <string name="help_navigate_up">Swipe \u2191: pumunta sa nakaraang komento</string>
+    <string name="help_navigate_down">Swipe \u2193: pumunta sa susunod na komento</string>
+    <string name="help_navigate_right">Swipe \u2192: palawakin &amp; pumunta sa 1st reply</string>
+    <string name="help_navigate_left">Swipe \u2190: bumalik sa parent</string>
+    <string name="help_navigate_move">Long press para i-drag ang navigation button sa bagong posisyon</string>
+    <string name="readability">Readability</string>
+    <string name="text_size_extra_small">Extra small</string>
+    <string name="text_size_small">Maliit</string>
+    <string name="text_size_medium">Katamtaman</string>
+    <string name="text_size_large">Malaki</string>
+    <string name="text_size_extra_large">Extra large</string>
+    <string name="readability_failed">Hindi ma-analyze ang artikulo</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_black">Black</string>
+    <string name="theme_sepia">Sepia</string>
+    <string name="theme_green">Berde</string>
+    <string name="theme_transparent">Transparent</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Lila</string>
+    <string name="theme_ocean">Karagatan</string>
+    <string name="theme_rose">Rosas</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Crimson</string>
+    <string name="theme_forest">Gubat</string>
+    <string name="theme_midnight">Hatinggabi</string>
+    <string name="theme_sand">Buhangin</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Dark Orange</string>
+    <string name="comment_display_multiple">Maraming pahina</string>
+    <string name="comment_display_single">Isang pahina - auto expand</string>
+    <string name="comment_display_collapsed">Isang pahina - collapsed</string>
+    <string name="story_display_article">Artikulo</string>
+    <string name="story_display_comments">Mga Komento</string>
+    <string name="search_sort_recent">Mas bago</string>
+    <string name="search_sort_popularity">Popularidad</string>
+    <string name="story_display_readability">Readability</string>
+    <string name="font_options">Mga opsyon ng font</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Basahin ang lahat ng %1$d linya</string>
+    <string name="comment_max_lines_3">Max 3 linya</string>
+    <string name="comment_max_lines_4">Max 4 linya</string>
+    <string name="comment_max_lines_5">Max 5 linya</string>
+    <string name="comment_max_lines_all">Buong content</string>
+    <string name="line_height_compact">Compact</string>
+    <string name="line_height_normal">Normal</string>
+    <string name="line_height_cozy">Cozy</string>
+    <string name="line_height_comfortable">Comfortable</string>
+    <string name="frequency_3_hours">3 oras</string>
+    <string name="frequency_6_hours">6 oras</string>
+    <string name="frequency_12_hours">12 oras</string>
+    <string name="frequency_1_day">1 araw</string>
+    <string name="file_not_supported">Hindi suportado ang uri ng content</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="title_activity_login">Login sa Hacker News</string>
+    <string name="username_required">Kailangan ang username</string>
+    <string name="password_required">Kailangan ang password</string>
+    <string name="login_failed">Nabigo ang login/paglikha ng account, subukang muli</string>
+    <string name="welcome">Maligayang pagdating %1$s!</string>
+    <string name="logout_confirm">Gusto mo bang mag-logout?</string>
+    <string name="choose_account">Pumili ng account</string>
+    <string name="add_account">Magdagdag</string>
+    <string name="remove_account">Alisin</string>
+    <string name="login_note">Ang iyong credentials ay maging naka-secure na naka-store sa ilalim ng Settings / Accounts ng iyong device</string>
+    <string name="save">I-save</string>
+    <string name="unsave">I-unsave</string>
+    <string name="re_enter_password">Ilagay muli ang iyong password</string>
+    <string name="vote_up">Vote up</string>
+    <string name="voted">Matagumpay na nai-vote</string>
+    <string name="vote_failed">Nabago ang pag-record ng vote. Subukang muli.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Nagpapadala...</string>
+    <string name="add_comment">Magdagdag ng komento</string>
+    <string name="title_activity_compose">Compose</string>
+    <string name="send">Ipadala</string>
+    <string name="original_content">Orihinal na content</string>
+    <string name="quote">Quote</string>
+    <string name="formatting_guidelines">Mga guideline ng formatting ng HN</string>
+    <string name="confirm_save_draft">I-save ang draft?</string>
+    <string name="create_account">Lumikha ng account</string>
+    <string name="comment_failed">Nabigong ipadala ang komento</string>
+    <string name="comment_successful">Naidagdag ang komento. I-refresh para tingnan.</string>
+    <string name="confirm_no_waiting">Lalabas ba nang hindi naghihintay?</string>
+    <string name="rate_app">I-rate ang app</string>
+    <string name="or">o</string>
+    <string name="leave_feedback">Mag-iwan ng feedback</string>
+    <string name="no_playstore">Walang nahanap na Play Store app</string>
+    <string name="submit_content_hint">URL o teksto</string>
+    <string name="title_activity_submit">I-submit sa HN</string>
+    <string name="url_text_required">Kailangan ang URL o teksto</string>
+    <string name="submit_failed">Nabigong mag-submit. Subukang muli.</string>
+    <string name="submit_successful">Matagumpay na nai-submit</string>
+    <string name="confirm_no_submit">Lalabas ba nang hindi nai-submit?</string>
+    <string name="submit_note">Ilagay ang teksto para mag-submit ng tanong para sa diskusyon, o URL para mag-submit ng link. Maaari mo ring mag-share ng mga link nang direkta mula sa ibang mga app</string>
+    <string name="confirm_submit_url">I-submit bilang link?</string>
+    <string name="confirm_submit_question">I-submit bilang tanong?</string>
+    <string name="submission_guidelines">Mga guideline ng submission</string>
+    <string name="title_activity_user">Aking Profile</string>
+    <string name="user_info">Nilikha: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s submission</item>
+        <item quantity="one">%1$s submission</item>
+        <item quantity="other">%1$s mga submission</item>
+    </plurals>
+    <string name="view_story">Tingnan ang kwento</string>
+    <string name="user_failed">Hindi ma-load ang user. Subukang muli.</string>
+    <string name="dead_prefix">[patay]</string>
+    <string name="title_activity_thread_preview">Preview ng Thread</string>
+    <string name="view_thread">Tingnan ang thread</string>
+    <string name="view_user">Tingnan ang user</string>
+    <string name="more">Higit pa</string>
+    <string name="logout">Logout</string>
+    <string name="offline">Offline</string>
+    <string name="offline_notice">Ikaw ay offline ngayon</string>
+    <string name="download_in_progress">Download ay nagpapatuloy</string>
+    <string name="love_it">Mahal ko ito!</string>
+    <string name="display_options">Mga opsyon ng display</string>
+    <string name="pull_up_hint">I-pull pataas para sa higit pa</string>
+    <string name="find_in_page">Maghanap sa pahina</string>
+    <string name="no_matches">Walang nahanap na match</string>
+    <string name="back">Bumalik</string>
+    <string name="forward">Forward</string>
+    <string name="zoom_out">Zoom out</string>
+    <string name="zoom_in">Zoom in</string>
+    <string name="refresh">Refresh</string>
+    <string name="exit_fullscreen">Exit</string>
+    <string name="next">Susunod</string>
+    <string name="list_display_options">Mga opsyon ng display ng list</string>
+    <string name="last_screen">Huling ginamit na screen</string>
+    <string name="widget_options">Mga opsyon ng widget</string>
+    <string name="item_exist">Katulod na kwento ay nai-submit na</string>
+    <string name="hn_link">Link ng Hacker News</string>
+    <string name="article_link">Link ng artikulo</string>
+    <string name="hint_drag">I-drag para muling posisyon</string>
+    <string name="hint_nav_short">Swipe \u2191 \u2193 \u2192 \u2190 para mag-navigate\nLong press para muling posisyon</string>
+    <string name="konami">Nakuha mo ang Konami code! Bigyan mo ako ng 5 stars?</string>
+    <string name="end_of_thread">Dulo ng thread</string>
+    <string name="save_draft">I-save ang draft</string>
+    <string name="discard_draft">I-discard ang draft</string>
+    <string name="clear_drafts">Alisin lahat ng draft</string>
+    <string name="more_sections">Higit pang mga seksyon</string>
+    <string name="list">List</string>
+    <string name="delete">I-delete</string>
+    <string name="full_text">Buong teksto</string>
+    <string name="empty_text">[Walang content ang kwentong ito]</string>
+    <string name="none">Wala</string>
+    <string name="hint_update">Ang iyong app ay bagong na-update!</string>
+    <string name="export_saved_stories">I-export ang nai-save na kwento</string>
+    <string name="export_notification">Nai-save sa file. I-tap para sa mga opsyon.</string>
+    <string name="share_file">Ibahagi ang file</string>
+    <string name="privacy_policy">Patakaran sa privacy</string>
+    <string name="notification_channel_downloads">Mga Download</string>
+    <string name="reply">Reply</string>
+</resources>

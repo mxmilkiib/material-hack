@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">সেটিংস</string>
+    <string name="title_activity_list">শীর্ষ গল্প</string>
+    <string name="title_activity_best">সেরা গল্প</string>
+    <string name="title_activity_item">মন্তব্য</string>
+    <string name="title_activity_release">নতুন কী</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">ড্রয়ার খুলুন</string>
+    <string name="close_drawer">ড্রয়ার বন্ধ করুন</string>
+    <string name="view_in_browser">বাহ্যিক ব্রাউজারে দেখুন</string>
+    <string name="share">শেয়ার করুন</string>
+    <string name="title_activity_about">সম্পর্কে</string>
+    <string name="license_title">লাইসেন্স</string>
+    <string name="third_party_licenses_title">তৃতীয় পক্ষের লাইসেন্স</string>
+    <string name="developer_info_title">ডেভেলপার তথ্য</string>
+    <string name="application_info_title">অ্যাপ তথ্য</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>সংস্করণ</b> %1$s<br>
+            <b>বিল্ড</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>নির্মিত</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> Ha Duy Trung দ্বারা Materialistic এর একটি ফর্ক।<br><br>
+            <b>পরিবর্তন:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; আধুনিক toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; নতুন থিম<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ভায়োলেট<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; মহাসাগর<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; গোলাপ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; মনোকাই<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; নর্ড<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; ছোট ফন্ট এবং সংকীর্ণ ফাঁকের সাথে কমপ্যাক্ট তালিকা মোড<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; নতুন ফন্ট<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; সরল নেভিগেশন ড্রয়ার, সমস্ত বিভাগ রুটে<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; সমগ্র অ্যাপে সংকীর্ণ ফাঁক<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; স্বচ্ছ স্ক্রল চকচক<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; সাইড-বাই-সাইড ডিবাগ ইনস্টলেশন সমর্থন<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">লাইব্রেরি এবং সম্পদ</string>
+    <string name="title_activity_favorite">সংরক্ষিত গল্প</string>
+    <string name="saved">%1$s আগে সংরক্ষিত</string>
+    <string name="toast_saved">গল্প সংরক্ষিত</string>
+    <string name="clear_all">সব মুছুন</string>
+    <string name="toast_removed">গল্প সরানো হয়েছে</string>
+    <string name="no_saved_stories">এখনো কোনো সংরক্ষিত গল্প নেই</string>
+    <string name="no_comments">এখানে এখনো শান্ত</string>
+    <string name="confirm_clear">সব সংরক্ষিত গল্প মুছুন?</string>
+    <string name="export">রপ্তানি করুন</string>
+    <string name="clear_selected">নির্বাচিত মুছুন</string>
+    <string name="confirm_clear_selected">নির্বাচিত সংরক্ষিত গল্প মুছুন?</string>
+    <string name="search">অনুসন্ধান</string>
+    <string name="hint_search_saved_stories">সংরক্ষিত গল্প অনুসন্ধান করুন</string>
+    <string name="no_stories_search">আপনি যা খুঁজছেন তা পাওয়া যায়নি</string>
+    <string name="display">প্রদর্শন</string>
+    <string name="pref_external_title">বাহ্যিক ব্রাউজার ব্যবহার করুন</string>
+    <string name="pref_external_summary">বাহ্যিক ব্রাউজারে নিবন্ধ পড়ুন</string>
+    <string name="pref_color_code_title">রঙ কোড</string>
+    <string name="pref_color_code_opacity_title">রঙ কোড অস্বচ্ছতা</string>
+    <string name="pref_highlight_updated_title">আপডেট করা গল্প হাইলাইট করুন</string>
+    <string name="pref_highlight_updated_summary">শেষ রিফ্রেশ থেকে পরিবর্তন দেখান</string>
+    <string name="pref_custom_tab_title">কাস্টম ট্যাব ব্যবহার করুন</string>
+    <string name="pref_custom_tab_summary">পূর্ণ ব্রাউজারের পরিবর্তে ব্রাউজার ট্যাব খুলুন</string>
+    <string name="pref_story_display_title">ডিফল্ট খুলুন</string>
+    <string name="pref_theme_title">থিম</string>
+    <string name="pref_app_icon_title">অ্যাপ আইকন স্টাইল</string>
+    <string name="app_icon_default">কমলা (ডিফল্ট)</string>
+    <string name="app_icon_purple">বেগুনি</string>
+    <string name="app_icon_green">সবুজ</string>
+    <string name="app_icon_blue">নীল</string>
+    <string name="app_icon_red">লাল</string>
+    <string name="app_icon_teal">টিল</string>
+    <string name="app_icon_pink">গোলাপি</string>
+    <string name="app_icon_indigo">নীলচে</string>
+    <string name="pref_daynight_title">স্বয়ংক্রিয় দিন-রাত মোড</string>
+    <string name="pref_search_sort_title">সাজান</string>
+    <string name="pref_search_sort_value_recent">সাম্প্রতিক</string>
+    <string name="pref_search_sort_value_default">ডিফল্ট</string>
+    <string name="pref_text_size_title">টেক্সট সাইজ</string>
+    <string name="pref_font_title">ফন্ট</string>
+    <string name="pref_comment_display_title">থ্রেড</string>
+    <string name="pref_max_lines_title">দীর্ঘ মন্তব্য</string>
+    <string name="pref_multi_window_title">মাল্টি-উইন্ডো মোড</string>
+    <string name="pref_multi_window_summary">কোন উইন্ডোতে গল্প খুলবেন (Android 7+)</string>
+    <string name="pref_multi_window_none">একই</string>
+    <string name="pref_multi_window_one">অন্য</string>
+    <string name="pref_navigation_title">অন-স্ক্রিন নেভিগেশন</string>
+    <string name="pref_navigation_vibrate_title">স্পর্শে কম্পন</string>
+    <string name="pref_lazy_load_title">লেজি লোড কন্টেন্ট</string>
+    <string name="pref_lazy_load_summary">আপনি যখন তার ট্যাবে স্যুইচ করেন তখনই কন্টেন্ট লোড করুন</string>
+    <string name="pref_saved_item_sync_title">অফলাইন অ্যাক্সেস সক্ষম করুন</string>
+    <string name="pref_saved_item_sync_summary">গল্প সংরক্ষণ করার সময় কন্টেন্ট ডাউনলোড করুন</string>
+    <string name="pref_offline_data_title">কখন ডাউনলোড করবেন</string>
+    <string name="pref_offline_comments_title">মন্তব্য ডাউনলোড করুন</string>
+    <string name="pref_offline_article_title">নিবন্ধ ডাউনলোড করুন</string>
+    <string name="pref_offline_readability_title">রিডেবিলিটি ডাউনলোড করুন</string>
+    <string name="pref_offline_data_wifi">শুধুমাত্র WiFi</string>
+    <string name="pref_offline_data_always">সর্বদা</string>
+    <string name="pref_offline_notification_title">অগ্রগতি দেখান</string>
+    <string name="pref_offline_notification_summary">ডাউনলোড অগ্রগতির জন্য নোটিফিকেশন দেখান</string>
+    <string name="pref_launch_screen_title">ডিফল্ট স্ক্রিন</string>
+    <string name="pref_volume_title">ভলিউম নেভিগেশন ব্যবহার করুন</string>
+    <string name="pref_volume_summary">ভলিউম কী দিয়ে উপরে/নিচে স্ক্রল করুন</string>
+    <string name="pref_ad_block_title">বিজ্ঞাপন ব্লক করুন</string>
+    <string name="pref_ad_block_summary">অভ্যন্তরীণ ব্রাউজারের জন্য সাধারণ বিজ্ঞাপন ব্লকার সক্ষম করুন</string>
+    <string name="pref_line_height_title">লাইন হাইট</string>
+    <string name="pref_list_item_view_title">কার্ড হিসাবে দেখান</string>
+    <string name="pref_list_compact_title">কমপ্যাক্ট তালিকা ফাঁক</string>
+    <string name="pref_list_compact_summary">চওড়া শিরোনামের জন্য সংকীর্ণ সারি এবং সংকীর্ণ স্কোর কলাম</string>
+    <string name="pref_thread_indicator_title">থ্রেড সূচক</string>
+    <string name="pref_widget_section_title">বিভাগ</string>
+    <string name="pref_widget_query_title">কোয়েরি দ্বারা ফিল্টার করুন (ঐচ্ছিক)</string>
+    <string name="pref_widget_frequency_title">আপডেট ফ্রিকোয়েন্সি</string>
+    <string name="pref_auto_viewed_title">স্বয়ংক্রিয়ভাবে দেখা হিসাবে চিহ্নিত করুন</string>
+    <string name="pref_auto_viewed_summary">উপরে সোয়াইপ করার সময় গল্পগুলি দেখা হিসাবে চিহ্নিত করুন</string>
+    <string name="pref_smooth_scroll_title">নেভিগেশন অ্যানিমেট করুন</string>
+    <string name="pref_smooth_scroll_summary">স্ক্রল নির্ভুলতা উন্নত করতে অক্ষম করুন</string>
+    <string name="pref_list_swipe_left_title">বামে সোয়াইপ করুন</string>
+    <string name="pref_list_swipe_right_title">ডানে সোয়াইপ করুন</string>
+    <string name="connection_error">Hacker News এর সাথে সংযোগ করতে অক্ষম। আপনার সংযোগ পরীক্ষা করুন বা আবার চেষ্টা করুন।</string>
+    <string name="select_story">দেখার জন্য একটি গল্প নির্বাচন করুন</string>
+    <string name="download_external">অন্য অ্যাপে দেখুন</string>
+    <string name="try_me">পরে সংরক্ষণ করতে দীর্ঘ চাপ/সোয়াইপ করুন!</string>
+    <string name="title_activity_jobs">চাকরি</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">নতুন গল্প</string>
+    <string name="title_activity_search">HN অনুসন্ধান করুন</string>
+    <string name="clear_search_history">অনুসন্ধান ইতিহাস মুছুন</string>
+    <string name="clear_search_history_confirm">অনুসন্ধান ইতিহাস মুছুন?</string>
+    <string name="undo">পূর্বাবস্থায় ফিরুন</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">মন্তব্য</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s মন্তব্য</item>
+        <item quantity="one">%1$s মন্তব্য</item>
+        <item quantity="other">%1$s মন্তব্য</item>
+    </plurals>
+    <string name="article">নিবন্ধ</string>
+    <string name="reset_settings">সব সেটিংস রিসেট করুন</string>
+    <string name="reset_settings_confirm">আপনার সব পছন্দ অ্যাপ ডিফল্টে রিসেট করবেন?</string>
+    <string name="last_updated">শেষ আপডেট %1$s</string>
+    <string name="feedback">প্রতিক্রিয়া</string>
+    <string name="send_feedback">প্রতিক্রিয়া পাঠান</string>
+    <string name="title_hint">শিরোনাম</string>
+    <string name="comment_hint">মন্তব্য</string>
+    <string name="feedback_note">
+        <![CDATA[
+            আপনার প্রতিক্রিয়া একটি <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a> হিসাবে প্রকাশ্য করা হবে।
+        ]]>
+    </string>
+    <string name="title_required">শিরোনাম প্রয়োজন</string>
+    <string name="comment_required">মন্তব্য প্রয়োজন</string>
+    <string name="feedback_sent">প্রতিক্রিয়া পাঠানো হয়েছে। ধন্যবাদ!</string>
+    <string name="feedback_failed">পাঠাতে ব্যর্থ, আবার চেষ্টা করুন</string>
+    <string name="chooser_title">দিয়ে খুলুন</string>
+    <string name="title_activity_popular">ধরুন</string>
+    <string name="range">সীমা</string>
+    <string name="popular_range_last_24h">গত 24 ঘন্টা</string>
+    <string name="popular_range_past_week">গত সপ্তাহ</string>
+    <string name="popular_range_past_month">গত মাস</string>
+    <string name="popular_range_past_year">গত বছর</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s নতুন গল্প</item>
+        <item quantity="one">%1$s নতুন গল্প</item>
+        <item quantity="other">%1$s নতুন গল্প</item>
+    </plurals>
+    <string name="show_me">দেখান</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s নতুন গল্প দেখাচ্ছে</item>
+        <item quantity="one">%1$s নতুন গল্প দেখাচ্ছে</item>
+        <item quantity="other">%1$s নতুন গল্প দেখাচ্ছে</item>
+    </plurals>
+    <string name="show_all">সব দেখান</string>
+    <string name="whats_this">এটা কী?</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="help_new_story">শেষ রিফ্রেশ থেকে নতুন গল্প</string>
+    <string name="help_promoted_story">শেষ রিফ্রেশ থেকে প্রচারিত গল্প</string>
+    <string name="help_new_comments">শেষ রিফ্রেশ থেকে নতুন মন্তব্য সহ গল্প</string>
+    <string name="help_lazy_load">লেজি লোড সক্ষম থাকলে, কেবল আপনার পছন্দের ডিফল্ট ট্যাব লোড হবে যখন একটি আইটেম প্রথমবার খোলা হবে।\n\nআপনি ধীর সংযোগে থাকলে বা দেরি অনুভব করলে, এটি সক্ষম করলে সাহায্য হতে পারে।</string>
+    <string name="help_volume_up">উপরে স্ক্রল করতে ভলিউম আপ চাপুন</string>
+    <string name="help_long_volume_up">দ্রুত উপরে স্ক্রল করতে ভলিউম আপ দীর্ঘ চাপুন</string>
+    <string name="help_volume_down">নিচে স্ক্রল করতে ভলিউম ডাউন চাপুন</string>
+    <string name="help_navigate">নেস্টেড কমেন্ট থ্রেডগুলি নেভিগেট করতে সোয়াইপ জেসচারের জবাব দেয় একটি ফ্লোটিং নেভিগেশন বাটন প্রদর্শন করুন।</string>
+    <string name="help_navigate_up">সোয়াইপ \u2191: আগের মন্তব্যে যান</string>
+    <string name="help_navigate_down">সোয়াইপ \u2193: পরবর্তী মন্তব্যে যান</string>
+    <string name="help_navigate_right">সোয়াইপ \u2192: প্রসারিত করুন এবং 1st উত্তরে যান</string>
+    <string name="help_navigate_left">সোয়াইপ \u2190: প্যারেন্টে ফিরে যান</string>
+    <string name="help_navigate_move">নেভিগেশন বাটনটি নতুন অবস্থানে টানতে দীর্ঘ চাপুন</string>
+    <string name="readability">পাঠযোগ্যতা</string>
+    <string name="text_size_extra_small">অতি ছোট</string>
+    <string name="text_size_small">ছোট</string>
+    <string name="text_size_medium">মাঝারি</string>
+    <string name="text_size_large">বড়</string>
+    <string name="text_size_extra_large">অতি বড়</string>
+    <string name="readability_failed">নিবন্ধ বিশ্লেষণ করতে অক্ষম</string>
+    <string name="theme_light">হালকা</string>
+    <string name="theme_dark">গাঢ়</string>
+    <string name="theme_black">কালো</string>
+    <string name="theme_sepia">সেপিয়া</string>
+    <string name="theme_green">সবুজ</string>
+    <string name="theme_transparent">স্বচ্ছ</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">ভায়োলেট</string>
+    <string name="theme_ocean">মহাসাগর</string>
+    <string name="theme_rose">গোলাপ</string>
+    <string name="theme_monokai">মনোকাই</string>
+    <string name="theme_nord">নর্ড</string>
+    <string name="theme_crimson">ক্রিমসন</string>
+    <string name="theme_forest">বন</string>
+    <string name="theme_midnight">মধ্যরাত</string>
+    <string name="theme_sand">বালি</string>
+    <string name="theme_dracula">ড্রাকুলা</string>
+    <string name="theme_darkorange">গাঢ় কমলা</string>
+    <string name="comment_display_multiple">একাধিক পৃষ্ঠা</string>
+    <string name="comment_display_single">একক পৃষ্ঠা - স্বয়ংক্রিয় প্রসারণ</string>
+    <string name="comment_display_collapsed">একক পৃষ্ঠা - সংকুচিত</string>
+    <string name="story_display_article">নিবন্ধ</string>
+    <string name="story_display_comments">মন্তব্য</string>
+    <string name="search_sort_recent">আরও সাম্প্রতিক</string>
+    <string name="search_sort_popularity">জনপ্রিয়তা</string>
+    <string name="story_display_readability">পাঠযোগ্যতা</string>
+    <string name="font_options">ফন্ট অপশন</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">সব %1$d লাইন পড়ুন</string>
+    <string name="comment_max_lines_3">সর্বোচ্চ 3 লাইন</string>
+    <string name="comment_max_lines_4">সর্বোচ্চ 4 লাইন</string>
+    <string name="comment_max_lines_5">সর্বোচ্চ 5 লাইন</string>
+    <string name="comment_max_lines_all">সম্পূর্ণ কন্টেন্ট</string>
+    <string name="line_height_compact">কমপ্যাক্ট</string>
+    <string name="line_height_normal">স্বাভাবিক</string>
+    <string name="line_height_cozy">আরামদায়ক</string>
+    <string name="line_height_comfortable">সুখদায়ক</string>
+    <string name="frequency_3_hours">3 ঘন্টা</string>
+    <string name="frequency_6_hours">6 ঘন্টা</string>
+    <string name="frequency_12_hours">12 ঘন্টা</string>
+    <string name="frequency_1_day">1 দিন</string>
+    <string name="file_not_supported">কন্টেন্ট টাইপ সমর্থিত নয়</string>
+    <string name="username_hint">ব্যবহারকারী নাম</string>
+    <string name="password_hint">পাসওয়ার্ড</string>
+    <string name="login">লগ ইন</string>
+    <string name="title_activity_login">Hacker News এ লগ ইন করুন</string>
+    <string name="username_required">ব্যবহারকারী নাম প্রয়োজন</string>
+    <string name="password_required">পাসওয়ার্ড প্রয়োজন</string>
+    <string name="login_failed">লগ ইন/অ্যাকাউন্ট তৈরি ব্যর্থ, আবার চেষ্টা করুন</string>
+    <string name="welcome">স্বাগতম %1$s!</string>
+    <string name="logout_confirm">আপনি কি লগ আউট করতে চান?</string>
+    <string name="choose_account">একটি অ্যাকাউন্ট চয়ন করুন</string>
+    <string name="add_account">যোগ করুন</string>
+    <string name="remove_account">সরান</string>
+    <string name="login_note">আপনার শংসাপত্রগুলি আপনার ডিভাইসের সেটিংস / অ্যাকাউন্টের অধীনে নিরাপদে সংরক্ষিত হবে</string>
+    <string name="save">সংরক্ষণ করুন</string>
+    <string name="unsave">সংরক্ষণ বাতিল করুন</string>
+    <string name="re_enter_password">আপনার পাসওয়ার্ড পুনরায় লিখুন</string>
+    <string name="vote_up">ভোট আপ</string>
+    <string name="voted">সফলভাবে ভোট দেওয়া হয়েছে</string>
+    <string name="vote_failed">ভোট রেকর্ড করতে ব্যর্থ। আবার চেষ্টা করুন।</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">পাঠাচ্ছে...</string>
+    <string name="add_comment">মন্তব্য যোগ করুন</string>
+    <string name="title_activity_compose">লিখুন</string>
+    <string name="send">পাঠান</string>
+    <string name="original_content">মূল কন্টেন্ট</string>
+    <string name="quote">উদ্ধৃতি</string>
+    <string name="formatting_guidelines">HN ফরম্যাটিং নির্দেশিকা</string>
+    <string name="confirm_save_draft">ড্রাফট সংরক্ষণ করবেন?</string>
+    <string name="create_account">অ্যাকাউন্ট তৈরি করুন</string>
+    <string name="comment_failed">মন্তব্য পাঠাতে ব্যর্থ</string>
+    <string name="comment_successful">মন্তব্য যোগ করা হয়েছে। দেখতে রিফ্রেশ করুন।</string>
+    <string name="confirm_no_waiting">অপেক্ষা না করে বের হবেন?</string>
+    <string name="rate_app">অ্যাপ রেট করুন</string>
+    <string name="or">অথবা</string>
+    <string name="leave_feedback">প্রতিক্রিয়া ছেড়ুন</string>
+    <string name="no_playstore">কোনো Play Store অ্যাপ পাওয়া যায়নি</string>
+    <string name="submit_content_hint">URL বা টেক্সট</string>
+    <string name="title_activity_submit">HN এ পাঠান</string>
+    <string name="url_text_required">URL বা টেক্সট প্রয়োজন</string>
+    <string name="submit_failed">পাঠাতে ব্যর্থ। আবার চেষ্টা করুন।</string>
+    <string name="submit_successful">সফলভাবে পাঠানো হয়েছে</string>
+    <string name="confirm_no_submit">না পাঠিয়ে বের হবেন?</string>
+    <string name="submit_note">আলোচনার জন্য একটি প্রশ্ন পাঠাতে টেক্সট লিখুন, বা লিংক পাঠাতে URL। আপনি অন্য অ্যাপ থেকেও সরাসরি লিংক শেয়ার করতে পারেন</string>
+    <string name="confirm_submit_url">লিংক হিসাবে পাঠাবেন?</string>
+    <string name="confirm_submit_question">প্রশ্ন হিসাবে পাঠাবেন?</string>
+    <string name="submission_guidelines">জমা দেওয়ার নির্দেশিকা</string>
+    <string name="title_activity_user">আমার প্রোফাইল</string>
+    <string name="user_info">তৈরি: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s জমা</item>
+        <item quantity="one">%1$s জমা</item>
+        <item quantity="other">%1$s জমা</item>
+    </plurals>
+    <string name="view_story">গল্প দেখুন</string>
+    <string name="user_failed">ব্যবহারকারী লোড করতে অক্ষম। আবার চেষ্টা করুন।</string>
+    <string name="dead_prefix">[মৃত]</string>
+    <string name="title_activity_thread_preview">থ্রেড প্রিভিউ</string>
+    <string name="view_thread">থ্রেড দেখুন</string>
+    <string name="view_user">ব্যবহারকারী দেখুন</string>
+    <string name="more">আরও</string>
+    <string name="logout">লগ আউট</string>
+    <string name="offline">অফলাইন</string>
+    <string name="offline_notice">আপনি বর্তমানে অফলাইনে আছেন</string>
+    <string name="download_in_progress">ডাউনলোড চলছে</string>
+    <string name="love_it">আমি এটা পছন্দ করি!</string>
+    <string name="display_options">প্রদর্শন অপশন</string>
+    <string name="pull_up_hint">আরও জন্য উপরে টানুন</string>
+    <string name="find_in_page">পেজে খুঁজুন</string>
+    <string name="no_matches">কোনো মিল পাওয়া যায়নি</string>
+    <string name="back">পিছনে</string>
+    <string name="forward">সামনে</string>
+    <string name="zoom_out">জুম আউট</string>
+    <string name="zoom_in">জুম ইন</string>
+    <string name="refresh">রিফ্রেশ</string>
+    <string name="exit_fullscreen">প্রস্থান</string>
+    <string name="next">পরবর্তী</string>
+    <string name="list_display_options">তালিকা প্রদর্শন অপশন</string>
+    <string name="last_screen">শেষ ব্যবহৃত স্ক্রিন</string>
+    <string name="widget_options">উইজেট অপশন</string>
+    <string name="item_exist">অনুরূপ গল্প ইতিমধ্যে জমা দেওয়া হয়েছে</string>
+    <string name="hn_link">Hacker News লিংক</string>
+    <string name="article_link">নিবন্ধ লিংক</string>
+    <string name="hint_drag">পুনঃঅবস্থানের জন্য টানুন</string>
+    <string name="hint_nav_short">নেভিগেট করতে সোয়াইপ \u2191 \u2193 \u2192 \u2190\nপুনঃঅবস্থানের জন্য দীর্ঘ চাপ</string>
+    <string name="konami">আপনি কোনামি কোড পেয়েছেন! আমাকে 5 তারা দিন?</string>
+    <string name="end_of_thread">থ্রেড শেষ</string>
+    <string name="save_draft">ড্রাফট সংরক্ষণ করুন</string>
+    <string name="discard_draft">ড্রাফট বাতিল করুন</string>
+    <string name="clear_drafts">সব ড্রাফট মুছুন</string>
+    <string name="more_sections">আরও বিভাগ</string>
+    <string name="list">তালিকা</string>
+    <string name="delete">মুছুন</string>
+    <string name="full_text">সম্পূর্ণ টেক্সট</string>
+    <string name="empty_text">[এই গল্পে কোনো কন্টেন্ট নেই]</string>
+    <string name="none">কোনোটিই নয়</string>
+    <string name="hint_update">আপনার অ্যাপ এখন আপডেট হয়েছে!</string>
+    <string name="export_saved_stories">সংরক্ষিত গল্প রপ্তানি করুন</string>
+    <string name="export_notification">ফাইলে সংরক্ষিত। অপশনের জন্য ট্যাপ করুন।</string>
+    <string name="share_file">ফাইল শেয়ার করুন</string>
+    <string name="privacy_policy">গোপনীয়তা নীতি</string>
+    <string name="notification_channel_downloads">ডাউনলোড</string>
+    <string name="reply">উত্তর দিন</string>
+</resources>

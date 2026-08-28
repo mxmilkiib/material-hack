@@ -273,4 +273,45 @@
     <string name="privacy_policy">Política de privacidad</string>
     <string name="notification_channel_downloads">Descargas</string>
     <string name="hint_nav_short">Deslizar \\u2191 \\u2193 \\u2192 \\u2190 parra navegar Pulsación larga para volver a posicionar</string>
+    <string name="app_icon_default">Naranja (por defecto)</string>
+    <string name="app_icon_purple">Púrpura</string>
+    <string name="app_icon_green">Verde</string>
+    <string name="app_icon_blue">Azul</string>
+    <string name="app_icon_red">Rojo</string>
+    <string name="app_icon_teal">Turquesa</string>
+    <string name="app_icon_pink">Rosa</string>
+    <string name="app_icon_indigo">Índigo</string>
+    <string name="pref_app_icon_title">Estilo del icono de la aplicación</string>
+    <string name="pref_list_compact_title">Espaciado compacto de lista</string>
+    <string name="pref_list_compact_summary">Filas más apretadas y una columna de puntuación más estrecha para títulos más anchos</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Comentario</item>
+        <item quantity="one">%1$s Comentario</item>
+        <item quantity="other">%1$s Comentarios</item>
+    </plurals>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s historia nueva</item>
+        <item quantity="one">%1$s historia nueva</item>
+        <item quantity="other">%1$s historias nuevas</item>
+    </plurals>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Mostrando %1$s historia nueva</item>
+        <item quantity="one">Mostrando %1$s historia nueva</item>
+        <item quantity="other">Mostrando %1$s historias nuevas</item>
+    </plurals>
+    <string name="reply">Responder</string>
+    <string name="theme_violet">Violeta</string>
+    <string name="theme_ocean">Océano</string>
+    <string name="theme_rose">Rosa</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Carmesí</string>
+    <string name="theme_forest">Bosque</string>
+    <string name="theme_midnight">Medianoche</string>
+    <string name="theme_sand">Arena</string>
+    <string name="theme_dracula">Drácula</string>
+    <string name="theme_darkorange">Naranja oscuro</string>
 </resources>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">設定</string>
+    <string name="title_activity_list">トップストーリー</string>
+    <string name="title_activity_best">ベストストーリー</string>
+    <string name="title_activity_item">コメント</string>
+    <string name="title_activity_release">新着情報</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">ドロワーを開く</string>
+    <string name="close_drawer">ドロワーを閉じる</string>
+    <string name="view_in_browser">外部ブラウザで表示</string>
+    <string name="share">共有</string>
+    <string name="title_activity_about">アプリについて</string>
+    <string name="license_title">ライセンス</string>
+    <string name="third_party_licenses_title">サードパーティライセンス</string>
+    <string name="developer_info_title">開発者情報</string>
+    <string name="application_info_title">アプリ情報</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>バージョン</b> %1$s<br>
+            <b>ビルド</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>ビルド日時</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> は Ha Duy Trung による Materialistic のフォークです。<br><br>
+            <b>変更点:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; モダンなツールチェーン<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 新しいテーマ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; バイオレット<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; オーシャン<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; ローズ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 小さいフォントと狭い間隔のコンパクトリストモード<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 新しいフォント<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; シンプルなナビゲーションドロワー、すべてのセクションがルート<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; アプリ全体で狭い間隔<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; 透明なスクロールグロー<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; サイドバイサイドデバッグインストールのサポート<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">ライブラリとリソース</string>
+    <string name="title_activity_favorite">保存したストーリー</string>
+    <string name="saved">%1$s前に保存</string>
+    <string name="toast_saved">ストーリーを保存しました</string>
+    <string name="clear_all">すべてクリア</string>
+    <string name="toast_removed">ストーリーを削除しました</string>
+    <string name="no_saved_stories">まだ保存されたストーリーはありません</string>
+    <string name="no_comments">まだ静かです</string>
+    <string name="confirm_clear">すべての保存されたストーリーをクリアしますか？</string>
+    <string name="export">エクスポート</string>
+    <string name="clear_selected">選択をクリア</string>
+    <string name="confirm_clear_selected">選択した保存されたストーリーをクリアしますか？</string>
+    <string name="search">検索</string>
+    <string name="hint_search_saved_stories">保存されたストーリーを検索</string>
+    <string name="no_stories_search">お探しのものが見つかりませんでした</string>
+    <string name="display">表示</string>
+    <string name="pref_external_title">外部ブラウザを使用</string>
+    <string name="pref_external_summary">外部ブラウザで記事を読む</string>
+    <string name="pref_color_code_title">カラーコード</string>
+    <string name="pref_color_code_opacity_title">カラーコードの不透明度</string>
+    <string name="pref_highlight_updated_title">更新されたストーリーをハイライト</string>
+    <string name="pref_highlight_updated_summary">最後の更新からの変更を表示</string>
+    <string name="pref_custom_tab_title">カスタムタブを使用</string>
+    <string name="pref_custom_tab_summary">完全なブラウザの代わりにブラウザタブを開く</string>
+    <string name="pref_story_display_title">デフォルトで開く</string>
+    <string name="pref_theme_title">テーマ</string>
+    <string name="pref_app_icon_title">アプリアイコンスタイル</string>
+    <string name="app_icon_default">オレンジ（デフォルト）</string>
+    <string name="app_icon_purple">パープル</string>
+    <string name="app_icon_green">グリーン</string>
+    <string name="app_icon_blue">ブルー</string>
+    <string name="app_icon_red">レッド</string>
+    <string name="app_icon_teal">ティール</string>
+    <string name="app_icon_pink">ピンク</string>
+    <string name="app_icon_indigo">インディゴ</string>
+    <string name="pref_daynight_title">自動昼夜モード</string>
+    <string name="pref_search_sort_title">並べ替え</string>
+    <string name="pref_search_sort_value_recent">最新</string>
+    <string name="pref_search_sort_value_default">デフォルト</string>
+    <string name="pref_text_size_title">テキストサイズ</string>
+    <string name="pref_font_title">フォント</string>
+    <string name="pref_comment_display_title">スレッド</string>
+    <string name="pref_max_lines_title">長いコメント</string>
+    <string name="pref_multi_window_title">マルチウィンドウモード</string>
+    <string name="pref_multi_window_summary">ストーリーを開くウィンドウ（Android 7+）</string>
+    <string name="pref_multi_window_none">同じ</string>
+    <string name="pref_multi_window_one">別</string>
+    <string name="pref_navigation_title">画面ナビゲーション</string>
+    <string name="pref_navigation_vibrate_title">タッチで振動</string>
+    <string name="pref_lazy_load_title">遅延ロードコンテンツ</string>
+    <string name="pref_lazy_load_summary">タブに切り替えたときのみコンテンツをロード</string>
+    <string name="pref_saved_item_sync_title">オフラインアクセスを有効にする</string>
+    <string name="pref_saved_item_sync_summary">ストーリーを保存するときにコンテンツをダウンロード</string>
+    <string name="pref_offline_data_title">ダウンロードするタイミング</string>
+    <string name="pref_offline_comments_title">コメントをダウンロード</string>
+    <string name="pref_offline_article_title">記事をダウンロード</string>
+    <string name="pref_offline_readability_title">読みやすさをダウンロード</string>
+    <string name="pref_offline_data_wifi">WiFiのみ</string>
+    <string name="pref_offline_data_always">常に</string>
+    <string name="pref_offline_notification_title">進行状況を表示</string>
+    <string name="pref_offline_notification_summary">ダウンロードの進行状況を通知に表示</string>
+    <string name="pref_launch_screen_title">デフォルト画面</string>
+    <string name="pref_volume_title">音量ナビゲーションを使用</string>
+    <string name="pref_volume_summary">音量キーで上下スクロール</string>
+    <string name="pref_ad_block_title">広告をブロック</string>
+    <string name="pref_ad_block_summary">内部ブラウザのシンプルな広告ブロッカーを有効にする</string>
+    <string name="pref_line_height_title">行の高さ</string>
+    <string name="pref_list_item_view_title">カードとして表示</string>
+    <string name="pref_list_compact_title">コンパクトリスト間隔</string>
+    <string name="pref_list_compact_summary">広いタイトルのために狭い行と狭いスコア列</string>
+    <string name="pref_thread_indicator_title">スレッドインジケーター</string>
+    <string name="pref_widget_section_title">セクション</string>
+    <string name="pref_widget_query_title">クエリでフィルタ（オプション）</string>
+    <string name="pref_widget_frequency_title">更新頻度</string>
+    <string name="pref_auto_viewed_title">自動的に既読としてマーク</string>
+    <string name="pref_auto_viewed_summary">上にスワイプするときにストーリーを既読としてマーク</string>
+    <string name="pref_smooth_scroll_title">ナビゲーションをアニメーション</string>
+    <string name="pref_smooth_scroll_summary">スクロール精度を向上するために無効にする</string>
+    <string name="pref_list_swipe_left_title">左にスワイプ</string>
+    <string name="pref_list_swipe_right_title">右にスワイプ</string>
+    <string name="connection_error">Hacker Newsに接続できません。接続を確認するか、もう一度お試しください。</string>
+    <string name="select_story">表示するストーリーを選択</string>
+    <string name="download_external">別のアプリで表示</string>
+    <string name="try_me">長押し/スワイプで後で保存！</string>
+    <string name="title_activity_jobs">求人</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">新しいストーリー</string>
+    <string name="title_activity_search">HNを検索</string>
+    <string name="clear_search_history">検索履歴をクリア</string>
+    <string name="clear_search_history_confirm">検索履歴をクリアしますか？</string>
+    <string name="undo">元に戻す</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">コメント</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s コメント</item>
+        <item quantity="one">%1$s コメント</item>
+        <item quantity="other">%1$s コメント</item>
+    </plurals>
+    <string name="article">記事</string>
+    <string name="reset_settings">すべての設定をリセット</string>
+    <string name="reset_settings_confirm">すべての設定をアプリのデフォルトにリセットしますか？</string>
+    <string name="last_updated">最終更新 %1$s</string>
+    <string name="feedback">フィードバック</string>
+    <string name="send_feedback">フィードバックを送信</string>
+    <string name="title_hint">タイトル</string>
+    <string name="comment_hint">コメント</string>
+    <string name="feedback_note">
+        <![CDATA[
+            フィードバックは<a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github issue</a>として公開されます。
+        ]]>
+    </string>
+    <string name="title_required">タイトルは必須です</string>
+    <string name="comment_required">コメントは必須です</string>
+    <string name="feedback_sent">フィードバックを送信しました。ありがとうございます！</string>
+    <string name="feedback_failed">送信に失敗しました、もう一度お試しください</string>
+    <string name="chooser_title">で開く</string>
+    <string name="title_activity_popular">追いつく</string>
+    <string name="range">期間</string>
+    <string name="popular_range_last_24h">過去24時間</string>
+    <string name="popular_range_past_week">先週</string>
+    <string name="popular_range_past_month">先月</string>
+    <string name="popular_range_past_year">去年</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s 新しいストーリー</item>
+        <item quantity="one">%1$s 新しいストーリー</item>
+        <item quantity="other">%1$s 新しいストーリー</item>
+    </plurals>
+    <string name="show_me">表示</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">%1$s 新しいストーリーを表示中</item>
+        <item quantity="one">%1$s 新しいストーリーを表示中</item>
+        <item quantity="other">%1$s 新しいストーリーを表示中</item>
+    </plurals>
+    <string name="show_all">すべて表示</string>
+    <string name="whats_this">これは何ですか？</string>
+    <string name="got_it">了解</string>
+    <string name="help_new_story">最後の更新からの新しいストーリー</string>
+    <string name="help_promoted_story">最後の更新から昇格したストーリー</string>
+    <string name="help_new_comments">最後の更新から新しいコメントがあるストーリー</string>
+    <string name="help_lazy_load">遅延ロードが有効になっている場合、アイテムが初めて開かれたときにのみ優先デフォルトタブがロードされます。\n\n遅い接続の場合やラグを経験している場合、これを有効にすると役立ちます。</string>
+    <string name="help_volume_up">音量アップで上にスクロール</string>
+    <string name="help_long_volume_up">音量アップ長押しで上に高速スクロール</string>
+    <string name="help_volume_down">音量ダウンで下にスクロール</string>
+    <string name="help_navigate">スワイプジェスチャに応答してネストされたコメントスレッドをナビゲートするフローティングナビゲーションボタンを表示します。</string>
+    <string name="help_navigate_up">スワイプ \u2191: 前のコメントに移動</string>
+    <string name="help_navigate_down">スワイプ \u2193: 次のコメントに移動</string>
+    <string name="help_navigate_right">スワイプ \u2192: 展開して1番目の返信に移動</string>
+    <string name="help_navigate_left">スワイプ \u2190: 親に戻る</string>
+    <string name="help_navigate_move">長押しでナビゲーションボタンを新しい位置にドラッグ</string>
+    <string name="readability">読みやすさ</string>
+    <string name="text_size_extra_small">極小</string>
+    <string name="text_size_small">小</string>
+    <string name="text_size_medium">中</string>
+    <string name="text_size_large">大</string>
+    <string name="text_size_extra_large">特大</string>
+    <string name="readability_failed">記事を解析できません</string>
+    <string name="theme_light">ライト</string>
+    <string name="theme_dark">ダーク</string>
+    <string name="theme_black">ブラック</string>
+    <string name="theme_sepia">セピア</string>
+    <string name="theme_green">グリーン</string>
+    <string name="theme_transparent">透明</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">バイオレット</string>
+    <string name="theme_ocean">オーシャン</string>
+    <string name="theme_rose">ローズ</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">クリムゾン</string>
+    <string name="theme_forest">フォレスト</string>
+    <string name="theme_midnight">ミッドナイト</string>
+    <string name="theme_sand">サンド</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">ダークオレンジ</string>
+    <string name="comment_display_multiple">複数ページ</string>
+    <string name="comment_display_single">単一ページ - 自動展開</string>
+    <string name="comment_display_collapsed">単一ページ - 折りたたみ</string>
+    <string name="story_display_article">記事</string>
+    <string name="story_display_comments">コメント</string>
+    <string name="search_sort_recent">より新しい</string>
+    <string name="search_sort_popularity">人気</string>
+    <string name="story_display_readability">読みやすさ</string>
+    <string name="font_options">フォントオプション</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">すべての %1$d 行を読む</string>
+    <string name="comment_max_lines_3">最大3行</string>
+    <string name="comment_max_lines_4">最大4行</string>
+    <string name="comment_max_lines_5">最大5行</string>
+    <string name="comment_max_lines_all">完全なコンテンツ</string>
+    <string name="line_height_compact">コンパクト</string>
+    <string name="line_height_normal">標準</string>
+    <string name="line_height_cozy">快適</string>
+    <string name="line_height_comfortable">快適</string>
+    <string name="frequency_3_hours">3時間</string>
+    <string name="frequency_6_hours">6時間</string>
+    <string name="frequency_12_hours">12時間</string>
+    <string name="frequency_1_day">1日</string>
+    <string name="file_not_supported">コンテンツタイプはサポートされていません</string>
+    <string name="username_hint">ユーザー名</string>
+    <string name="password_hint">パスワード</string>
+    <string name="login">ログイン</string>
+    <string name="title_activity_login">Hacker Newsにログイン</string>
+    <string name="username_required">ユーザー名は必須です</string>
+    <string name="password_required">パスワードは必須です</string>
+    <string name="login_failed">ログイン/アカウント作成に失敗しました、もう一度お試しください</string>
+    <string name="welcome">ようこそ %1$s！</string>
+    <string name="logout_confirm">ログアウトしますか？</string>
+    <string name="choose_account">アカウントを選択</string>
+    <string name="add_account">追加</string>
+    <string name="remove_account">削除</string>
+    <string name="login_note">認証情報はデバイスの設定/アカウントの下に安全に保存されます</string>
+    <string name="save">保存</string>
+    <string name="unsave">保存を取り消す</string>
+    <string name="re_enter_password">パスワードを再入力</string>
+    <string name="vote_up">投票</string>
+    <string name="voted">投票に成功しました</string>
+    <string name="vote_failed">投票の記録に失敗しました。もう一度お試しください。</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">送信中...</string>
+    <string name="add_comment">コメントを追加</string>
+    <string name="title_activity_compose">作成</string>
+    <string name="send">送信</string>
+    <string name="original_content">元のコンテンツ</string>
+    <string name="quote">引用</string>
+    <string name="formatting_guidelines">HNフォーマットガイドライン</string>
+    <string name="confirm_save_draft">下書きを保存しますか？</string>
+    <string name="create_account">アカウントを作成</string>
+    <string name="comment_failed">コメントの送信に失敗しました</string>
+    <string name="comment_successful">コメントを追加しました。表示するには更新してください。</string>
+    <string name="confirm_no_waiting">待たずに終了しますか？</string>
+    <string name="rate_app">アプリを評価</string>
+    <string name="or">または</string>
+    <string name="leave_feedback">フィードバックを残す</string>
+    <string name="no_playstore">Play Storeアプリが見つかりません</string>
+    <string name="submit_content_hint">URLまたはテキスト</string>
+    <string name="title_activity_submit">HNに送信</string>
+    <string name="url_text_required">URLまたはテキストは必須です</string>
+    <string name="submit_failed">送信に失敗しました。もう一度お試しください。</string>
+    <string name="submit_successful">送信に成功しました</string>
+    <string name="confirm_no_submit">送信せずに終了しますか？</string>
+    <string name="submit_note">議論のための質問を送信するにはテキストを入力するか、リンクを送信するにはURLを入力します。他のアプリから直接リンクを共有することもできます</string>
+    <string name="confirm_submit_url">リンクとして送信しますか？</string>
+    <string name="confirm_submit_question">質問として送信しますか？</string>
+    <string name="submission_guidelines">送信ガイドライン</string>
+    <string name="title_activity_user">マイプロフィール</string>
+    <string name="user_info">作成: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s 投稿</item>
+        <item quantity="one">%1$s 投稿</item>
+        <item quantity="other">%1$s 投稿</item>
+    </plurals>
+    <string name="view_story">ストーリーを表示</string>
+    <string name="user_failed">ユーザーをロードできません。もう一度お試しください。</string>
+    <string name="dead_prefix">[削除]</string>
+    <string name="title_activity_thread_preview">スレッドプレビュー</string>
+    <string name="view_thread">スレッドを表示</string>
+    <string name="view_user">ユーザーを表示</string>
+    <string name="more">その他</string>
+    <string name="logout">ログアウト</string>
+    <string name="offline">オフライン</string>
+    <string name="offline_notice">現在オフラインです</string>
+    <string name="download_in_progress">ダウンロード中</string>
+    <string name="love_it">気に入りました！</string>
+    <string name="display_options">表示オプション</string>
+    <string name="pull_up_hint">さらに表示するには上に引く</string>
+    <string name="find_in_page">ページ内検索</string>
+    <string name="no_matches">一致が見つかりません</string>
+    <string name="back">戻る</string>
+    <string name="forward">進む</string>
+    <string name="zoom_out">ズームアウト</string>
+    <string name="zoom_in">ズームイン</string>
+    <string name="refresh">更新</string>
+    <string name="exit_fullscreen">終了</string>
+    <string name="next">次</string>
+    <string name="list_display_options">リスト表示オプション</string>
+    <string name="last_screen">最後に使用した画面</string>
+    <string name="widget_options">ウィジェットオプション</string>
+    <string name="item_exist">同様のストーリーは既に送信されています</string>
+    <string name="hn_link">Hacker Newsリンク</string>
+    <string name="article_link">記事リンク</string>
+    <string name="hint_drag">再配置するにはドラッグ</string>
+    <string name="hint_nav_short">ナビゲートするにはスワイプ \u2191 \u2193 \u2192 \u2190\n再配置するには長押し</string>
+    <string name="konami">コナミコードを見つけました！5つ星をくれますか？</string>
+    <string name="end_of_thread">スレッドの終わり</string>
+    <string name="save_draft">下書きを保存</string>
+    <string name="discard_draft">下書きを破棄</string>
+    <string name="clear_drafts">すべての下書きをクリア</string>
+    <string name="more_sections">その他のセクション</string>
+    <string name="list">リスト</string>
+    <string name="delete">削除</string>
+    <string name="full_text">完全なテキスト</string>
+    <string name="empty_text">[このストーリーにはコンテンツがありません]</string>
+    <string name="none">なし</string>
+    <string name="hint_update">アプリが更新されました！</string>
+    <string name="export_saved_stories">保存したストーリーをエクスポート</string>
+    <string name="export_notification">ファイルに保存されました。オプションをタップしてください。</string>
+    <string name="share_file">ファイルを共有</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="notification_channel_downloads">ダウンロード</string>
+    <string name="reply">返信</string>
+</resources>

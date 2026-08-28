@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="title_activity_list">Topp Historier</string>
+    <string name="title_activity_best">Bästa Historier</string>
+    <string name="title_activity_item">Kommentarer</string>
+    <string name="title_activity_release">Nyheter</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Öppna låda</string>
+    <string name="close_drawer">Stäng låda</string>
+    <string name="view_in_browser">Visa i extern webbläsare</string>
+    <string name="share">Dela</string>
+    <string name="title_activity_about">Om</string>
+    <string name="license_title">Licens</string>
+    <string name="third_party_licenses_title">Tredjepartslicenser</string>
+    <string name="developer_info_title">Utvecklarinfo</string>
+    <string name="application_info_title">Appinfo</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Version</b> %1$s<br>
+            <b>Build</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Byggd</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> är en fork av Materialistic av Ha Duy Trung.<br><br>
+            <b>Ändringar:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Moderniserad toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nya teman<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Violet<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Ocean<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Rose<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kompakt listläge med mindre teckensnitt och tätare mellanrum<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nya teckensnitt<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Förenklad navigeringslåda, alla sektioner i roten<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Tätare mellanrum i hela appen<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Transparent scrollglöd<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Stöd för sida-vid-sida debug-installation<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Bibliotek &amp; Resurser</string>
+    <string name="title_activity_favorite">Sparade Historier</string>
+    <string name="saved">Sparad för %1$s sedan</string>
+    <string name="toast_saved">Historia sparad</string>
+    <string name="clear_all">Rensa alla</string>
+    <string name="toast_removed">Historie borttagen</string>
+    <string name="no_saved_stories">Inga sparade historier än</string>
+    <string name="no_comments">Det är fortfarande tyst här</string>
+    <string name="confirm_clear">Rensa alla sparade historier?</string>
+    <string name="export">Exportera</string>
+    <string name="clear_selected">Rensa markerade</string>
+    <string name="confirm_clear_selected">Rensa markerade sparade historier?</string>
+    <string name="search">Sök</string>
+    <string name="hint_search_saved_stories">Sök sparade historier</string>
+    <string name="no_stories_search">Kunde inte hitta det du letar efter</string>
+    <string name="display">Visning</string>
+    <string name="pref_external_title">Använd extern webbläsare</string>
+    <string name="pref_external_summary">Läs artiklar i extern webbläsare</string>
+    <string name="pref_color_code_title">Färgkod</string>
+    <string name="pref_color_code_opacity_title">Färgkodopacitet</string>
+    <string name="pref_highlight_updated_title">Markera uppdaterade historier</string>
+    <string name="pref_highlight_updated_summary">Visa ändringar sedan senaste uppdatering</string>
+    <string name="pref_custom_tab_title">Använd anpassade flikar</string>
+    <string name="pref_custom_tab_summary">Öppna en webbläsarflik istället för full webbläsare</string>
+    <string name="pref_story_display_title">Standardöppning</string>
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_app_icon_title">Appikonstil</string>
+    <string name="app_icon_default">Orange (standard)</string>
+    <string name="app_icon_purple">Lila</string>
+    <string name="app_icon_green">Grön</string>
+    <string name="app_icon_blue">Blå</string>
+    <string name="app_icon_red">Röd</string>
+    <string name="app_icon_teal">Turkos</string>
+    <string name="app_icon_pink">Rosa</string>
+    <string name="app_icon_indigo">Indigo</string>
+    <string name="pref_daynight_title">Automatiskt dag-nattläge</string>
+    <string name="pref_search_sort_title">Sortera efter</string>
+    <string name="pref_search_sort_value_recent">senaste</string>
+    <string name="pref_search_sort_value_default">standard</string>
+    <string name="pref_text_size_title">Textstorlek</string>
+    <string name="pref_font_title">Teckensnitt</string>
+    <string name="pref_comment_display_title">Tråd</string>
+    <string name="pref_max_lines_title">Lång kommentar</string>
+    <string name="pref_multi_window_title">Fönsterläge</string>
+    <string name="pref_multi_window_summary">Vilket fönster ska öppna historien (Android 7+)</string>
+    <string name="pref_multi_window_none">Samma</string>
+    <string name="pref_multi_window_one">Annat</string>
+    <string name="pref_navigation_title">Skärmnavigering</string>
+    <string name="pref_navigation_vibrate_title">Vibrera vid beröring</string>
+    <string name="pref_lazy_load_title">Lazy load-innehåll</string>
+    <string name="pref_lazy_load_summary">Ladda innehåll bara när du byter till dess flik</string>
+    <string name="pref_saved_item_sync_title">Aktivera offlineåtkomst</string>
+    <string name="pref_saved_item_sync_summary">Ladda ner innehåll när du sparar historia</string>
+    <string name="pref_offline_data_title">När ska laddas ner</string>
+    <string name="pref_offline_comments_title">Ladda ner kommentarer</string>
+    <string name="pref_offline_article_title">Ladda ner artikel</string>
+    <string name="pref_offline_readability_title">Ladda ner readability</string>
+    <string name="pref_offline_data_wifi">Endast WiFi</string>
+    <string name="pref_offline_data_always">Alltid</string>
+    <string name="pref_offline_notification_title">Visa förlopp</string>
+    <string name="pref_offline_notification_summary">Visa notis för nedladdningsförlopp</string>
+    <string name="pref_launch_screen_title">Standardskärm</string>
+    <string name="pref_volume_title">Använd volymnavigering</string>
+    <string name="pref_volume_summary">Scrolla upp/ner med volymknappar</string>
+    <string name="pref_ad_block_title">Blockera annonser</string>
+    <string name="pref_ad_block_summary">Aktivera enkel annonsblockerare för intern webbläsare</string>
+    <string name="pref_line_height_title">Radavstånd</string>
+    <string name="pref_list_item_view_title">Visa som kort</string>
+    <string name="pref_list_compact_title">Kompakt listavstånd</string>
+    <string name="pref_list_compact_summary">Tätare rader och smalare poängkolumn för bredare titlar</string>
+    <string name="pref_thread_indicator_title">Trådindikator</string>
+    <string name="pref_widget_section_title">Sektion</string>
+    <string name="pref_widget_query_title">Filtrera efter fråga (valfritt)</string>
+    <string name="pref_widget_frequency_title">Uppdateringsfrekvens</string>
+    <string name="pref_auto_viewed_title">Markera automatiskt som sedd</string>
+    <string name="pref_auto_viewed_summary">Markera historier som sedda när du scrollar upp</string>
+    <string name="pref_smooth_scroll_title">Animera navigering</string>
+    <string name="pref_smooth_scroll_summary">Inaktivera för att förbättra scrollningsprecision</string>
+    <string name="pref_list_swipe_left_title">Svep vänster för</string>
+    <string name="pref_list_swipe_right_title">Svep höger för</string>
+    <string name="connection_error">Kan inte ansluta till Hacker News. Kontrollera din anslutning eller försök igen.</string>
+    <string name="select_story">Välj en historia att visa</string>
+    <string name="download_external">Visa i annan app</string>
+    <string name="try_me">Långtryck/svep för att spara till senare!</string>
+    <string name="title_activity_jobs">Jobb</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Nya Historier</string>
+    <string name="title_activity_search">Sök HN</string>
+    <string name="clear_search_history">Rensa sökhistorik</string>
+    <string name="clear_search_history_confirm">Rensa sökhistorik?</string>
+    <string name="undo">Ångra</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Kommentarer</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Kommentar</item>
+        <item quantity="one">%1$s Kommentar</item>
+        <item quantity="other">%1$s Kommentarer</item>
+    </plurals>
+    <string name="article">Artikel</string>
+    <string name="reset_settings">Återställ alla inställningar</string>
+    <string name="reset_settings_confirm">Återställ alla dina inställningar till appens standard?</string>
+    <string name="last_updated">Senast uppdaterad %1$s</string>
+    <string name="feedback">Feedback</string>
+    <string name="send_feedback">Skicka Feedback</string>
+    <string name="title_hint">Titel</string>
+    <string name="comment_hint">Kommentar</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Din feedback kommer att göras offentlig som en <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github-issue</a>.
+        ]]>
+    </string>
+    <string name="title_required">Titel krävs</string>
+    <string name="comment_required">Kommentar krävs</string>
+    <string name="feedback_sent">Feedback skickad. Tack!</string>
+    <string name="feedback_failed">Kunde inte skicka, försök igen</string>
+    <string name="chooser_title">Öppna med</string>
+    <string name="title_activity_popular">Hämta upp</string>
+    <string name="range">Period</string>
+    <string name="popular_range_last_24h">Senaste 24h</string>
+    <string name="popular_range_past_week">Senaste veckan</string>
+    <string name="popular_range_past_month">Senaste månaden</string>
+    <string name="popular_range_past_year">Senaste året</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s ny historia</item>
+        <item quantity="one">%1$s ny historia</item>
+        <item quantity="other">%1$s nya historier</item>
+    </plurals>
+    <string name="show_me">Visa</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Visar %1$s ny historia</item>
+        <item quantity="one">Visar %1$s ny historia</item>
+        <item quantity="other">Visar %1$s nya historier</item>
+    </plurals>
+    <string name="show_all">Visa alla</string>
+    <string name="whats_this">Vad är detta?</string>
+    <string name="got_it">Uppfattat</string>
+    <string name="help_new_story">Ny historia sedan senaste uppdatering</string>
+    <string name="help_promoted_story">Upphöjd historia sedan senaste uppdatering</string>
+    <string name="help_new_comments">Historia med nya kommentarer sedan senaste uppdatering</string>
+    <string name="help_lazy_load">Med lazy load aktiverat laddas bara din föredrade standardflik när ett objekt öppnas första gången.\n\nOm du är på en långsam anslutning eller upplever lag, kan detta hjälpa.</string>
+    <string name="help_volume_up">Tryck volym upp för att scrolla upp</string>
+    <string name="help_long_volume_up">Långtryck volym upp för att snabbscrolla till toppen</string>
+    <string name="help_volume_down">Tryck volym ner för att scrolla ner</string>
+    <string name="help_navigate">Visa en flytande navigeringsknapp som svarar på svepgester för att navigera nästlade kommentartrådar.</string>
+    <string name="help_navigate_up">Svep \u2191: gå till föregående kommentar</string>
+    <string name="help_navigate_down">Svep \u2193: gå till nästa kommentar</string>
+    <string name="help_navigate_right">Svep \u2192: expandera &amp; gå till 1:a svaret</string>
+    <string name="help_navigate_left">Svep \u2190: gå tillbaka till förälder</string>
+    <string name="help_navigate_move">Långtryck för att dra navigeringsknappen till ny position</string>
+    <string name="readability">Läsbarhet</string>
+    <string name="text_size_extra_small">Extra liten</string>
+    <string name="text_size_small">Liten</string>
+    <string name="text_size_medium">Medium</string>
+    <string name="text_size_large">Stor</string>
+    <string name="text_size_extra_large">Extra stor</string>
+    <string name="readability_failed">Kan inte analysera artikel</string>
+    <string name="theme_light">Ljust</string>
+    <string name="theme_dark">Mörkt</string>
+    <string name="theme_black">Svart</string>
+    <string name="theme_sepia">Sepia</string>
+    <string name="theme_green">Grön</string>
+    <string name="theme_transparent">Transparent</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Violett</string>
+    <string name="theme_ocean">Ocean</string>
+    <string name="theme_rose">Ros</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Karmosinröd</string>
+    <string name="theme_forest">Skog</string>
+    <string name="theme_midnight">Midnatt</string>
+    <string name="theme_sand">Sand</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Mörkorange</string>
+    <string name="comment_display_multiple">Flera sidor</string>
+    <string name="comment_display_single">Enkel sida - autoexpandera</string>
+    <string name="comment_display_collapsed">Enkel sida - ihopfälld</string>
+    <string name="story_display_article">Artikel</string>
+    <string name="story_display_comments">Kommentarer</string>
+    <string name="search_sort_recent">Mer senaste</string>
+    <string name="search_sort_popularity">Popularitet</string>
+    <string name="story_display_readability">Läsbarhet</string>
+    <string name="font_options">Teckensnittsalternativ</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Läs alla %1$d rader</string>
+    <string name="comment_max_lines_3">Max 3 rader</string>
+    <string name="comment_max_lines_4">Max 4 rader</string>
+    <string name="comment_max_lines_5">Max 5 rader</string>
+    <string name="comment_max_lines_all">Fullt innehåll</string>
+    <string name="line_height_compact">Kompakt</string>
+    <string name="line_height_normal">Normal</string>
+    <string name="line_height_cozy">Mysig</string>
+    <string name="line_height_comfortable">Bekväm</string>
+    <string name="frequency_3_hours">3 timmar</string>
+    <string name="frequency_6_hours">6 timmar</string>
+    <string name="frequency_12_hours">12 timmar</string>
+    <string name="frequency_1_day">1 dag</string>
+    <string name="file_not_supported">Innehållstyp stöds inte</string>
+    <string name="username_hint">Användarnamn</string>
+    <string name="password_hint">Lösenord</string>
+    <string name="login">Logga in</string>
+    <string name="title_activity_login">Logga in till Hacker News</string>
+    <string name="username_required">Användarnamn krävs</string>
+    <string name="password_required">Lösenord krävs</string>
+    <string name="login_failed">Inloggning/skapande av konto misslyckades, försök igen</string>
+    <string name="welcome">Välkommen %1$s!</string>
+    <string name="logout_confirm">Vill du logga ut?</string>
+    <string name="choose_account">Välj ett konto</string>
+    <string name="add_account">Lägg till</string>
+    <string name="remove_account">Ta bort</string>
+    <string name="login_note">Dina uppgifter kommer att lagras säkert under din enhets Inställningar / Konton</string>
+    <string name="save">Spara</string>
+    <string name="unsave">Avspara</string>
+    <string name="re_enter_password">Ange ditt lösenord igen</string>
+    <string name="vote_up">Rösta upp</string>
+    <string name="voted">Röst registrerad</string>
+    <string name="vote_failed">Kunde inte registrera röst. Försök igen.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Skickar...</string>
+    <string name="add_comment">Lägg till kommentar</string>
+    <string name="title_activity_compose">Skriv</string>
+    <string name="send">Skicka</string>
+    <string name="original_content">Ursprungligt innehåll</string>
+    <string name="quote">Citat</string>
+    <string name="formatting_guidelines">HN-formateringsriktlinjer</string>
+    <string name="confirm_save_draft">Spara utkast?</string>
+    <string name="create_account">Skapa konto</string>
+    <string name="comment_failed">Kunde inte skicka kommentar</string>
+    <string name="comment_successful">Kommentar tillagd. Uppdatera för att se.</string>
+    <string name="confirm_no_waiting">Avsluta utan att vänta?</string>
+    <string name="rate_app">Betygsätt appen</string>
+    <string name="or">eller</string>
+    <string name="leave_feedback">Lämna feedback</string>
+    <string name="no_playstore">Ingen Play Store-app hittad</string>
+    <string name="submit_content_hint">URL eller text</string>
+    <string name="title_activity_submit">Skicka till HN</string>
+    <string name="url_text_required">URL eller text krävs</string>
+    <string name="submit_failed">Kunde inte skicka. Försök igen.</string>
+    <string name="submit_successful">Skickat</string>
+    <string name="confirm_no_submit">Avsluta utan att skicka?</string>
+    <string name="submit_note">Ange text för att skicka en fråga för diskussion, eller URL för att skicka en länk. Du kan också dela länkar direkt från andra appar</string>
+    <string name="confirm_submit_url">Skicka som länk?</string>
+    <string name="confirm_submit_question">Skicka som fråga?</string>
+    <string name="submission_guidelines">Skickningsriktlinjer</string>
+    <string name="title_activity_user">Min Profil</string>
+    <string name="user_info">Skapad: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s inlägg</item>
+        <item quantity="one">%1$s inlägg</item>
+        <item quantity="other">%1$s inlägg</item>
+    </plurals>
+    <string name="view_story">Visa historia</string>
+    <string name="user_failed">Kan inte ladda användare. Försök igen.</string>
+    <string name="dead_prefix">[död]</string>
+    <string name="title_activity_thread_preview">Trådförhandsvisning</string>
+    <string name="view_thread">Visa tråd</string>
+    <string name="view_user">Visa användare</string>
+    <string name="more">Mer</string>
+    <string name="logout">Logga ut</string>
+    <string name="offline">Offline</string>
+    <string name="offline_notice">Du är för närvarande offline</string>
+    <string name="download_in_progress">Nedladdning pågår</string>
+    <string name="love_it">Jag älskar det!</string>
+    <string name="display_options">Visningsalternativ</string>
+    <string name="pull_up_hint">Dra upp för mer</string>
+    <string name="find_in_page">Sök på sidan</string>
+    <string name="no_matches">Inga träffar hittade</string>
+    <string name="back">Tillbaka</string>
+    <string name="forward">Framåt</string>
+    <string name="zoom_out">Zooma ut</string>
+    <string name="zoom_in">Zooma in</string>
+    <string name="refresh">Uppdatera</string>
+    <string name="exit_fullscreen">Avsluta</string>
+    <string name="next">Nästa</string>
+    <string name="list_display_options">Listvisningsalternativ</string>
+    <string name="last_screen">Senast använda skärm</string>
+    <string name="widget_options">Widgetalternativ</string>
+    <string name="item_exist">Liknande historia har redan skickats</string>
+    <string name="hn_link">Hacker News-länk</string>
+    <string name="article_link">Artikellänk</string>
+    <string name="hint_drag">Dra för att ompositionera</string>
+    <string name="hint_nav_short">Svep \u2191 \u2193 \u2192 \u2190 för att navigera\nLångtryck för att ompositionera</string>
+    <string name="konami">Du fick Konami-koden! Ge mig 5 stjärnor?</string>
+    <string name="end_of_thread">Slut på tråd</string>
+    <string name="save_draft">Spara utkast</string>
+    <string name="discard_draft">Ta bort utkast</string>
+    <string name="clear_drafts">Rensa alla utkast</string>
+    <string name="more_sections">Fler sektioner</string>
+    <string name="list">Lista</string>
+    <string name="delete">Ta bort</string>
+    <string name="full_text">Full text</string>
+    <string name="empty_text">[Denna historia har inget innehåll]</string>
+    <string name="none">Ingen</string>
+    <string name="hint_update">Din app har precis uppdaterats!</string>
+    <string name="export_saved_stories">Exportera sparade historier</string>
+    <string name="export_notification">Sparad till fil. Tryck för alternativ.</string>
+    <string name="share_file">Dela fil</string>
+    <string name="privacy_policy">Integritetspolicy</string>
+    <string name="notification_channel_downloads">Nedladdningar</string>
+    <string name="reply">Svara</string>
+</resources>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="title_activity_list">Top Geschichten</string>
+    <string name="title_activity_best">Beste Geschichten</string>
+    <string name="title_activity_item">Kommentare</string>
+    <string name="title_activity_release">Neuigkeiten</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">Schublade öffnen</string>
+    <string name="close_drawer">Schublade schließen</string>
+    <string name="view_in_browser">In externem Browser anzeigen</string>
+    <string name="share">Teilen</string>
+    <string name="title_activity_about">Über</string>
+    <string name="license_title">Lizenz</string>
+    <string name="third_party_licenses_title">Drittanbieter-Lizenzen</string>
+    <string name="developer_info_title">Entwickler-Info</string>
+    <string name="application_info_title">Anwendungs-Info</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>Version</b> %1$s<br>
+            <b>Build</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>Erstellt</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> ist ein Fork von Materialistic von Ha Duy Trung.<br><br>
+            <b>Änderungen:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Modernisierte Toolchain<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Neue Themes<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Violett<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Ozean<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Rose<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Monokai<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Nord<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kompakter Listenmodus mit kleineren Schriftarten und engerem Abstand<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Neue Schriftarten<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Vereinfachte Navigationsschublade, alle Abschnitte im Stammverzeichnis<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Engerer Abstand in der gesamten App<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Transparenter Scroll-Glanz<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; Unterstützung für parallele Debug-Installation<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">Bibliotheken &amp; Ressourcen</string>
+    <string name="title_activity_favorite">Gespeicherte Geschichten</string>
+    <string name="saved">Vor %1$s gespeichert</string>
+    <string name="toast_saved">Geschichte gespeichert</string>
+    <string name="clear_all">Alles löschen</string>
+    <string name="toast_removed">Geschichte entfernt</string>
+    <string name="no_saved_stories">Bisher keine gespeicherten Geschichten</string>
+    <string name="no_comments">Hier ist es noch ruhig</string>
+    <string name="confirm_clear">Alle gespeicherten Geschichten löschen?</string>
+    <string name="export">Exportieren</string>
+    <string name="clear_selected">Auswahl löschen</string>
+    <string name="confirm_clear_selected">Ausgewählte gespeicherte Geschichten löschen?</string>
+    <string name="search">Suchen</string>
+    <string name="hint_search_saved_stories">Gespeicherte Geschichten durchsuchen</string>
+    <string name="no_stories_search">Konnte nicht finden, was Sie suchen</string>
+    <string name="display">Anzeige</string>
+    <string name="pref_external_title">Externen Browser verwenden</string>
+    <string name="pref_external_summary">Artikel in externem Browser lesen</string>
+    <string name="pref_color_code_title">Farbcode</string>
+    <string name="pref_color_code_opacity_title">Farbcode-Deckkraft</string>
+    <string name="pref_highlight_updated_title">Aktualisierte Geschichten hervorheben</string>
+    <string name="pref_highlight_updated_summary">Änderungen seit letzter Aktualisierung anzeigen</string>
+    <string name="pref_custom_tab_title">Benutzerdefinierte Tabs verwenden</string>
+    <string name="pref_custom_tab_summary">Browser-Tab statt vollem Browser öffnen</string>
+    <string name="pref_story_display_title">Standard öffnen</string>
+    <string name="pref_theme_title">Theme</string>
+    <string name="pref_app_icon_title">App-Icon-Stil</string>
+    <string name="app_icon_default">Orange (Standard)</string>
+    <string name="app_icon_purple">Lila</string>
+    <string name="app_icon_green">Grün</string>
+    <string name="app_icon_blue">Blau</string>
+    <string name="app_icon_red">Rot</string>
+    <string name="app_icon_teal">Türkis</string>
+    <string name="app_icon_pink">Rosa</string>
+    <string name="app_icon_indigo">Indigo</string>
+    <string name="pref_daynight_title">Automatischer Tag-Nacht-Modus</string>
+    <string name="pref_search_sort_title">Sortieren nach</string>
+    <string name="pref_search_sort_value_recent">neueste</string>
+    <string name="pref_search_sort_value_default">Standard</string>
+    <string name="pref_text_size_title">Textgröße</string>
+    <string name="pref_font_title">Schriftart</string>
+    <string name="pref_comment_display_title">Thread</string>
+    <string name="pref_max_lines_title">Langer Kommentar</string>
+    <string name="pref_multi_window_title">Multi-Fenster-Modus</string>
+    <string name="pref_multi_window_summary">Welches Fenster für Geschichte öffnen (Android 7+)</string>
+    <string name="pref_multi_window_none">Gleiches</string>
+    <string name="pref_multi_window_one">Anderes</string>
+    <string name="pref_navigation_title">Bildschirmnavigation</string>
+    <string name="pref_navigation_vibrate_title">Bei Berührung vibrieren</string>
+    <string name="pref_lazy_load_title">Lazy Load-Inhalt</string>
+    <string name="pref_lazy_load_summary">Inhalt nur laden, wenn Sie zu dessen Tab wechseln</string>
+    <string name="pref_saved_item_sync_title">Offline-Zugriff aktivieren</string>
+    <string name="pref_saved_item_sync_summary">Inhalt herunterladen, wenn Sie Geschichte speichern</string>
+    <string name="pref_offline_data_title">Wann herunterladen</string>
+    <string name="pref_offline_comments_title">Kommentare herunterladen</string>
+    <string name="pref_offline_article_title">Artikel herunterladen</string>
+    <string name="pref_offline_readability_title">Readability herunterladen</string>
+    <string name="pref_offline_data_wifi">Nur WiFi</string>
+    <string name="pref_offline_data_always">Immer</string>
+    <string name="pref_offline_notification_title">Fortschritt anzeigen</string>
+    <string name="pref_offline_notification_summary">Benachrichtigung für Download-Fortschritt anzeigen</string>
+    <string name="pref_launch_screen_title">Standardbildschirm</string>
+    <string name="pref_volume_title">Lautstärkenavigation verwenden</string>
+    <string name="pref_volume_summary">Mit Lautstärketasten nach oben/unter scrollen</string>
+    <string name="pref_ad_block_title">Werbung blockieren</string>
+    <string name="pref_ad_block_summary">Einfachen Werbeblocker für internen Browser aktivieren</string>
+    <string name="pref_line_height_title">Zeilenabstand</string>
+    <string name="pref_list_item_view_title">Als Karten anzeigen</string>
+    <string name="pref_list_compact_title">Kompakter Listenabstand</string>
+    <string name="pref_list_compact_summary">Engere Zeilen und schmalere Punktespalte für breitere Titel</string>
+    <string name="pref_thread_indicator_title">Thread-Indikator</string>
+    <string name="pref_widget_section_title">Abschnitt</string>
+    <string name="pref_widget_query_title">Nach Abfrage filtern (optional)</string>
+    <string name="pref_widget_frequency_title">Aktualisierungshäufigkeit</string>
+    <string name="pref_auto_viewed_title">Automatisch als gesehen markieren</string>
+    <string name="pref_auto_viewed_summary">Geschichten beim Hochwischen als gesehen markieren</string>
+    <string name="pref_smooth_scroll_title">Navigation animieren</string>
+    <string name="pref_smooth_scroll_summary">Deaktivieren, um Scrollgenauigkeit zu verbessern</string>
+    <string name="pref_list_swipe_left_title">Nach links wischen für</string>
+    <string name="pref_list_swipe_right_title">Nach rechts wischen für</string>
+    <string name="connection_error">Keine Verbindung zu Hacker News möglich. Überprüfen Sie Ihre Verbindung oder versuchen Sie es erneut.</string>
+    <string name="select_story">Wählen Sie eine Geschichte zum Anzeigen</string>
+    <string name="download_external">In anderer App anzeigen</string>
+    <string name="try_me">Langer Druck/Wischen, um für später zu speichern!</string>
+    <string name="title_activity_jobs">Jobs</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">Neue Geschichten</string>
+    <string name="title_activity_search">HN durchsuchen</string>
+    <string name="clear_search_history">Suchverlauf löschen</string>
+    <string name="clear_search_history_confirm">Suchverlauf löschen?</string>
+    <string name="undo">Rückgängig</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">Kommentare</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s Kommentar</item>
+        <item quantity="one">%1$s Kommentar</item>
+        <item quantity="other">%1$s Kommentare</item>
+    </plurals>
+    <string name="article">Artikel</string>
+    <string name="reset_settings">Alle Einstellungen zurücksetzen</string>
+    <string name="reset_settings_confirm">Alle Ihre Einstellungen auf App-Standard zurücksetzen?</string>
+    <string name="last_updated">Zuletzt aktualisiert %1$s</string>
+    <string name="feedback">Feedback</string>
+    <string name="send_feedback">Feedback senden</string>
+    <string name="title_hint">Titel</string>
+    <string name="comment_hint">Kommentar</string>
+    <string name="feedback_note">
+        <![CDATA[
+            Ihr Feedback wird öffentlich als <a href="https://github.com/mxmilkiib/material-hack/issues">Material Hack Github-Issue</a> gemacht.
+        ]]>
+    </string>
+    <string name="title_required">Titel ist erforderlich</string>
+    <string name="comment_required">Kommentar ist erforderlich</string>
+    <string name="feedback_sent">Feedback gesendet. Danke!</string>
+    <string name="feedback_failed">Senden fehlgeschlagen, bitte erneut versuchen</string>
+    <string name="chooser_title">Öffnen mit</string>
+    <string name="title_activity_popular">Aufholen</string>
+    <string name="range">Zeitraum</string>
+    <string name="popular_range_last_24h">Letzte 24h</string>
+    <string name="popular_range_past_week">Letzte Woche</string>
+    <string name="popular_range_past_month">Letzter Monat</string>
+    <string name="popular_range_past_year">Letztes Jahr</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s neue Geschichte</item>
+        <item quantity="one">%1$s neue Geschichte</item>
+        <item quantity="other">%1$s neue Geschichten</item>
+    </plurals>
+    <string name="show_me">Zeigen</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">Zeige %1$s neue Geschichte</item>
+        <item quantity="one">Zeige %1$s neue Geschichte</item>
+        <item quantity="other">Zeige %1$s neue Geschichten</item>
+    </plurals>
+    <string name="show_all">Alle anzeigen</string>
+    <string name="whats_this">Was ist das?</string>
+    <string name="got_it">Verstanden</string>
+    <string name="help_new_story">Neue Geschichte seit letzter Aktualisierung</string>
+    <string name="help_promoted_story">Beförderte Geschichte seit letzter Aktualisierung</string>
+    <string name="help_new_comments">Geschichte mit neuen Kommentaren seit letzter Aktualisierung</string>
+    <string name="help_lazy_load">Mit Lazy Load aktiviert wird nur Ihr bevorzugter Standard-Tab geladen, wenn ein Element zum ersten Mal geöffnet wird.\n\nWenn Sie eine langsame Verbindung haben oder Verzögerungen erleben, kann dies helfen.</string>
+    <string name="help_volume_up">Lautstärke hoch drücken zum Hochscrollen</string>
+    <string name="help_long_volume_up">Langer Druck auf Lautstärke hoch zum schnellen Hochscrollen nach oben</string>
+    <string name="help_volume_down">Lautstärke runter drücken zum Herunterscrollen</string>
+    <string name="help_navigate">Schwebenden Navigationsknopf anzeigen, der auf Wischgesten reagiert, um verschachtelte Kommentar-Threads zu navigieren.</string>
+    <string name="help_navigate_up">Wischen \u2191: zum vorherigen Kommentar gehen</string>
+    <string name="help_navigate_down">Wischen \u2193: zum nächsten Kommentar gehen</string>
+    <string name="help_navigate_right">Wischen \u2192: erweitern &amp; zur 1. Antwort gehen</string>
+    <string name="help_navigate_left">Wischen \u2190: zurück zum Elternteil gehen</string>
+    <string name="help_navigate_move">Langer Druck, um Navigationsknopf an neue Position zu ziehen</string>
+    <string name="readability">Lesbarkeit</string>
+    <string name="text_size_extra_small">Sehr klein</string>
+    <string name="text_size_small">Klein</string>
+    <string name="text_size_medium">Mittel</string>
+    <string name="text_size_large">Groß</string>
+    <string name="text_size_extra_large">Sehr groß</string>
+    <string name="readability_failed">Artikel konnte nicht analysiert werden</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_black">Schwarz</string>
+    <string name="theme_sepia">Sepia</string>
+    <string name="theme_green">Grün</string>
+    <string name="theme_transparent">Transparent</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">Violett</string>
+    <string name="theme_ocean">Ozean</string>
+    <string name="theme_rose">Rose</string>
+    <string name="theme_monokai">Monokai</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_crimson">Karmesinrot</string>
+    <string name="theme_forest">Wald</string>
+    <string name="theme_midnight">Mitternacht</string>
+    <string name="theme_sand">Sand</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_darkorange">Dunkelorange</string>
+    <string name="comment_display_multiple">Mehrere Seiten</string>
+    <string name="comment_display_single">Einzelne Seite - automatisch erweitern</string>
+    <string name="comment_display_collapsed">Einzelne Seite - reduziert</string>
+    <string name="story_display_article">Artikel</string>
+    <string name="story_display_comments">Kommentare</string>
+    <string name="search_sort_recent">Neueste</string>
+    <string name="search_sort_popularity">Beliebtheit</string>
+    <string name="story_display_readability">Lesbarkeit</string>
+    <string name="font_options">Schriftart-Optionen</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">Alle %1$d Zeilen lesen</string>
+    <string name="comment_max_lines_3">Max 3 Zeilen</string>
+    <string name="comment_max_lines_4">Max 4 Zeilen</string>
+    <string name="comment_max_lines_5">Max 5 Zeilen</string>
+    <string name="comment_max_lines_all">Vollständiger Inhalt</string>
+    <string name="line_height_compact">Kompakt</string>
+    <string name="line_height_normal">Normal</string>
+    <string name="line_height_cozy">Gemütlich</string>
+    <string name="line_height_comfortable">Komfortabel</string>
+    <string name="frequency_3_hours">3 Stunden</string>
+    <string name="frequency_6_hours">6 Stunden</string>
+    <string name="frequency_12_hours">12 Stunden</string>
+    <string name="frequency_1_day">1 Tag</string>
+    <string name="file_not_supported">Inhaltstyp nicht unterstützt</string>
+    <string name="username_hint">Benutzername</string>
+    <string name="password_hint">Passwort</string>
+    <string name="login">Anmelden</string>
+    <string name="title_activity_login">Bei Hacker News anmelden</string>
+    <string name="username_required">Benutzername ist erforderlich</string>
+    <string name="password_required">Passwort ist erforderlich</string>
+    <string name="login_failed">Anmeldung/Kontoerstellung fehlgeschlagen, bitte erneut versuchen</string>
+    <string name="welcome">Willkommen %1$s!</string>
+    <string name="logout_confirm">Möchten Sie sich abmelden?</string>
+    <string name="choose_account">Konto auswählen</string>
+    <string name="add_account">Hinzufügen</string>
+    <string name="remove_account">Entfernen</string>
+    <string name="login_note">Ihre Anmeldedaten werden sicher unter den Einstellungen / Konten Ihres Geräts gespeichert</string>
+    <string name="save">Speichern</string>
+    <string name="unsave">Speicherung aufheben</string>
+    <string name="re_enter_password">Passwort erneut eingeben</string>
+    <string name="vote_up">Hochstimmen</string>
+    <string name="voted">Erfolgreich abgestimmt</string>
+    <string name="vote_failed">Stimme konnte nicht aufgezeichnet werden. Bitte erneut versuchen.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">Wird gesendet...</string>
+    <string name="add_comment">Kommentar hinzufügen</string>
+    <string name="title_activity_compose">Verfassen</string>
+    <string name="send">Senden</string>
+    <string name="original_content">Ursprünglicher Inhalt</string>
+    <string name="quote">Zitat</string>
+    <string name="formatting_guidelines">HN-Formatierungsrichtlinien</string>
+    <string name="confirm_save_draft">Entwurf speichern?</string>
+    <string name="create_account">Konto erstellen</string>
+    <string name="comment_failed">Kommentar konnte nicht gesendet werden</string>
+    <string name="comment_successful">Kommentar hinzugefügt. Bitte aktualisieren zum Anzeigen.</string>
+    <string name="confirm_no_waiting">Beenden ohne Warten?</string>
+    <string name="rate_app">App bewerten</string>
+    <string name="or">oder</string>
+    <string name="leave_feedback">Feedback hinterlassen</string>
+    <string name="no_playstore">Keine Play Store App gefunden</string>
+    <string name="submit_content_hint">URL oder Text</string>
+    <string name="title_activity_submit">An HN senden</string>
+    <string name="url_text_required">URL oder Text ist erforderlich</string>
+    <string name="submit_failed">Senden fehlgeschlagen. Bitte erneut versuchen.</string>
+    <string name="submit_successful">Erfolgreich gesendet</string>
+    <string name="confirm_no_submit">Beenden ohne Senden?</string>
+    <string name="submit_note">Text eingeben, um eine Frage zur Diskussion zu senden, oder URL, um einen Link zu senden. Sie können auch Links direkt aus anderen Apps teilen</string>
+    <string name="confirm_submit_url">Als Link senden?</string>
+    <string name="confirm_submit_question">Als Frage senden?</string>
+    <string name="submission_guidelines">Einreichungsrichtlinien</string>
+    <string name="title_activity_user">Mein Profil</string>
+    <string name="user_info">Erstellt: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s Einreichung</item>
+        <item quantity="one">%1$s Einreichung</item>
+        <item quantity="other">%1$s Einreichungen</item>
+    </plurals>
+    <string name="view_story">Geschichte anzeigen</string>
+    <string name="user_failed">Benutzer konnte nicht geladen werden. Bitte erneut versuchen.</string>
+    <string name="dead_prefix">[tot]</string>
+    <string name="title_activity_thread_preview">Thread-Vorschau</string>
+    <string name="view_thread">Thread anzeigen</string>
+    <string name="view_user">Benutzer anzeigen</string>
+    <string name="more">Mehr</string>
+    <string name="logout">Abmelden</string>
+    <string name="offline">Offline</string>
+    <string name="offline_notice">Sie sind derzeit offline</string>
+    <string name="download_in_progress">Download läuft</string>
+    <string name="love_it">Ich liebe es!</string>
+    <string name="display_options">Anzeigeoptionen</string>
+    <string name="pull_up_hint">Nach oben ziehen für mehr</string>
+    <string name="find_in_page">Auf Seite suchen</string>
+    <string name="no_matches">Keine Treffer gefunden</string>
+    <string name="back">Zurück</string>
+    <string name="forward">Vorwärts</string>
+    <string name="zoom_out">Verkleinern</string>
+    <string name="zoom_in">Vergrößern</string>
+    <string name="refresh">Aktualisieren</string>
+    <string name="exit_fullscreen">Beenden</string>
+    <string name="next">Nächste</string>
+    <string name="list_display_options">Listen-Anzeigeoptionen</string>
+    <string name="last_screen">Zuletzt verwendeter Bildschirm</string>
+    <string name="widget_options">Widget-Optionen</string>
+    <string name="item_exist">Ähnliche Geschichte wurde bereits eingereicht</string>
+    <string name="hn_link">Hacker News Link</string>
+    <string name="article_link">Artikel-Link</string>
+    <string name="hint_drag">Ziehen zum Neupositionieren</string>
+    <string name="hint_nav_short">Wischen \u2191 \u2193 \u2192 \u2190 zum Navigieren\nLanger Druck zum Neupositionieren</string>
+    <string name="konami">Sie haben den Konami-Code gefunden! Geben Sie mir 5 Sterne?</string>
+    <string name="end_of_thread">Ende des Threads</string>
+    <string name="save_draft">Entwurf speichern</string>
+    <string name="discard_draft">Entwurf verwerfen</string>
+    <string name="clear_drafts">Alle Entwürfe löschen</string>
+    <string name="more_sections">Mehr Abschnitte</string>
+    <string name="list">Liste</string>
+    <string name="delete">Löschen</string>
+    <string name="full_text">Vollständiger Text</string>
+    <string name="empty_text">[Diese Geschichte hat keinen Inhalt]</string>
+    <string name="none">Keine</string>
+    <string name="hint_update">Ihre App wurde gerade aktualisiert!</string>
+    <string name="export_saved_stories">Gespeicherte Geschichten exportieren</string>
+    <string name="export_notification">In Datei gespeichert. Tippen für Optionen.</string>
+    <string name="share_file">Datei teilen</string>
+    <string name="privacy_policy">Datenschutzrichtlinie</string>
+    <string name="notification_channel_downloads">Downloads</string>
+    <string name="reply">Antworten</string>
+</resources>

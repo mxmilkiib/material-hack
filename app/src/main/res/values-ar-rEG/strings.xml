@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Material Hack</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="title_activity_list">أهم القصص</string>
+    <string name="title_activity_best">أفضل القصص</string>
+    <string name="title_activity_item">التعليقات</string>
+    <string name="title_activity_release">إيه الجديد</string>
+    <string name="filter_title_item">Materialistic</string>
+    <string name="open_drawer">افتح الدرج</string>
+    <string name="close_drawer">اقفل الدرج</string>
+    <string name="view_in_browser">شوف في براوزر خارجي</string>
+    <string name="share">شارك</string>
+    <string name="title_activity_about">عن التطبيق</string>
+    <string name="license_title">الرخصة</string>
+    <string name="third_party_licenses_title">رخصات الطرف التالت</string>
+    <string name="developer_info_title">معلومات المطور</string>
+    <string name="application_info_title">معلومات التطبيق</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <b>الإصدار</b> %1$s<br>
+            <b>البناء</b> %2$d &#8226; <a href="https://github.com/mxmilkiib/material-hack/commit/%5$s">%5$s</a><br>
+            <b>تم البناء</b> %3$s (%4$s)<br><br>
+            <b>Material Hack</b> هو فورك من Materialistic بواسطة Ha Duy Trung.<br><br>
+            <b>التغييرات:</b><br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; toolchain حديث<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Gradle 8<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; AGP 8.5<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Kotlin 1.9<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; targetSdk 34<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; تيمات جديدة<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; بنفسجي<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; محيط<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; وردة<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; مونوكاي<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; نورد<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; وضع قائمة مضغوط بخطوط أصغر ومسافات أضيق<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; خطوط جديدة<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Hack Nerd Font<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Inter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; JetBrains Mono<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fira Code<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Terminus<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp; Fixedsys<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; درج تنقل مبسط، كل الأقسام في الروت<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; مسافات أضيق في التطبيق كله<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; لمعان سكرول شفاف<br>
+            &nbsp;&nbsp;&nbsp;&#8226;&nbsp; دعم تنصيب ديبوج جنب بجنب<br>
+            <br>
+            Fork: <a href="https://github.com/mxmilkiib/material-hack">mxmilkiib/material-hack</a><br>
+            Original: <a href="https://github.com/hidroh/materialistic">hidroh/materialistic</a>
+        ]]>
+    </string>
+    <string name="libraries_title">المكتبات والمصادر</string>
+    <string name="title_activity_favorite">القصص المحفوظة</string>
+    <string name="saved">محفوظ من %1$s</string>
+    <string name="toast_saved">القصة محفوظة</string>
+    <string name="clear_all">مسح الكل</string>
+    <string name="toast_removed">القصة محذوفة</string>
+    <string name="no_saved_stories">لسه مفيش قصص محفوظة</string>
+    <string name="no_comments">لسه هاد هنا</string>
+    <string name="confirm_clear">مسح كل القصص المحفوظة؟</string>
+    <string name="export">تصدير</string>
+    <string name="clear_selected">مسح المختار</string>
+    <string name="confirm_clear_selected">مسح القصص المحفوظة المختارة؟</string>
+    <string name="search">بحث</string>
+    <string name="hint_search_saved_stories">بحث في القصص المحفوظة</string>
+    <string name="no_stories_search">مقدرتش تلقى اللي بتدور عليه</string>
+    <string name="display">العرض</string>
+    <string name="pref_external_title">استخدم براوزر خارجي</string>
+    <string name="pref_external_summary">اقرأ المقالات في براوزر خارجي</string>
+    <string name="pref_color_code_title">كود اللون</string>
+    <string name="pref_color_code_opacity_title">شفافية كود اللون</string>
+    <string name="pref_highlight_updated_title">سطع القصص المحدثة</string>
+    <string name="pref_highlight_updated_summary">أظهر التغييرات من آخر تحديث</string>
+    <string name="pref_custom_tab_title">استخدم تابات مخصصة</string>
+    <string name="pref_custom_tab_summary">افتح تابة براوزر بدل البراوزر الكامل</string>
+    <string name="pref_story_display_title">افتح الافتراضي</string>
+    <string name="pref_theme_title">التيما</string>
+    <string name="pref_app_icon_title">ستايل أيقونة التطبيق</string>
+    <string name="app_icon_default">برتقالي (افتراضي)</string>
+    <string name="app_icon_purple">بنفسجي</string>
+    <string name="app_icon_green">أخضر</string>
+    <string name="app_icon_blue">أزرق</string>
+    <string name="app_icon_red">أحمر</string>
+    <string name="app_icon_teal">تركواز</string>
+    <string name="app_icon_pink">وردي</string>
+    <string name="app_icon_indigo">نيلي</string>
+    <string name="pref_daynight_title">وضع ليل نهار تلقائي</string>
+    <string name="pref_search_sort_title">رتب حسب</string>
+    <string name="pref_search_sort_value_recent">الأحدث</string>
+    <string name="pref_search_sort_value_default">افتراضي</string>
+    <string name="pref_text_size_title">حجم النص</string>
+    <string name="pref_font_title">الخط</string>
+    <string name="pref_comment_display_title">الموضوع</string>
+    <string name="pref_max_lines_title">تعليق طويل</string>
+    <string name="pref_multi_window_title">وضع نوافذ متعددة</string>
+    <string name="pref_multi_window_summary">أي نافذة تفتح القصة (Android 7+)</string>
+    <string name="pref_multi_window_none">نفس</string>
+    <string name="pref_multi_window_one">تاني</string>
+    <string name="pref_navigation_title">التنقل على الشاشة</string>
+    <string name="pref_navigation_vibrate_title">اهتز عند اللمس</string>
+    <string name="pref_lazy_load_title">تحميل كسول للمحتوى</string>
+    <string name="pref_lazy_load_summary">حمل المحتوى بس لما بتغير لتابته</string>
+    <string name="pref_saved_item_sync_title">فعّل الوصول أوفلاين</string>
+    <string name="pref_saved_item_sync_summary">نزّل المحتوى لما بتخزن القصة</string>
+    <string name="pref_offline_data_title">متا تنزّل</string>
+    <string name="pref_offline_comments_title">نزّل التعليقات</string>
+    <string name="pref_offline_article_title">نزّل المقال</string>
+    <string name="pref_offline_readability_title">نزّل القراءة</string>
+    <string name="pref_offline_data_wifi">WiFi بس</string>
+    <string name="pref_offline_data_always">دومًا</string>
+    <string name="pref_offline_notification_title">أظهر التقدم</string>
+    <string name="pref_offline_notification_summary">أظهر إشعار لتقدم التنزيل</string>
+    <string name="pref_launch_screen_title">الشاشة الافتراضية</string>
+    <string name="pref_volume_title">استخدم تنقل الصوت</string>
+    <string name="pref_volume_summary">سكرول لفوق/لتحت بأزرار الصوت</string>
+    <string name="pref_ad_block_title">بلوك الإعلانات</string>
+    <string name="pref_ad_block_summary">فعّل بلوك إعلانات بسيط للبراوزر الداخلي</string>
+    <string name="pref_line_height_title">ارتفاع السطر</string>
+    <string name="pref_list_item_view_title">أظهر ككروت</string>
+    <string name="pref_list_compact_title">مسافة قائمة مضغوطة</string>
+    <string name="pref_list_compact_summary">صفوف أضيق وعمود نقاط أضيق للعناوين الأعرض</string>
+    <string name="pref_thread_indicator_title">مؤشر الموضوع</string>
+    <string name="pref_widget_section_title">القسم</string>
+    <string name="pref_widget_query_title">فلتر بالاستعلام (اختياري)</string>
+    <string name="pref_widget_frequency_title">تردد التحديث</string>
+    <string name="pref_auto_viewed_title">علّم تلقائيًا كمشاهد</string>
+    <string name="pref_auto_viewed_summary">علّم القصص كمشاهدة لما بتسكرول لفوق</string>
+    <string name="pref_smooth_scroll_title">حرّك التنقل</string>
+    <string name="pref_smooth_scroll_summary">عطّل لتحسين دقة السكرول</string>
+    <string name="pref_list_swipe_left_title">سوايب لليسار لـ</string>
+    <string name="pref_list_swipe_right_title">سوايب لليمين لـ</string>
+    <string name="connection_error">مقدرتش اتصل بـ Hacker News. شيك اتصالك أو حاول تاني.</string>
+    <string name="select_story">اختار قصة عشان تشوفها</string>
+    <string name="download_external">شوف في تطبيق تاني</string>
+    <string name="try_me">ضغطة طويلة/سوايب عشان تخزن لبعدين!</string>
+    <string name="title_activity_jobs">وظايف</string>
+    <string name="title_activity_show">Show HN</string>
+    <string name="title_activity_ask">Ask HN</string>
+    <string name="title_activity_new">قصص جديدة</string>
+    <string name="title_activity_search">بحث HN</string>
+    <string name="clear_search_history">مسح تاريخ البحث</string>
+    <string name="clear_search_history_confirm">مسح تاريخ البحث؟</string>
+    <string name="undo">تراجع</string>
+    <plurals name="score">
+        <item quantity="other">%1$sp</item>
+    </plurals>
+    <string name="comments">التعليقات</string>
+    <plurals name="comments_count">
+        <item quantity="zero">%1$s تعليق</item>
+        <item quantity="one">%1$s تعليق</item>
+        <item quantity="other">%1$s تعليقات</item>
+    </plurals>
+    <string name="article">مقال</string>
+    <string name="reset_settings">إعادة تعيين كل الإعدادات</string>
+    <string name="reset_settings_confirm">إعادة تعيين كل تفضيلاتك لافتراضيات التطبيق؟</string>
+    <string name="last_updated">آخر تحديث %1$s</string>
+    <string name="feedback">ردود الفعل</string>
+    <string name="send_feedback">إرسال ردود الفعل</string>
+    <string name="title_hint">العنوان</string>
+    <string name="comment_hint">التعليق</string>
+    <string name="feedback_note">
+        <![CDATA[
+            ردود الفعل بتاعتك هتنشر علنًا كـ <a href="https://github.com/mxmilkiib/material-hack/issues">مشكلة Github Material Hack</a>.
+        ]]>
+    </string>
+    <string name="title_required">العنوان مطلوب</string>
+    <string name="comment_required">التعليق مطلوب</string>
+    <string name="feedback_sent">ردود الفعل مرسلة. شكرًا!</string>
+    <string name="feedback_failed">فشل الإرسال، حاول تاني</string>
+    <string name="chooser_title">افتح بـ</string>
+    <string name="title_activity_popular">لحق</string>
+    <string name="range">المدى</string>
+    <string name="popular_range_last_24h">آخر 24 ساعة</string>
+    <string name="popular_range_past_week">الأسبوع اللي فات</string>
+    <string name="popular_range_past_month">الشهر اللي فات</string>
+    <string name="popular_range_past_year">السنة اللي فاتت</string>
+    <plurals name="new_stories_count">
+        <item quantity="zero">%1$s قصة جديدة</item>
+        <item quantity="one">%1$s قصة جديدة</item>
+        <item quantity="other">%1$s قصص جديدة</item>
+    </plurals>
+    <string name="show_me">أظهر</string>
+    <plurals name="showing_new_stories">
+        <item quantity="zero">بيظهر %1$s قصة جديدة</item>
+        <item quantity="one">بيظهر %1$s قصة جديدة</item>
+        <item quantity="other">بيظهر %1$s قصص جديدة</item>
+    </plurals>
+    <string name="show_all">أعرض الكل</string>
+    <string name="whats_this">إيه ده؟</string>
+    <string name="got_it">فهمت</string>
+    <string name="help_new_story">قصة جديدة من آخر تحديث</string>
+    <string name="help_promoted_story">قصة مرفوعة من آخر تحديث</string>
+    <string name="help_new_comments">قصة بتعليقات جديدة من آخر تحديث</string>
+    <string name="help_lazy_load">مع التحميل الكسول مفعّل، بس التابة الافتراضية المفضلة بتتحمل لما العنصر يفتح أول مرة.\n\nلو بتكون على اتصال بطيء أو بتواجه لاج، تفعيل ده ممكن يساعد.</string>
+    <string name="help_volume_up">اضغط رفع الصوت عشان تسكرول لفوق</string>
+    <string name="help_long_volume_up">ضغطة طويلة على رفع الصوت عشان تسكرول بسرعة لفوق</string>
+    <string name="help_volume_down">اضغط خفض الصوت عشان تسكرول لتحت</string>
+    <string name="help_navigate">أظهر زر تنقل عايم بيستجيب لحركات السوايب عشان تنقل مواضيع التعليقات المتداخلة.</string>
+    <string name="help_navigate_up">سوايب \u2191: روح للتعليق اللي قبل</string>
+    <string name="help_navigate_down">سوايب \u2193: روح للتعليق اللي بعد</string>
+    <string name="help_navigate_right">سوايب \u2192: توسّع وروح للرد الأول</string>
+    <string name="help_navigate_left">سوايب \u2190: ارجع للأب</string>
+    <string name="help_navigate_move">ضغطة طويلة عشان تسحب زر التنقل لمكان جديد</string>
+    <string name="readability">القراءة</string>
+    <string name="text_size_extra_small">صغير جدًا</string>
+    <string name="text_size_small">صغير</string>
+    <string name="text_size_medium">متوسط</string>
+    <string name="text_size_large">كبير</string>
+    <string name="text_size_extra_large">كبير جدًا</string>
+    <string name="readability_failed">مقدرتش تحليل المقال</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">غامق</string>
+    <string name="theme_black">أسود</string>
+    <string name="theme_sepia">سيبيا</string>
+    <string name="theme_green">أخضر</string>
+    <string name="theme_transparent">شفاف</string>
+    <string name="theme_solarized_dark">Solarized Dark</string>
+    <string name="theme_solarized">Solarized</string>
+    <string name="theme_violet">بنفسجي</string>
+    <string name="theme_ocean">محيط</string>
+    <string name="theme_rose">وردة</string>
+    <string name="theme_monokai">مونوكاي</string>
+    <string name="theme_nord">نورد</string>
+    <string name="theme_crimson">قرمزي</string>
+    <string name="theme_forest">غابة</string>
+    <string name="theme_midnight">منتصف الليل</string>
+    <string name="theme_sand">رمل</string>
+    <string name="theme_dracula">دراكولا</string>
+    <string name="theme_darkorange">برتقالي غامق</string>
+    <string name="comment_display_multiple">صفحات متعددة</string>
+    <string name="comment_display_single">صفحة واحدة - توسيع تلقائي</string>
+    <string name="comment_display_collapsed">صفحة واحدة - مطوي</string>
+    <string name="story_display_article">مقال</string>
+    <string name="story_display_comments">تعليقات</string>
+    <string name="search_sort_recent">الأحدث</string>
+    <string name="search_sort_popularity">الشعبية</string>
+    <string name="story_display_readability">القراءة</string>
+    <string name="font_options">خيارات الخط</string>
+    <string name="read_more" tools:ignore="PluralsCandidate">اقرأ كل %1$d سطر</string>
+    <string name="comment_max_lines_3">أقصى 3 أسطر</string>
+    <string name="comment_max_lines_4">أقصى 4 أسطر</string>
+    <string name="comment_max_lines_5">أقصى 5 أسطر</string>
+    <string name="comment_max_lines_all">المحتوى الكامل</string>
+    <string name="line_height_compact">مضغوط</string>
+    <string name="line_height_normal">عادي</string>
+    <string name="line_height_cozy">مريح</string>
+    <string name="line_height_comfortable">مريح جدًا</string>
+    <string name="frequency_3_hours">3 ساعات</string>
+    <string name="frequency_6_hours">6 ساعات</string>
+    <string name="frequency_12_hours">12 ساعة</string>
+    <string name="frequency_1_day">1 يوم</string>
+    <string name="file_not_supported">نوع المحتوى مدعومش</string>
+    <string name="username_hint">اسم المستخدم</string>
+    <string name="password_hint">كلمة السر</string>
+    <string name="login">دخول</string>
+    <string name="title_activity_login">دخول لـ Hacker News</string>
+    <string name="username_required">اسم المستخدم مطلوب</string>
+    <string name="password_required">كلمة السر مطلوبة</string>
+    <string name="login_failed">فشل الدخول/إنشاء حساب، حاول تاني</string>
+    <string name="welcome">أهلاً %1$s!</string>
+    <string name="logout_confirm">عايز تخرج؟</string>
+    <string name="choose_account">اختار حساب</string>
+    <string name="add_account">إضافة</string>
+    <string name="remove_account">إزالة</string>
+    <string name="login_note">بيانات الدخول بتاعتك هتتخزن بأمان تحت إعدادات جهازك / الحسابات</string>
+    <string name="save">خزن</string>
+    <string name="unsave">إلغاء التخزين</string>
+    <string name="re_enter_password">أدخل كلمة السر تاني</string>
+    <string name="vote_up">تصويت إيجابي</string>
+    <string name="voted">التصويت ناجح</string>
+    <string name="vote_failed">فشل تسجيل التصويت. حاول تاني.</string>
+    <string name="sending" tools:ignore="TypographyEllipsis">بيبعت...</string>
+    <string name="add_comment">إضافة تعليق</string>
+    <string name="title_activity_compose">كتابة</string>
+    <string name="send">إرسال</string>
+    <string name="original_content">المحتوى الأصلي</string>
+    <string name="quote">اقتباس</string>
+    <string name="formatting_guidelines">إرشادات تنسيق HN</string>
+    <string name="confirm_save_draft">خزن المسودة؟</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="comment_failed">فشل إرسال التعليق</string>
+    <string name="comment_successful">التعليق مضاف. حدّث عشان تشوف.</string>
+    <string name="confirm_no_waiting">تخرج من غير انتظار؟</string>
+    <string name="rate_app">قيّم التطبيق</string>
+    <string name="or">أو</string>
+    <string name="leave_feedback">اترك رد فعل</string>
+    <string name="no_playstore">مفيش تطبيق Play Store موجود</string>
+    <string name="submit_content_hint">URL أو نص</string>
+    <string name="title_activity_submit">إرسال لـ HN</string>
+    <string name="url_text_required">URL أو النص مطلوب</string>
+    <string name="submit_failed">فشل الإرسال. حاول تاني.</string>
+    <string name="submit_successful">إرسال ناجح</string>
+    <string name="confirm_no_submit">تخرج من غير إرسال؟</string>
+    <string name="submit_note">اكتب نص عشان ترسل سؤال للمناقشة، أو URL عشان ترسل رابط. ممكن كمان تشارك روابط مباشرة من تطبيقات تانية</string>
+    <string name="confirm_submit_url">إرسال كرابط؟</string>
+    <string name="confirm_submit_question">إرسال كسؤال؟</string>
+    <string name="submission_guidelines">إرشادات الإرسال</string>
+    <string name="title_activity_user">بروفايلي</string>
+    <string name="user_info">أنشئ: %1$s</string>
+    <plurals name="submissions_count">
+        <item quantity="zero">%1$s إرسال</item>
+        <item quantity="one">%1$s إرسال</item>
+        <item quantity="other">%1$s إرسالات</item>
+    </plurals>
+    <string name="view_story">شوف القصة</string>
+    <string name="user_failed">مقدرتش تحميل المستخدم. حاول تاني.</string>
+    <string name="dead_prefix">[ميت]</string>
+    <string name="title_activity_thread_preview">معاينة الموضوع</string>
+    <string name="view_thread">شوف الموضوع</string>
+    <string name="view_user">شوف المستخدم</string>
+    <string name="more">أكتر</string>
+    <string name="logout">خروج</string>
+    <string name="offline">أوفلاين</string>
+    <string name="offline_notice">أنت دلوقتي أوفلاين</string>
+    <string name="download_in_progress">التنزيل شغال</string>
+    <string name="love_it">أنا بحب ده!</string>
+    <string name="display_options">خيارات العرض</string>
+    <string name="pull_up_hint">اسحب لفوق عشان أكتر</string>
+    <string name="find_in_page">ابحث في الصفحة</string>
+    <string name="no_matches">مفيش تطابقات موجودة</string>
+    <string name="back">رجوع</string>
+    <string name="forward">تقدم</string>
+    <string name="zoom_out">تصغير</string>
+    <string name="zoom_in">تكبير</string>
+    <string name="refresh">تحديث</string>
+    <string name="exit_fullscreen">خروج</string>
+    <string name="next">التالي</string>
+    <string name="list_display_options">خيارات عرض القائمة</string>
+    <string name="last_screen">آخر شاشة مستخدمة</string>
+    <string name="widget_options">خيارات الودجت</string>
+    <string name="item_exist">قصة مشابهة مرسلة بالفعل</string>
+    <string name="hn_link">رابط Hacker News</string>
+    <string name="article_link">رابط المقال</string>
+    <string name="hint_drag">اسحب عشان تغيير المكان</string>
+    <string name="hint_nav_short">سوايب \u2191 \u2193 \u2192 \u2190 عشان تنقل\nضغطة طويلة عشان تغيير المكان</string>
+    <string name="konami">لقيّت كود Konami! تعطيني 5 نجوم؟</string>
+    <string name="end_of_thread">نهاية الموضوع</string>
+    <string name="save_draft">خزن المسودة</string>
+    <string name="discard_draft">تجاهل المسودة</string>
+    <string name="clear_drafts">مسح كل المسودات</string>
+    <string name="more_sections">أقسام أكتر</string>
+    <string name="list">قائمة</string>
+    <string name="delete">حذف</string>
+    <string name="full_text">النص الكامل</string>
+    <string name="empty_text">[القصة دي مافيهاش محتوى]</string>
+    <string name="none">مفيش</string>
+    <string name="hint_update">التطبيق بتاعك تحديث دلوقتي!</string>
+    <string name="export_saved_stories">تصدير القصص المحفوظة</string>
+    <string name="export_notification">مخزن في ملف. اضغط عشان الخيارات.</string>
+    <string name="share_file">شارك الملف</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="notification_channel_downloads">التنزيلات</string>
+    <string name="reply">رد</string>
+</resources>
