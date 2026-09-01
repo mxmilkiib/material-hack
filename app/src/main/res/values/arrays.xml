@@ -19,18 +19,42 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Font size -->
     <string-array name="text_size_options">
+        <item>@string/text_size_tiny</item>
         <item>@string/text_size_extra_small</item>
         <item>@string/text_size_small</item>
         <item>@string/text_size_medium</item>
         <item>@string/text_size_large</item>
         <item>@string/text_size_extra_large</item>
+        <item>@string/text_size_huge</item>
     </string-array>
     <string-array name="pref_text_size_values" translatable="false">
+        <item>-2</item>
         <item>-1</item>
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="comment_text_size_options">
+        <item>@string/text_size_auto</item>
+        <item>@string/text_size_tiny</item>
+        <item>@string/text_size_extra_small</item>
+        <item>@string/text_size_small</item>
+        <item>@string/text_size_medium</item>
+        <item>@string/text_size_large</item>
+        <item>@string/text_size_extra_large</item>
+        <item>@string/text_size_huge</item>
+    </string-array>
+    <string-array name="pref_comment_text_size_values" translatable="false">
+        <item></item>
+        <item>-2</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
     <!-- Font -->
@@ -61,6 +85,66 @@
         <item>Terminus-Regular.ttf</item>
         <item>Fixedsys-Regular.ttf</item>
         <item>ShantellSans-Regular.otf</item>
+    </string-array>
+
+    <!-- Compact title size -->
+    <string-array name="compact_title_size_options">
+        <item>13sp</item>
+        <item>14sp</item>
+        <item>15sp</item>
+        <item>16sp</item>
+        <item>17sp</item>
+    </string-array>
+    <string-array name="compact_title_size_values" translatable="false">
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+    </string-array>
+
+    <!-- Compact subtitle size -->
+    <string-array name="compact_subtitle_size_options">
+        <item>10sp</item>
+        <item>11sp</item>
+        <item>12sp</item>
+        <item>13sp</item>
+        <item>14sp</item>
+    </string-array>
+    <string-array name="compact_subtitle_size_values" translatable="false">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+    </string-array>
+
+    <!-- Font weight -->
+    <string-array name="font_weight_options">
+        <item>@string/font_weight_regular</item>
+        <item>@string/font_weight_bold</item>
+        <item>@string/font_weight_italic</item>
+        <item>@string/font_weight_bold_italic</item>
+    </string-array>
+    <string-array name="font_weight_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Hot threshold -->
+    <string-array name="hot_threshold_options">
+        <item>@string/hot_threshold_auto</item>
+        <item>@string/hot_threshold_low</item>
+        <item>@string/hot_threshold_normal</item>
+        <item>@string/hot_threshold_high</item>
+    </string-array>
+    <string-array name="hot_threshold_values" translatable="false">
+        <item>auto</item>
+        <item>10</item>
+        <item>100</item>
+        <item>300</item>
     </string-array>
 
     <!-- Comment display -->

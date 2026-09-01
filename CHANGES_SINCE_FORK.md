@@ -44,10 +44,17 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 ## Typography
 
 - Added fonts: Hack Nerd Font, Inter, JetBrains Mono, Fira Code, Terminus, Fixedsys
+- Font weight preference: Regular, Bold, Italic, Bold Italic (applied via `Typeface.create()` for all custom fonts, and via CSS `font-weight`/`font-style` for readability view)
+- Text size expanded from 5 to 7 steps: Tiny (15sp), Extra Small, Small, Medium, Large, Extra Large, Huge (26sp)
 
 ## Story List Layout
 
 - Compact list mode preference (smaller title/subtitle fonts, symmetric tight padding)
+- Compact title and subtitle font sizes independently configurable via spinner preferences (13-17sp and 10-14sp respectively)
+- Score column width adjustable via seekbar (44-80dp, default 64dp)
+- List divider toggle to show/hide the 1dp item gap line
+- Card elevation adjustable via seekbar (0-8dp, default 2dp)
+- Hot story threshold configurable: Auto (per section), Low (10+), Normal (100+), High (300+)
 - List item divider set to 1dp with `colorDivider` background showing through as a darker line
 - Score/rank column: full-height `colorCardHighlight` background anchored to parent top and `posted` bottom, centred gravity, no truncation
 - Score column and background view anchored to `title.top`/`posted.bottom` via `alignTop`/`alignBottom` for reliable full-height coverage
@@ -75,6 +82,7 @@ Forked from [Materialistic](https://github.com/hidroh/materialistic) at commit `
 - Title `marginTop` +4dp for extra spacing above
 - Meta container `marginTop` -2dp to reduce space below title
 - Tighter header/comment padding
+- Comment indentation width adjustable via seekbar (12-36dp, default 24dp)
 
 ## About Page
 

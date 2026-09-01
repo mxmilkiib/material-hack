@@ -26,7 +26,6 @@ import android.graphics.Rect;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
-import io.github.mxmilkiib.materialistic.AppUtils;
 import io.github.mxmilkiib.materialistic.Preferences;
 import io.github.mxmilkiib.materialistic.R;
 
@@ -43,7 +42,7 @@ public class CommentItemDecoration extends RecyclerView.ItemDecoration {
         mPaint.setStrokeWidth(context.getResources().getDimensionPixelSize(R.dimen.divider));
         mHorizontalMargin = context.getResources()
                 .getDimensionPixelSize(R.dimen.cardview_horizontal_margin);
-        mLevelIndicatorWidth = AppUtils.getDimensionInDp(context, R.dimen.level_indicator_width);
+        mLevelIndicatorWidth = Preferences.getCommentIndentWidth(context);
         mColors = context.getResources().obtainTypedArray(R.array.color_codes);
         mColorCodeEnabled = Preferences.colorCodeEnabled(context);
         mThreadIndicatorEnabled = Preferences.threadIndicatorEnabled(context);

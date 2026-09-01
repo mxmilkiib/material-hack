@@ -20,47 +20,75 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
-        android:key="@string/pref_line_height"
-        android:title="@string/pref_line_height_title"
-        android:defaultValue="1.0"
-        app:entries="@array/pref_line_height_options"
-        app:entryValues="@array/pref_line_height_values" />
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_display"
+        style="@style/Preference.Category.Hint">
 
-    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
-        android:key="@string/pref_comment_display"
-        android:title="@string/pref_comment_display_title"
-        android:defaultValue="@string/pref_comment_display_value_single"
-        app:entries="@array/pref_comment_display_options"
-        app:entryValues="@array/pref_comment_display_values" />
+        <io.github.mxmilkiib.materialistic.preference.FontSizePreference
+            android:key="@string/pref_comment_text_size"
+            android:title="@string/pref_text_size_comment_title"
+            android:defaultValue=""
+            app:entries="@array/comment_text_size_options"
+            app:entryValues="@array/pref_comment_text_size_values" />
 
-    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
-        android:key="@string/pref_max_lines"
-        android:title="@string/pref_max_lines_title"
-        android:defaultValue="-1"
-        app:entries="@array/comment_max_lines_options"
-        app:entryValues="@array/comment_max_lines_values" />
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_comment_display"
+            android:title="@string/pref_comment_display_title"
+            android:defaultValue="@string/pref_comment_display_value_single"
+            app:entries="@array/pref_comment_display_options"
+            app:entryValues="@array/pref_comment_display_values" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_color_code"
-        android:title="@string/pref_color_code_title"
-        android:defaultValue="true" />
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_max_lines"
+            android:title="@string/pref_max_lines_title"
+            android:defaultValue="-1"
+            app:entries="@array/comment_max_lines_options"
+            app:entryValues="@array/comment_max_lines_values" />
 
-    <androidx.preference.SeekBarPreference
-        app:iconSpaceReserved="false"
-        android:dependency="@string/pref_color_code"
-        android:key="@string/pref_color_code_opacity"
-        android:title="@string/pref_color_code_opacity_title"
-        app:showSeekBarValue="false"
-        android:max="100"
-        android:defaultValue="100" />
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_line_height"
+            android:title="@string/pref_line_height_comments_title"
+            android:defaultValue="1.0"
+            app:entries="@array/pref_line_height_options"
+            app:entryValues="@array/pref_line_height_values" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_thread_indicator"
-        android:title="@string/pref_thread_indicator_title"
-        android:defaultValue="true" />
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_comment_indent_width"
+            android:title="@string/pref_comment_indent_width_title"
+            app:min="12"
+            android:max="36"
+            android:defaultValue="24"
+            app:showSeekBarValue="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_threads"
+        style="@style/Preference.Category.Hint">
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_color_code"
+            android:title="@string/pref_color_code_title"
+            android:defaultValue="true" />
+
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_color_code"
+            android:key="@string/pref_color_code_opacity"
+            android:title="@string/pref_color_code_opacity_title"
+            app:showSeekBarValue="false"
+            android:max="100"
+            android:defaultValue="100" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_thread_indicator"
+            android:title="@string/pref_thread_indicator_title"
+            android:defaultValue="true" />
+
+    </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
         android:summary="@string/pref_navigation_title"

@@ -45,4 +45,15 @@ public class FontCache {
         }
         return mTypefaceMap.get(typefaceName);
     }
+
+    public Typeface get(Context context, String typefaceName, int style) {
+        Typeface base = get(context, typefaceName);
+        if (base == null) {
+            return null;
+        }
+        if (style == Typeface.NORMAL) {
+            return base;
+        }
+        return Typeface.create(base, style);
+    }
 }

@@ -59,7 +59,8 @@ public class Application extends android.app.Application implements Injectable {
                     .build());
         }
         Preferences.migrate(this);
-        TYPE_FACE = FontCache.getInstance().get(this, Preferences.Theme.getTypeface(this));
+        TYPE_FACE = FontCache.getInstance().get(this, Preferences.Theme.getTypeface(this),
+                Preferences.getFontWeight(this));
         AppUtils.registerAccountsUpdatedListener(this);
         AdBlocker.init(this, Schedulers.io());
         registerWifiSyncCallback();

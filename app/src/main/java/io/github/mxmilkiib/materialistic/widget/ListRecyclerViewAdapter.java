@@ -248,8 +248,9 @@ public abstract class ListRecyclerViewAdapter
             super(itemView);
             mCardView = (FlatCardView) itemView;
             mStoryView = itemView.findViewById(R.id.story_view);
-            mCardElevation = itemView.getContext().getResources()
-                    .getDimensionPixelSize(R.dimen.cardview_elevation);
+            Context ctx = itemView.getContext();
+            float density = ctx.getResources().getDisplayMetrics().density;
+            mCardElevation = (int) (Preferences.getCardElevation(ctx) * density);
         }
 
         public void bind(WebItem item,

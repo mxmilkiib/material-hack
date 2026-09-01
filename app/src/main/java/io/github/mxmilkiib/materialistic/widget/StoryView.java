@@ -127,7 +127,22 @@ public class StoryView extends RelativeLayout implements Checkable {
                 R.attr.selectableItemBackground));
         ta.recycle();
         a.recycle();
+        applyScoreColumnWidth();
         applyCompactMode();
+    }
+
+    private void applyScoreColumnWidth() {
+        if (mIsLocal) {
+            return;
+        }
+        int columnWidth = Preferences.getScoreColumnWidth(getContext());
+        float density = getResources().getDisplayMetrics().density;
+        int columnWidthPx = (int) (columnWidth * density);
+        View scoreColumn = findViewById(R.id.score_column);
+        setViewWidth(scoreColumn, columnWidthPx);
+        setMarginStart(mTitleTextView, columnWidthPx);
+        setMarginStart(mSourceTextView, columnWidthPx);
+        setMarginStart(mPostedTextView, columnWidthPx);
     }
 
     private void applyCompactMode() {
@@ -138,19 +153,24 @@ public class StoryView extends RelativeLayout implements Checkable {
         int columnWidth = res.getDimensionPixelSize(R.dimen.cardview_compact_min_height);
         int verticalPadding = res.getDimensionPixelSize(R.dimen.padding_compact);
         int titleTopPadding = res.getDimensionPixelSize(R.dimen.padding_text);
-        float compactTitleSize = res.getDimension(R.dimen.text_size_compact_title);
-        float compactSubtitleSize = res.getDimension(R.dimen.text_size_compact_subtitle);
-        float compactRankSize = res.getDimension(R.dimen.text_size_compact_rank);
-        float compactScoreSize = res.getDimension(R.dimen.text_size_compact_score);
+        // Scale compact sizes relative to the global text size preference
+        // Each global step is ~2sp for title, ~1sp for subtitle
+        int globalChoice = Integer.parseInt(Preferences.Theme.getPreferredTextSize(getContext()));
+        float titleOffset = globalChoice * 2f;
+        float subtitleOffset = globalChoice * 1f;
+        float compactTitleSize = Preferences.getCompactTitleSize(getContext()) + titleOffset;
+        float compactSubtitleSize = Preferences.getCompactSubtitleSize(getContext()) + subtitleOffset;
+        float compactRankSize = compactTitleSize - 2;
+        float compactScoreSize = compactSubtitleSize - 1;
         setViewWidth(findViewById(R.id.score_column), columnWidth);
         setMarginStart(mTitleTextView, columnWidth);
         setMarginStart(mSourceTextView, columnWidth);
         setMarginStart(mPostedTextView, columnWidth);
-        mTitleTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactTitleSize);
-        mSourceTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
-        mPostedTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactSubtitleSize);
-        mRankTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactRankSize);
-        mScoreTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, compactScoreSize);
+        mTitleTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, compactTitleSize);
+        mSourceTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, compactSubtitleSize);
+        mPostedTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, compactSubtitleSize);
+        mRankTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, compactRankSize);
+        mScoreTextView.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, compactScoreSize);
         mTitleTextView.setPadding(mTitleTextView.getPaddingLeft(), res.getDimensionPixelSize(R.dimen.padding_compact),
                 mTitleTextView.getPaddingRight(), res.getDimensionPixelSize(R.dimen.padding_compact));
         if (mTitleTextView.getLayoutParams() instanceof RelativeLayout.LayoutParams) {

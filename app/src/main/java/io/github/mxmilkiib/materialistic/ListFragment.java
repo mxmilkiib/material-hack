@@ -27,6 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,7 +96,15 @@ public class ListFragment extends BaseListFragment {
         mPreferenceObservable.subscribe(context, this::onPreferenceChanged,
                 R.string.pref_highlight_updated,
                 R.string.pref_username,
-                R.string.pref_auto_viewed);
+                R.string.pref_auto_viewed,
+                R.string.pref_list_divider,
+                R.string.pref_card_elevation,
+                R.string.pref_hot_threshold,
+                R.string.pref_score_column_width,
+                R.string.pref_compact_title_size,
+                R.string.pref_compact_subtitle_size,
+                R.string.pref_list_item_view,
+                R.string.pref_list_compact);
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -146,19 +155,30 @@ public class ListFragment extends BaseListFragment {
         } else {
             itemManager = mHnItemManager;
         }
-        getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_NORMAL);
-        if (itemManager == mHnItemManager && mFilter != null) {
-            switch (mFilter) {
-                case ItemManager.BEST_FETCH_MODE:
-                    getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_HIGH);
-                    break;
-                case ItemManager.NEW_FETCH_MODE:
-                    getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_LOW);
-                    break;
+        // Old auto-threshold logic, kept as fallback for "auto" mode
+        String hotThresholdPref = Preferences.getHotThresholdPref(getContext());
+        if ("auto".equals(hotThresholdPref)) {
+            getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_NORMAL);
+            if (itemManager == mHnItemManager && mFilter != null) {
+                switch (mFilter) {
+                    case ItemManager.BEST_FETCH_MODE:
+                        getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_HIGH);
+                        break;
+                    case ItemManager.NEW_FETCH_MODE:
+                        getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_LOW);
+                        break;
+                }
+            } else if (itemManager == mPopularItemManager) {
+                getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_HIGH);
             }
-        } else if (itemManager == mPopularItemManager) {
-            getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_HIGH);
+        } else {
+            try {
+                getAdapter().setHotThresHold(Integer.parseInt(hotThresholdPref));
+            } catch (NumberFormatException e) {
+                getAdapter().setHotThresHold(AppUtils.HOT_THRESHOLD_NORMAL);
+            }
         }
+        applyListDivider();
         getAdapter().initDisplayOptions(mRecyclerView);
         getAdapter().setCacheMode(mCacheMode);
         getAdapter().setUpdateListener((showAll, itemCount, actionClickListener) -> {
@@ -223,8 +243,26 @@ public class ListFragment extends BaseListFragment {
     }
 
     private void onPreferenceChanged(int key, boolean contextChanged) {
-        if (!contextChanged) {
+        if (contextChanged) {
+            mRecyclerView.setAdapter(getAdapter());
+        } else if (key == R.string.pref_list_item_view) {
+            getAdapter().setCardViewEnabled(Preferences.isListItemCardView(getActivity()));
+        } else {
             getAdapter().initDisplayOptions(mRecyclerView);
+            applyListDivider();
+        }
+    }
+
+    private void applyListDivider() {
+        if (mRecyclerView == null) {
+            return;
+        }
+        if (Preferences.isListDividerEnabled(getContext())) {
+            TypedValue typedValue = new TypedValue();
+            getContext().getTheme().resolveAttribute(R.attr.colorDivider, typedValue, true);
+            mRecyclerView.setBackgroundColor(typedValue.data);
+        } else {
+            mRecyclerView.setBackground(null);
         }
     }
 

@@ -552,6 +552,11 @@ public class AppUtils {
                 Preferences.Theme.resolvePreferredTextSize(context)));
     }
 
+    public static LayoutInflater createCommentLayoutInflater(Context context) {
+        return LayoutInflater.from(new ContextThemeWrapper(context,
+                Preferences.Theme.resolvePreferredCommentTextSize(context)));
+    }
+
     public static void share(Context context, String subject, String text) {
         Intent intent = new Intent(Intent.ACTION_SEND)
                 .setType("text/plain")
@@ -590,6 +595,11 @@ public class AppUtils {
     }
 
     public static String wrapHtml(Context context, String html) {
+        int weight = Preferences.getFontWeight(context);
+        String fontWeight = (weight == android.graphics.Typeface.BOLD || weight == android.graphics.Typeface.BOLD_ITALIC)
+                ? "bold" : "normal";
+        String fontStyle = (weight == android.graphics.Typeface.ITALIC || weight == android.graphics.Typeface.BOLD_ITALIC)
+                ? "italic" : "normal";
         return context.getString(R.string.html,
                 Preferences.Theme.getReadabilityTypeface(context),
                 toHtmlPx(context, Preferences.Theme.resolvePreferredReadabilityTextSize(context)),
@@ -598,7 +608,9 @@ public class AppUtils {
                 TextUtils.isEmpty(html) ? context.getString(R.string.empty_text) : html,
                 toHtmlPx(context, context.getResources().getDimension(R.dimen.activity_vertical_margin)),
                 toHtmlPx(context, context.getResources().getDimension(R.dimen.activity_horizontal_margin)),
-                Preferences.getReadabilityLineHeight(context));
+                Preferences.getReadabilityLineHeight(context),
+                fontWeight,
+                fontStyle);
     }
 
     private static float toHtmlPx(Context context, @StyleRes int textStyleAttr) {

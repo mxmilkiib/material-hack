@@ -87,7 +87,9 @@ public class ItemFragment extends LazyLoadFragment implements Scrollable, Naviga
                 R.string.pref_font,
                 R.string.pref_text_size,
                 R.string.pref_smooth_scroll,
-                R.string.pref_color_code_opacity);
+                R.string.pref_color_code_opacity,
+                R.string.pref_comment_indent_width,
+                R.string.pref_font_weight);
     }
 
     @Override

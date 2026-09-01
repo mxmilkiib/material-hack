@@ -174,6 +174,12 @@
         <item name="contentTextSize">@dimen/text_size_small</item>
     </style>
 
+    <style name="AppTextSize.XXSmall">
+        <item name="titleTextSize">15sp</item>
+        <item name="subtitleTextSize">11sp</item>
+        <item name="contentTextSize">11sp</item>
+    </style>
+
     <style name="AppTextSize.XSmall">
         <item name="titleTextSize">16sp</item>
         <item name="subtitleTextSize">12sp</item>
@@ -196,6 +202,12 @@
         <item name="titleTextSize">24sp</item>
         <item name="subtitleTextSize">14sp</item>
         <item name="contentTextSize">20sp</item>
+    </style>
+
+    <style name="AppTextSize.XXLarge">
+        <item name="titleTextSize">26sp</item>
+        <item name="subtitleTextSize">15sp</item>
+        <item name="contentTextSize">22sp</item>
     </style>
 
     <!-- =========== -->

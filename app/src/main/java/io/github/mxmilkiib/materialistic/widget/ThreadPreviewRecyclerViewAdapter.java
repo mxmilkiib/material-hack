@@ -28,7 +28,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.mxmilkiib.materialistic.AppUtils;
 import io.github.mxmilkiib.materialistic.Injectable;
 import io.github.mxmilkiib.materialistic.ItemActivity;
 import io.github.mxmilkiib.materialistic.R;
@@ -51,7 +50,7 @@ public class ThreadPreviewRecyclerViewAdapter extends ItemRecyclerViewAdapter<Su
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         attach(recyclerView.getContext(), recyclerView);
-        mLevelIndicatorWidth = AppUtils.getDimensionInDp(mContext, R.dimen.level_indicator_width);
+        mLevelIndicatorWidth = io.github.mxmilkiib.materialistic.Preferences.getCommentIndentWidth(mContext);
     }
 
     @Override

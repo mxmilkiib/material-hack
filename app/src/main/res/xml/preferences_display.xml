@@ -22,91 +22,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <io.github.mxmilkiib.materialistic.preference.ThemePreference
-        android:key="@string/pref_theme"
-        android:title="@string/pref_theme_title"
-        android:defaultValue="light" />
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_appearance"
+        style="@style/Preference.Category.Hint">
 
-    <io.github.mxmilkiib.materialistic.preference.AppIconPreference
-        android:key="@string/pref_app_icon"
-        android:title="@string/pref_app_icon_title"
-        android:defaultValue="@string/pref_app_icon_value_default" />
+        <io.github.mxmilkiib.materialistic.preference.ThemePreference
+            android:key="@string/pref_theme"
+            android:title="@string/pref_theme_title"
+            android:defaultValue="light" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:dependency="@string/pref_theme"
-        android:key="@string/pref_daynight_auto"
-        android:title="@string/pref_daynight_title"
-        android:defaultValue="false" />
+        <io.github.mxmilkiib.materialistic.preference.AppIconPreference
+            android:key="@string/pref_app_icon"
+            android:title="@string/pref_app_icon_title"
+            android:defaultValue="@string/pref_app_icon_value_default" />
 
-    <io.github.mxmilkiib.materialistic.preference.FontSizePreference
-        android:key="@string/pref_text_size"
-        android:title="@string/pref_text_size_title"
-        android:defaultValue="0"
-        app:entries="@array/text_size_options"
-        app:entryValues="@array/pref_text_size_values" />
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_theme"
+            android:key="@string/pref_daynight_auto"
+            android:title="@string/pref_daynight_title"
+            android:defaultValue="false" />
 
-    <io.github.mxmilkiib.materialistic.preference.FontPreference
-        android:key="@string/pref_font"
-        android:title="@string/pref_font_title"
-        android:defaultValue=""
-        app:entries="@array/font_options"
-        app:entryValues="@array/font_values" />
+    </androidx.preference.PreferenceCategory>
 
-    <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
-        android:key="@string/pref_launch_screen"
-        android:title="@string/pref_launch_screen_title"
-        android:defaultValue="top"
-        app:entries="@array/pref_launch_screen_options"
-        app:entryValues="@array/pref_launch_screen_values" />
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_typography"
+        style="@style/Preference.Category.Hint">
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_external"
-        android:title="@string/pref_external_title"
-        android:summary="@string/pref_external_summary"
-        android:disableDependentsState="true"
-        android:defaultValue="false" />
+        <io.github.mxmilkiib.materialistic.preference.FontSizePreference
+            android:key="@string/pref_text_size"
+            android:title="@string/pref_text_size_list_title"
+            android:defaultValue="0"
+            app:entries="@array/text_size_options"
+            app:entryValues="@array/pref_text_size_values" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:dependency="@string/pref_external"
-        android:key="@string/pref_ad_block"
-        android:title="@string/pref_ad_block_title"
-        android:summary="@string/pref_ad_block_summary"
-        android:defaultValue="true" />
+        <io.github.mxmilkiib.materialistic.preference.FontPreference
+            android:key="@string/pref_font"
+            android:title="@string/pref_font_list_title"
+            android:defaultValue=""
+            app:entries="@array/font_options"
+            app:entryValues="@array/font_values" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_custom_tab"
-        android:title="@string/pref_custom_tab_title"
-        android:summary="@string/pref_custom_tab_summary"
-        android:defaultValue="true" />
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_font_weight"
+            android:title="@string/pref_font_weight_list_title"
+            android:defaultValue="0"
+            app:entries="@array/font_weight_options"
+            app:entryValues="@array/font_weight_values" />
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_lazy_load"
-        android:title="@string/pref_lazy_load_title"
-        android:summary="@string/pref_lazy_load_summary"
-        android:defaultValue="true" />
+    </androidx.preference.PreferenceCategory>
 
-    <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
-        android:key="@string/pref_lazy_load_help"
-        android:title="@string/whats_this"
-        app:dialogTitle="@string/pref_lazy_load_title"
-        app:dialogLayout="@layout/help_lazy_load" />
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_navigation"
+        style="@style/Preference.Category.Hint">
 
-    <androidx.preference.SwitchPreferenceCompat
-        app:iconSpaceReserved="false"
-        android:key="@string/pref_volume"
-        android:title="@string/pref_volume_title"
-        android:summary="@string/pref_volume_summary"
-        android:defaultValue="false" />
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_launch_screen"
+            android:title="@string/pref_launch_screen_title"
+            android:defaultValue="top"
+            app:entries="@array/pref_launch_screen_options"
+            app:entryValues="@array/pref_launch_screen_values" />
 
-    <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
-        android:key="@string/pref_volume_help"
-        android:title="@string/whats_this"
-        app:dialogTitle="@string/pref_volume_title"
-        app:dialogLayout="@layout/help_volume" />
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_volume"
+            android:title="@string/pref_volume_title"
+            android:summary="@string/pref_volume_summary"
+            android:defaultValue="false" />
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_volume_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_volume_title"
+            app:dialogLayout="@layout/help_volume" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_browser"
+        style="@style/Preference.Category.Hint">
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_external"
+            android:title="@string/pref_external_title"
+            android:summary="@string/pref_external_summary"
+            android:disableDependentsState="true"
+            android:defaultValue="false" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_external"
+            android:key="@string/pref_ad_block"
+            android:title="@string/pref_ad_block_title"
+            android:summary="@string/pref_ad_block_summary"
+            android:defaultValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_custom_tab"
+            android:title="@string/pref_custom_tab_title"
+            android:summary="@string/pref_custom_tab_summary"
+            android:defaultValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_lazy_load"
+            android:title="@string/pref_lazy_load_title"
+            android:summary="@string/pref_lazy_load_summary"
+            android:defaultValue="true" />
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_lazy_load_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_lazy_load_title"
+            app:dialogLayout="@layout/help_lazy_load" />
+
+    </androidx.preference.PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

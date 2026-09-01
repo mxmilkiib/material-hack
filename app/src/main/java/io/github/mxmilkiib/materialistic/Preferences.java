@@ -120,6 +120,38 @@ public class Preferences {
         return get(context, R.string.pref_list_compact, false);
     }
 
+    public static int getCompactTitleSize(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_compact_title_size, 15f);
+    }
+
+    public static int getCompactSubtitleSize(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_compact_subtitle_size, 12f);
+    }
+
+    public static int getScoreColumnWidth(Context context) {
+        return getInt(context, R.string.pref_score_column_width, 64);
+    }
+
+    public static boolean isListDividerEnabled(Context context) {
+        return get(context, R.string.pref_list_divider, true);
+    }
+
+    public static int getCardElevation(Context context) {
+        return getInt(context, R.string.pref_card_elevation, 2);
+    }
+
+    public static int getCommentIndentWidth(Context context) {
+        return getInt(context, R.string.pref_comment_indent_width, 24);
+    }
+
+    public static String getHotThresholdPref(Context context) {
+        return get(context, R.string.pref_hot_threshold, "auto");
+    }
+
+    public static int getFontWeight(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_font_weight, 0f);
+    }
+
     public static boolean isSortByRecent(Context context) {
         return get(context, R.string.pref_search_sort, R.string.pref_search_sort_value_recent)
                 .equals(context.getString(R.string.pref_search_sort_value_recent));
@@ -440,7 +472,12 @@ public class Preferences {
         }
 
         public static @StyleRes int resolveTextSize(String choice) {
+            if (TextUtils.isEmpty(choice)) {
+                return R.style.AppTextSize;
+            }
             switch (Integer.parseInt(choice)) {
+                case -2:
+                    return R.style.AppTextSize_XXSmall;
                 case -1:
                     return R.style.AppTextSize_XSmall;
                 case 0:
@@ -452,11 +489,17 @@ public class Preferences {
                     return R.style.AppTextSize_Large;
                 case 3:
                     return R.style.AppTextSize_XLarge;
+                case 4:
+                    return R.style.AppTextSize_XXLarge;
             }
         }
 
         public static @StyleRes int resolvePreferredTextSize(Context context) {
             return resolveTextSize(getPreferredTextSize(context));
+        }
+
+        public static @StyleRes int resolvePreferredCommentTextSize(Context context) {
+            return resolveTextSize(getPreferredCommentTextSize(context));
         }
 
         static @StyleRes int resolvePreferredReadabilityTextSize(Context context) {
@@ -481,8 +524,16 @@ public class Preferences {
             return choice;
         }
 
-        private static @NonNull String getPreferredTextSize(Context context) {
+        public static @NonNull String getPreferredTextSize(Context context) {
             return get(context, R.string.pref_text_size, String.valueOf(0));
+        }
+
+        public static @NonNull String getPreferredCommentTextSize(Context context) {
+            String choice = get(context, R.string.pref_comment_text_size, null);
+            if (TextUtils.isEmpty(choice)) {
+                return getPreferredTextSize(context);
+            }
+            return choice;
         }
 
         private static ThemePreference.ThemeSpec getTheme(Context context, boolean isTransulcent) {
@@ -570,7 +621,9 @@ public class Preferences {
             Set<String> keys = new HashSet<>();
             keys.add(context.getString(R.string.pref_theme));
             keys.add(context.getString(R.string.pref_text_size));
+            keys.add(context.getString(R.string.pref_comment_text_size));
             keys.add(context.getString(R.string.pref_font));
+            keys.add(context.getString(R.string.pref_font_weight));
             keys.add(context.getString(R.string.pref_daynight_auto));
             CONTEXT_KEYS = Collections.unmodifiableSet(keys);
         }
