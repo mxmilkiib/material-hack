@@ -626,8 +626,11 @@ public class AppUtils {
             return charSequence;
         }
         int end = charSequence.length() - 1;
-        while (Character.isWhitespace(charSequence.charAt(end))) {
+        while (end >= 0 && Character.isWhitespace(charSequence.charAt(end))) {
             end--;
+        }
+        if (end < 0) {
+            return "";
         }
         return charSequence.subSequence(0, end + 1);
     }
