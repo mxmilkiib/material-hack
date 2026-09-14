@@ -66,12 +66,14 @@ public class Application extends android.app.Application implements Injectable {
         registerWifiSyncCallback();
     }
 
+    private ConnectivityManager.NetworkCallback mWifiSyncCallback;
+
     private void registerWifiSyncCallback() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkRequest request = new NetworkRequest.Builder()
                 .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
                 .build();
-        cm.registerNetworkCallback(request, new ConnectivityManager.NetworkCallback() {
+        mWifiSyncCallback = new ConnectivityManager.NetworkCallback() {
             @Override
             public void onCapabilitiesChanged(Network network, NetworkCapabilities capabilities) {
                 if (capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
@@ -79,7 +81,20 @@ public class Application extends android.app.Application implements Injectable {
                             new SyncDelegate.JobBuilder(Application.this, null).build());
                 }
             }
-        });
+        };
+        cm.registerNetworkCallback(request, mWifiSyncCallback);
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        if (mWifiSyncCallback != null) {
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (cm != null) {
+                cm.unregisterNetworkCallback(mWifiSyncCallback);
+            }
+            mWifiSyncCallback = null;
+        }
     }
 
     @Override
