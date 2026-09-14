@@ -154,15 +154,21 @@ public class StoryView extends RelativeLayout implements Checkable {
         int verticalPadding = res.getDimensionPixelSize(R.dimen.padding_compact);
         int titleTopPadding = res.getDimensionPixelSize(R.dimen.padding_text);
         // Scale compact sizes relative to the global text size preference
-        // Each global step is ~2sp for title, ~1sp for subtitle
+        // Read the actual title/subtitle dimensions from the resolved style
+        // so compact mode tracks the real style increments, not a linear approximation
         int globalChoice;
         try {
             globalChoice = Integer.parseInt(Preferences.Theme.getPreferredTextSize(getContext()));
         } catch (NumberFormatException e) {
             globalChoice = 0;
         }
-        float titleOffset = globalChoice * 2f;
-        float subtitleOffset = globalChoice * 1f;
+        int resolvedStyle = Preferences.Theme.resolveTextSize(String.valueOf(globalChoice));
+        float styleTitleSize = AppUtils.getDimension(getContext(), resolvedStyle, R.attr.titleTextSize);
+        float styleSubtitleSize = AppUtils.getDimension(getContext(), resolvedStyle, R.attr.subtitleTextSize);
+        float defaultTitleSize = AppUtils.getDimension(getContext(), R.style.AppTextSize, R.attr.titleTextSize);
+        float defaultSubtitleSize = AppUtils.getDimension(getContext(), R.style.AppTextSize, R.attr.subtitleTextSize);
+        float titleOffset = styleTitleSize - defaultTitleSize;
+        float subtitleOffset = styleSubtitleSize - defaultSubtitleSize;
         float compactTitleSize = Preferences.getCompactTitleSize(getContext()) + titleOffset;
         float compactSubtitleSize = Preferences.getCompactSubtitleSize(getContext()) + subtitleOffset;
         float compactRankSize = compactTitleSize - 2;
