@@ -171,42 +171,42 @@
     <style name="AppTextSize">
         <item name="titleTextSize">@dimen/text_size_medium</item>
         <item name="subtitleTextSize">@dimen/text_size_small</item>
-        <item name="contentTextSize">@dimen/text_size_small</item>
-    </style>
-
-    <style name="AppTextSize.XXSmall">
-        <item name="titleTextSize">15sp</item>
-        <item name="subtitleTextSize">11sp</item>
-        <item name="contentTextSize">11sp</item>
-    </style>
-
-    <style name="AppTextSize.XSmall">
-        <item name="titleTextSize">16sp</item>
-        <item name="subtitleTextSize">12sp</item>
-        <item name="contentTextSize">12sp</item>
-    </style>
-
-    <style name="AppTextSize.Medium">
-        <item name="titleTextSize">20sp</item>
-        <item name="subtitleTextSize">14sp</item>
         <item name="contentTextSize">16sp</item>
     </style>
 
+    <style name="AppTextSize.XXSmall">
+        <item name="titleTextSize">16sp</item>
+        <item name="subtitleTextSize">13sp</item>
+        <item name="contentTextSize">14sp</item>
+    </style>
+
+    <style name="AppTextSize.XSmall">
+        <item name="titleTextSize">17sp</item>
+        <item name="subtitleTextSize">13sp</item>
+        <item name="contentTextSize">15sp</item>
+    </style>
+
+    <style name="AppTextSize.Medium">
+        <item name="titleTextSize">19sp</item>
+        <item name="subtitleTextSize">14sp</item>
+        <item name="contentTextSize">17sp</item>
+    </style>
+
     <style name="AppTextSize.Large">
-        <item name="titleTextSize">22sp</item>
+        <item name="titleTextSize">20sp</item>
         <item name="subtitleTextSize">14sp</item>
         <item name="contentTextSize">18sp</item>
     </style>
 
     <style name="AppTextSize.XLarge">
-        <item name="titleTextSize">24sp</item>
-        <item name="subtitleTextSize">14sp</item>
+        <item name="titleTextSize">22sp</item>
+        <item name="subtitleTextSize">15sp</item>
         <item name="contentTextSize">20sp</item>
     </style>
 
     <style name="AppTextSize.XXLarge">
-        <item name="titleTextSize">26sp</item>
-        <item name="subtitleTextSize">15sp</item>
+        <item name="titleTextSize">24sp</item>
+        <item name="subtitleTextSize">16sp</item>
         <item name="contentTextSize">22sp</item>
     </style>
 

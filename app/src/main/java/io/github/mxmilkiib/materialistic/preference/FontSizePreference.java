@@ -26,12 +26,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.preference.PreferenceViewHolder;
+
 import io.github.mxmilkiib.materialistic.AppUtils;
 import io.github.mxmilkiib.materialistic.Preferences;
 import io.github.mxmilkiib.materialistic.R;
 
 public class FontSizePreference extends SpinnerPreference {
     private final LayoutInflater mLayoutInflater;
+    private TextView mPreviewView;
 
     @SuppressWarnings("unused")
     public FontSizePreference(Context context, AttributeSet attrs) {
@@ -41,6 +44,37 @@ public class FontSizePreference extends SpinnerPreference {
     public FontSizePreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mLayoutInflater = LayoutInflater.from(getContext());
+    }
+
+    @Override
+    public void onBindViewHolder(PreferenceViewHolder holder) {
+        super.onBindViewHolder(holder);
+        mPreviewView = (TextView) holder.findViewById(android.R.id.summary);
+        if (mPreviewView != null) {
+            mPreviewView.setVisibility(View.VISIBLE);
+            updatePreview();
+        }
+    }
+
+    @Override
+    protected void onSelectionChanged(int position) {
+        updatePreview();
+    }
+
+    private void updatePreview() {
+        if (mPreviewView == null) {
+            return;
+        }
+        String entryValue = mSelection < mEntryValues.length ? mEntryValues[mSelection] : "";
+        int styleResId;
+        if (TextUtils.isEmpty(entryValue)) {
+            styleResId = Preferences.Theme.resolvePreferredTextSize(getContext());
+        } else {
+            styleResId = Preferences.Theme.resolveTextSize(entryValue);
+        }
+        float titleSize = AppUtils.getDimension(getContext(), styleResId, R.attr.titleTextSize);
+        mPreviewView.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize);
+        mPreviewView.setText(R.string.font_size_preview);
     }
 
     @Override

@@ -181,6 +181,7 @@
     <string name="text_size_tiny">Tiny</string>
     <string name="text_size_huge">Huge</string>
     <string name="text_size_auto">Auto (same as story list)</string>
+    <string name="font_size_preview">Sample: Show HN: A lightweight Hacker News reader for Android</string>
     <string name="pref_thread_indicator_title">Thread indicator</string>
     <string name="pref_widget_section_title">Section</string>
     <string name="pref_widget_query_title">Filter by query (optional)</string>

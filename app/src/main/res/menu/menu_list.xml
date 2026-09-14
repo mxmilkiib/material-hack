@@ -21,5 +21,6 @@
     <item
         android:title="@string/list_display_options"
         android:id="@id/menu_list"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_settings_white_24dp"
+        app:showAsAction="always" />
 </menu>
