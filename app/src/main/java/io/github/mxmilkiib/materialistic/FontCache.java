@@ -24,10 +24,10 @@ import android.text.TextUtils;
 
 public class FontCache {
 
-    private static FontCache sInstance;
+    private static volatile FontCache sInstance;
     private final ArrayMap<String, Typeface> mTypefaceMap = new ArrayMap<>();
 
-    public static FontCache getInstance() {
+    public static synchronized FontCache getInstance() {
         if (sInstance == null) {
             sInstance = new FontCache();
         }
@@ -40,10 +40,17 @@ public class FontCache {
         if (TextUtils.isEmpty(typefaceName)) {
             return null;
         }
-        if (!mTypefaceMap.containsKey(typefaceName)) {
-            mTypefaceMap.put(typefaceName, Typeface.createFromAsset(context.getAssets(), typefaceName));
+        synchronized (mTypefaceMap) {
+            if (!mTypefaceMap.containsKey(typefaceName)) {
+                try {
+                    mTypefaceMap.put(typefaceName,
+                            Typeface.createFromAsset(context.getAssets(), typefaceName));
+                } catch (RuntimeException e) {
+                    return null;
+                }
+            }
+            return mTypefaceMap.get(typefaceName);
         }
-        return mTypefaceMap.get(typefaceName);
     }
 
     public Typeface get(Context context, String typefaceName, int style) {
