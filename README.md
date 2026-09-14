@@ -10,7 +10,7 @@ Material Hack picks up where Materialistic left off. Forked on 2026-06-18 at com
 
 1. **Modernisation** — The build toolchain was updated to Gradle 8.7, AGP 8.5.2, Kotlin 1.9.24, compileSdk/targetSdk 34, and Java 17. Deprecated APIs were replaced throughout: `LocalBroadcastManager` to `LiveData`, `setLayoutFrozen` to `suppressLayout`, `addJavascriptInterface` to `WebViewAssetLoader`, `CONNECTIVITY_ACTION` receivers to `NetworkCallback`, `Html.fromHtml` to `HtmlCompat`, `Vibrator.vibrate` to `VibrationEffect`, `SystemUiVisibility` to `WindowInsetsController`, and HTML regex parsing to Jsoup. Several latent crash bugs from RxJava 3.x null handling and DI ordering were fixed.
 
-2. **Customisation** — The original app's single text size preference was expanded into a full typography system: 11 bundled fonts with independent weight/style selection (Regular, Bold, Italic, Bold Italic), separate text size controls for the story list and comments (7 steps each, Tiny to Huge), and compact mode with independently sized titles and subtitles. Layout controls were added for score column width, comment indentation, card elevation, list dividers, and the hot-story threshold. The theme count grew from 12 to 17 (adding Crimson, Forest, Midnight, Sand, and Dracula), and 8 selectable app icons were introduced. All preference screens were reorganised with category headers and descriptive labels.
+2. **Customisation** — The original app's single text size preference was expanded into a full typography system: 11 bundled fonts with independent weight/style selection (Regular, Bold, Italic, Bold Italic), separate text size controls for the story list and comments (7 steps each, Tiny to Huge with a live preview), and compact mode with independently sized titles and subtitles. Layout controls were added for score column width, comment indentation, card elevation, list dividers, and the hot-story threshold. The theme count grew from 12 to 17 (adding Crimson, Forest, Midnight, Sand, and Dracula), and 8 selectable app icons were introduced. Settings were reorganised into two top-level screens — Appearance (all visual controls) and Behaviour (all non-visual controls) — with quick-access popups from the story list and comment toolbars.
 
 3. **Localisation** — Translation support grew from 11 to 29 languages, with full translations added for 18 new languages including Yue Chinese, Wu Chinese, Korean, Amharic, Jamaican, Latin, Gaelic, and Scots.
 
@@ -34,15 +34,17 @@ The goal is a fast, readable, and highly tunable HN reader that respects the ori
 - **Minimum Android 7.0 (API 24)** — up from the original's API 15; required for Java 8 language features, AndroidX, and modern lifecycle APIs
 - **New themes** — Violet, Ocean, Rose, Monokai, Nord, Crimson, Forest, Midnight, Sand, Dracula, Dark Orange (alongside the originals)
 - **App icon customization** — 8 selectable app icons via Display settings (Orange, Purple, Green, Blue, Red, Teal, Pink, Indigo)
-- **Typography controls** — 11 bundled fonts, font weight/style selection (Regular, Bold, Italic, Bold Italic), independent text sizes for story list and comments (7 steps each, Tiny to Huge), compact mode title/subtitle sizing
+- **Typography controls** — 11 bundled fonts, font weight/style selection (Regular, Bold, Italic, Bold Italic), independent text sizes for story list and comments (7 steps each, Tiny to Huge with live preview), compact mode title/subtitle sizing
 - **Layout controls** — adjustable score column width, comment indentation width, card elevation, list divider toggle, hot story threshold
 - **Compact list mode** — tighter spacing, smaller fonts, smaller rank/score column
 - **Flattened drawer** — all section links in the root, no "More sections" submenu
-- **Organised settings** — all preference screens grouped into categories (Appearance, Typography, Layout, Behaviour, etc.)
-- **UI polish** — transparent overscroll glow, tighter header/comment spacing, better score column layout
+- **Reorganised settings** — two top-level screens: Appearance (theme, typography, layout) and Behaviour (display modes, navigation, browser), with quick-access popups from the story list and comment toolbars
+- **List display options visible** — gear icon on the story list toolbar opens a quick appearance popup (theme, text size, font, compact toggle)
+- **Release signing** — CI signs release APKs with a keystore stored as GitHub secrets; local builds produce unsigned release APKs when secrets are absent
 - **Side-by-side debug install** — debug build uses `applicationIdSuffix ".debug"` so it installs alongside any release build
 - **Deprecated API modernization** — updated for Android 34, replaced deprecated APIs (LocalBroadcastManager → LiveData, setLayoutFrozen → suppressLayout, etc.)
-- **Crash fixes** — fixed RxJava 3.x null crashes, DI ordering issues, ScrollView crash, tab listener leaks, Parcelable duplicates
+- **Crash fixes** — fixed RxJava 3.x null crashes, DI ordering issues, ScrollView crash, tab listener leaks, Parcelable duplicates, preference parsing crashes on corrupted values, all-whitespace comment trimming crash
+- **Resource leak fixes** — detach old comment adapter before replacement, unregister WiFi sync NetworkCallback on termination, avoid Spannable allocation on every touch event
 - **Test coverage** — unit tests for HackerNewsClient, StoryListViewModel, UserServicesClient
 - **GitHub Actions CI** — automated debug/release APK builds and tagged releases
 
