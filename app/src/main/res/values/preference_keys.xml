@@ -25,6 +25,8 @@
     <string translatable="false" name="pref_color_code_opacity">pref_color_code_opacity</string>
     <string translatable="false" name="pref_comment_display">pref_comment_display</string>
     <string translatable="false" name="pref_comment_text_size">pref_comment_text_size</string>
+    <string translatable="false" name="pref_comment_font">pref_comment_font</string>
+    <string translatable="false" name="pref_comment_font_weight">pref_comment_font_weight</string>
     <string translatable="false" name="pref_compact_title_size">pref_compact_title_size</string>
     <string translatable="false" name="pref_compact_subtitle_size">pref_compact_subtitle_size</string>
     <string translatable="false" name="pref_font_weight">pref_font_weight</string>

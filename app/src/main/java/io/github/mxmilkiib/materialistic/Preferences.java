@@ -152,6 +152,10 @@ public class Preferences {
         return (int) getFloatFromString(context, R.string.pref_font_weight, 0f);
     }
 
+    public static int getCommentFontWeight(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_comment_font_weight, 0f);
+    }
+
     public static boolean isSortByRecent(Context context) {
         return get(context, R.string.pref_search_sort, R.string.pref_search_sort_value_recent)
                 .equals(context.getString(R.string.pref_search_sort_value_recent));
@@ -466,6 +470,14 @@ public class Preferences {
 
         static @Nullable String getTypeface(Context context) {
             return get(context, R.string.pref_font, null);
+        }
+
+        static @Nullable String getCommentTypeface(Context context) {
+            String typefaceName = get(context, R.string.pref_comment_font, null);
+            if (TextUtils.isEmpty(typefaceName)) {
+                return getTypeface(context);
+            }
+            return typefaceName;
         }
 
         static @Nullable String getReadabilityTypeface(Context context) {

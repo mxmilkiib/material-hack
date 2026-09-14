@@ -18,6 +18,7 @@
 package io.github.mxmilkiib.materialistic.widget;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
@@ -31,7 +32,10 @@ public class TextView extends AppCompatTextView {
     public TextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         if (!isInEditMode()) {
-            setTypeface(Application.TYPE_FACE);
+            Typeface typeface = TypefaceContextWrapper.resolve(context);
+            if (typeface != null) {
+                setTypeface(typeface);
+            }
         }
     }
 }

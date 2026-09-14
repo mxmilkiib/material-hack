@@ -80,6 +80,20 @@
             app:entries="@array/comment_text_size_options"
             app:entryValues="@array/pref_comment_text_size_values" />
 
+        <io.github.mxmilkiib.materialistic.preference.FontPreference
+            android:key="@string/pref_comment_font"
+            android:title="@string/pref_font_comment_title"
+            android:defaultValue=""
+            app:entries="@array/font_options"
+            app:entryValues="@array/font_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_comment_font_weight"
+            android:title="@string/pref_font_weight_comment_title"
+            android:defaultValue="0"
+            app:entries="@array/font_weight_options"
+            app:entryValues="@array/font_weight_values" />
+
         <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
             android:key="@string/pref_line_height"
             android:title="@string/pref_line_height_comments_title"

@@ -31,6 +31,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
@@ -78,6 +79,7 @@ import io.github.mxmilkiib.materialistic.data.HackerNewsClient;
 import io.github.mxmilkiib.materialistic.data.Item;
 import io.github.mxmilkiib.materialistic.data.WebItem;
 import io.github.mxmilkiib.materialistic.widget.PopupMenu;
+import io.github.mxmilkiib.materialistic.widget.TypefaceContextWrapper;
 
 @SuppressWarnings("WeakerAccess")
 @PublicApi
@@ -559,8 +561,12 @@ public class AppUtils {
     }
 
     public static LayoutInflater createCommentLayoutInflater(Context context) {
-        return LayoutInflater.from(new ContextThemeWrapper(context,
-                Preferences.Theme.resolvePreferredCommentTextSize(context)));
+        Typeface commentTypeface = FontCache.getInstance().get(context,
+                Preferences.Theme.getCommentTypeface(context),
+                Preferences.getCommentFontWeight(context));
+        return LayoutInflater.from(new TypefaceContextWrapper(context,
+                Preferences.Theme.resolvePreferredCommentTextSize(context),
+                commentTypeface));
     }
 
     public static void share(Context context, String subject, String text) {

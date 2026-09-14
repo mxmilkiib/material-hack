@@ -25,6 +25,9 @@
     <item type="id" name="progress" />
     <item type="id" name="toolbar" />
 
+    <!-- tags -->
+    <item type="id" name="tag_typeface" />
+
     <!-- item views -->
     <item type="id" name="rank" />
     <item type="id" name="title" />
