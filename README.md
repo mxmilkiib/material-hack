@@ -2,6 +2,8 @@
 
 A refreshed [Hacker News] client for Android — a fork of [Materialistic] by Ha Duy Trung.
 
+Development of Material Hack has been assisted by AI coding agents. The initial modernisation and feature work (June 2026) was done with Claude Sonnet 4 (Anthropic). Later work — translations, UI customisation preferences, code smell fixes, and release signing (August–September 2026) — was done with Devin (Cognition) powered by GLM-5.2 High. All code has been reviewed and tested before committing.
+
 [Materialistic](https://github.com/hidroh/materialistic) was a popular open-source Hacker News reader for Android, developed from January 2015 through April 2023, accumulating over 1,700 commits and 2,300 stars. The original author's last commit was "Spring cleaning (#1471)" on 2023-04-15, after which the project went dormant. It targeted an older Android SDK, used deprecated APIs, and exposed limited customisation — no font selection, no text size options beyond a single preference, no layout controls, and a fixed set of themes.
 
 Material Hack picks up where Materialistic left off. Forked on 2026-06-18 at commit `442253f7`, it has since grown by over 100 commits across three months of active development. The work falls into three areas:
