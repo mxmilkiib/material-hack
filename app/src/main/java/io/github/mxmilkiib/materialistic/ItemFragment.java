@@ -249,6 +249,10 @@ public class ItemFragment extends LazyLoadFragment implements Scrollable, Naviga
 
         mEmptyView.setVisibility(View.GONE);
         String displayOption = Preferences.getCommentDisplayOption(getActivity());
+        // Detach previous adapter to release its TypedArray and ItemTouchHelper
+        if (mAdapter != null) {
+            mAdapter.detach(getActivity(), mRecyclerView);
+        }
         if (Preferences.isSinglePage(getActivity(), displayOption)) {
             boolean autoExpand = Preferences.isAutoExpand(getActivity(), displayOption);
             // if collapsed or no saved state then start a fresh (adapter items all collapsed)
