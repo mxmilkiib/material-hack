@@ -71,6 +71,9 @@
         <item>Terminus</item>
         <item>Fixedsys</item>
         <item>Shantell Sans</item>
+        <item>Noto Sans</item>
+        <item>Atkinson Hyperlegible</item>
+        <item>IBM Plex Sans</item>
     </string-array>
     <string-array name="font_values" translatable="false">
         <item/>
@@ -85,6 +88,9 @@
         <item>Terminus-Regular.ttf</item>
         <item>Fixedsys-Regular.ttf</item>
         <item>ShantellSans-Regular.otf</item>
+        <item>NotoSans-Regular.ttf</item>
+        <item>AtkinsonHyperlegible-Regular.ttf</item>
+        <item>IBMPlexSans-Regular.ttf</item>
     </string-array>
 
     <!-- Compact title size -->
