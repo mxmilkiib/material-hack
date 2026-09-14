@@ -18,6 +18,7 @@
 package io.github.mxmilkiib.materialistic.preference;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -50,9 +51,15 @@ public class FontSizePreference extends SpinnerPreference {
     @Override
     protected void bindDropDownView(int position, View view) {
         TextView textView = (TextView) view.findViewById(android.R.id.text1);
-        float textSize = AppUtils.getDimension(getContext(),
-                Preferences.Theme.resolveTextSize(mEntryValues[position]),
-                R.attr.contentTextSize);
+        String entryValue = mEntryValues[position];
+        int styleResId;
+        if (TextUtils.isEmpty(entryValue)) {
+            // "Auto" option: resolve using the global text size preference
+            styleResId = Preferences.Theme.resolvePreferredTextSize(getContext());
+        } else {
+            styleResId = Preferences.Theme.resolveTextSize(entryValue);
+        }
+        float textSize = AppUtils.getDimension(getContext(), styleResId, R.attr.contentTextSize);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         textView.setText(mEntries[position]);
     }
