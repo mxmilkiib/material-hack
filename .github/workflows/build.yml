@@ -39,7 +39,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug
         env:
-          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'app/keystore.jks' || '' }}
+          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'keystore.jks' || '' }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
@@ -47,7 +47,7 @@ jobs:
       - name: Build release APK
         run: ./gradlew assembleRelease
         env:
-          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'app/keystore.jks' || '' }}
+          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'keystore.jks' || '' }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
