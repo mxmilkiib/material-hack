@@ -155,7 +155,12 @@ public class StoryView extends RelativeLayout implements Checkable {
         int titleTopPadding = res.getDimensionPixelSize(R.dimen.padding_text);
         // Scale compact sizes relative to the global text size preference
         // Each global step is ~2sp for title, ~1sp for subtitle
-        int globalChoice = Integer.parseInt(Preferences.Theme.getPreferredTextSize(getContext()));
+        int globalChoice;
+        try {
+            globalChoice = Integer.parseInt(Preferences.Theme.getPreferredTextSize(getContext()));
+        } catch (NumberFormatException e) {
+            globalChoice = 0;
+        }
         float titleOffset = globalChoice * 2f;
         float subtitleOffset = globalChoice * 1f;
         float compactTitleSize = Preferences.getCompactTitleSize(getContext()) + titleOffset;

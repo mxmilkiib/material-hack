@@ -29,19 +29,33 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Decode signing keystore
+        if: ${{ env.KEYSTORE_BASE64 != '' }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > app/keystore.jks
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+
       - name: Build debug APK
         run: ./gradlew assembleDebug
+        env:
+          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'app/keystore.jks' || '' }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Build release APK
         run: ./gradlew assembleRelease
-        # Unsigned unless KEYSTORE_BASE64 / KEYSTORE_PASSWORD / KEY_ALIAS / KEY_PASSWORD
-        # secrets are set in repo Settings → Secrets and a signingConfigs block added to
-        # app/build.gradle referencing them.
+        env:
+          KEYSTORE_FILE: ${{ secrets.KEYSTORE_BASE64 != '' && 'app/keystore.jks' || '' }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Rename APKs with prefix
         run: |
           mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/material-hack-debug.apk
-          mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/material-hack-release-unsigned.apk
+          mv app/build/outputs/apk/release/app-release*.apk app/build/outputs/apk/release/material-hack-release.apk
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
@@ -53,8 +67,8 @@ jobs:
       - name: Upload release APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-unsigned
-          path: app/build/outputs/apk/release/material-hack-release-unsigned.apk
+          name: app-release
+          path: app/build/outputs/apk/release/material-hack-release.apk
           retention-days: 14
 
   release:
@@ -72,14 +86,14 @@ jobs:
       - name: Download release APK
         uses: actions/download-artifact@v4
         with:
-          name: app-release-unsigned
+          name: app-release
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             material-hack-debug.apk
-            material-hack-release-unsigned.apk
+            material-hack-release.apk
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -240,7 +240,12 @@ public class Preferences {
 
     public static int getCommentMaxLines(Context context) {
         String maxLinesString = get(context, R.string.pref_max_lines, null);
-        int maxLines = maxLinesString == null ? -1 : Integer.parseInt(maxLinesString);
+        int maxLines;
+        try {
+            maxLines = maxLinesString == null ? -1 : Integer.parseInt(maxLinesString);
+        } catch (NumberFormatException e) {
+            maxLines = -1;
+        }
         if (maxLines < 0) {
             maxLines = Integer.MAX_VALUE;
         }
@@ -475,7 +480,13 @@ public class Preferences {
             if (TextUtils.isEmpty(choice)) {
                 return R.style.AppTextSize;
             }
-            switch (Integer.parseInt(choice)) {
+            int parsed;
+            try {
+                parsed = Integer.parseInt(choice);
+            } catch (NumberFormatException e) {
+                return R.style.AppTextSize;
+            }
+            switch (parsed) {
                 case -2:
                     return R.style.AppTextSize_XXSmall;
                 case -1:
