@@ -196,9 +196,15 @@ public class AppUtils {
                     int line = layout.getLineForVertical(y);
                     int off = layout.getOffsetForHorizontal(line, x);
 
-                    ClickableSpan[] links = Spannable.Factory.getInstance()
-                            .newSpannable(widget.getText())
-                            .getSpans(off, off, ClickableSpan.class);
+                    ClickableSpan[] links;
+                    CharSequence text = widget.getText();
+                    if (text instanceof Spannable) {
+                        links = ((Spannable) text).getSpans(off, off, ClickableSpan.class);
+                    } else {
+                        links = Spannable.Factory.getInstance()
+                                .newSpannable(text)
+                                .getSpans(off, off, ClickableSpan.class);
+                    }
 
                     if (links.length != 0) {
                         if (action == MotionEvent.ACTION_UP) {
