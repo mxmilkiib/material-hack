@@ -52,6 +52,7 @@ public class FontSizePreference extends SpinnerPreference {
         mPreviewView = (TextView) holder.findViewById(android.R.id.summary);
         if (mPreviewView != null) {
             mPreviewView.setVisibility(View.VISIBLE);
+            mPreviewView.setMaxLines(2);
             updatePreview();
         }
     }
@@ -72,8 +73,9 @@ public class FontSizePreference extends SpinnerPreference {
         } else {
             styleResId = Preferences.Theme.resolveTextSize(entryValue);
         }
-        float titleSize = AppUtils.getDimension(getContext(), styleResId, R.attr.titleTextSize);
-        mPreviewView.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize);
+        float titleSizePx = AppUtils.getDimension(getContext(), styleResId, R.attr.titleTextSize);
+        float titleSizeSp = titleSizePx / getContext().getResources().getDisplayMetrics().scaledDensity;
+        mPreviewView.setTextSize(TypedValue.COMPLEX_UNIT_SP, titleSizeSp);
         mPreviewView.setText(R.string.font_size_preview);
     }
 
@@ -93,8 +95,9 @@ public class FontSizePreference extends SpinnerPreference {
         } else {
             styleResId = Preferences.Theme.resolveTextSize(entryValue);
         }
-        float textSize = AppUtils.getDimension(getContext(), styleResId, R.attr.contentTextSize);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        float textSizePx = AppUtils.getDimension(getContext(), styleResId, R.attr.contentTextSize);
+        float textSizeSp = textSizePx / getContext().getResources().getDisplayMetrics().scaledDensity;
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSizeSp);
         textView.setText(mEntries[position]);
     }
 }
