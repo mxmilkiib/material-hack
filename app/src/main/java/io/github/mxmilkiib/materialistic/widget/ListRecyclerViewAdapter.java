@@ -78,6 +78,11 @@ public abstract class ListRecyclerViewAdapter
         mMultiWindowEnabled = Preferences.multiWindowEnabled(mContext);
     }
 
+    public void refreshLayoutInflater() {
+        mInflater = AppUtils.createLayoutInflater(mContext);
+        notifyItemRangeChanged(0, getItemCount());
+    }
+
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);

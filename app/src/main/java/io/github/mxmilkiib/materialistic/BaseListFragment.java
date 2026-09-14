@@ -147,7 +147,7 @@ abstract class BaseListFragment extends BaseFragment implements Scrollable {
 
     private void onPreferenceChanged(int key, boolean contextChanged) {
         if (contextChanged) {
-            mRecyclerView.setAdapter(getAdapter());
+            getAdapter().refreshLayoutInflater();
         } else if (key == R.string.pref_list_item_view) {
             getAdapter().setCardViewEnabled(Preferences.isListItemCardView(getActivity()));
         }

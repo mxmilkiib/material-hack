@@ -244,7 +244,8 @@ public class ListFragment extends BaseListFragment {
 
     private void onPreferenceChanged(int key, boolean contextChanged) {
         if (contextChanged) {
-            mRecyclerView.setAdapter(getAdapter());
+            getAdapter().refreshLayoutInflater();
+            getAdapter().initDisplayOptions(mRecyclerView);
         } else if (key == R.string.pref_list_item_view) {
             getAdapter().setCardViewEnabled(Preferences.isListItemCardView(getActivity()));
         } else {
