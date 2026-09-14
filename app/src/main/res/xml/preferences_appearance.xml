@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2026 mxmilkiib
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_theme"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.ThemePreference
+            android:key="@string/pref_theme"
+            android:title="@string/pref_theme_title"
+            android:defaultValue="light" />
+
+        <io.github.mxmilkiib.materialistic.preference.AppIconPreference
+            android:key="@string/pref_app_icon"
+            android:title="@string/pref_app_icon_title"
+            android:defaultValue="@string/pref_app_icon_value_default" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_theme"
+            android:key="@string/pref_daynight_auto"
+            android:title="@string/pref_daynight_title"
+            android:defaultValue="false" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_story_list_typography"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.FontSizePreference
+            android:key="@string/pref_text_size"
+            android:title="@string/pref_text_size_list_title"
+            android:defaultValue="0"
+            app:entries="@array/text_size_options"
+            app:entryValues="@array/pref_text_size_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.FontPreference
+            android:key="@string/pref_font"
+            android:title="@string/pref_font_list_title"
+            android:defaultValue=""
+            app:entries="@array/font_options"
+            app:entryValues="@array/font_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_font_weight"
+            android:title="@string/pref_font_weight_list_title"
+            android:defaultValue="0"
+            app:entries="@array/font_weight_options"
+            app:entryValues="@array/font_weight_values" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_comment_typography"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.FontSizePreference
+            android:key="@string/pref_comment_text_size"
+            android:title="@string/pref_text_size_comment_title"
+            android:defaultValue=""
+            app:entries="@array/comment_text_size_options"
+            app:entryValues="@array/pref_comment_text_size_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_line_height"
+            android:title="@string/pref_line_height_comments_title"
+            android:defaultValue="1.0"
+            app:entries="@array/pref_line_height_options"
+            app:entryValues="@array/pref_line_height_values" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_readability_typography"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.FontSizePreference
+            android:key="@string/pref_readability_text_size"
+            android:title="@string/pref_text_size_readability_title"
+            android:defaultValue="0"
+            app:entries="@array/text_size_options"
+            app:entryValues="@array/pref_text_size_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.FontPreference
+            android:key="@string/pref_readability_font"
+            android:title="@string/pref_font_readability_title"
+            android:defaultValue=""
+            app:entries="@array/font_options"
+            app:entryValues="@array/font_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_readability_line_height"
+            android:title="@string/pref_line_height_readability_title"
+            android:defaultValue="1.2"
+            app:entries="@array/pref_line_height_options"
+            app:entryValues="@array/pref_line_height_readability_values" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_list_layout"
+        style="@style/Preference.Category.Hint">
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_list_item_view"
+            android:title="@string/pref_list_item_view_title"
+            android:defaultValue="false" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_list_compact"
+            android:title="@string/pref_list_compact_title"
+            android:summary="@string/pref_list_compact_summary"
+            android:defaultValue="false" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:dependency="@string/pref_list_compact"
+            android:key="@string/pref_compact_title_size"
+            android:title="@string/pref_compact_title_size_title"
+            android:summary="@string/pref_compact_title_size_desc"
+            android:defaultValue="15"
+            app:entries="@array/compact_title_size_options"
+            app:entryValues="@array/compact_title_size_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:dependency="@string/pref_list_compact"
+            android:key="@string/pref_compact_subtitle_size"
+            android:title="@string/pref_compact_subtitle_size_title"
+            android:summary="@string/pref_compact_subtitle_size_desc"
+            android:defaultValue="12"
+            app:entries="@array/compact_subtitle_size_options"
+            app:entryValues="@array/compact_subtitle_size_values" />
+
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_score_column_width"
+            android:title="@string/pref_score_column_width_title"
+            app:min="44"
+            android:max="80"
+            android:defaultValue="64"
+            app:showSeekBarValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_list_divider"
+            android:title="@string/pref_list_divider_title"
+            android:defaultValue="true" />
+
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_card_elevation"
+            android:title="@string/pref_card_elevation_title"
+            app:min="0"
+            android:max="8"
+            android:defaultValue="2"
+            app:showSeekBarValue="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_comment_layout"
+        style="@style/Preference.Category.Hint">
+
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_comment_indent_width"
+            android:title="@string/pref_comment_indent_width_title"
+            app:min="12"
+            android:max="36"
+            android:defaultValue="24"
+            app:showSeekBarValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_color_code"
+            android:title="@string/pref_color_code_title"
+            android:defaultValue="true" />
+
+        <androidx.preference.SeekBarPreference
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_color_code"
+            android:key="@string/pref_color_code_opacity"
+            android:title="@string/pref_color_code_opacity_title"
+            app:showSeekBarValue="false"
+            android:max="100"
+            android:defaultValue="100" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_thread_indicator"
+            android:title="@string/pref_thread_indicator_title"
+            android:defaultValue="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

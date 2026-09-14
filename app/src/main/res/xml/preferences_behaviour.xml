@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2026 mxmilkiib
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_story_display"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_story_display"
+            android:title="@string/pref_story_display_title"
+            app:entries="@array/pref_story_display_options"
+            app:entryValues="@array/pref_story_display_values"
+            android:defaultValue="@string/pref_story_display_value_article" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_multi_window"
+            android:title="@string/pref_multi_window_title"
+            android:summary="@string/pref_multi_window_summary"
+            app:entries="@array/pref_multi_window_options"
+            app:entryValues="@array/pref_multi_window_values"
+            android:defaultValue="@string/pref_multi_window_value_none" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_hot_threshold"
+            android:title="@string/pref_hot_threshold_title"
+            android:defaultValue="auto"
+            app:entries="@array/hot_threshold_options"
+            app:entryValues="@array/hot_threshold_values" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_highlight_updated"
+            android:title="@string/pref_highlight_updated_title"
+            android:summary="@string/pref_highlight_updated_summary"
+            android:defaultValue="true" />
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_highlight_updated_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_highlight_updated_title"
+            app:dialogLayout="@layout/help_list_view" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_auto_viewed"
+            android:title="@string/pref_auto_viewed_title"
+            android:summary="@string/pref_auto_viewed_summary"
+            android:defaultValue="false" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_comment_display"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_comment_display"
+            android:title="@string/pref_comment_display_title"
+            android:defaultValue="@string/pref_comment_display_value_single"
+            app:entries="@array/pref_comment_display_options"
+            app:entryValues="@array/pref_comment_display_values" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_max_lines"
+            android:title="@string/pref_max_lines_title"
+            android:defaultValue="-1"
+            app:entries="@array/comment_max_lines_options"
+            app:entryValues="@array/comment_max_lines_values" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_swipe"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_list_swipe_left"
+            android:title="@string/pref_list_swipe_left_title"
+            app:entries="@array/pref_list_swipe_options"
+            app:entryValues="@array/pref_list_swipe_values"
+            android:defaultValue="@string/swipe_save" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_list_swipe_right"
+            android:title="@string/pref_list_swipe_right_title"
+            app:entries="@array/pref_list_swipe_options"
+            app:entryValues="@array/pref_list_swipe_values"
+            android:defaultValue="@string/swipe_vote" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_navigation"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_launch_screen"
+            android:title="@string/pref_launch_screen_title"
+            android:defaultValue="top"
+            app:entries="@array/pref_launch_screen_options"
+            app:entryValues="@array/pref_launch_screen_values" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_volume"
+            android:title="@string/pref_volume_title"
+            android:summary="@string/pref_volume_summary"
+            android:defaultValue="false" />
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_volume_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_volume_title"
+            app:dialogLayout="@layout/help_volume" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_comment_navigation"
+        style="@style/Preference.Category.Hint">
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_navigation_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_navigation_title"
+            app:dialogLayout="@layout/help_navigation" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_navigation"
+            android:title="@string/pref_navigation_title"
+            android:defaultValue="false" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_navigation_vibrate"
+            android:title="@string/pref_navigation_vibrate_title"
+            android:dependency="@string/pref_navigation"
+            android:defaultValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_smooth_scroll"
+            android:title="@string/pref_smooth_scroll_title"
+            android:summary="@string/pref_smooth_scroll_summary"
+            android:dependency="@string/pref_navigation"
+            android:defaultValue="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_browser"
+        style="@style/Preference.Category.Hint">
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_external"
+            android:title="@string/pref_external_title"
+            android:summary="@string/pref_external_summary"
+            android:disableDependentsState="true"
+            android:defaultValue="false" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:dependency="@string/pref_external"
+            android:key="@string/pref_ad_block"
+            android:title="@string/pref_ad_block_title"
+            android:summary="@string/pref_ad_block_summary"
+            android:defaultValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_custom_tab"
+            android:title="@string/pref_custom_tab_title"
+            android:summary="@string/pref_custom_tab_summary"
+            android:defaultValue="true" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_lazy_load"
+            android:title="@string/pref_lazy_load_title"
+            android:summary="@string/pref_lazy_load_summary"
+            android:defaultValue="true" />
+
+        <io.github.mxmilkiib.materialistic.preference.PreferenceHelp
+            android:key="@string/pref_lazy_load_help"
+            android:title="@string/whats_this"
+            app:dialogTitle="@string/pref_lazy_load_title"
+            app:dialogLayout="@layout/help_lazy_load" />
+
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

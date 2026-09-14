@@ -38,7 +38,7 @@
 
             <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/drawer_display"
-                android:text="@string/display"
+                android:text="@string/appearance"
                 app:iconStart="@drawable/ic_palette_white_24dp"
                 style="@style/DrawerTextStyle" />
 
@@ -49,30 +49,8 @@
 
             <io.github.mxmilkiib.materialistic.widget.TintableTextView
                 android:id="@id/menu_list"
-                android:text="@string/list"
+                android:text="@string/behaviour"
                 app:iconStart="@drawable/ic_list_white_24dp"
-                style="@style/DrawerTextStyle" />
-
-            <View
-                android:background="@color/blackT12"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divider" />
-
-            <io.github.mxmilkiib.materialistic.widget.TintableTextView
-                android:id="@id/menu_comments"
-                android:text="@string/comments"
-                app:iconStart="@drawable/ic_format_size_white_24dp"
-                style="@style/DrawerTextStyle" />
-
-            <View
-                android:background="@color/blackT12"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divider" />
-
-            <io.github.mxmilkiib.materialistic.widget.TintableTextView
-                android:id="@id/menu_readability"
-                android:text="@string/readability"
-                app:iconStart="@drawable/ic_local_library_white_24dp"
                 style="@style/DrawerTextStyle" />
 
             <View
