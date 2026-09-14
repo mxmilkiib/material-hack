@@ -73,7 +73,12 @@ public class ThreadPreviewRecyclerViewAdapter extends ItemRecyclerViewAdapter<Su
                 .inflate(R.layout.item_submission, parent, false));
         final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams)
                 holder.itemView.getLayoutParams();
-        params.leftMargin = mLevelIndicatorWidth * viewType;
+        int effectiveLevel = viewType;
+        int maxDepth = io.github.mxmilkiib.materialistic.Preferences.getCommentIndentWrap(mContext);
+        if (maxDepth > 0 && effectiveLevel > maxDepth) {
+            effectiveLevel = maxDepth + (effectiveLevel - maxDepth) % 2;
+        }
+        params.leftMargin = mLevelIndicatorWidth * effectiveLevel;
         holder.itemView.setLayoutParams(params);
         holder.mCommentButton.setVisibility(View.GONE);
         return holder;

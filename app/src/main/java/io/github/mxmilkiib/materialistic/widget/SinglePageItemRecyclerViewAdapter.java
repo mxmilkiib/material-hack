@@ -144,7 +144,12 @@ public class SinglePageItemRecyclerViewAdapter
                 new ToggleItemViewHolder(mLayoutInflater.inflate(R.layout.item_comment, parent, false));
         final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams)
                 holder.itemView.getLayoutParams();
-        params.leftMargin = mLevelIndicatorWidth * viewType;
+        int effectiveLevel = viewType;
+        int maxDepth = Preferences.getCommentIndentWrap(mContext);
+        if (maxDepth > 0 && effectiveLevel > maxDepth) {
+            effectiveLevel = maxDepth + (effectiveLevel - maxDepth) % 2;
+        }
+        params.leftMargin = mLevelIndicatorWidth * effectiveLevel;
         holder.itemView.setLayoutParams(params);
         return holder;
     }

@@ -73,6 +73,9 @@
     <string name="title_activity_favorite">Saved Stories</string>
     <string name="saved">Saved %1$s ago</string>
     <string name="toast_saved">Story saved</string>
+    <string name="toast_refreshing">Refreshing story</string>
+    <string name="toast_voting">Voting</string>
+    <string name="toast_sharing">Sharing story</string>
     <string name="clear_all">Clear all</string>
     <string name="toast_removed">Story unsaved</string>
     <string name="no_saved_stories">No saved stories so far</string>
@@ -139,6 +142,13 @@
     <string name="pref_text_size_comment_title">Comment text size</string>
     <string name="pref_font_comment_title">Comment font</string>
     <string name="pref_font_weight_comment_title">Comment font weight</string>
+    <string name="pref_line_height_stories_title">Story list line spacing</string>
+    <string name="pref_comment_indent_wrap_title">Comment indent wrap depth</string>
+    <string name="pref_comment_indent_wrap_summary">Wrap deeply-nested comments back to a shallower indent to prevent content being pushed off-screen</string>
+    <string name="pref_card_padding_title">Story card padding</string>
+    <string name="pref_age_display_title">Timestamp display</string>
+    <string name="pref_swipe_feedback_title">Swipe action feedback</string>
+    <string name="pref_swipe_feedback_summary">Show a toast notification when performing a swipe action</string>
     <string name="pref_text_size_readability_title">Readability text size</string>
     <string name="pref_font_readability_title">Readability font</string>
     <string name="pref_line_height_comments_title">Comment line spacing</string>

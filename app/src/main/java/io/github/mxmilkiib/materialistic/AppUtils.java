@@ -338,6 +338,23 @@ public class AppUtils {
         return (span / DateUtils.MINUTE_IN_MILLIS) + ABBR_MINUTE;
     }
 
+    public static String getAbsoluteTime(long timeMillis) {
+        return DateUtils.formatDateTime(null, timeMillis,
+                DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_ABBREV_TIME);
+    }
+
+    public static String getDisplayedTimeForMode(Context context, long timeMillis) {
+        String mode = Preferences.getAgeDisplay(context);
+        String relative = getAbbreviatedTimeSpan(timeMillis);
+        if ("absolute".equals(mode)) {
+            return getAbsoluteTime(timeMillis);
+        }
+        if ("both".equals(mode)) {
+            return relative + " (" + getAbsoluteTime(timeMillis) + ")";
+        }
+        return relative;
+    }
+
     public static boolean isOnWiFi(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
                 Context.CONNECTIVITY_SERVICE);

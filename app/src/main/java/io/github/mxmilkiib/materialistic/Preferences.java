@@ -260,6 +260,26 @@ public class Preferences {
         return getFloatFromString(context, R.string.pref_line_height, 1.0f);
     }
 
+    public static float getStoryLineHeight(Context context) {
+        return getFloatFromString(context, R.string.pref_story_line_height, 1.0f);
+    }
+
+    public static int getCommentIndentWrap(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_comment_indent_wrap, 0f);
+    }
+
+    public static int getCardPadding(Context context) {
+        return (int) getFloatFromString(context, R.string.pref_card_padding, 8f);
+    }
+
+    public static String getAgeDisplay(Context context) {
+        return get(context, R.string.pref_age_display, "relative");
+    }
+
+    public static boolean isSwipeFeedbackEnabled(Context context) {
+        return get(context, R.string.pref_swipe_feedback, true);
+    }
+
     public static float getReadabilityLineHeight(Context context) {
         return getFloatFromString(context, R.string.pref_readability_line_height, 1.0f);
     }

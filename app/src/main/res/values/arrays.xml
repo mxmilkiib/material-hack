@@ -294,6 +294,48 @@
         <item>2</item>
     </string-array>
 
+    <!-- Comment indent wrap depth -->
+    <string-array name="pref_comment_indent_wrap_options">
+        <item>Off</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="pref_comment_indent_wrap_values" translatable="false">
+        <item>0</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+
+    <!-- Story card padding -->
+    <string-array name="pref_card_padding_options">
+        <item>None</item>
+        <item>Tight</item>
+        <item>Normal</item>
+        <item>Loose</item>
+    </string-array>
+    <string-array name="pref_card_padding_values" translatable="false">
+        <item>0</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+    </string-array>
+
+    <!-- Age display -->
+    <string-array name="pref_age_display_options">
+        <item>Relative (2h ago)</item>
+        <item>Absolute (2:30 PM)</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="pref_age_display_values" translatable="false">
+        <item>relative</item>
+        <item>absolute</item>
+        <item>both</item>
+    </string-array>
+
     <string-array name="pref_multi_window_options">
         <item>@string/pref_multi_window_none</item>
         <item>@string/pref_multi_window_one</item>

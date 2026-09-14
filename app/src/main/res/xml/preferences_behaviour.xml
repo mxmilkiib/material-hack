@@ -65,6 +65,13 @@
             android:summary="@string/pref_auto_viewed_summary"
             android:defaultValue="false" />
 
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_age_display"
+            android:title="@string/pref_age_display_title"
+            android:defaultValue="relative"
+            app:entries="@array/pref_age_display_options"
+            app:entryValues="@array/pref_age_display_values" />
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
@@ -104,6 +111,13 @@
             app:entries="@array/pref_list_swipe_options"
             app:entryValues="@array/pref_list_swipe_values"
             android:defaultValue="@string/swipe_vote" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            android:key="@string/pref_swipe_feedback"
+            android:title="@string/pref_swipe_feedback_title"
+            android:summary="@string/pref_swipe_feedback_summary"
+            android:defaultValue="true" />
 
     </androidx.preference.PreferenceCategory>
 

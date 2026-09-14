@@ -291,7 +291,7 @@ class HackerNewsItem implements Item {
             SpannableStringBuilder builder = new SpannableStringBuilder(dead ?
                     context.getString(R.string.dead_prefix) + " " : "");
             SpannableString timeSpannable = new SpannableString(
-                    AppUtils.getAbbreviatedTimeSpan(time * 1000));
+                    AppUtils.getDisplayedTimeForMode(context, time * 1000));
             if (deleted) {
                 timeSpannable.setSpan(new StrikethroughSpan(), 0, timeSpannable.length(),
                         Spanned.SPAN_INCLUSIVE_EXCLUSIVE);

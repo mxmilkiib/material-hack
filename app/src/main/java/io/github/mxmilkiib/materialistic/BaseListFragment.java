@@ -65,12 +65,15 @@ abstract class BaseListFragment extends BaseFragment implements Scrollable {
         final int horizontalMargin = getResources()
                 .getDimensionPixelSize(R.dimen.cardview_horizontal_margin);
         final int divider = getResources().getDimensionPixelSize(R.dimen.list_item_divider);
+        final int cardPadding = (int) (Preferences.getCardPadding(getActivity())
+                * getResources().getDisplayMetrics().density);
         mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
                                        RecyclerView.State state) {
                 if (getAdapter().isCardViewEnabled()) {
-                    outRect.set(horizontalMargin, verticalMargin, horizontalMargin, 0);
+                    outRect.set(horizontalMargin, verticalMargin + cardPadding,
+                            horizontalMargin, cardPadding);
                 } else {
                     outRect.set(0, 0, 0, divider);
                 }

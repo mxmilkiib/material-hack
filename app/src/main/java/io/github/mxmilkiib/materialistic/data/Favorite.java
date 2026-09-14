@@ -104,7 +104,7 @@ public class Favorite implements WebItem {
     public Spannable getDisplayedTime(Context context) {
         if (displayedTime == null) {
             displayedTime = new SpannableString(context.getString(R.string.saved,
-                    AppUtils.getAbbreviatedTimeSpan(time)));
+                    AppUtils.getDisplayedTimeForMode(context, time)));
         }
         return displayedTime;
     }

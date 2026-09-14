@@ -67,6 +67,13 @@
             app:entries="@array/font_weight_options"
             app:entryValues="@array/font_weight_values" />
 
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_story_line_height"
+            android:title="@string/pref_line_height_stories_title"
+            android:defaultValue="1.0"
+            app:entries="@array/pref_line_height_options"
+            app:entryValues="@array/pref_line_height_values" />
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
@@ -189,6 +196,13 @@
             android:defaultValue="2"
             app:showSeekBarValue="true" />
 
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_card_padding"
+            android:title="@string/pref_card_padding_title"
+            android:defaultValue="8"
+            app:entries="@array/pref_card_padding_options"
+            app:entryValues="@array/pref_card_padding_values" />
+
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
@@ -203,6 +217,14 @@
             android:max="36"
             android:defaultValue="24"
             app:showSeekBarValue="true" />
+
+        <io.github.mxmilkiib.materialistic.preference.SimpleSpinnerPreference
+            android:key="@string/pref_comment_indent_wrap"
+            android:title="@string/pref_comment_indent_wrap_title"
+            android:summary="@string/pref_comment_indent_wrap_summary"
+            android:defaultValue="0"
+            app:entries="@array/pref_comment_indent_wrap_options"
+            app:entryValues="@array/pref_comment_indent_wrap_values" />
 
         <androidx.preference.SwitchPreferenceCompat
             app:iconSpaceReserved="false"

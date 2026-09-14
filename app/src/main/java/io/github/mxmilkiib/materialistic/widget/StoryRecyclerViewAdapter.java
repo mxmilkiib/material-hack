@@ -174,18 +174,29 @@ public class StoryRecyclerViewAdapter extends
                 switch (action) {
                     case Save:
                         toggleSave(item);
+                        showSwipeFeedback(R.string.toast_saved);
                         break;
                     case Refresh:
                         refresh(item, viewHolder);
+                        showSwipeFeedback(R.string.toast_refreshing);
                         break;
                     case Vote:
                         notifyItemChanged(viewHolder.getAdapterPosition());
                         vote(item, viewHolder);
+                        showSwipeFeedback(R.string.toast_voting);
                         break;
                     case Share:
                         notifyItemChanged(viewHolder.getAdapterPosition());
                         AppUtils.share(mContext, item.getDisplayedTitle(), item.getUrl());
+                        showSwipeFeedback(R.string.toast_sharing);
                         break;
+                }
+            }
+
+            private void showSwipeFeedback(int resId) {
+                if (Preferences.isSwipeFeedbackEnabled(mContext)) {
+                    android.widget.Toast.makeText(mContext, resId,
+                            android.widget.Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -30,6 +30,11 @@
     <string translatable="false" name="pref_compact_title_size">pref_compact_title_size</string>
     <string translatable="false" name="pref_compact_subtitle_size">pref_compact_subtitle_size</string>
     <string translatable="false" name="pref_font_weight">pref_font_weight</string>
+    <string translatable="false" name="pref_story_line_height">pref_story_line_height</string>
+    <string translatable="false" name="pref_comment_indent_wrap">pref_comment_indent_wrap</string>
+    <string translatable="false" name="pref_card_padding">pref_card_padding</string>
+    <string translatable="false" name="pref_age_display">pref_age_display</string>
+    <string translatable="false" name="pref_swipe_feedback">pref_swipe_feedback</string>
     <string translatable="false" name="pref_score_column_width">pref_score_column_width</string>
     <string translatable="false" name="pref_comment_indent_width">pref_comment_indent_width</string>
     <string translatable="false" name="pref_list_divider">pref_list_divider</string>

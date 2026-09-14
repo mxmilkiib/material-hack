@@ -129,6 +129,14 @@ public class StoryView extends RelativeLayout implements Checkable {
         a.recycle();
         applyScoreColumnWidth();
         applyCompactMode();
+        applyLineSpacing();
+    }
+
+    private void applyLineSpacing() {
+        float lineHeight = Preferences.getStoryLineHeight(getContext());
+        mTitleTextView.setLineSpacing(0f, lineHeight);
+        mPostedTextView.setLineSpacing(0f, lineHeight);
+        mSourceTextView.setLineSpacing(0f, lineHeight);
     }
 
     private void applyScoreColumnWidth() {
