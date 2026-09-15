@@ -198,6 +198,7 @@
     <string name="pref_list_divider_title">Show list dividers</string>
     <string name="pref_card_elevation_title">Card elevation</string>
     <string name="pref_hot_threshold_title">Hot story threshold</string>
+    <string name="hot">Hot</string>
     <string name="hot_threshold_low">Low (10+)</string>
     <string name="hot_threshold_normal">Normal (100+)</string>
     <string name="hot_threshold_high">High (300+)</string>

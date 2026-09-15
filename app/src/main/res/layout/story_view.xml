@@ -135,6 +135,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <ImageView
+            android:id="@+id/score_hot"
+            android:src="@drawable/ic_whatshot_orange500_18dp"
+            android:contentDescription="@string/hot"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp" />
+
     </LinearLayout>
 
     <ImageView

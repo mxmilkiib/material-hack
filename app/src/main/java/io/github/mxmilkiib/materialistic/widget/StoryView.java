@@ -38,6 +38,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Checkable;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -63,6 +64,7 @@ public class StoryView extends RelativeLayout implements Checkable {
     private final int mAccentColorResId;
     private final TextView mRankTextView;
     @Synthetic final TextView mScoreTextView;
+    private final ImageView mScoreHotIndicator;
     private final View mBookmarked;
     private final TextView mPostedTextView;
     private final TextView mTitleTextView;
@@ -114,6 +116,7 @@ public class StoryView extends RelativeLayout implements Checkable {
         mVoteSwitcher = (ViewSwitcher) findViewById(R.id.vote_switcher);
         mRankTextView = (TextView) findViewById(R.id.rank);
         mScoreTextView = (TextView) findViewById(R.id.score);
+        mScoreHotIndicator = (ImageView) findViewById(R.id.score_hot);
         mBookmarked = findViewById(R.id.bookmarked);
         mPostedTextView = (TextView) findViewById(R.id.posted);
         mTitleTextView = (TextView) findViewById(R.id.title);
@@ -256,8 +259,7 @@ public class StoryView extends RelativeLayout implements Checkable {
             boolean hot = item.getScore() >= hotThreshold * AppUtils.HOT_FACTOR;
             mScoreTextView.setTextColor(hot ? mHotColorResId : mSecondaryTextColorResId);
             mRankTextView.setText(String.valueOf(item.getRank()));
-            mScoreTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, hot ?
-                    R.drawable.ic_whatshot_orange500_18dp : 0);
+            mScoreHotIndicator.setVisibility(hot ? View.VISIBLE : View.GONE);
             mScoreTextView.setText(getContext().getResources()
                     .getQuantityString(R.plurals.score, item.getScore(), item.getScore()));
             if (item.getKidCount() > 0) {
