@@ -23,37 +23,87 @@ import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.ActionBar;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.appcompat.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 public class PreferencesActivity extends ThemedActivity {
     public static final String EXTRA_TITLE = PreferencesActivity.class.getName() + ".EXTRA_TITLE";
     public static final String EXTRA_PREFERENCES = PreferencesActivity.class.getName() + ".EXTRA_PREFERENCES";
 
+    private static final int[] SECTION_TITLES = {
+            R.string.appearance,
+            R.string.behaviour,
+            R.string.offline
+    };
+    private static final int[] SECTION_XML = {
+            R.xml.preferences_appearance,
+            R.xml.preferences_behaviour,
+            R.xml.preferences_offline
+    };
+
+    private int mCurrentSection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
-        setTitle(getIntent().getIntExtra(EXTRA_TITLE, 0));
+        mCurrentSection = sectionIndexFromIntent();
+        setTitle(SECTION_TITLES[mCurrentSection]);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         //noinspection ConstantConditions
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME |
                 ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
         if (savedInstanceState == null) {
-            Bundle args = new Bundle();
-            args.putInt(EXTRA_PREFERENCES, getIntent().getIntExtra(EXTRA_PREFERENCES, 0));
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.content_frame,
-                            Fragment.instantiate(this, SettingsFragment.class.getName(), args),
-                            SettingsFragment.class.getName())
-                    .commit();
+            showSection(mCurrentSection);
         }
+    }
+
+    private int sectionIndexFromIntent() {
+        int xml = getIntent().getIntExtra(EXTRA_PREFERENCES, R.xml.preferences_appearance);
+        for (int i = 0; i < SECTION_XML.length; i++) {
+            if (SECTION_XML[i] == xml) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    private void showSection(int section) {
+        mCurrentSection = section;
+        setTitle(SECTION_TITLES[section]);
+        Bundle args = new Bundle();
+        args.putInt(EXTRA_PREFERENCES, SECTION_XML[section]);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_frame,
+                        Fragment.instantiate(this, SettingsFragment.class.getName(), args),
+                        SettingsFragment.class.getName())
+                .commit();
+    }
+
+    private void cycleSection(int delta) {
+        int next = (mCurrentSection + delta + SECTION_TITLES.length) % SECTION_TITLES.length;
+        showSection(next);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_preferences, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            return true;
+        }
+        if (item.getItemId() == R.id.menu_prev_section) {
+            cycleSection(-1);
+            return true;
+        }
+        if (item.getItemId() == R.id.menu_next_section) {
+            cycleSection(1);
             return true;
         }
         return super.onOptionsItemSelected(item);
