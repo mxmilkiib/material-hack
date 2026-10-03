@@ -9,9 +9,9 @@ android {
         applicationId "io.github.mxmilkiib.materialistic"
         minSdkVersion 24
         targetSdkVersion 34
-        versionCode 82
-        versionName "4.1"
-        buildConfigField "int", "LATEST_RELEASE", "82"
+        versionCode 83
+        versionName "4.1.1"
+        buildConfigField "int", "LATEST_RELEASE", "83"
         buildConfigField "String", "GITHUB_TOKEN", "\"\""
         buildConfigField "String", "MERCURY_TOKEN", "\"\""
         buildConfigField "long", "BUILD_TIME", System.currentTimeMillis() + "L"
