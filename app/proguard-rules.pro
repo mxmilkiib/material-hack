@@ -14,3 +14,6 @@
 -dontobfuscate
 -keep class io.github.mxmilkiib.materialistic.** { *; }
 -keep interface io.github.mxmilkiib.materialistic.** { *; }
+
+-keep class net.dankito.readability4j.** { *; }
+-dontwarn org.slf4j.**

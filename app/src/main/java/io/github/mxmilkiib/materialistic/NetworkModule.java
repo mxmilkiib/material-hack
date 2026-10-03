@@ -36,7 +36,6 @@ import dagger.Provides;
 import io.github.mxmilkiib.materialistic.data.AlgoliaClient;
 import io.github.mxmilkiib.materialistic.data.FileDownloader;
 import io.github.mxmilkiib.materialistic.data.HackerNewsClient;
-import io.github.mxmilkiib.materialistic.data.ReadabilityClient;
 import io.github.mxmilkiib.materialistic.data.RestServiceFactory;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -125,8 +124,6 @@ public class NetworkModule {
                     RestServiceFactory.CACHE_CONTROL_MAX_AGE_30M);
             CACHE_ENABLED_HOSTS.put(AlgoliaClient.HOST,
                     RestServiceFactory.CACHE_CONTROL_MAX_AGE_30M);
-            CACHE_ENABLED_HOSTS.put(ReadabilityClient.HOST,
-                    RestServiceFactory.CACHE_CONTROL_MAX_AGE_24H);
         }
         private final Context mContext;
 

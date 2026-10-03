@@ -17,26 +17,24 @@
 
 package io.github.mxmilkiib.materialistic.data;
 
-import androidx.annotation.Keep;
+import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import io.github.mxmilkiib.materialistic.AndroidUtils;
-import io.github.mxmilkiib.materialistic.BuildConfig;
 import io.github.mxmilkiib.materialistic.DataModule;
-import io.github.mxmilkiib.materialistic.annotation.Synthetic;
+import net.dankito.readability4j.Article;
+import net.dankito.readability4j.Readability4J;
+import okhttp3.ResponseBody;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.Query;
+import retrofit2.http.Url;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public interface ReadabilityClient {
-    String HOST = "mercury.postlight.com";
 
     interface Callback {
         void onResponse(String content);
@@ -48,32 +46,21 @@ public interface ReadabilityClient {
     void parse(String itemId, String url);
 
     class Impl implements ReadabilityClient {
-        private static final CharSequence EMPTY_CONTENT = "<div></div>";
-        private final MercuryService mMercuryService;
+        private final HtmlService mHtmlService;
         private final LocalCache mCache;
         @Inject @Named(DataModule.IO_THREAD) Scheduler mIoScheduler;
         @Inject @Named(DataModule.MAIN_THREAD) Scheduler mMainThreadScheduler;
 
-        interface MercuryService {
-            String MERCURY_API_URL = "https://" + HOST + "/";
-            String X_API_KEY = "x-api-key: ";
-
-            @Headers({RestServiceFactory.CACHE_CONTROL_MAX_AGE_24H,
-                    X_API_KEY + BuildConfig.MERCURY_TOKEN})
-            @GET("parser")
-            Observable<Readable> parse(@Query("url") String url);
-        }
-
-        class Readable {
-            @Keep @Synthetic
-            String content;
+        interface HtmlService {
+            // base URL is a placeholder; @Url overrides it entirely per request
+            @GET
+            Observable<ResponseBody> fetch(@Url String url);
         }
 
         @Inject
         public Impl(LocalCache cache, RestServiceFactory factory) {
-            mMercuryService = factory.rxEnabled(true)
-                    .create(MercuryService.MERCURY_API_URL,
-                            MercuryService.class);
+            mHtmlService = factory.rxEnabled(true)
+                    .create("https://unused.invalid/", HtmlService.class);
             mCache = cache;
         }
 
@@ -81,9 +68,7 @@ public interface ReadabilityClient {
         public void parse(String itemId, String url, Callback callback) {
             Observable.defer(() -> fromCache(itemId))
                     .subscribeOn(mIoScheduler)
-                    .flatMap(content -> content != null ?
-                            Observable.just(content) : fromNetwork(itemId, url))
-                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? "" : content)
+                    .switchIfEmpty(fromNetwork(itemId, url))
                     .observeOn(mMainThreadScheduler)
                     .subscribe(callback::onResponse);
         }
@@ -94,17 +79,24 @@ public interface ReadabilityClient {
             Observable.defer(() -> fromCache(itemId))
                     .subscribeOn(Schedulers.trampoline())
                     .switchIfEmpty(fromNetwork(itemId, url))
-                    .map(content -> AndroidUtils.TextUtils.equals(EMPTY_CONTENT, content) ? "" : content)
                     .observeOn(Schedulers.trampoline())
                     .subscribe();
         }
 
         @NonNull
         private Observable<String> fromNetwork(String itemId, String url) {
-            return mMercuryService.parse(url)
-                    .onErrorResumeNext(throwable -> Observable.empty())
-                    .map(readable -> readable.content)
-                    .doOnNext(content -> mCache.putReadability(itemId, content));
+            return mHtmlService.fetch(url)
+                    .map(body -> {
+                        Article article = new Readability4J(url, body.string()).parse();
+                        return article != null && article.getContent() != null ?
+                                article.getContent() : "";
+                    })
+                    .onErrorResumeNext(throwable -> Observable.just(""))
+                    .doOnNext(content -> {
+                        if (!TextUtils.isEmpty(content)) {
+                            mCache.putReadability(itemId, content);
+                        }
+                    });
         }
 
         private Observable<String> fromCache(String itemId) {
